@@ -212,3 +212,17 @@ $video-thumb-url: '../themes/isc/images/healthshare-thumbnail.png';
     margin: 0 !important;
     text-align: right;
 }
+
+// Register page
+body.view-register {
+	.introduction header {
+		h1.title {
+			span.title-sub {
+				font-size: 20px;
+				margin-left: 40px;
+				text-transform: none;
+				color: #585858;
+			}
+		}
+	}
+}
