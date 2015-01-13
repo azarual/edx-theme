@@ -10,20 +10,20 @@
 //-----------------
 
 //Main Color Variables
-$main-color: #f7691f;
-$dark-color: #ea281f; //Link Color
-$light-color: #f4e00c; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
-$bg-color: #f7fe81; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+$main-color: #42545d; //orange (login button)
+$dark-color: #94beb8; //Link Color (red mostly slight orange)
+$light-color: #f4e00c; //(yellow)Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$bg-color: #f7fe81; //(light yellow)Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
 //Main BG Color Variables
-$main-bg: #822537;
-$main-bg-60: lighten($main-bg, 18.5%); //Main Border/HR Color
-$main-bg-25: lighten($main-bg, 25%); 
+$main-bg: #42545d; //maroon (boarders)
+$main-bg-60: #42545d; //Main Border/HR Color
+$main-bg-25: #42545d; 
 
 //Secondary Color Variables
-$secondary: #b5a4b7;
-$secondary-50: lighten($secondary, 9%);
-$secondary-25: lighten($secondary, 20%); //Important Heading BG Color 
+$secondary: #42545d; //light purple (header footer)
+$secondary-50: #42545d;
+$secondary-25: #42545d; //Important Heading BG Color 
 
 //Gray Color Variables
 $gray: #3f3f3f; //Main Text Color
@@ -205,4 +205,78 @@ $video-thumb-url: '../themes/nyif/images/edx.png';
 @mixin footer_references_style {
     margin: 0 !important;
     text-align: right;
+}
+
+// NYIF customizations
+
+//header
+body {
+	header.global {
+		border-bottom: none; 
+		box-shadow: none;
+		background: #42545d;
+		height: 76px;
+		position: relative;
+		width: 100%;
+		
+		.left {
+			float: left;
+		}
+
+		.right {
+			float: right;
+		}
+		 nav {
+	        height: auto;
+	        color: #ffffff;
+	        margin-right: 10%;
+	        margin-left: 10%;
+
+	        .nav-global li a {
+	        	display: block;
+				margin-left: 10px;
+				padding: 5px;
+				color: #ffffff;
+				text-transform: uppercase;
+				font-size: 18px;
+				font-weight: bold;
+
+	        }
+	    }
+	}
+	.home>header .title {
+		background: none;
+		border: none;
+		box-shadow: none;
+		.title>hgroup {
+			min-height: 120px;
+			margin: auto;
+			position: relative;
+			-webkit-transition: all 0.2s linear 0s;
+			-moz-transition: all 0.2s linear 0s;
+			transition: all 0.2s linear 0s;
+			vertical-align: top;
+		}
+	}
+
+	.wrapper-footer footer .colophon .nav-colophon li {
+		float: none;
+
+		a {
+			display: block;
+			margin-left: 10px;
+			padding: 5px;
+			color: #ffffff;
+			//text-transform: uppercase;
+			font-size: 18px;
+			font-weight: bold;
+		}
+	}
+}
+
+
+
+//index page
+div.title {
+
 }
