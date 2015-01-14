@@ -11,7 +11,7 @@
 
 //Main Color Variables
 $main-color: #42545d; //orange (login button)
-$dark-color: #94beb8; //Link Color (red mostly slight orange)
+$dark-color: #42545d; //Link Color (red mostly slight orange)
 $light-color: #f4e00c; //(yellow)Selected Header BG Color, ie. calendar        ***Custom, not from palette***
 $bg-color: #f7fe81; //(light yellow)Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
@@ -229,9 +229,7 @@ body {
 		 nav {
 	        height: auto;
 	        color: #ffffff;
-	        margin-right: 10%;
-	        margin-left: 10%;
-
+	        
 	        .nav-global li a {
 	        	display: block;
 				margin-left: 10px;
@@ -262,9 +260,6 @@ body {
 	div.wrapper-footer {
 		box-shadow: none;
 		border-top: none;
-		//padding: 25px 10px 30px 10px;
-		padding-left: 10%;
-		padding-right: 10%;
 		background: #000000;
 		
 		footer .colophon .nav-colophon li {
@@ -275,7 +270,6 @@ body {
 				margin-left: 10px;
 				padding: 5px;
 				color: #ffffff;
-				//text-transform: uppercase;
 				font-size: 18px;
 				font-weight: bold;
 			}
@@ -290,12 +284,47 @@ body {
 				font-size: 85%;
 			}
 		}
+
+		span.footer-text {
+			color: #ffffff;
+			a {
+				color: #ffffff;
+			}
+		}
 	}
 }
 
 
+// Slim version (courseware pages)
+body header.global.slim {
+    background-color: #000000;
 
-//index page
-div.title {
+    nav:before,
+    nav .logo:before,
+    nav .logo:after {
+        display: none !important;
+	}
 
+	h2 {
+		display: block;
+		width: 550px;
+		float: left;
+		font-size: 1em;
+		font-weight: 600;
+		color: #ffffff;
+		letter-spacing: 0;
+		margin-top: 9px;
+		margin-bottom: 0;
+		text-transform: none;
+		/* text-shadow: 0 1px 0 #fff; */
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		.provider {
+			color: #ffffff;
+			font-weight: normal;
+		}
+	}
 }
+
