@@ -299,12 +299,6 @@ body {
 body header.global.slim {
     background-color: #000000;
 
-    nav:before,
-    nav .logo:before,
-    nav .logo:after {
-        display: none !important;
-	}
-
 	h2 {
 		display: block;
 		width: 550px;
