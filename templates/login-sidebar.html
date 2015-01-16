@@ -1,0 +1,32 @@
+<%! 
+from django.utils.translation import ugettext as _ 
+from django.core.urlresolvers import reverse
+%>
+
+<header>
+  <h2 class="sr">${_("Helpful Information")}</h2>
+</header>
+
+% if settings.FEATURES.get('AUTH_USE_OPENID'):
+<!-- <div class="cta cta-login-options-openid">
+  <h3>${_("Login via OpenID")}</h3>
+  <p>${_('You can now start learning with {platform_name} by logging in with your <a rel="external" href="http://openid.net/">OpenID account</a>.').format(platform_name=platform_name)}</p>
+  <a class="action action-login-openid" href="#">${_("Login via OpenID")}</a>
+</div> -->
+% endif
+
+<div class="cta cta-help">
+  <h3>Welcome to NYIF</h3>
+  <p>
+    This site is dedicated to students registered for specific courses at New York Institute of Finance. You may login here if you have enrolled in one of these courses (you would have received notification in email).
+  </p>
+  <p>
+    To learn more about the courses on this site, and the wide range of training available at New York Institute of Finance, please visit our primary site at <a href="http://www.nyif.com">www.nyif.com</a>. If you have questions:
+  </p>
+  <ul>
+    <li>Give us a call at +1 212 641 6616 or +1 888 641 6616</li>
+    <li>Email us at <a href="mailto:Customerservice@nyif.com">Customerservice@nyif.com</a></li>
+  </ul>
+
+
+</div>
