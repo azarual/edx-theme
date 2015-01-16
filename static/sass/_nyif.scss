@@ -322,3 +322,13 @@ body header.global.slim {
 	}
 }
 
+body.view-register {
+    .introduction header {
+        h1.title {
+          span.title-sub {
+              text-transform: none;
+            }
+        }
+    }
+}
+
