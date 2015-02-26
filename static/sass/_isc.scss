@@ -216,6 +216,14 @@ $video-thumb-url: '../themes/isc/images/healthshare-thumbnail.png';
 // Register page
 body.view-register {
 	.introduction header {
+		.title .title-super {
+			font-size: 26px;
+			line-height: 26.64px;
+			text-transform: uppercase;
+			text-align: center;
+			color: #2a5db0;
+		}
+
 		h1.title {
 			span.title-sub {
 				font-size: 20px;
@@ -228,4 +236,17 @@ body.view-register {
 			}
 		}
 	}
+	.register form .instructions {
+		font-size: 18px;
+		margin: 0 0 20px 0;
+		font-weight: 300;
+		color: #2e2e2e;
+		font-family: 'Open Sans', sans-serif;
+		line-height: 1.55733em;
+		text-align: center;
+
+	}
 }
+
+//.view-register .introduction header .title .title-super, 
+//.view-register .register form .instructions
