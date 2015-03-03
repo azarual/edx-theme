@@ -191,7 +191,7 @@ $footer_margin: ($baseline/4) 0;
 //  CSS BG Images
 //-----------------
 //$homepage-bg-image: url('../themes/default/images/sunrise.jpg');
-$homepage-bg-image: url('../themes/isc/images/nurse-with-girl.jpg');
+$homepage-bg-image: url('../themes/isc/images/hero-learning.jpg');
 
 $login-banner-image: none;
 $register-banner-image: none;
@@ -212,6 +212,67 @@ $video-thumb-url: '../themes/isc/images/healthshare-thumbnail.png';
     margin: 0 !important;
     text-align: right;
 }
+
+//index page
+.home>header {
+	.outer-wrapper {
+		margin: 0 auto;
+		padding: 150px 10px 0px;
+		position: relative;
+		max-width: 1200px;
+		min-width: 760px;
+	}
+
+	.title2 {
+		background: #FFF;
+		background: rgba(0,0,0,0);
+		min-height: 120px;
+		float: left;
+		position: relative;
+		vertical-align: top;
+
+		hgroup.hero-text {
+			h1 {
+				color: white;
+				font-size: 63px;
+				font-family: sans-serif;
+				margin: 0px;
+			}
+
+			h2 {
+				color: white;
+				font-weight: bold;
+				font-size: 42px;
+				text-transform: none;
+				font-family: sans-serif;
+
+			}
+
+			h3 {
+				color: white;
+				padding-top: 20px;
+				font-weight: bold;
+				font-size: 20px;	
+				font-family: sans-serif;
+
+				a span {
+					background-color: #76d153;
+					color: white;
+					padding: 15px 45px 15px 45px;
+					font-weight: bold;
+					text-decoration: none;				
+					text-shadow: 1px 1px #999;
+
+				}
+				a.underline {
+					color: white;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
 
 // Register page
 body.view-register {
@@ -248,5 +309,3 @@ body.view-register {
 	}
 }
 
-//.view-register .introduction header .title .title-super, 
-//.view-register .register form .instructions
