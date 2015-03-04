@@ -1,0 +1,93 @@
+header.global-new {
+	background-color: #333333;
+	@include lato;
+	text-transform: capitalize;
+	font-size: 20px;
+	line-height: 24px;
+	border-bottom: none;
+
+	& .nav-global, & .nav-courseware {
+		margin-top: 15px;
+
+		& li a, & a.nav-courseware-button {
+			@include lato;
+			font-size: 20px;
+			line-height: 24px;
+			border: none;
+			color: #fff;
+			border: none;
+			padding: 8px;
+			text-transform: capitalize;
+			margin-top: -22px;
+			border-radius: 8px;
+			
+			&:hover {
+				background-color: #666;
+				padding: 8px;
+				border-radius: 8px;
+				border: none;
+				color: #fff;
+			}
+
+			&.nav-courseware-button {
+				@include linear-gradient(to bottom, #49aeff, #006fc9);
+				@include lato;
+				font-size: 20px;
+				line-height: 24px;
+				border: none;
+				color: #fff;
+				border: none;
+				padding: 8px;
+				text-transform: capitalize;
+				border-radius: 8px;
+
+				&:hover {
+					@include linear-gradient(#006fc9, #006fc9);
+					border-radius: 8px;
+				}
+			}
+		}
+	}
+
+	& ol {
+
+		& li.primary>a {
+			border: none;
+			padding: 9px 40px !important;
+
+			&.dropdown {
+				padding: 6px !important;
+			}
+		}
+
+		&.user a.user-link .avatar {
+			background-position: center;
+			margin-top: -2px;
+		}
+
+		&.user ul.dropdown-menu {
+			border-color: #ccc;
+
+			&:before {
+				box-shadow: 1px 0 0 0 #ccc,0 -1px 0 0 #ccc;
+			}
+		}
+
+		&.user ul.dropdown-menu li {
+			border-color: #ccc;
+
+			&>a {
+				font-size: 0.8em;
+			}
+		}
+	}
+}
+
+.logo {
+
+	& img {
+		height: 48px;
+		width: auto;
+		margin-top: -6px;
+	}
+}

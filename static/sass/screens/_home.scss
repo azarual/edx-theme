@@ -1,0 +1,92 @@
+.home {
+	&>header {
+		background-image: none;
+		border-bottom: 1px solid rgba(0, 69, 124, 0.16000000000000003);
+		@include linear-gradient(to bottom, #EDF2F6, #C5D9E9);
+		height: auto;
+		padding: 40px 0;
+		transition: all 0.2s linear 0s;
+
+		& .outer-wrapper {
+			padding: 0;
+			max-width: 100%;
+			min-width: 100%;
+		}
+
+		& .title {
+			background: none;
+			border: none;
+			width: 100%;
+			float: none;
+			margin-left: 0;
+			box-shadow: none;
+
+			&>hgroup {
+				background: none;
+				width: 100%;
+			}
+		}
+
+		& #academy-logo {
+			display: block;
+			margin: 0 auto;
+			width: 660px;
+			height: auto;
+			max-width: 100%;
+		}
+
+		& #landing-diagram {
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+		}
+	}
+}
+
+.highlighted-courses .courses {
+
+	& .course {
+
+		& header.course-preview {
+			background-image: none;
+			background-color: rgba(51, 51, 51, 0.85);
+
+			& .info-link {
+				color: #fff;
+			}
+
+			&:hover {
+				background-image: none;
+				background-color: rgba(51, 51, 51, 0.85);
+
+				& h2 {
+					color: #fff;
+				}
+
+				& .info-link {
+					color: #fff;
+				}
+			}
+
+			& hgroup h2 {
+				@include lato;
+				color: #fff;
+				text-shadow: none;
+
+				& .course-number {
+					@include lato-bold;
+					color: #fff;
+				}
+			}
+
+		}
+
+		& .info {
+
+			& .bottom {
+				@include lato;
+				font-size: 0.85em;
+			}
+		}
+	}
+}

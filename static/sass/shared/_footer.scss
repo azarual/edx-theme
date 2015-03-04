@@ -1,0 +1,44 @@
+.wrapper-footer {
+	@include lato;
+	background-color: #333333;
+	color: #fff;
+	font-size: 0.85em;
+	padding-bottom: 140px;
+
+	& footer .colophon .nav-colophon li {
+		color: #fff;
+
+		& a {
+			@include lato;
+			color: #fff;
+			text-decoration: none;
+
+			&:hover {
+				@include lato-bold;
+				color: #006fc9;
+				border-bottom: none;
+			}
+		}
+	}
+
+	& footer {
+
+		& span {
+			color: #fff;
+			opacity: 0.75;
+			margin-left: 10px;
+		}
+
+		& a, & a:link {
+			@include lato;
+			color: #fff;
+			text-decoration: none;
+
+			&:hover, &:focus, &:visited {
+				@include lato-bold;
+				color: #006fc9;
+				border-bottom: none;
+			}
+		}
+	}
+}

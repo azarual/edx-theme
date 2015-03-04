@@ -1,0 +1,24 @@
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Corben);
+
+// define font mixins
+@mixin lato-light {
+	font-family: 'Lato', $helvetica;
+	font-weight: 300;
+}
+
+@mixin lato {
+	font-family: 'Lato', $helvetica;
+	font-weight: 400;
+}
+
+@mixin lato-bold {
+	font-family: 'Lato', $helvetica;
+	font-weight: 700;
+}
+
+@mixin corben {
+	font-family: 'Corben', $georgia;
+	font-weight: 300;
+}
+

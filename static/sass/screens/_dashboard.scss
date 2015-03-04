@@ -1,0 +1,39 @@
+.content-wrapper {
+	min-height: 700px;
+}
+
+.dashboard {
+
+	& .profile-sidebar {
+
+		& header.profile {
+			border-color: #ccc;
+			background-color: #006fc9;
+			color: #fff;
+
+			& h1.user-name {
+				font-size: 1em;
+				text-transform: uppercase;
+				color: #fff;
+			}
+		}
+
+		& .user-info {
+
+			&>ul {
+				border-color: #ccc;
+
+				& li {
+					border-color: #dedede;
+				}
+			}
+		}
+	}
+
+	& .my-courses {
+
+		&>header {
+			border-color: #006fc9;
+		}
+	}
+}
