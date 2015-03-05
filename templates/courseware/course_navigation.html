@@ -33,8 +33,6 @@ def url_class(is_active):
           <li class="${"prominent" if tab.name in ("Courseware", "Course Content") else ""}">
         % elif tab.name in ("Discussion",) and course.discussion_blackouts:
           <li class="hidden">
-          #course.forum_posts_allowed returned true even if the current date was between blackout dates
-          #now discussion tab is hidden if any blackout dates are entered in "advanced settings"
         % else:
           <li>
         % endif
