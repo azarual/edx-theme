@@ -1,45 +1,9 @@
 .home {
 	&>header {
-		background-image: none;
 		border-bottom: 1px solid rgba(0, 69, 124, 0.16000000000000003);
-		@include linear-gradient(to bottom, #EDF2F6, #C5D9E9);
+		background-color: #c5d9e9;
 		height: auto;
 		padding: 40px 0;
-		transition: all 0.2s linear 0s;
-
-		& .outer-wrapper {
-			padding: 0;
-			max-width: 100%;
-			min-width: 100%;
-		}
-
-		& .title {
-			background: none;
-			border: none;
-			width: 100%;
-			float: none;
-			margin-left: 0;
-			box-shadow: none;
-
-			&>hgroup {
-				background: none;
-				width: 100%;
-			}
-		}
-
-		& #academy-logo {
-			display: block;
-			margin: 0 auto;
-			width: 660px;
-			height: auto;
-			max-width: 100%;
-		}
-
-		& #landing-diagram {
-			display: block;
-			margin: 0 auto;
-			max-width: 100%;
-		}
 	}
 }
 

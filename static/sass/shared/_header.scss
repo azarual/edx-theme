@@ -91,3 +91,17 @@ header.global-new {
 		margin-top: -6px;
 	}
 }
+
+
+ul.dropdown-menu {
+	background: #fff !important;
+}
+
+header nav h2 {
+	text-shadow: none !important;
+	color: #fff !important;
+
+	& span {
+		color: rgba(255,255,255,0.75);
+	}
+}
