@@ -14,7 +14,7 @@
 			text-decoration: none;
 
 			&:hover {
-				@include lato-bold;
+				@include lato;
 				color: #006fc9;
 				border-bottom: none;
 			}
@@ -35,7 +35,7 @@
 			text-decoration: none;
 
 			&:hover, &:focus, &:visited {
-				@include lato-bold;
+				@include lato;
 				color: #006fc9;
 				border-bottom: none;
 			}
