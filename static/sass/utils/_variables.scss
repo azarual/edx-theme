@@ -1,38 +1,38 @@
-$header-bg: #fff;
+$header-bg: #334249;
 $nav-padding: 18px 10px 0px;
 $header-height: 88px;
-$header-border-bottom: 2px solid #efefef;
-$courseware-border-bottom-color: #efefef;
+$header-border-bottom: 2px solid #FAC21E;
+$courseware-border-bottom-color: #FAC21E;
 $header-logo-margin: -14px 0 0 0;
 $header-logo-height: 72px;
-$courseware-navigation-color: #e62f28;
-$courseware-button-border-color: #9a9a9a;
-$link-color: #e62f28;
-$header-cta-button-border: 3px solid #e62f28;
+$courseware-navigation-color: #fff;
+$courseware-button-border-color: #A2C14B;
+$link-color: #E96222;
+$header-cta-button-border: 3px solid #A2C14B;
 $header-cta-button-color: #fff;
-$header-cta-button-background: #e62f28;
-$header-cta-button-hover-border-color: #e62f28;
+$header-cta-button-background: #A2C14B;
+$header-cta-button-hover-border-color: #A2C14B;
 
-$homepage__header--gradient__color--alpha: #e62f28;
-$homepage__header--gradient__color--bravo: #d22c26;
+$homepage__header--gradient__color--alpha: #E96222;
+$homepage__header--gradient__color--bravo: #FAC21E;
 
 
 // homepage bg image
-$homepage-bg-image: url('../themes/synerscope/images/bg-synerscope.jpg');
+$homepage-bg-image: url('../themes/apmasphere/images/apmasphere-header-bg.jpg');
 
 
 $homepage-course-bg: #fff;
-$homepage-course-border: 2px solid #9a9a9a;
+$homepage-course-border: 2px solid #E96222;
 
 
-$action-primary-bg: #e62f28;
+$action-primary-bg: #E96222;
 $action-primary-fg: #fff;
-$action-primary-focused-bg: #d22c26;
+$action-primary-focused-bg: share(#E96222, 20%);
 
 
-$link-color-d1: #e62f28;
-$header-graphic-super-color: #e62f28;
+$link-color-d1: #E96222;
+$header-graphic-super-color: #E96222;
 
 
-$button-color: #e62f28;
+$button-color: #A2C14B;
 $button-archive-color: #666;

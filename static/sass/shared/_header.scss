@@ -31,3 +31,13 @@ header.global-new .nav-courseware li a.nav-courseware-button {
 }
 
 
+header.global-new .nav-global li a:hover, header.global-new .nav-courseware li a:hover, header.global-new .nav-global li a:focus, header.global-new .nav-courseware li a:focus {
+	color: shade($courseware-navigation-color, 20%) !important;
+}
+
+header.global-new h1.logo {
+
+	& img {
+		margin-top: -8px;
+	}
+}
