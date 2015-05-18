@@ -1,0 +1,87 @@
+.highlighted-courses, .find-courses {
+
+    .course {
+      background: $homepage-course-bg;
+      border: $homepage-course-border;
+      border-radius: 0px;
+      box-shadow: none;
+      @include transition(all 0.15s ease-in-out 0s);
+
+      .meta-info {
+        background: $link-color;
+        bottom: 6px;
+        border: none;
+        @include border-right-radius(2px);
+        box-shadow: 0 1px 5px 0 rgba(0,0,0, 0.15);
+        @include clearfix;
+        position: absolute;
+        right: -4px;
+        @include transition(all 0.15s linear 0s);
+
+        p {
+          color: rgb(255,255,255);
+          font-style: normal;
+          line-height: 1.2em;
+          padding: 4px 12px 5px;
+        }
+      }
+
+      .inner-wrapper {
+        border: none;
+        height: 100%;
+        height: 200px;
+      }
+
+      header.course-preview {
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        z-index: 3;
+
+        // > a {
+          @include background-image(linear-gradient(-90deg, rgba(255,255,255, 1), rgba(255,255,255, 0.85)));
+          box-shadow: inset 0 -1px 0 0 rgba(255,255,255, 0.2);
+          border-bottom: 1px solid rgba(150,150,150, 0.7);
+          display: block;
+          height: 50px;
+
+          &:hover, &:focus {
+            @include background-image(linear-gradient(-90deg, rgba(255,255,255, 1), rgba(255,255,255, 0.8)));
+            text-decoration: none;
+
+            .info-link {
+              color: $link-color;
+              opacity: 1.0;
+            }
+
+            h2 {
+              color: $link-color;
+            }
+          }
+
+          hgroup {
+            left: 0px;
+            padding: 0px 10px;
+            position: absolute;
+            right: 60px;
+            top: 0px;
+
+            h2 {
+              color: $base-font-color;
+              display: table-cell;
+              font-family: $theme-serif-font;
+              font-size: 1em;
+              font-weight: 500;
+              height: 48px;
+
+              .course-number {
+                font-weight: 700;
+                text-transform: none;
+              }
+            }
+          }
+        }
+      // }
+    }
+  }

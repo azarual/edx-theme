@@ -1,0 +1,39 @@
+header.global, header.global-new {
+	height: $header-height;
+	border-bottom: $header-border-bottom;
+
+	& nav {
+		padding: $nav-padding;
+	}
+
+	& h1.logo {
+		margin: $header-logo-margin;
+	}
+}
+
+.header-logo {
+	height: $header-logo-height;
+	width: 100%;
+	margin: $header-logo-margin;
+}
+
+header.global-new .nav-courseware li a.nav-courseware-button {
+	border: $header-cta-button-border;
+	border-radius: 0;
+	color: $header-cta-button-color;
+	background: $header-cta-button-background;
+
+	&:hover, &:focus {
+		border: $header-cta-button-border;
+		border-color: $header-cta-button-hover-border-color;
+		color: $header-cta-button-color;
+		background: $header-cta-button-background;
+		opacity: 0.8;
+	}
+}
+
+
+header.global-new .nav-global li a:hover, header.global-new .nav-courseware li a:hover, header.global-new .nav-global li a:focus, header.global-new .nav-courseware li a:focus  {
+	color: $courseware-navigation-color;
+	opacity: 0.8;
+}
