@@ -1,0 +1,19 @@
+html {
+	font-size: 14px;
+}
+
+body {
+	@include sans-serif;
+	font-size: 14px;
+	color: $base-text-color;
+}
+
+p {
+	@include sans-serif;
+	font-size: 14px;
+	line-height: 130%;
+}
+
+a {
+	@include transition(all 0.25s ease-in-out);
+}
