@@ -30,6 +30,7 @@
 
 		& span {
 			margin: 0 10px;
+			color: #fff;
 		}
 	}
 
@@ -54,8 +55,9 @@
 
 	&__button {
 		@include sans-serif-bold;
-		font-size: 12px;
-		color: #fff;
+		font-weight: 700 !important;
+		font-size: 12px !important;
+		color: #fff !important;
 		text-transform: uppercase;
 		text-align: center;
 		padding: 12px 25px;

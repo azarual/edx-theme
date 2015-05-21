@@ -72,6 +72,7 @@
 	.dropdown-menu {
 		left: auto;
 		padding: 5px 10px;
+		background-color: #fff;
 
 		& li {
 			display: block;
@@ -107,6 +108,10 @@
 	}
 }
 
+.navigation:after {
+	display: none !important;
+}
+
 .navbar-nav {
 
 	& .navigation-group {
@@ -120,6 +125,7 @@
 
 				& i {
 					margin-left: 5px;
+					display: inline-block;
 				}
 			}
 

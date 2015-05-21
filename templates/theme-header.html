@@ -64,7 +64,7 @@ site_status_msg = get_site_status_msg(course_id)
 
           ## If courses are browsable display these items
           % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-            <ul style="display: none" class="navigation-group navigation-group__links-authenticated">
+            <ul class="navigation-group navigation-group__links-authenticated">
               <li><a href="#">Find Courses</a></li>
             </ul>
           % endif
@@ -105,17 +105,17 @@ site_status_msg = get_site_status_msg(course_id)
 
             % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
               % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-                <li><a href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">Sign in</a></li>
+                <li><a class="cta-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">Sign in</a></li>
               % else:
-                <li><a href="/login${login_query()}">Sign in</a></li>
+                <li><a class="cta-login" href="/login${login_query()}">Sign in</a></li>
               % endif
             % endif
 
             % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
               % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-                <li><a href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}">Create account</a></li>
+                <li><a class="cta-register" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}">Create account</a></li>
               % else:
-                <li><a href="/register">Create account</a></li>
+                <li><a class="cta-register" href="/register">Create account</a></li>
               % endif
             % endif
           </ul>

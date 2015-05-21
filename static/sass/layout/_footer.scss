@@ -21,9 +21,14 @@ footer {
 		@include align-items(center);
 		@include justify-content(space-between);
 
-		&:before, &:after {
-			display: none;
+		&:before {
+			display: none !important;
 		}
+
+		&:after {
+			display: none !important;
+		}
+
 	}
 
 	&__content {

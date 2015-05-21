@@ -16,87 +16,72 @@
 
 %>
 
-<section class="home">
-  <header>
-    <div class="outer-wrapper">
-      <div class="title">
-        <hgroup>
-          % if homepage_overlay_html:
-            ${homepage_overlay_html}
-          % else:
-            % if self.stanford_theme_enabled():
-              <h1>${_("Free courses from <strong>{university_name}</strong>").format(university_name="Stanford")}</h1>
-            % else:
-              <h1>InterSystems Learning Services</h1>
-            % endif
-            <h2>Data Transformations and more...</h2>
-          % endif
-        </hgroup>
-
-        ## Disable social buttons for non-edX sites
-        % if not self.theme_enabled():
-          <section class="actions">
-            <div class="main-cta">
-              <a href="#signup-modal" id="signup_action" class="find-courses" rel="leanModal">${_("Sign Up")}</a>
-            </div>
-
-            <div class="secondary-actions">
-              <div class="social-sharing">
-                <div class="sharing-message">${_("Stay up to date with all {platform_name} has to offer!").format(platform_name=settings.PLATFORM_NAME)}</div>
-                <a href="https://twitter.com/edXOnline" class="share">
-                  <img src="${static.url('images/social/twitter-sharing.png')}">
-                </a>
-                <a href="http://www.facebook.com/EdxOnline" class="share">
-                  <img src="${static.url('images/social/facebook-sharing.png')}">
-                </a>
-                <a href="https://plus.google.com/108235383044095082735/posts" class="share">
-                  <img src="${static.url('images/social/google-plus-sharing.png')}">
-                </a>
-              </div>
-            </div>
-          </section>
-          % endif
+<section class="landing-hero">
+      <div class="container">
+        <div class="landing-hero__content">
+          <h1>ONLINE LEARNING FOR <br>VA DEVELOPERS</h1>
+        </div>
       </div>
-
-      % if show_homepage_promo_video:
-        <a href="#video-modal" class="media" rel="leanModal">
-          <div class="hero">
-            <div class="play-intro"></div>
-          </div>
-        </a>
-      % endif
-    </div>
-  </header>
-  <section class="container">
-    <section class="highlighted-courses">
-
-      % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-        <section class="courses">
-            <ul class="courses-listing">
-            %for course in courses:
-              <li class="courses-listing-item">
-                <%include file="course.html" args="course=course" />
-              </li>
-            %endfor
-            </ul>
-        </section>
-      % endif
-
     </section>
-  </section>
-</section>
 
-<section id="video-modal" class="modal home-page-video-modal video-modal">
-  <div class="inner-wrapper">
-    <%
-      youtube_video_id = homepage_promo_video_youtube_id
-      if self.stanford_theme_enabled():
-        youtube_video_id = "2gmreZObCY4"
-    %>
-<!--     <iframe width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe> -->
-      <iframe width="640" height="360" src="//www.youtube.com/embed/7GPGc_kubLo?showinfo=0" frameborder="0" allowfullscreen></iframe>
-  </div>
-</section>
+    <section class="learning-paths-list">
+      <div class="container">
+        <!-- single LP tile -->
+        <div class="col-xs-12 col-sm-6 col-md-4 learning-path-tile__container">
+          <div class="learning-path-tile">
+            <div class="learning-path-tile__image">
+              <img src="${static.url('themes/isc-va/images/lp-image.jpg')}" alt="">
+            </div>
+            <div class="learning-path-tile__meta">
+              LEARNING PATH<span>|</span>7 COURSES
+            </div>
+            <div class="learning-path-tile__content">
+              <h3 class="learning-path-tile__title">Build a mobile application using interoperable Healtshare APIs</h3>
+              <p class="learning-path-tile__description">
+                Learn how to use InterSystems HealthShare™ to pull data from the VistA EMR, make this data available as FHIR resources via RESTful services, and then create a simple, HTML5-based mobile application to display the information on a mobile device.
+              </p>
+              <a href="#" class="learning-path-tile__button">Learn more</a>
+            </div>
+          </div>
+        </div>
+        <!-- single LP tile -->
+        <div class="col-xs-12 col-sm-6 col-md-4 learning-path-tile__container">
+          <div class="learning-path-tile">
+            <div class="learning-path-tile__image">
+              <img src="${static.url('themes/isc-va/images/lp-image.jpg')}" alt="">
+            </div>
+            <div class="learning-path-tile__meta">
+              LEARNING PATH<span>|</span>7 COURSES
+            </div>
+            <div class="learning-path-tile__content">
+              <h3 class="learning-path-tile__title">Build a mobile application using interoperable Healtshare APIs</h3>
+              <p class="learning-path-tile__description">
+                Learn how to use InterSystems HealthShare™ to pull data from the VistA EMR, make this data available as FHIR resources via RESTful services, and then create a simple, HTML5-based mobile application to display the information on a mobile device.
+              </p>
+              <a href="#" class="learning-path-tile__button">Learn more</a>
+            </div>
+          </div>
+        </div>
+        <!-- single LP tile -->
+        <div class="col-xs-12 col-sm-6 col-md-4 learning-path-tile__container">
+          <div class="learning-path-tile">
+            <div class="learning-path-tile__image">
+              <img src="${static.url('themes/isc-va/images/lp-image.jpg')}" alt="">
+            </div>
+            <div class="learning-path-tile__meta">
+              LEARNING PATH<span>|</span>7 COURSES
+            </div>
+            <div class="learning-path-tile__content">
+              <h3 class="learning-path-tile__title">Build a mobile application using interoperable Healtshare APIs</h3>
+              <p class="learning-path-tile__description">
+                Learn how to use InterSystems HealthShare™ to pull data from the VistA EMR, make this data available as FHIR resources via RESTful services, and then create a simple, HTML5-based mobile application to display the information on a mobile device.
+              </p>
+              <a href="#" class="learning-path-tile__button">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <%block name="js_extra">
    <script type="text/javascript">

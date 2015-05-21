@@ -1,0 +1,164 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.core.urlresolvers import reverse %>
+<%namespace name='static' file='../../../static_content.html'/>
+
+<%inherit file="../../../main.html" />
+
+<%block name="title"><title>About UTAustinX Professional Education</title></%block>
+
+<section class="learning-path-hero" style="background-image: url('images/learning-path-cover.jpg');">
+      <div class="container learning-path-hero__container">
+        <div class="learning-path-hero__content">
+          <h3 class="learning-path-hero__meta">
+            Learning path<span>|</span>7 courses
+          </h3>
+          <h1 class="learning-path-hero__title">
+            Build a mobile application based on interoperable healthcare APIs
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-path-menu">
+      <div class="learning-path-menu__container container">
+        <ul class="learning-path-menu__left">
+          <li class="active"><a href="#">ABOUT</a></li>
+          <li><a href="#">COURSES</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+        <ul class="learning-path-menu__right">
+          <li><a href="#" class="learning-path-menu__button orange">Register</a></li>
+        </ul> 
+      </div>    
+    </section>
+
+    <section class="learning-path-about container">
+      <div class="col-xs-12 col-md-9 learning-path-about__main">
+        <h2 class="learning-path__section-title">ABOUT THIS LEARNING PATH</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+      </div>
+      <div class="col-xs-12 col-md-3 learning-path-about__objectives">
+        <h4>LEARNING OBJECTIVES</h4>
+        <p>Nullam eu lectus fermentum, pharetra ligula nec, dignissim quam. Cras ex orci, tempor in laoreet vel, feugiat sed est. Mauris lacinia est pellentesque risus mattis interdum. Nulla condimentum ac felis eu consequat. Aliquam eu elit sed justo vestibulum sagittis. Curabitur sollicitudin massa a neque consequat, vel iaculis ligula tempus. Proin ultrices elementum mattis. Nunc tincidunt at tortor ac pellentesque.</p>
+      </div>
+    </section>
+
+    <section class="learning-path-courses">
+      <div class="learning-path-courses__container container">
+        <h2 class="learning-path__section-title">COURSES IN THIS LEARNING PATH</h2>
+        <div class="learning-path-courses__content">
+          <ul class="learning-path-courses__selector" role="tablist">
+            <li class="active">
+              <a href="#course-1" aria-controls="home" role="tab" data-toggle="tab">
+                <span class="learning-path-courses__selector__number">1</span>
+                <span class="learning-path-courses__selector__name">Name of the course</span>
+              </a>  
+            </li>
+            <li>
+              <a href="#course-2" aria-controls="home" role="tab" data-toggle="tab">
+                <span class="learning-path-courses__selector__number">2</span>
+                <span class="learning-path-courses__selector__name">Name of another course</span>
+              </a>
+            </li>
+            <li>
+              <a href="#course-3" aria-controls="home" role="tab" data-toggle="tab">
+                <span class="learning-path-courses__selector__number">3</span>
+                <span class="learning-path-courses__selector__name">This is the name of the third course</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="learning-path-courses__course">
+            <!-- single course -->
+            <li role="tabpanel" class="tab-pane fade in active" id="course-1">
+              <div class="learning-path-courses__course__header">
+                <div class="learning-path-courses__course__title">
+                  <span>Course 1</span>
+                  <h2>This is the name of the course right here</h2>
+                </div>
+                <div class="learning-path-courses__course__buttons-container">
+                  <a href="#" class="learning-path-courses__course__button">Start</a>
+                </div>
+              </div>
+              <p class="learning-path-courses__course__description">
+                Aliquam erat volutpat. Nunc volutpat, ex vel suscipit egestas, dui justo rutrum elit, sed rhoncus augue nisl at sapien. Nulla facilisi. Duis sed ligula felis. Ut non dolor rutrum, fermentum felis eget, efficitur nunc. Vestibulum volutpat, turpis sed suscipit semper, odio tortor lacinia mi, vitae posuere risus leo quis neque. Donec vulputate euismod maximus. Cras vel accumsan sem. 
+              </p>
+              <div class="learning-path-courses__course__staff">
+                <div class="learning-path-courses__course__staff__image">
+                  <img src="images/staff-pic.jpg" alt="">
+                </div>
+                <div class="learning-path-courses__course__staff__content">
+                  <span class="staff-title">Course staff</span>
+                  <h4 class="staff-name">Marissa Mayer</h4>
+                  <p class="staff-description">Aliquam erat volutpat. Nunc volutpat, ex vel suscipit egestas, dui justo rutrum elit, sed rhoncus augue nisl at sapien. Nulla facilisi. Duis sed ligula felis. Ut non dolor rutrum, fermentum felis eget.</p>
+                </div>
+              </div>
+            </li>
+            <!-- single course -->
+            <li role="tabpanel" class="tab-pane fade" id="course-2">
+              <div class="learning-path-courses__course__header">
+                <div class="learning-path-courses__course__title">
+                  <span>Course 2</span>
+                  <h2>Name of another course</h2>
+                </div>
+                <div class="learning-path-courses__course__buttons-container">
+                  <a href="#" class="learning-path-courses__course__button">Start</a>
+                </div>
+              </div>
+              <p class="learning-path-courses__course__description">
+                Aliquam erat volutpat. Nunc volutpat, ex vel suscipit egestas, dui justo rutrum elit, sed rhoncus augue nisl at sapien. Nulla facilisi. Duis sed ligula felis. Ut non dolor rutrum, fermentum felis eget, efficitur nunc. Vestibulum volutpat, turpis sed suscipit semper, odio tortor lacinia mi, vitae posuere risus leo quis neque. Donec vulputate euismod maximus. Cras vel accumsan sem. 
+              </p>
+              <div class="learning-path-courses__course__staff">
+                <div class="learning-path-courses__course__staff__image">
+                  <img src="images/staff-pic.jpg" alt="">
+                </div>
+                <div class="learning-path-courses__course__staff__content">
+                  <span class="staff-title">Course staff</span>
+                  <h4 class="staff-name">Marissa Mayer</h4>
+                  <p class="staff-description">Aliquam erat volutpat. Nunc volutpat, ex vel suscipit egestas, dui justo rutrum elit, sed rhoncus augue nisl at sapien. Nulla facilisi. Duis sed ligula felis. Ut non dolor rutrum, fermentum felis eget.</p>
+                </div>
+              </div>
+            </li>
+            <!-- single course -->
+            <li role="tabpanel" class="tab-pane fade" id="course-3">
+              <div class="learning-path-courses__course__header">
+                <div class="learning-path-courses__course__title">
+                  <span>Course 3</span>
+                  <h2>This is the name of the third course and OMG it is just too long :((</h2>
+                </div>
+                <div class="learning-path-courses__course__buttons-container">
+                  <a href="#" class="learning-path-courses__course__button">Start</a>
+                </div>
+              </div>
+              <p class="learning-path-courses__course__description">
+                Aliquam erat volutpat. Nunc volutpat, ex vel suscipit egestas, dui justo rutrum elit, sed rhoncus augue nisl at sapien. Nulla facilisi. Duis sed ligula felis. Ut non dolor rutrum, fermentum felis eget, efficitur nunc. Vestibulum volutpat, turpis sed suscipit semper, odio tortor lacinia mi, vitae posuere risus leo quis neque. Donec vulputate euismod maximus. Cras vel accumsan sem. 
+              </p>
+              <div class="learning-path-courses__course__staff">
+                <div class="learning-path-courses__course__staff__image">
+                  <img src="images/staff-pic.jpg" alt="">
+                </div>
+                <div class="learning-path-courses__course__staff__content">
+                  <span class="staff-title">Course staff</span>
+                  <h4 class="staff-name">Marissa Mayer</h4>
+                  <p class="staff-description">Aliquam erat volutpat. Nunc volutpat, ex vel suscipit egestas, dui justo rutrum elit, sed rhoncus augue nisl at sapien. Nulla facilisi. Duis sed ligula felis. Ut non dolor rutrum, fermentum felis eget.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-path-faq container">
+      <h2 class="learning-path__section-title">FAQs</h2>
+      <div class="row learning-path-faq__list">
+        <div class="col-xs-12 col-md-6 learning-path-faq__single">
+          <h4>This is one of the questions</h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor.</p>
+        </div>
+        <div class="col-xs-12 col-md-6 learning-path-faq__single">
+          <h4>This is one of the questions</h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor.</p>
+        </div>
+      </div>
+    </section>
+
