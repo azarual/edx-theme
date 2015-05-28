@@ -4,23 +4,41 @@
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
 
-<div class="wrapper-footer">
-  <footer>
-    <div class="colophon">
-      <nav class="nav-colophon">
-        <ol>
-          <li><a href="${reverse('tos')}">Terms of Service</a></li>
-          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
-          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
-          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
-          <li><a href="${reverse('about')}#careers">Careers</a></li>
-          <li><a href="${reverse('about')}#contact">Contact</a></li>
-          <li><a href="${marketing_link('FAQ')}">Help</a></li>
-        </ol>
-      </nav>
-    </div>
-    <div class="references">
-      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
-    </div>
-  </footer>
-</div>
+<footer>
+      <div class="container footer__container">
+        <div class="footer__section">
+          <div class="footer__logo">
+            <a href="http://executive.mit.edu/" target="_blank"><img src="${static.url('themes/metalogix/images/metalogix-icon.svg')}" alt="Metalogix"></a>
+          </div>
+          <div class="footer__content">
+            <div class="footer__legal">
+              Copyright © 2015 Metalogix International GmbH. All rights reserved.
+            </div>
+            <ul class="footer__links">
+              <li><a href="http://www.metalogix.com/About.aspx">About</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="http://www.metalogix.com/Resources/Promotions/Metalogix/Contact-Us.aspx">Contact</a></li>
+              <li><a href="http://www.metalogix.com/Footer/Terms-Of-Use.aspx">Terms of Service</a></li>
+              <li><a href="http://www.metalogix.com/Footer/Privacy-Policy.aspx">Privacy Policy</a></li>
+              <li><a href="http://www.metalogix.com/About/Careers.aspx">Careers</a></li>
+              <li><a href="https://www.facebook.com/Metalogix"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/metalogix"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.linkedin.com/company/239787"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://www.youtube.com/user/MetalogixSharePoint"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__poweredby">
+          <span>Built on:</span>
+          <a href="http://code.edx.com" target="_blank" class="footer__poweredby__logo"><img src="${static.url('themes/metalogix/images/edx-logo.svg')}" alt="Open edX"></a>
+        </div>
+      </div>
+</footer>
+
+    <!-- Include jQuery mobile -->
+    <script src="${static.url('themes/metalogix/js/jquery.mobile.custom.min.js')}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="${static.url('themes/metalogix/js/bootstrap.min.js')}"></script>
+    <!-- Custom base JavaScript -->
+    <script src="${static.url('themes/metalogix/js/base.js')}"></script>
+
