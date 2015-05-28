@@ -4,21 +4,35 @@
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
 
-<div class="wrapper-footer">
-  <footer>
-    <div class="colophon">
-      <nav class="nav-colophon">
-        <ol>
-          <li><a href="${reverse('tos')}">Terms of Service</a></li>
-          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
-          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
-          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
-          <li><a href="${marketing_link('FAQ')}">Help</a></li>
-        </ol>
-      </nav>
-    </div>
-    <div class="references">
-      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
-    </div>
-  </footer>
-</div>
+<footer>
+      <div class="container footer__container">
+        <div class="footer__section">
+          <div class="footer__logo">
+            <a href="http://executive.mit.edu/" target="_blank"><img src="${static.url('themes/mit/images/mit-logo.svg')}" alt="MIT Sloan - executive education"></a>
+          </div>
+          <div class="footer__content">
+            <div class="footer__legal">
+              © 2015 Sloan School of Management
+            </div>
+            <ul class="footer__links">
+              <li><a href="http://executive.mit.edu/contactus/">Contact us</a></li>
+              <li><a href="http://executive.mit.edu/tos/">Terms of Service</a></li>
+              <li><a href="http://executive.mit.edu/FAQ">Frequently Asked Questions</a></li>
+              <li><a href="http://executive.mit.edu/openenrollment/policies/">Policies</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__poweredby">
+          <span>Built on:</span>
+          <a href="http://code.edx.com" target="_blank" class="footer__poweredby__logo"><img src="${static.url('themes/mit/images/edx-logo.svg')}" alt="Open edX"></a>
+        </div>
+      </div>
+</footer>
+
+    <!-- Include jQuery mobile -->
+    <script src="${static.url('themes/mit/js/jquery.mobile.custom.min.js')}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="${static.url('themes/mit/js/bootstrap.min.js')}"></script>
+    <!-- Custom base JavaScript -->
+    <script src="${static.url('themes/mit/js/base.js')}"></script>
+
