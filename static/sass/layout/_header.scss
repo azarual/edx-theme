@@ -220,11 +220,11 @@
 	display: -ms-flexbox !important;
 	display: flex !important;
 	@include align-items(center);
-	width: auto;
-	border-radius: 0;
-	border: none;
-	background: none;
-	box-shadow: none;
+	width: auto !important;
+	border-radius: 0 !important;
+	border: none !important;
+	background: none !important;
+	box-shadow: none !important;
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
