@@ -227,6 +227,14 @@
 	box-shadow: none !important;
 }
 
+.navbar-collapse {
+	width: auto !important;
+	border-radius: 0 !important;
+	border: none !important;
+	background: none !important;
+	box-shadow: none !important;
+}
+
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
 	background: none;
 }
