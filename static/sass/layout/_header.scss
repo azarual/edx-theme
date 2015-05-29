@@ -184,6 +184,7 @@
 
 		& span {
 			@include sans-serif-bold;
+			color: $navbar-text-color;
 		}
 	}
 
@@ -200,8 +201,19 @@
 }
 
 .navbar-header {
-	@include display(flex);
+	display: -webkit-box !important;
+	display: -moz-box !important;
+	display: box !important;
+	display: -webkit-flex !important;
+	display: -moz-flex !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
 	@include align-items(center);
+	width: auto;
+	border-radius: 0;
+	border: none;
+	background: none;
+	box-shadow: none;
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
