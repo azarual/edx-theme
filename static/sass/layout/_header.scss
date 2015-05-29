@@ -30,22 +30,6 @@
 			display: $display-navbar-logo-negative;
 		}
 	}
-
-	& .container {
-		border: none !important;
-		background: none !important;
-		width: 100% !important;
-
-		@media (min-width: $screen-sm-min) {
-		    width: $container-sm !important;
-		}
-		@media (min-width: $screen-md-min) {
-		    width: $container-md !important;
-		}
-		@media (min-width: $screen-lg-min) {
-		    width: $container-lg !important;
-		}
-	}
 }
 
 .navbar-nav {
@@ -212,27 +196,8 @@
 }
 
 .navbar-header {
-	display: -webkit-box !important;
-	display: -moz-box !important;
-	display: box !important;
-	display: -webkit-flex !important;
-	display: -moz-flex !important;
-	display: -ms-flexbox !important;
-	display: flex !important;
+	@include display(flex);
 	@include align-items(center);
-	width: auto !important;
-	border-radius: 0 !important;
-	border: none !important;
-	background: none !important;
-	box-shadow: none !important;
-}
-
-.navbar-collapse {
-	width: auto !important;
-	border-radius: 0 !important;
-	border: none !important;
-	background: none !important;
-	box-shadow: none !important;
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
