@@ -34,6 +34,10 @@ a {
 	height: auto;
 }
 
+.dashboard .my-courses .course .cover, .dashboard .my-courses .course a.fade-cover {
+	margin-right: 20px;
+}
+
 .container-bs {
   @include container-fixed();
 
