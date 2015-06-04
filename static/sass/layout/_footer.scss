@@ -132,4 +132,13 @@ footer {
 			@include transition(all 0.3s ease-in-out);
 		}
 	}
+
+	&__edx-legal {
+		margin-top: 30px;
+		padding-top: 30px;
+		border-top: 1px solid #ddd;
+		font-size: 12px;
+		text-align: center;
+		color: #ccc;
+	}
 }
