@@ -17,7 +17,7 @@
 		}
 
 		& img {
-			  width: auto;
+			  width: $header-logo-width;
 			  height: $header-logo-height;
 			  margin: $header-logo-margin;
 		}
@@ -198,6 +198,7 @@
 .navbar-header {
 	@include display(flex);
 	@include align-items(center);
+	@include flex-shrink(0);
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
