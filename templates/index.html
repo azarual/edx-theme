@@ -9,8 +9,9 @@
 <%
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
 
-  show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
-  homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "XNaiOGxWeto")
+  ## To display a welcome video, change False to True, and add a YouTube ID (11 chars, eg "123456789xX") in the following line
+  show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', False)
+  homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "your-youtube-id")
 
   show_partners = microsite.get_value('show_partners', True)
 
@@ -21,16 +22,29 @@
     <div class="outer-wrapper">
       <div class="title2">
         <hgroup class="hero-text">
-          <h1>Online Learning. Anytime. Anyplace.</h1>
-          <h2>The knowledge you need. Now 24/7.</h2>
-          <h3>
-            <a href="/register">
-              <span>Register Now</span>
-            </a>
-            already have an account? <a href="/login" class="underline">sign-in</a>
-          </h3>
+          % if homepage_overlay_html:
+            ${homepage_overlay_html}
+          % else:
+            <h1>Online Learning. Anytime. Anyplace.</h1>
+            <h2>The knowledge you need. Now 24/7.</h2>
+            <h3>
+              <a href="/register">
+                <span>Register Now</span>
+              </a>
+              already have an account? <a href="/login" class="underline">sign-in</a>
+            </h3>
+          % endif
         </hgroup>
+
       </div>
+
+      % if show_homepage_promo_video:
+        <a href="#video-modal" class="media" rel="leanModal">
+          <div class="hero">
+            <div class="play-intro"></div>
+          </div>
+        </a>
+      % endif
     </div>
   </header>
   <section class="container">
@@ -59,7 +73,6 @@
       if self.stanford_theme_enabled():
         youtube_video_id = "2gmreZObCY4"
     %>
-<!--     <iframe width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe> -->
       <iframe width="640" height="360" src="//www.youtube.com/embed/7GPGc_kubLo?showinfo=0" frameborder="0" allowfullscreen></iframe>
   </div>
 </section>
