@@ -16,12 +16,20 @@ p {
 
 a {
 	@include transition(all 0.25s ease-in-out);
-	color: $brand-primary-color;
-	text-decoration: none;
 
 	&:hover, &:focus {
-		color: darken($brand-primary-color, 15%);
+		text-decoration: none;
 	}
+}
+
+img {
+	max-width: none;
+}
+
+h1, h2, h3, h4, p, a {
+	color: inherit;
+	text-transform: none;
+	text-decoration: none;
 }
 
 .content-wrapper {

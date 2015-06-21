@@ -1,12 +1,22 @@
 .navbar {
 	background-color: $navbar-bg-color;
-	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-top: $navbar-vert-padding;
+	padding-bottom: $navbar-vert-padding;
 	margin-bottom: 0;
 	border-radius: 0;
 	border: none;
 	border-bottom: $header-bottom-border;
 	z-index: 100;
+	position: relative;
+
+	&:after {
+		width: 100%;
+		height: 15px;
+		@include linear-gradient(to bottom, $base-text-color, rgba($base-text-color, 0), $fallback: rgba($base-text-color, 0.1));
+		opacity: 0.2;
+		position: absolute;
+		top: 100%;
+	}
 
 	&__logo {
 		@include transition(all 0.2s ease-in-out);
@@ -36,6 +46,9 @@
 	margin-top: $navbar-links-top-offset;
 	float: right;
 	font-size: $header-li-font-size;
+	@include display(flex);
+	@include align-items(center);
+	@include flex-wrap(wrap);
 
 	& li {
 		display: inline-block;
@@ -59,6 +72,19 @@
 			}
 		}
 
+		&.separator {
+			padding: 0;
+			background-color: rgba($navbar-text-color, 0.15);
+			margin: 0 $header-li-padding-hor;
+			width: 1px;
+			height: 30px;
+
+			&:hover, &:focus {
+				padding: 0 $header-li-padding-hor;
+				opacity: 1;
+			}
+		}
+
 		&.active {
 
 			& a {
@@ -72,7 +98,6 @@
 			background-color: $navbar-button-bg;
 			padding: 10px 20px;
 			border-radius: 5px;
-			margin-top: -10px;
 
 			&:hover, &:focus {
 				background-color: darken($navbar-button-bg, 15%) !important;

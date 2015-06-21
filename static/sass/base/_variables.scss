@@ -5,30 +5,25 @@
 //
 //  ================
 
-$navbar-height: 100px;
+$navbar-height: 80px;
 $header-li-font-size: 16px;
 $header-li-padding-hor: 15px;
-$header-li-hover-expand: 5px;
-$header-logo-height: 80px;
-$header-logo-margin: 0;
+$header-li-hover-expand: 10px;
+$header-logo-height: 60px;
+$header-logo-margin: 4px 0 0;
 $navbar-links-top-offset: 0;
 $header-bottom-border: none;
+$navbar-vert-padding: 15px;
 
 // calculations
 
 $navbar-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
 $navbar-text-color: calcNavbarTextColor($navbar-style, $base-text-color);
-$navbar-button-text-color: $navbar-text-color;
+$navbar-button-text-color: #fff;
 $navbar-button-border: calcNavbarButtonBorder($navbar-style);
 $navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-primary-color);
 $display-navbar-logo-positive: calcDisplayLogoPositive($navbar-style);
 $display-navbar-logo-negative: calcDisplayLogoNegative($navbar-style);
-
-// override calculated stuff
-
-$navbar-button-border: none;
-$navbar-button-bg: #FFE34B;
-$navbar-button-text-color: #111;
 
 
 
@@ -37,57 +32,15 @@ $navbar-button-text-color: #111;
 //  =========================
 
 $landing-hero-bg-image: $hero-bg-image;
-$landing-hero-padding-ver: 150px;
+$landing-hero-padding-ver: 90px;
+$landing-hero-text-color: #fff;
 
 
 //  Footer section
 
+$footer-text-color: #fff;
 $footer-menu-text-size: 14px;
 $footer-menu-link-padding: 0 10px;
 $footer-menu-font-weight: 400;
 $footer-menu-text-color: #fff;
 $footer-logo-height: 28px;
-
-
-
-// =============================
-
-
-// Standard edX variables 
-
-$link-color: $brand-primary-color;
-$header-cta-button-border: 3px solid #ffe34b;
-$header-cta-button-color: #000;
-$header-cta-button-background: #ffe34b;
-$header-cta-button-hover-border-color: #ffe34b;
-
-$homepage__header--gradient__color--alpha: #5F1863;
-$homepage__header--gradient__color--bravo: shade($homepage__header--gradient__color--alpha, 15%);
-
-
-// homepage bg image
-$homepage-bg-image: url('../themes/mit/images/hero-image.jpg');
-
-
-$homepage-course-bg: #fff;
-$homepage-course-border: 2px solid #9a9a9a;
-
-
-$action-primary-bg: #5F1863;
-$action-primary-fg: #fff;
-$action-primary-focused-bg: shade(#5F1863, 20%);
-
-
-$link-color-d1: #5F1863;
-$header-graphic-super-color: #5F1863;
-
-
-$button-color: #5F1863;
-$button-archive-color: #666;
-
-
-//-----------------
-//  Font Assignment
-//-----------------
-$theme-serif-font: Arial, sans-serif;
-$serif: $theme-serif-font;

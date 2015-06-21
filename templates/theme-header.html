@@ -17,6 +17,10 @@ from status.status import get_site_status_msg
 ## Provide a hook for themes to inject branding on top.
 <%block name="navigation_top" />
 
+
+<link rel="stylesheet" type="text/css" href="/static/themes/matej-test/css/main.css">
+
+
 <%block cached="False">
 <%
 try:
@@ -46,7 +50,7 @@ site_status_msg = get_site_status_msg(course_id)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
       </button>
-      <a class="navbar__logo" href="${marketing_link('ROOT')}"><img src="${static.url('themes/mit/images/header-logo-composition-negative.svg')}"  alt="${platform_name()}"/></a>
+      <a class="navbar__logo" href="${marketing_link('ROOT')}"><img src="${static.url('themes/matej-test/images/header-logo-composition-negative.svg')}"  alt="${platform_name()}"/></a>
 
       ## If on a course page - display course info
       % if course:

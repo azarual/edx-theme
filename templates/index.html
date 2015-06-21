@@ -14,88 +14,158 @@
 
   show_partners = microsite.get_value('show_partners', True)
 
+  from django.utils.translation import ugettext as _
+  from django.core.urlresolvers import reverse
+  from courseware.courses import course_image_url, get_course_about_section
 %>
 
-<section class="home">
-  <header>
-    <div class="outer-wrapper">
-      <div class="title">
-        <hgroup>
-          % if homepage_overlay_html:
-            ${homepage_overlay_html}
-          % else:
-            % if self.stanford_theme_enabled():
-              <h1>${_("Free courses from <strong>{university_name}</strong>").format(university_name="Stanford")}</h1>
-            % else:
-              <h1>${_("The Future of Online Education")}</h1>
-            % endif
-            <h2>${_("For anyone, anywhere, anytime")}</h2>
-          % endif
-        </hgroup>
 
-        ## Disable social buttons for non-edX sites
-        % if not self.theme_enabled():
-          <section class="actions">
-            <div class="main-cta">
-              <a href="#signup-modal" id="signup_action" class="find-courses" rel="leanModal">${_("Sign Up")}</a>
+<!-- LMS landing page hero portion -->
+  <section class="landing-hero">
+    <div class="container-bs">
+      <div class="landing-hero__content">
+        <div class="landing-hero__content__text">
+          <h1>Brand landing page heading</h1>
+          <p>Well hello there! This text is here just so we’re <b>even more fancy!</b></p>
+        </div>
+        <a href="#" class="landing-hero__content__button">View promo video</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-additional-text">
+    <div class="container-bs">
+      <div class="landing-additional-text__content">
+        <h2>Here’s some text by the client</h2>
+        <div class="landing-additional-text__separator"></div>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-search">
+    <div class="container-bs landing-search">
+      <div class="hidden-xs col-sm-2 col-md-3 landing-search__filler">
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-6 landing-search__field">
+        <i class="fa fa-search"></i>
+        <input type="text" name="landing-search" placeholder="Search our courses">
+      </div>
+      <div class="hidden-xs col-sm-2 col-md-3 landing-search__filler">
+      </div>
+    </div>
+  </section>
+
+% if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+  <section class="landing-courses">
+    <div class="container-bs">
+      <h2>Featured / newest courses</h2>
+    </div>
+    <div class="course-list-view container-bs">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+        %for course in courses:
+          <div class="course-list-item">
+            <div class="course-list-item__image" style="background-image: url('${course_image_url(course)}');"></div>
+            <div class="course-list-item__info">
+              % if not course.start_date_is_still_default:
+                <span class="course-list-item__date">${course.start_date_text}</span>
+              % endif
+              <span class="course-list-item__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
+              <span class="course-list-item__instructor">${get_course_about_section(course, 'university')}</span>
+              <div class="course-list-item__separator"></div>
+              <p class="course-list-item__description">${get_course_about_section(course, 'short_description')}</p>
+              <a class="course-list-item__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
             </div>
-
-            <div class="secondary-actions">
-              <div class="social-sharing">
-                <div class="sharing-message">${_("Stay up to date with all {platform_name} has to offer!").format(platform_name=settings.PLATFORM_NAME)}</div>
-                <a href="https://twitter.com/edXOnline" class="share">
-                  <img src="${static.url('images/social/twitter-sharing.png')}">
-                </a>
-                <a href="http://www.facebook.com/EdxOnline" class="share">
-                  <img src="${static.url('images/social/facebook-sharing.png')}">
-                </a>
-                <a href="https://plus.google.com/108235383044095082735/posts" class="share">
-                  <img src="${static.url('images/social/google-plus-sharing.png')}">
-                </a>
+          </div>
+        %endfor
+      </div>
+    </div>
+    
+    <div class="landing-courses__container">
+      <div class="container-bs">
+        <div class="row">
+          <div class="landing-courses__logo"><img src="images/icon-black.svg"></div>
+        </div>
+        <div class="row">
+          %for course in courses:
+            <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
+              <div class="course-tile__body">
+                <div class="course-tile__image"><img src="${course_image_url(course)}"></div>
+                <div class="course-tile__info">
+                  <span class="course-tile__date">${course.start_date_text}</span>
+                  <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
+                  <span class="course-tile__instructor">${get_course_about_section(course, 'university')}</span>
+                  <div class="course-tile__separator"></div>
+                  <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
+                  <a class="course-tile__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
+                </div>
               </div>
             </div>
-          </section>
-          % endif
+          %endfor
+        </div>
       </div>
-
-      % if show_homepage_promo_video:
-        <a href="#video-modal" class="media" rel="leanModal">
-          <div class="hero">
-            <div class="play-intro"></div>
-          </div>
-        </a>
-      % endif
     </div>
-  </header>
-  <section class="container">
-    <section class="highlighted-courses">
+  </section>      
+% endif
 
-      % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-        <section class="courses">
-            <ul class="courses-listing">
-            %for course in courses:
-              <li class="courses-listing-item">
-                <%include file="course.html" args="course=course" />
-              </li>
-            %endfor
-            </ul>
-        </section>
-      % endif
-
-    </section>
+  <section class="landing-additional-text">
+    <div class="container-bs">
+      <div class="landing-additional-text__content">
+        <h2>Does the client want another paragraph?</h2>
+        <div class="landing-additional-text__separator"></div>
+        <p>Sure as hell he can! This fancypants theme allows them to add another section of text where they can (if they want) lead visitors to their main site, products or something else! <b>Well ain’t that great?</b></p>
+        <a class="landing-additional-text__button" href="#">Link to whatever</a>
+      </div>
+    </div>
   </section>
-</section>
 
-<section id="video-modal" class="modal home-page-video-modal video-modal">
-  <div class="inner-wrapper">
-    <%
-      youtube_video_id = homepage_promo_video_youtube_id
-      if self.stanford_theme_enabled():
-        youtube_video_id = "2gmreZObCY4"
-    %>
-    <iframe width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
-  </div>
-</section>
+  <section class="instructors-marketing container-bs">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+        <div class="instructors-marketing__text">
+          <h2 class="instructors-marketing__text__title">
+            Only the best Teachers
+          </h2>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+        </div>
+        <div class="instructors-marketing__list">
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Misty Mendoza</h4>
+            <span class="instructors-marketing__list__single__title">CEO of Something ltd</span>
+          </div>
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/men/36.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Herbert Hansen</h4>
+            <span class="instructors-marketing__list__single__title">Master of Universe</span>
+          </div>
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/women/36.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Lynn Thompson</h4>
+            <span class="instructors-marketing__list__single__title">Original Power Ranger</span>
+          </div>
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/men/29.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Francis Russell</h4>
+            <span class="instructors-marketing__list__single__title">College dropout turned billionare</span>
+          </div>
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/men/47.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Edwin Owens</h4>
+            <span class="instructors-marketing__list__single__title">Expert in education</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 instructors-marketing__cta">
+        <div class="instructors-marketing__cta__content">
+          <h3 class="instructors-marketing__cta__title">Join in on open education!</h3>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          <a class="instructors-marketing__cta__button" href="#">Sign up!</a>
+        </div>
+      </div>
+    </div>  
+  </section>
+
 
 <%block name="js_extra">
    <script type="text/javascript">

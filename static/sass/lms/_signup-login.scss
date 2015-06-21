@@ -1,0 +1,32 @@
+.signup-form, .login-form {
+	padding: 40px 20px;
+
+	&__instructions {
+		font-size: 18px;
+		margin: 0 0 20px;
+		line-height: 140%;
+	}
+
+	&__help {
+
+		@media (min-width:$screen-sm-min) {
+			padding-left: 40px;
+		}
+
+		&__heading {
+			margin: 0 0 10px;
+			@include sans-serif-bold;
+			font-size: 18px;
+		}
+
+		&__group {
+			margin-bottom: 20px;
+		}
+
+		&__login-button {
+			@include button-positive;
+			padding: 8px 30px;
+			margin-bottom: 20px;
+		}
+	}
+}

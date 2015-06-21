@@ -28,21 +28,3 @@
 		bottom: 0;
 	}
 }
-
-
-@mixin button-positive {
-	@include sans-serif;
-	background-color: $brand-primary-color;
-	padding: 15px 25px;
-	color: #fff;
-	display: inline-block;	
-	@include transition(all 0.3s ease-in-out);
-
-	&:hover, &:focus {
-		outline: none;
-		border: none;
-		background-color: shade($brand-primary-color, 10%);
-		color: #fff;
-		text-decoration: none;
-	}
-}
