@@ -1,0 +1,35 @@
+<%! 
+from django.utils.translation import ugettext as _ 
+from django.core.urlresolvers import reverse
+%>
+
+<header>
+  <h2 class="sr">${_("Helpful Information")}</h2>
+</header>
+
+% if settings.FEATURES.get('AUTH_USE_OPENID'):
+<!-- <div class="cta cta-login-options-openid">
+  <h3>${_("Login via OpenID")}</h3>
+  <p>${_('You can now start learning with {platform_name} by logging in with your <a rel="external" href="http://openid.net/">OpenID account</a>.').format(platform_name=platform_name)}</p>
+  <a class="action action-login-openid" href="#">${_("Login via OpenID")}</a>
+</div> -->
+% endif
+
+<div class="cta cta-help">
+  <h3>${_("Not Enrolled?")}</h3>
+  <p><a href="http://bodymindinstitute.com">Click here</a> to sign up with one of our courses at the BodyMind Institute today.</p>
+
+  <h3>${_("Need Help?")}</h3>
+  <p>
+    The BodyMind Student Support is here to ensure that you enjoy a significant learning experience and intimate social community from across BodyMind's many programs. We have many resources to support you through your studies. 
+  </p>
+  <p>
+    If you have questions, or need more information, please call support at 1-888 787-8886 or, email <a href="mailto:info@bodymindinstitute.com">info@bodymindinstitute.com</a>.  Our office hours are 9am-5pm (MST - Canada), Monday to Friday.
+  </p>
+  <p>
+    <a href="http://bodymindinstitute.com/our-story/support-faqs/">Click here</a> to check out more answers to our FAQ’s.
+  </p>
+  <p>
+    <a href="https://www.facebook.com/BodyMindInstitute">Click here</a> to join us on Facebook.
+  </p>
+</div>
