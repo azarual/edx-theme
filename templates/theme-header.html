@@ -112,7 +112,7 @@ site_status_msg = get_site_status_msg(course_id)
               % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
                 <li><a class="cta-register navbar__button" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}">Register now!</a></li>
               % else:
-                <li><a class="cta-register navbar__button" href="/register">Register now!</a></li>
+                <li><a class="cta-register navbar__button" href="http://bodymindinstitute.com/">Register now!</a></li>
               % endif
             % endif
           </ul>
