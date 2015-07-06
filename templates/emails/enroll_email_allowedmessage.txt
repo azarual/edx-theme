@@ -1,0 +1,25 @@
+<%! from django.utils.translation import ugettext as _ %>
+
+Hello!
+
+${_("We are delighted to have you on board with us as a student at the {site_name} in the {course_name} Course!").format(
+		course_name=course.display_name_with_default,
+		site_name=site_name
+	)}
+
+To finish your registration, please visit http://courses.bodymindinstitute.com/
+
+  1. ${_("Fill out the registration form making sure to use {email_address} in the Email field.").format(email_address=email_address)}
+  2. Activate your account in a separate email by clicking on the link that will be sent to you automatically after Step 1.
+
+If you need any assistance, please feel free to contact us at info@bodymindinstitute.com or give us a call toll free at 1-888-787-8886 M-F 9-5pm MST.
+
+Again, welcome!
+
+Your BodyMind Team
+www.bodymindinstitute.com
+info@bodymindinstitute.com
+1-888-787-8886 M-F 9-5pm MST
+
+Join us in the conversation on Facebook where we regularly host free events, special offers and valuable resources all to enhance your learning with BodyMind Institute.
+www.facebook.com/bodymindinstitute
