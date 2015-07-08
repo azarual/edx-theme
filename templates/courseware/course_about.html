@@ -143,8 +143,8 @@
 <section class="course-body container-bs">
   <div class="col-xs-12 col-sm-4 col-sm-push-8 course-meta">
     % if not course.start_date_is_still_default:
-      <p class="course-meta__start-date">${course.start_date_text}</p>
-      <p class="course-meta__end-date">${course.end_date_text}</p>
+      <p class="course-meta__start-date">${course.start_datetime_text}</p>
+      <p class="course-meta__end-date">${course.end_datetime_text}</p>
     % endif  
     <div class="course-meta__enroll-button__container">
       %if user.is_authenticated() and registered:
@@ -224,7 +224,7 @@
       <h2 class="course-information__title">Course staff</h2>
       <div class="course-information__instructors">
         <div class="course-information__instructor">
-          <div class="course-information__instructor__image" style="background-image: url('images/instructor-images/misty.jpg');">
+          <div class="course-information__instructor__image" style="background-image: url('https://randomuser.me/api/portraits/women/12.jpg');">
           </div>
           <div class="course-information__instructor__info">
             <h4 class="course-information__instructor__name">Misty Mendoza</h4>
@@ -233,7 +233,7 @@
           </div>
         </div>
         <div class="course-information__instructor">
-          <div class="course-information__instructor__image" style="background-image: url('images/instructor-images/herbert.jpg');">
+          <div class="course-information__instructor__image" style="background-image: url('https://randomuser.me/api/portraits/men/36.jpg');">
           </div>
           <div class="course-information__instructor__info">
             <h4 class="course-information__instructor__name">Herbert Hansen</h4>

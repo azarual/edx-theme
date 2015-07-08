@@ -52,8 +52,8 @@ site_status_msg = get_site_status_msg(course_id)
             <span class="icon-bar"></span>
       </button>
 
-      <a class="page-scroll navbar__logo navbar__logo__positive" href="#page-top"><img src="${static.url('themes/matej-test/images/brand-logo.svg')}" alt="${platform_name()}"></a>
-      <a class="page-scroll navbar__logo navbar__logo__negative" href="#page-top"><img src="${static.url('themes/matej-test/images/brand-logo-negative.svg')}" alt="${platform_name()}"></a>
+      <a class="page-scroll navbar__logo navbar__logo__positive" href="${marketing_link('ROOT')}"><img src="${static.url('themes/matej-test/images/brand-logo.svg')}" alt="${platform_name()}"></a>
+      <a class="page-scroll navbar__logo navbar__logo__negative" href="${marketing_link('ROOT')}"><img src="${static.url('themes/matej-test/images/brand-logo-negative.svg')}" alt="${platform_name()}"></a>
 
       ## If on a course page - display course info
       % if course:
@@ -67,11 +67,11 @@ site_status_msg = get_site_status_msg(course_id)
         % if user.is_authenticated():
 
           ## If courses are browsable display these items
-          ## % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+          % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
             <ul class="navigation-group navigation-group__links-authenticated">
               <li><a href="${marketing_link('COURSES')}">Find Courses</a></li>
             </ul>
-          ## % endif
+          % endif
 
           ## Display user section of menu
           <ul class="navigation-group navigation-group__user">
@@ -90,12 +90,16 @@ site_status_msg = get_site_status_msg(course_id)
 
         ## Elements to display to non authenticated users
         % else:
+          % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+            <ul class="navigation-group navigation-group__links-authenticated">
+              <li><a href="${marketing_link('COURSES')}">Find Courses</a></li>
+            </ul>
+          % endif
 
           ## Optional sales links
           % if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
             <ul style="display: none" class="navigation-group navigation-group__global-links">
               <li><a href="${marketing_link('HOW_IT_WORKS')}">How it Works</a></li>
-              <li><a href="${marketing_link('COURSES')}">Find Courses</a></li>
               <li><a href="${marketing_link('SCHOOLS')}">Schools & Partners</a></li>
             </ul>
           % endif
