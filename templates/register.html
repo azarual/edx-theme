@@ -330,7 +330,9 @@
             % if has_extauth_info is UNDEFINED or ask_for_tos :
             <div class="field required checkbox" id="field-tos">
               <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" />
-              <label for="tos-yes">${_('I agree to the Terms of Service')}</label>
+              <label for="tos-yes">${_('I agree to the {link_start}Terms of Service{link_end}').format(
+                link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url="http://bodymindinstitute.com/terms-conditions/"),
+                link_end='</a>')}</label>
             </div>
             % endif
 
