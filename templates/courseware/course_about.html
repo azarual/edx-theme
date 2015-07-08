@@ -143,8 +143,8 @@
 <section class="course-body container-bs">
   <div class="col-xs-12 col-sm-4 col-sm-push-8 course-meta">
     % if not course.start_date_is_still_default:
-      <p class="course-meta__start-date">${course.start_datetime_text}</p>
-      <p class="course-meta__end-date">${course.end_datetime_text}</p>
+      <p class="course-meta__start-date">${course.start_datetime_text()}</p>
+      <p class="course-meta__end-date">${course.end_datetime_text()}</p>
     % endif  
     <div class="course-meta__enroll-button__container">
       %if user.is_authenticated() and registered:
