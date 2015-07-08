@@ -7,7 +7,7 @@ ${_("We are delighted to have you on board with us as a student at the {site_nam
 		site_name=site_name
 	)}
 
-To finish your registration, please visit http://courses.bodymindinstitute.com/
+To finish your registration, please visit http://courses.bodymindinstitute.com/register
 
   1. ${_("Fill out the registration form making sure to use {email_address} in the Email field.").format(email_address=email_address)}
   2. Activate your account in a separate email by clicking on the link that will be sent to you automatically after Step 1.
