@@ -72,10 +72,6 @@ site_status_msg = get_site_status_msg(course_id)
               <span class="avatar"></span><a href="#" class="navigation-group__user__name-toggle dropdown-toggle" id="userDropdownMenu" data-toggle="dropdown" aria-expanded="true">${user.username} <i class="fa fa-caret-down"></i></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="userDropdownMenu">
                 <li><a href="${reverse('dashboard')}">Dashboard</a></li>
-                ## If FAQ section exists
-                % if settings.MKTG_URL_LINK_MAP.get('FAQ'):
-                  <li><a href="${marketing_link('FAQ')}">Help</a></li>
-                % endif
                 <li class="divider"></li>
                 <li><a href="${reverse('logout')}">Log Out</a></li>
               </ul>
