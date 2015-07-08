@@ -61,9 +61,6 @@ site_status_msg = get_site_status_msg(course_id)
 
           ## If courses are browsable display these items
           % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-            <ul class="navigation-group navigation-group__links-authenticated">
-              <li><a href="${marketing_link('COURSES')}">Find Courses</a></li>
-            </ul>
           % endif
 
           ## Display user section of menu
