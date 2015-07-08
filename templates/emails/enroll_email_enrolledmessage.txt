@@ -2,24 +2,23 @@
 
 Hello!
 
-${_("Congratulations in registering for {course_name} here at the {site_name}! "
+${_("Congratulations in registering for {course_name} here at the BodyMind Institute! "
 	"You will now see this course show up in your dashboard. ").format(
-		course_name=course.display_name_with_default,
-		site_name=site_name
+		course_name=course.display_name_with_default
 	)}
 
 ${_("Simply log in here to begin: {course_url}").format(
 		course_url=course_url
 	)}
 
-If you need any assistance, please feel free to contact us at info@bodymindinstitute.com or give us a call toll free at 1-888-787-8886 M-F 9-5pm MST.
+"If you need any assistance, please feel free to contact us at info@bodymindinstitute.com or give us a call toll free at 1-888-787-8886 M-F 9-5pm MST.
 
-Again, welcome!
+"Again, welcome!
 
 Your BodyMind Team
-www.bodymindinstitute.com
-info@bodymindinstitute.com
-1-888-787-8886 M-F 9-5pm MST
+ www.bodymindinstitute.com
+ info@bodymindinstitute.com
+ 1-888-787-8886 M-F 9-5pm MST
 
-Join us in the conversation on Facebook where we regularly host free events, special offers and valuable resources all to enhance your learning with BodyMind Institute.
-www.facebook.com/bodymindinstitute
+ Join us in the conversation on Facebook where we regularly host free events, special offers and valuable resources all to enhance your learning with BodyMind Institute.
+ www.facebook.com/bodymindinstitute
