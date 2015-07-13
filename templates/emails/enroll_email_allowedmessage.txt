@@ -2,7 +2,7 @@
 
 Hello!
 
-${_("We are delighted to have you on board with us as a student at the BodyMind Institue in the {course_name} Course!").format(
+${_("We are delighted to have you on board with us as a student at the BodyMind Institute in the {course_name} Course!").format(
 		course_name=course.display_name_with_default
 	)}
 
