@@ -1,0 +1,1 @@
+This directory exists to make sure that the default microsite gets initialized.
