@@ -9,8 +9,10 @@
 <%
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
 
-  show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
-  homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "XNaiOGxWeto")
+  #show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
+  #homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "_LOgBWIf4Wo")
+  show_homepage_promo_video = True
+  homepage_promo_video_youtube_id = "_LOgBWIf4Wo"
 
   show_partners = microsite.get_value('show_partners', True)
 
@@ -18,6 +20,23 @@
   from django.core.urlresolvers import reverse
   from courseware.courses import course_image_url, get_course_about_section
 %>
+
+
+% if show_homepage_promo_video:
+
+<!-- Video modal -->
+<div class="modal fade modal__video-fullscreen__wrapper" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal__video-fullscreen">
+    <div class="modal__video-fullscreen__container">
+      <iframe src='https://www.youtube.com/embed/${homepage_promo_video_youtube_id}?rel=0&controls=0&showinfo=0' frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="modal__video-fullscreen__close">
+      <a href="#" data-dismiss="modal" aria-label="Close"><i class="fa fa-remove"></i></a>
+    </div>
+  </div>
+</div>
+
+% endif
 
 
 <!-- LMS landing page hero portion -->
@@ -28,7 +47,12 @@
           <h1>Appsembler Open edX</h1>
           <p>Well hello there! Welcome to our <b>Open edX based</b> e-learning platform!</p>
         </div>
-        <a href="#" class="landing-hero__content__button">View promo video</a>
+
+        % if show_homepage_promo_video:
+
+          <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View our video</a>
+
+        % endif  
       </div>
     </div>
   </section>
