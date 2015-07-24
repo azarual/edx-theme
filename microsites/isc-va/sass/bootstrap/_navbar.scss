@@ -63,6 +63,7 @@
 
   @media (min-width: $grid-float-breakpoint) {
     width: auto;
+    min-width: 450px;
     border-top: 0;
     box-shadow: none;
 

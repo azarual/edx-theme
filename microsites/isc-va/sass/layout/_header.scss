@@ -166,6 +166,10 @@
 		& span {
 			@include sans-serif-bold;
 		}
+
+		&__provider {
+			display: none;
+		}
 	}
 
 	&-group__login {
