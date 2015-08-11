@@ -1,5 +1,6 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
+<%! from django.utils.translation import ugettext as _ %>
 <%namespace name='static' file='/static_content.html'/>
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
@@ -7,12 +8,12 @@
 <div class="wrapper-footer">
   <footer>
     <div class="colophon">
-      <span class="footer-text-small">&copy; 1922–2015 New York Institute of Finance, a Financial Times company. All rights reserved.</span>
+      <span class="footer-text-small">&copy; ${_("1922-2015 New York Institute of Finance, a Financial Times company. All rights reserved.")}</span>
       <br />
       <span class="footer-text-small">
-        <a href="http://www.nyif.com/terms-of-use">Terms of Service</a>&nbsp;|&nbsp;
-        <a href="http://www.nyif.com/privacy-cookie-policy/">Privacy Policy</a>&nbsp;|&nbsp;
-        <a href="mailto:customerservice@nyif.com">Contact us</a>&nbsp;
+        <a href="http://www.nyif.com/terms-of-use">${_("Terms of Service")}</a>&nbsp;|&nbsp;
+        <a href="http://www.nyif.com/privacy-cookie-policy/">${_("Privacy Policy")}</a>&nbsp;|&nbsp;
+        <a href="mailto:customerservice@nyif.com">${_("Contact us")}</a>&nbsp;
       </span>
     </div>
     <div class="references">

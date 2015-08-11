@@ -29,7 +29,7 @@ from django.core.urlresolvers import reverse
   <div class="cta cta-welcome">
     <h3>${_("Welcome to {platform_name}").format(platform_name=platform_name)}</h3>
     <p>
-      Registering with New York Institute of Finance is required for participation in the courses on this site for which you are enrolled. You only need to register once, then you will have easy access to any NYIF courses for which you enroll in the future.
+      ${_("Registering with New York Institute of Finance is required for participation in the courses on this site for which you are enrolled. You only need to register once, then you will have easy access to any NYIF courses for which you enroll in the future.")}
     </p>
   </div>
 % endif
@@ -47,7 +47,7 @@ from django.core.urlresolvers import reverse
   <div class="cta cta-help">
     <h3>${_("Need Help?")}</h3>
     <p>
-      Need help in enrolling in New York Institute of Finance courses? Please visit our primary website at <a href="http://www.nyif.com/">www.NYIF.com</a>, or call our Customer Success team at +1 212 641-6616 or +1 888 641-6616.
+      ${_("Need help in enrolling in New York Institute of Finance courses? Please visit our primary website at {link_start}www.NYIF.com{link_end}, or call our Customer Success team at +1 212 641-6616 or +1 888 641-6616.").format(link_start=u"<a href='http://www.nyif.com/'>", link_end=u"</a>")}
     </p>
   </div>
 % endif

@@ -16,16 +16,16 @@ from django.core.urlresolvers import reverse
 % endif
 
 <div class="cta cta-help">
-  <h3>Welcome to NYIF</h3>
+  <h3>${_("Welcome to NYIF")}</h3>
   <p>
-    This site is dedicated to students registered for specific courses at New York Institute of Finance. You may login here if you have enrolled in one of these courses (you would have received notification in email).
+    ${_("This site is dedicated to students registered for specific courses at New York Institute of Finance. You may login here if you have enrolled in one of these courses (you would have received notification in email).")}
   </p>
   <p>
-    To learn more about the courses on this site, and the wide range of training available at New York Institute of Finance, please visit our primary site at <a href="http://www.nyif.com">www.nyif.com</a>. If you have questions:
+    ${_("To learn more about the courses on this site, and the wide range of training available at New York Institute of Finance, please visit our primary site at {link_start}www.nyif.com{link_end}. If you have questions:").format(link_start=u"<a href='http://www.nyif.com'>", link_end=u"</a>")}
   </p>
   <ul>
-    <li>Give us a call at +1 212 641 6616 or +1 888 641 6616</li>
-    <li>Email us at <a href="mailto:Customerservice@nyif.com">Customerservice@nyif.com</a></li>
+    <li>${_("Give us a call at +1 212 641 6616 or +1 888 641 6616")}</li>
+    <li>${_("Email us at {link_start}Customerservice@nyif.com{link_end}").format(link_start=u"<a href='mailto:Customerservice@nyif.com'>", link_end=u"</a>")}</li>
   </ul>
 
 
