@@ -253,6 +253,7 @@
                 %for code, job_role in UserProfile.JOB_ROLES:
                 <option value="${code}">${_(job_role)}</option>
                 %endfor
+              </select>
             </div>
           </li>
 
@@ -261,7 +262,7 @@
           % if settings.REGISTRATION_EXTRA_FIELDS['telephone_number'] != 'hidden':
           <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['telephone_number']} text" id="field-telephone-number">
             <label for="telephone_number">${_('Telephone Number')}</label>
-            <input id="telephone_number" type="text" name="telephone_number" value="" placeholder="${_('example: (877)123-456')}" aria-describedby="phone-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['telephone_number'] == 'required' else ''} />
+            <input id="telephone_number" type="text" name="telephone_number" value="" placeholder="${_('example: (877)123-4567')}" aria-describedby="phone-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['telephone_number'] == 'required' else ''} />
           </li>
           % endif
 
