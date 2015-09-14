@@ -48,23 +48,26 @@
     </div>
   </header>
   <section class="container">
-    <section class="highlighted-courses">
+      <section class="highlighted-courses">
 
-      % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-        <section class="courses">
-            <ul class="courses-listing">
-            %for course in courses:
-              <li class="courses-listing-item">
-                <%include file="course.html" args="course=course" />
-              </li>
-            %endfor
-            </ul>
-        </section>
-      % endif
+        % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+          %for university in courses:
+            <section class="courses">
+              <h2>${university}</h2>
+              <ul class="courses-listing">
+              %for course in courses[university]:
+                <li class="courses-listing-item">
+                  <%include file="course.html" args="course=course" />
+                </li>
+              %endfor
+              </ul>
+          </section>
+          %endfor
+        % endif
 
+      </section>
     </section>
   </section>
-</section>
 
 <section id="video-modal" class="modal home-page-video-modal video-modal">
   <div class="inner-wrapper">
