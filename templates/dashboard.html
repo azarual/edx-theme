@@ -7,7 +7,6 @@ import third_party_auth
 from third_party_auth import pipeline
 from microsite_configuration import microsite
 from django.core.urlresolvers import reverse
-import json
 %>
 
 <%
@@ -46,16 +45,7 @@ import json
     });
   </script>
   % if settings.FEATURES.get('ENABLE_DASHBOARD_SEARCH'):
-    <%static:require_module module_name="js/search/dashboard/dashboard_search_factory" class_name="DashboardSearchFactory">
-        DashboardSearchFactory();
-    </%static:require_module>
-  % endif
-  % if redirect_message:
-    <%static:require_module module_name="js/views/message_banner" class_name="MessageBannerView">
-        var banner = new MessageBannerView({urgency: 'low', type: 'warning'});
-        $('#content').prepend(banner.$el);
-        banner.showMessage(${json.dumps(redirect_message)})
-    </%static:require_module>
+    <%static:js group='dashboard_search'/>
   % endif
 </%block>
 
@@ -85,7 +75,7 @@ import json
         <div class="dashboard-header__main">
           <h2>${_("Current Courses")}</h2>
           % if settings.FEATURES.get('ENABLE_DASHBOARD_SEARCH'):
-            <button type="button" class="dashboard-header__search-trigger" id="dashboard-header__search-trigger"><i class="fa fa-search inactive"></i><i class="fa fa-remove active"></i></button>
+            <button type="button" class="dashboard-header__search-trigger" id="dashboard-header__search-trigger"><i class="fa fa-search inactive"></i><i class="fa fa-chevron-up active"></i></button>
           % endif
         </div>
         % if settings.FEATURES.get('ENABLE_DASHBOARD_SEARCH'):
