@@ -6937,9 +6937,6 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   box-orient: vertical;
-  -webkit-box-direction: normal;
-  -moz-box-direction: normal;
-  box-direction: normal;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
@@ -12694,6 +12691,59 @@ Copyright (c) 2015 Daniel Eden
   display: none;
 }
 
+.dashboard-courses__empty {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.dashboard-courses__empty__cta, .dashboard-courses__empty__cta:link, .dashboard-courses__empty__cta:visited {
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: none;
+  outline: none;
+  text-shadow: none;
+  border-radius: 0;
+  background-color: #c12226;
+  padding: 15px 25px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  line-height: inherit;
+  border: none;
+  padding: 15px 30px;
+  border: none;
+  outline: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #fff;
+  margin-top: 25px;
+}
+
+.dashboard-courses__empty__cta:hover, .dashboard-courses__empty__cta:focus, .dashboard-courses__empty__cta:hover:not(:disabled), .dashboard-courses__empty__cta:link:hover, .dashboard-courses__empty__cta:link:focus, .dashboard-courses__empty__cta:link:hover:not(:disabled), .dashboard-courses__empty__cta:visited:hover, .dashboard-courses__empty__cta:visited:focus, .dashboard-courses__empty__cta:visited:hover:not(:disabled) {
+  background-image: none;
+  text-shadow: none;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  background-color: #ad1e22;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dashboard-courses__empty__cta:link, .dashboard-courses__empty__cta:link:link, .dashboard-courses__empty__cta:visited:link {
+  color: #fff;
+}
+
+.dashboard-courses__empty__cta:hover, .dashboard-courses__empty__cta:focus, .dashboard-courses__empty__cta:link:hover, .dashboard-courses__empty__cta:link:focus, .dashboard-courses__empty__cta:visited:hover, .dashboard-courses__empty__cta:visited:focus {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
 .dashboard-courses__container {
   padding: 20px 0 30px;
   margin: 0;
@@ -12947,6 +12997,7 @@ Copyright (c) 2015 Daniel Eden
   width: 50%;
   text-align: center;
   display: inline-block;
+  color: inherit;
 }
 
 .dashboard-courses__course__view-button .icon {
@@ -13315,7 +13366,12 @@ Copyright (c) 2015 Daniel Eden
   font-style: normal;
   color: rgba(57, 53, 58, 0.7);
   margin: 0 0 30px;
-  float: none;
+  float: none !important;
+}
+
+.search-results .search-info {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .login-register {

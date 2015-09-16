@@ -7,7 +7,6 @@ import third_party_auth
 from third_party_auth import pipeline
 from microsite_configuration import microsite
 from django.core.urlresolvers import reverse
-import json
 %>
 
 <%
@@ -46,16 +45,7 @@ import json
     });
   </script>
   % if settings.FEATURES.get('ENABLE_DASHBOARD_SEARCH'):
-    <%static:require_module module_name="js/search/dashboard/dashboard_search_factory" class_name="DashboardSearchFactory">
-        DashboardSearchFactory();
-    </%static:require_module>
-  % endif
-  % if redirect_message:
-    <%static:require_module module_name="js/views/message_banner" class_name="MessageBannerView">
-        var banner = new MessageBannerView({urgency: 'low', type: 'warning'});
-        $('#content').prepend(banner.$el);
-        banner.showMessage(${json.dumps(redirect_message)})
-    </%static:require_module>
+    <%static:js group='dashboard_search'/>
   % endif
 </%block>
 
@@ -85,7 +75,7 @@ import json
         <div class="dashboard-header__main">
           <h2>${_("Current Courses")}</h2>
           % if settings.FEATURES.get('ENABLE_DASHBOARD_SEARCH'):
-            <button type="button" class="dashboard-header__search-trigger" id="dashboard-header__search-trigger"><i class="fa fa-search inactive"></i><i class="fa fa-remove active"></i></button>
+            <button type="button" class="dashboard-header__search-trigger" id="dashboard-header__search-trigger"><i class="fa fa-search inactive"></i><i class="fa fa-chevron-up active"></i></button>
           % endif
         </div>
         % if settings.FEATURES.get('ENABLE_DASHBOARD_SEARCH'):
@@ -154,38 +144,6 @@ import json
 
 <!-- end of new frontend -->
 
-
-
-
-
-  % if settings.FEATURES.get('IS_EDX_DOMAIN'):
-    <div class="wrapper-find-courses">
-      <p class="copy">Check out our recently launched courses and what's new in your favorite subjects</p>
-      <p><a class="btn-find-courses" href="${marketing_link('COURSES')}">${_("Find New Courses")}</a></p>
-    </div>
-  % endif
-
-  <section class="profile-sidebar" id="profile-sidebar" role="region" aria-label="Account Status Info">
-    <header class="profile">
-      <h2 class="account-status-title sr">${_("Account Status Info")}: </h2>
-    </header>
-    <section class="user-info">
-      <ul>
-
-        % if len(order_history_list):
-        <li class="order-history">
-          <span class="title">${_("Order History")}</span>
-          % for order_history_item in order_history_list:
-            <span><a href="${order_history_item['receipt_url']}" target="_blank" class="edit-name">${order_history_item['order_date']}</a></span>
-          % endfor
-        </li>
-        % endif
-
-        <%include file='dashboard/_dashboard_status_verification.html' />
-
-      </ul>
-    </section>
-  </section>
 </section>
 
 <section id="email-settings-modal" class="modal" aria-hidden="true">
@@ -211,7 +169,7 @@ import json
 
     <form id="email_settings_form" method="post">
       <input name="course_id" id="email_settings_course_id" type="hidden" />
-      <label><input type="checkbox" id="receive_emails" name="receive_emails" /> ${_("Receive course emails")}</label>
+      <label>${_("Receive course emails")} <input type="checkbox" id="receive_emails" name="receive_emails" /></label>
       <div class="submit">
         <input type="submit" id="submit" value="${_("Save Settings")}" />
       </div>
