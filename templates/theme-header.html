@@ -65,11 +65,14 @@ site_status_msg = get_site_status_msg(course_id)
         % if user.is_authenticated():
 
           ## If courses are browsable display these items
-          % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-            <ul class="navigation-group navigation-group__links-authenticated">
+          <ul class="navigation-group navigation-group__links-authenticated">
+            % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
               <li><a href="${marketing_link('COURSES')}">Find Courses</a></li>
-            </ul>
-          % endif
+            % endif
+            %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
+              <li><a href="${reverse('sysadmin')}">${_("Sysadmin")}</a></li>
+            % endif
+          </ul>
 
           ## Display user section of menu
           <ul class="navigation-group navigation-group__user">
@@ -84,7 +87,7 @@ site_status_msg = get_site_status_msg(course_id)
                 <li><a href="${reverse('logout')}">Log Out</a></li>
               </ul>
             </li>
-            % if display_shopping_cart:
+            % if should_display_shopping_cart_func():
               <li class="navigation-group__user__cart"><a href="${reverse('shoppingcart.views.show_cart')}"><i class="fa fa-shopping-cart"></i></a></li>
             % endif  
           </ul>
