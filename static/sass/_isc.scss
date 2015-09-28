@@ -313,3 +313,19 @@ body.view-register {
 	}
 }
 
+//course listings on dashboard and index
+
+.org-courses-callout {
+    padding: 3em 2em 1em 2em;
+    text-align: center;
+    
+    .cta {
+        background-color: rgb(69, 160, 194);
+        color: #f2f2f2;
+        border: none;
+        padding: 10px 20px;
+        margin-left: 2em;
+        text-align: center;
+        font-weight: 500;
+    }
+}
