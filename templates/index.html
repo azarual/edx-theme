@@ -56,7 +56,7 @@
               <a class="cta" href='#academies'>Access online Global Summit Academies</a>
               </div>
           %endif
-          %for university in sorted(courses.keys(), reverse=True):
+          %for university in sorted(courses.keys(), key=lambda k:k.lower(), reverse=True):
             <section class="courses">
               <h2>${university}</h2>
               %if university.lower()=='academies':
