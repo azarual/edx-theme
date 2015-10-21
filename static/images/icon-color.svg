@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW X7 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="86mm" height="100mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 8600 10000"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="50mm" height="48mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 5000 4800"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
    <![CDATA[
-    .fil1 {fill:#0090C1}
-    .fil0 {fill:#0090C1;fill-opacity:0.501961}
+    .fil1 {fill:#004274}
+    .fil0 {fill:#1A75CF}
    ]]>
   </style>
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_836192368">
-   <polygon class="fil0" points="5617,7475 5617,9950 4300,9190 2983,9950 2983,7475 4300,8235 "/>
-   <polygon class="fil1" points="4300,50 13,2525 13,7475 1003,6903 1003,3097 4300,1193 7597,3097 7597,6903 8587,7475 8587,2525 "/>
-   <path class="fil0" d="M13 7475l1980 1143 0 -1143 -990 -572 -990 572zm6594 1143l1980 -1143 -990 -572 -990 572 0 1143z"/>
-   <path class="fil1" d="M4300 2336l-2307 1332 0 2664 2307 1332 2307 -1332 0 -2664 -2307 -1332zm0 1144l-1317 760 0 1520 1317 760 1317 -760 0 -1520 -1317 -760z"/>
-   <path class="fil0" d="M4300 3480l-1317 760 0 1520 1317 760 1317 -760 0 -1520 -1317 -760zm0 1143l-327 188 0 378 327 188 327 -188 0 -378 -327 -188z"/>
-  </g>
+  <polygon class="fil0" points="1862,1348 1443,3394 1800,3394 2024,2291 2444,3421 2576,3421 2995,2291 3211,3394 3569,3394 3144,1348 2950,1348 2509,2726 2059,1348 "/>
+  <path class="fil1" d="M2500 21c1353,0 2450,1065 2450,2379 0,1314 -1097,2379 -2450,2379 -1353,0 -2450,-1065 -2450,-2379 0,-1314 1097,-2379 2450,-2379zm9 184c1245,0 2255,983 2255,2195 0,1212 -1010,2195 -2255,2195 -1246,0 -2256,-983 -2256,-2195 0,-1212 1010,-2195 2256,-2195z"/>
+  <path class="fil0" d="M2509 271c1209,0 2189,953 2189,2129 0,1176 -980,2129 -2189,2129 -1210,0 -2190,-953 -2190,-2129 0,-1176 980,-2129 2190,-2129zm0 670c881,0 1595,682 1595,1525 0,842 -714,1525 -1595,1525 -881,0 -1595,-683 -1595,-1525 0,-843 714,-1525 1595,-1525z"/>
  </g>
 </svg>

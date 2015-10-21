@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 // Import Bourbon.io
-@import "bourbon/bourbon";
+@import "bourbon";
 
 // Import typography
 @import "base/typography";
@@ -11,11 +11,10 @@
 @import "base/functions";
 
 // Import variables
-@import "basic-branding";
+@import "base/basic-branding";
 @import "base/variables";
 
 // Import basic styles
-@import "base/specific-edx-overrides";
 @import "base/base";
 @import "base/buttons";
 @import "base/forms";
@@ -30,6 +29,7 @@
 @import "layout/standard-headers";
 @import "layout/modals";
 
+
 // import page specific sass
 @import "lms/landing";
 @import "lms/course-tile";
@@ -43,3 +43,7 @@
 @import "lms/login-register";
 @import "lms/view-profile";
 @import "lms/account-settings";
+
+
+
+@import "layout/metalogix-specific";

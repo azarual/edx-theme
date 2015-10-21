@@ -1,0 +1,29 @@
+.landing-hero {
+
+	&__content {
+		@include display(flex);
+		@include align-items(center);
+		@include flex-wrap(wrap);
+		max-width: 100%;
+
+		&__text {
+
+			& h1 {
+				@include sans-serif-bold;
+			}
+
+			& p {
+				margin: 2rem 0;
+			}
+		}
+
+		&__graphic img {
+			max-width: 100%;
+		}
+	}
+}
+
+.landing-additional-text__content {
+	max-width: 100%;
+
+}

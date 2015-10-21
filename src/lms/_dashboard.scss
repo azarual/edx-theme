@@ -160,6 +160,21 @@
 		display: none;
 	}
 
+	&__empty {
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		&__cta, &__cta:link, &__cta:visited {
+			@include button-positive($brand-primary-color);
+			padding: 15px 30px;
+			border: none;
+			outline: none;
+			@include expanding-button(30px, 15px);
+			color: #fff;
+			margin-top: 25px;
+		}
+	}
+
 	&__container {
 		padding: 20px 0 30px;
 		margin: 0;
@@ -325,6 +340,7 @@
 				width: 50%;
 				text-align: center;
 				display: inline-block;
+				color: inherit;
 			}
 
 			& .icon {
@@ -571,6 +587,11 @@
 		@include sans-serif-bold;
 		color: rgba($base-text-color, 0.7);
 		margin: 0 0 30px;
-		float: none;
+		float: none !important;
+	}
+
+	.search-info {
+		margin-bottom: 20px;
+		padding-bottom: 10px;
 	}
 }

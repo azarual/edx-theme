@@ -13,7 +13,7 @@
 
   #show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
   #homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "_LOgBWIf4Wo")
-  show_homepage_promo_video = True
+  show_homepage_promo_video = False
   homepage_promo_video_youtube_id = "_LOgBWIf4Wo"
 
   show_partners = microsite.get_value('show_partners', True)
@@ -40,17 +40,19 @@
 <!-- LMS landing page hero portion -->
   <section class="landing-hero">
     <div class="container-bs">
-      <div class="landing-hero__content">
-        <div class="landing-hero__content__text">
-          <h1>Appsembler Open edX</h1>
-          <p>Well hello there! Welcome to our <b>Open edX based</b> e-learning platform!</p>
+      <div class="landing-hero__content row">
+        <div class="landing-hero__content__text text-left col-xs-12 col-sm-6 col-md-8">
+          <h1 class="text-left">Welcome to <br>Metalogix Academy!</h1>
+          <p>Sign in or register to access our courses.</p>
+            % if show_homepage_promo_video:
+
+              <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View our video</a>
+
+            % endif  
         </div>
-
-        % if show_homepage_promo_video:
-
-          <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View our video</a>
-
-        % endif  
+        <div class="landing-hero__graphic col-xs-12 col-sm-6 col-md-4">
+          <img src="${static.url('themes/')}/${settings.FEATURES.get('THEME_FOLDER')}/images/metalogix-edu-graphic.svg">
+        </div>
       </div>
     </div>
   </section>
@@ -58,11 +60,12 @@
   <section class="landing-additional-text">
     <div class="container-bs">
       <div class="landing-additional-text__content">
-        <h2>The Open edX Enterprise Experts</h2>
+          <h2>About us</h2>
           <div class="landing-additional-text__separator"></div>
-          <p>Appsembler is a leader in delivering educational technology solutions. We are a full-service Open edX solutions provider offering hosting, support, expert assistance and custom development services. edX is a nonprofit online initiative created by founding partners Harvard and MIT and composed of dozens of leading global institutions, the xConsortium. EdX offers interactive online courses and MOOCs from the world’s best universities and institutions.</p>
-          <p>Open edX is the open source platform that powers edX courses. Through our commitment to the open source vision, edX code is freely available to the community. Institutions can host their own instances of Open edX and offer their own classes. Educators can extend the platform to build learning tools that precisely meet their needs. And developers can contribute new features to the Open edX platform.</p>
-      </div>
+          <p>Metalogix is the premier provider of management software to move, manage and secure content for Office 365, SharePoint, OneDrive for Business, Exchange, Box, Dropbox, Amazon, Google and other leading enterprise content management (ECM) systems in the Cloud, On-premise and Hybrid environments.</p>
+          <p>Over 20,000 clients rely on Metalogix and the industry’s highest rated LIVE 24x7 support to enhance the use, performance and security of content collaboration in the cloud, on-premises and in hybrid environments.</p>
+          <p>Metalogix is a Microsoft Gold Partner, an EMC Select Partner, and a GSA provider. Our Client Service division of certified specialists is a multiple winner of the prestigious NorthFace ScoreBoard Award for World Class Excellence in Customer Service.</p>
+        </div>
     </div>
   </section>
 
@@ -85,7 +88,7 @@
 % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
   <section class="landing-courses">
     <div class="container-bs">
-      <h2>Featured / newest courses</h2>
+      <h2>Our courses</h2>
     </div>
 
 <%doc>
@@ -137,6 +140,7 @@
   </section>      
 % endif
 
+<%doc>
   <section class="landing-additional-text">
     <div class="container-bs">
       <div class="landing-additional-text__content">
@@ -184,7 +188,7 @@
       </div>
     </div>  
   </section>
-
+</%doc>
 
 <%block name="js_extra">
    <script type="text/javascript">
