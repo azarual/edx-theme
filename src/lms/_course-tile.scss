@@ -9,14 +9,24 @@
 	}
 
 	&__body {
-		border: 1px solid tint($base-text-color, 80%);
+		border: 2px solid tint($base-text-color, 80%);
 		background-color: #fff;
+		width: 100%;
+		@include transition(all 0.3s ease-in-out);
+
+		&:hover, &:focus {
+			border: 2px solid $brand-primary-color;
+		}
 	}
 
 	&__image {
+		display: block;
 		position: relative;
 		overflow: hidden;
 		height: 240px;
+		width: 100%;
+		background-size: cover;
+		background-position: center center;
 
 		& img {
 			width: 100%;

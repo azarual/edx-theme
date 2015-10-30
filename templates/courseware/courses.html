@@ -95,27 +95,25 @@
 % endif
 <!-- end of courses list search -->
 
-<!-- courses view -->
+<!-- courses view - grid -->
 <section class="courses-courses">
-  <div class="course-list-view container-bs">
+  <div class="container-bs">
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1"> 
-        %for course in courses:
-          <div class="course-list-item">
-            <div class="course-list-item__image" style="background-image: url('${course_image_url(course)}');"></div>
-            <div class="course-list-item__info">
-              % if not course.start_date_is_still_default:
-                <span class="course-list-item__date">${course.start_datetime_text()}</span>
-              % endif
-              <span class="course-list-item__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
-              <span class="course-list-item__instructor">${get_course_about_section(course, 'university')}</span>
-              <div class="course-list-item__separator"></div>
-              <p class="course-list-item__description">${get_course_about_section(course, 'short_description')}</p>
-              <a class="course-list-item__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
+      %for course in courses:
+        <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
+          <div class="course-tile__body">
+            <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image: url('${course_image_url(course)}');"></a>
+            <div class="course-tile__info">
+              <span class="course-tile__date">${course.start_datetime_text()}</span>
+              <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
+              <span class="course-tile__instructor">${get_course_about_section(course, 'university')}</span>
+              <div class="course-tile__separator"></div>
+              <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
+              <a class="course-tile__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
             </div>
           </div>
-        %endfor
-      </div>
+        </div>
+      %endfor
     </div>
   </div>
 </section>

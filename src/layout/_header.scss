@@ -291,9 +291,14 @@
 	@include flex-shrink(1);
 	@include flex-grow(0);
 	@include flex-wrap(nowrap);
+
+	@media(max-width:$screen-sm-max) {
+		display: block;
+	}
 }
 
 .navbar-toggle {
+	float: right;
 	@include flex-shrink(0);
 	margin-left: 30px;
 }
