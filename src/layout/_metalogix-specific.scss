@@ -63,8 +63,9 @@
 	background-color: #EBEBEB;
 	padding: 40px 0;
 
-	&__container {
-
+	&__row {
+		@include display(flex);
+		@include flex-wrap(wrap);
 	}
 }
 
