@@ -63,18 +63,18 @@
 
 <!-- end of head includes -->
 
-<!-- Courses list hero portion -->
-<section class="bg-photo-hero">
-  <div class="container-bs">
-    <div class="bg-photo-hero__content">
-      <div class="bg-photo-hero__content__text">
-        <h1>Browse our courses</h1>
-        <p>${course_index_overlay_text}</p>
-      </div>
+<!-- Header with categories -->
+<section class="courses-list-header">
+  <div class="courses-list-header__container container-bs">
+    <h2>Courses</h2>
+    <div class="courses-list-header__categories">
+      <a href="#" class="courses-list-header__category">CMC System Access</a>
+      <a href="#" class="courses-list-header__category">CMC System Training</a>
+      <a href="#" class="courses-list-header__category">Clinical Guidance</a>
     </div>
   </div>
 </section>
-<!-- end of hero portion -->
+<!-- end of header with categories -->
 
 <!-- courses list search -->
 % if course_discovery_enabled:
@@ -95,28 +95,38 @@
 % endif
 <!-- end of courses list search -->
 
-<!-- courses view -->
-<section class="courses-courses">
-  <div class="course-list-view container-bs">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1"> 
+
+<section class="courses-list">
+  <div class="courses-list__container">
+    <div class="container-bs">
+
+      <!-- single courses category -->
+      <div class="row courses-list__row courses-list__category">
+
+        <!-- single category header with category name -->
+        <div class="col-xs-12 courses-list__category__heading">
+          <h2>CMC System Access</h2>
+        </div>
+        <!-- end of category header -->
+
         %for course in courses:
-          <div class="course-list-item">
-            <div class="course-list-item__image" style="background-image: url('${course_image_url(course)}');"></div>
-            <div class="course-list-item__info">
-              % if not course.start_date_is_still_default:
-                <span class="course-list-item__date">${course.start_datetime_text()}</span>
-              % endif
-              <span class="course-list-item__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
-              <span class="course-list-item__instructor">${get_course_about_section(course, 'university')}</span>
-              <div class="course-list-item__separator"></div>
-              <p class="course-list-item__description">${get_course_about_section(course, 'short_description')}</p>
-              <a class="course-list-item__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
+        <!-- single course tile template -->
+        <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
+          <div class="course-tile__body">
+            <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image:url('${course_image_url(course)}');"></a>
+            <div class="course-tile__info">
+              <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h}: </span>${get_course_about_section(course, 'title')}</a></span>
+              <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
+              <span class="course-tile__for" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">For: <span>Everyone</span></span>
             </div>
           </div>
+        </div>
+        <!-- end of single course tile template -->
         %endfor
+
       </div>
+      <!-- end of single courses category -->
+
     </div>
   </div>
 </section>
-<!-- end of courses view -->

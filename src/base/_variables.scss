@@ -5,15 +5,15 @@
 //
 //  ================
 
-$navbar-height: 80px;
+$navbar-height: 74px;
 $header-li-font-size: 16px;
 $header-li-padding-hor: 15px;
-$header-li-hover-expand: 10px;
-$header-logo-height: 60px;
-$header-logo-margin: 4px 0 0;
+$header-li-hover-expand: 0px;
+$header-logo-height: 44px;
+$header-logo-margin: 0;
 $navbar-links-top-offset: 0;
 $header-bottom-border: none;
-$navbar-vert-padding: 15px;
+$navbar-vert-padding: 10px;
 
 // calculations
 
@@ -31,19 +31,19 @@ $display-navbar-logo-negative: calcDisplayLogoNegative($navbar-style);
 //
 //  =========================
 
-$landing-hero-bg-image: $hero-bg-image;
-$landing-hero-padding-ver: 90px;
-$landing-hero-text-color: #fff;
-$landing-hero-bg-color: $brand-primary-color;
+$landing-hero-bg-image: none;
+$landing-hero-padding-ver: 0;
+$landing-hero-text-color: #000;
+$landing-hero-bg-color: #F5F5F5;
 
 
 //  Footer section
 
-$footer-text-color: #fff;
+$footer-text-color: rgba(#000, 0.9);
 $footer-menu-text-size: 14px;
 $footer-menu-link-padding: 0 10px;
 $footer-menu-font-weight: 400;
-$footer-menu-text-color: #fff;
+$footer-menu-text-color: darken($brand-primary-color, 5%);
 $footer-logo-height: 28px;
 
 

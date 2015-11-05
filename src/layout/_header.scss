@@ -12,8 +12,8 @@
 
 	&:after {
 		width: 100%;
-		height: 15px;
-		@include linear-gradient(to bottom, $base-text-color, rgba($base-text-color, 0), $fallback: rgba($base-text-color, 0.1));
+		height: 2px;
+		@include linear-gradient(to bottom, $base-text-color, rgba($base-text-color, 0.5), $fallback: rgba($base-text-color, 1));
 		opacity: 0.2;
 		position: absolute;
 		top: 100%;
@@ -62,28 +62,49 @@
 
 	& li {
 		list-style-type: none;
-		padding: 10px;
-		
+		padding: 5px 1px;
+
 		@media(min-width:$screen-sm-min) {
 			display: inline-block;
-			padding: 15px $header-li-padding-hor;
+			padding: 0 0px;
 		}
 
 		& a {
+			display: inline-block;
 			@include sans-serif;
 			font-size: $header-li-font-size;
 			text-transform: capitalize;
 			color: $navbar-text-color !important;
 			text-decoration: none;
 			@include transition(all 0.3s ease-in-out);
-			padding: 0;			
+			padding: 0;
+			//cmc specific
+			background-color: rgba(#000, 0.2);
+			padding: 15px;
+			border-right: 1px solid $brand-primary-color;
 
 			&:hover, &:focus, &:active {
 				color: $navbar-text-color !important;
-				padding: 0 $header-li-hover-expand;
-				opacity: 0.75;
+				background-color: #134453;
 				text-transform: capitalize;
 				text-decoration: none;
+			}
+		}
+
+		&:first-child a {
+			border-radius: 5px 0 0 5px;
+		}
+
+		&:last-child a {
+			border-radius: 0 5px 5px 0;
+		}
+
+		@media(max-width:$screen-sm-min) {
+
+			padding: 15px;
+
+			&:first-child a, &:last-child a, a {
+				border-radius: 5px;
 			}
 		}
 
@@ -91,13 +112,13 @@
 
 
 			&:hover, &:focus, &:active {
-				padding: 0;
+
 			}
 		}
 
 		&.separator {
 			padding: 0;
-			background-color: rgba($navbar-text-color, 0.15);
+			background-color: rgba(#000, 0.15);
 			margin: 0 $header-li-padding-hor;
 			width: 1px;
 			height: 30px;
@@ -148,11 +169,12 @@
 				color: #666 !important;
 				@include sans-serif;
 				@include transition(all 0.3s ease-in-out);
+				background: none;
+				border: none;
+				padding: 5px 10px;
 
 				&:hover, &:focus {
-					background: none;
-					opacity: 0.7;
-					padding: 0;
+					color: $brand-primary-color !important;
 				}
 			}
 		}
@@ -184,14 +206,16 @@
 	& .navigation-group {
 		margin-top: 20px;
 		padding: 0;
-		
+
 		@media(min-width:$screen-sm-min) {
-			border-right: 1px solid rgba($navbar-text-color, 0.15);
+			border-right: 1px solid rgba(#000, 0.15);
 			padding: 0;
 			padding-right: $header-li-padding-hor;
 			margin: 0;
 			margin-right: $header-li-padding-hor;
-			display: inline-block;
+			@include display(flex);
+			@include align-items(center);
+			@include flex-wrap(wrap);
 		}
 
 		&:last-child {
@@ -202,32 +226,25 @@
 
 		&__user {
 
-			& li a {
-				text-transform: capitalize;
-
-				& i {
-					margin-left: 5px;
-					display: inline-block;
-				}
+			&__name {
+				color: #fff;
+				display: inline-block;
+				margin-right: 15px;
 			}
 
-			&__avatar {
-
-				& i {
-					font-size: 18px;
-					margin-right: 10px;
-					color: rgba($navbar-text-color, 0.35);
-				}
+			&__toggle {
+				padding: 10px 15px;
+				display: inline-block;
+				border-radius: 5px !important;
 			}
 
-			&__cart {
-				margin-left: 10px;
-				padding: 10px 0 10px 15px;
-				border-left: 1px solid rgba($navbar-text-color, 0.2);
+			.caron-png {
 
-				& a i {
-					font-size: 18px;
-				}
+			}
+
+			.user-icon-png {
+				width: 25px;
+				height: auto;
 			}
 		}
 	}
@@ -236,7 +253,7 @@
 .navbar-collapse {
 	@include flex-shrink(0);
 	@include flex-grow(1);
-	
+
 	@media(min-width:$screen-sm-min) {
 		@include display(flex);
 		@include align-items(center);
@@ -277,6 +294,11 @@
 		& span {
 			@include sans-serif-bold;
 			color: $navbar-text-color;
+			@include sans-serif;
+
+			&.homepage {
+				font-size: 22px;
+			}
 		}
 
 		@media(max-width:$screen-sm-max) {
@@ -291,15 +313,24 @@
 	@include flex-shrink(1);
 	@include flex-grow(0);
 	@include flex-wrap(nowrap);
+
+	@media(max-width:$screen-sm-max) {
+		display: block;
+	}
 }
 
-.navbar-toggle {
+.navbar-default .navbar-toggle {
 	@include flex-shrink(0);
 	margin-left: 30px;
+	float: right;
+
+	.icon-bar {
+		background-color: $navbar-text-color;
+	}
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
-	background: none;
+	background-color: rgba(#000, 0.2);
 }
 
 .navbar .container-bs {

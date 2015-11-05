@@ -9,15 +9,18 @@
 	}
 
 	&__body {
-		border: 1px solid tint($base-text-color, 80%);
 		background-color: #fff;
-		width: 100%;
+		padding: 0 15px;
 	}
 
 	&__image {
+		display: block;
 		position: relative;
 		overflow: hidden;
 		height: 240px;
+		background-size: cover;
+		background-position: center center;
+		border: 1px solid #dedede;
 
 		& img {
 			width: 100%;
@@ -40,7 +43,7 @@
 	}
 
 	&__info {
-		padding: 20px 20px;
+		padding: 20px 0;
 	}
 
 	&__date {
@@ -53,18 +56,24 @@
 
 	&__name {
 		@include sans-serif-bold;
-		color: $base-text-color;
+		color: darken($brand-primary-color, 5%);
 		font-size: 18px;
 		line-height: 130%;
 		display: block;
 		min-height: 46px;
+		margin: 10px 0 10px;
 
 		& a {
-			color: $base-text-color;
+			font: inherit;
+			color: darken($brand-primary-color, 5%);
 			text-decoration: none;
 
 			&:hover, &:focus {
-				color: tint($base-text-color, 20%);
+				color: darken($brand-primary-color, 0%);
+			}
+
+			span {
+				font: inherit;
 			}
 		}
 	}
@@ -83,8 +92,14 @@
 		background-color: $brand-primary-color;
 	}
 
-	& p {
+	&__for {
+		color: #888;
+		margin-top: 15px;
+		display: block;
+	}
 
+	& p {
+		font-size: 16px;
 	}
 
 	&__cta, &__cta:link, &__cta:visited {
@@ -99,7 +114,7 @@
 	}
 
 	&:hover, &:focus {
-		
+
 		& .course-tile {
 
 			&__image {

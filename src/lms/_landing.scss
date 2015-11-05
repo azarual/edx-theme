@@ -4,14 +4,20 @@
 	background-position: center center;
 	background-color: $landing-hero-bg-color;
 	background-size: cover;
-	text-align: center;
+	text-align: left;
 	color: $landing-hero-text-color;
+	border-bottom: 2px solid #D7D7D7;
 
 	&__content {
-		max-width: 880px;
 		margin: 0 auto;
+		@include display(flex);
+
+		@media(max-width:$screen-sm-max) {
+			text-align: center;
+		}
 
 		&__text {
+			padding: 80px 0;
 
 			& h1 {
 				@include sans-serif-black;
@@ -25,9 +31,8 @@
 
 			& p {
 				@include sans-serif;
-				font-size: 20px;
-				line-height: 130%;
-				color: #fff;
+				font-size: 26px;
+				line-height: 160%;
 			}
 		}
 
@@ -41,6 +46,20 @@
 			text-decoration: none;
 		}
 	}
+
+	&__graphic {
+		position: relative;
+
+		@media(max-width: $screen-sm-max) {
+			display: none;
+		}
+
+		img {
+			height: 100%;
+			position: absolute;
+		}
+	}
+
 }
 
 
@@ -116,19 +135,41 @@
 
 
 .landing-courses {
+	padding: 40px 0;
 
-	& h2 {
-		@include sans-serif-bold;
-		font-size: 32px;
-		color: tint($base-text-color, 50%);
-		margin: 0 0 30px;
-		text-align: center;
+	&__header {
+		@include display(flex);
+		@include align-items(center);
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		margin-bottom: 30px;
+
+		&:before, &:after {
+			display: none;
+		}
+
+		& h2 {
+			@include sans-serif;
+			font-size: 26px;
+			color: $base-text-color;
+			margin: 10px 0;
+			text-align: center;
+		}
+
+		&__view-all {
+			@include sans-serif;
+			border-radius: 5px;
+			display: inline-block;
+			font-size: 16px;
+			padding: 10px 15px;
+			margin: 10px 0;
+			color: #fff !important;
+			background-color: #72498F;
+		}
 	}
 
 	&__container {
-		border-top: 2px solid tint($base-text-color, 80%);
-		border-bottom: 2px solid tint($base-text-color, 80%);
-		background-color: tint($base-text-color, 90%);
+
 	}
 
 	&__logo {
@@ -144,6 +185,11 @@
 			height: auto;
 			opacity: 0.4;
 		}
+	}
+
+	&__row {
+	    margin-left: -30px;
+    	margin-right: -30px;
 	}
 
 	& .row {
