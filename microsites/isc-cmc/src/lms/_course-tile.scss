@@ -1,0 +1,132 @@
+.course-tile {
+	@include display(flex);
+	margin-bottom: 30px;
+	@include transition(all 0.3s ease-in-out);
+	opacity: 1;
+
+	&.opaque {
+		opacity: 0.5;
+	}
+
+	&__body {
+		background-color: #fff;
+		padding: 0 15px;
+	}
+
+	&__image {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		height: 240px;
+		background-size: cover;
+		background-position: center center;
+		border: 1px solid #dedede;
+
+		& img {
+			width: 100%;
+			min-height: 100%;
+			height: auto;
+			@include transition(all 0.3s ease-in-out);
+		}
+
+		&:after {
+			content: " ";
+			width: 100%;
+			height: 4px;
+			background-color: #000;
+			opacity: 0.1;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			@include transition(all 0.3s ease-in-out);
+		}
+	}
+
+	&__info {
+		padding: 20px 0;
+	}
+
+	&__date {
+		@include sans-serif-bold;
+		color: tint($base-text-color, 40%);
+		font-size: 14px;
+		display: block;
+		margin-bottom: 2px;
+	}
+
+	&__name {
+		@include sans-serif-bold;
+		color: darken($brand-primary-color, 5%);
+		font-size: 18px;
+		line-height: 130%;
+		display: block;
+		min-height: 46px;
+		margin: 10px 0 10px;
+
+		& a {
+			font: inherit;
+			color: darken($brand-primary-color, 5%);
+			text-decoration: none;
+
+			&:hover, &:focus {
+				color: darken($brand-primary-color, 0%);
+			}
+
+			span {
+				font: inherit;
+			}
+		}
+	}
+
+	&__instructor {
+		@include sans-serif;
+		color: tint($base-text-color, 30%);
+		font-size: 12px;
+		display: block;
+	}
+
+	&__separator {
+		width: 100px;
+		height: 4px;
+		margin: 15px 0;
+		background-color: $brand-primary-color;
+	}
+
+	&__for {
+		color: #888;
+		margin-top: 15px;
+		display: block;
+	}
+
+	& p {
+		font-size: 16px;
+	}
+
+	&__cta, &__cta:link, &__cta:visited {
+		@include sans-serif-semibold;
+		font-size: 16px;
+		color: $brand-primary-color;
+
+		&:hover, &:focus {
+			text-decoration: none;
+			color: shade($brand-primary-color, 10%);
+		}
+	}
+
+	&:hover, &:focus {
+
+		& .course-tile {
+
+			&__image {
+
+				& img {
+					@include transform(scale(1.05));
+				}
+
+				&:after {
+					height: 6px;
+				}
+			}
+		}
+	}
+}

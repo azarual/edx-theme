@@ -1,0 +1,183 @@
+.cmc-login-signup {
+	background-color: #fff;
+
+	&__container {
+		padding: 50px 0;
+	}
+
+	&__box {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 500px;
+		border: 1px solid #ccc;
+	}
+
+	&__header {
+		background-color: #f5f5f5;
+		border-bottom: 1px solid #ccc;
+		padding: 25px 30px;
+
+		h1 {
+			@include sans-serif;
+			font-size: 26px;
+			margin: 0;
+			text-align: left;
+		}
+	}
+
+	&__status-message {
+		padding: 20px 30px;
+		background-color: #ededed;
+		border-bottom: 1px solid #ccc;
+		display: none;
+
+		&.is-shown {
+			display: block;
+		}
+
+		h3 {
+			font-size: 18px;
+			@include sans-serif-semibold;
+			margin: 0;
+			color: $brand-danger
+		}
+
+		p {
+			font-size: 16px;
+			@include sans-serif;
+			margin: 10px 0 0 0;
+		}
+	}
+
+	&__body {
+		padding: 0 30px 35px;
+		@include display(flex);
+		@include flex-wrap(wrap);
+	}
+
+	label {
+		display: inline-block;
+		width: 120px;
+		margin-right: 20px;
+		font-size: 16px;
+		@include sans-serif-bold;
+		@include flex-shrink(0);
+
+		@media(max-width:$screen-xs-max) {
+			width: 100%;
+			diplay: block;
+			margin-bottom: 15px;
+		}
+
+		a, a:link, a:visited {
+			@include sans-serif-bold;
+			color: $brand-primary-color;
+		}
+	}
+
+	span.required {
+		color: #ff0000;
+	}
+
+	.extra-required {
+		color: #898989;
+		font-size: 14px;
+		margin-left: 30px;
+	}
+
+	.helper-text {
+		width: 100%;
+		display: block;
+		padding-left: 140px;
+		margin-top: 10px;
+		@include sans-serif;
+		color: #898989;
+
+		a {
+			@include sans-serif-bold;
+			color: $brand-primary-color;
+		}
+
+		@media(max-width:$screen-xs-max) {
+			padding-left: 0;
+		}
+	}
+
+	.option-text {
+		margin: 15px 0;
+
+		a {
+			@include sans-serif-bold;
+			color: $brand-primary-color;
+		}
+	}
+
+	.checkbox-group {
+		@include display(flex);
+		@include align-items(center);
+		margin-top: 20px;
+
+		label {
+			width: 100%;
+			margin: 0;
+			@include sans-serif;
+		}
+
+		input {
+			@include flex-shrink(0);
+			margin: 0 10px 0 0;
+		}
+	}
+
+	.input {
+
+		&__group {
+			width: 100%;
+			margin-top: 20px;
+			@include display(flex);
+			@include align-items(center);
+
+			@media(max-width:$screen-xs-max) {
+				@include flex-wrap(wrap);
+			}
+
+			.checkbox-group {
+				margin-left: 30px;
+				margin-top: 0;
+			}
+		}
+
+		&__single {
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			padding: 20px 15px;
+			font-size: 16px;
+			@include sans-serif;
+			width: 100%;
+		}
+
+		&__submit {
+			display: inline-block;
+			padding: 15px 20px;
+			font-size: 16px;
+			color: #fff;
+			background: none;
+			border: none;
+			box-shadow: none;
+			text-shadow: none;
+			font: inherit;
+			outline: none;
+			@include sans-serif-semibold;
+			letter-spacing: 0;
+			background-color: $cmc-purple;
+			border-radius: 5px;
+			@include transition(all 0.3s ease-in-out);
+
+			&:hover, &:focus {
+				background: none;
+				background-color: darken($cmc-purple, 10%);
+			}
+		}
+	}
+}

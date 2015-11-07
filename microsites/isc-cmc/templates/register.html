@@ -1,0 +1,238 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from microsite_configuration import microsite %>
+
+<%inherit file="main.html" />
+
+<%namespace name='static' file='static_content.html'/>
+<%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
+
+<%! from django.core.urlresolvers import reverse %>
+<%! from django.utils import html %>
+<%! from django_countries import countries %>
+<%! from django.utils.translation import ugettext as _ %>
+<%! from student.models import UserProfile %>
+<%! from datetime import date %>
+<%! import third_party_auth %>
+<%! from third_party_auth import pipeline, provider %>
+<%! import calendar %>
+
+<%block name="pagetitle">${_("Register for {platform_name}").format(platform_name=platform_name)}</%block>
+
+<%block name="bodyclass">view-register</%block>
+
+<%block name="js_extra">
+  <script type="text/javascript">
+    $(function() {
+
+      // adding js class for styling with accessibility in mind
+      $('body').addClass('js');
+
+      // new window/tab opening
+      $('a[rel="external"], a[class="new-vp"]')
+      .click( function() {
+      window.open( $(this).attr('href') );
+      return false;
+      });
+
+      // form field label styling on focus
+      $("form :input").focus(function() {
+        $("label[for='" + this.id + "']").parent().addClass("is-focused");
+      }).blur(function() {
+        $("label").parent().removeClass("is-focused");
+      });
+
+    });
+
+    (function() {
+      toggleSubmitButton(true);
+
+      $('#register-form').on('submit', function() {
+        toggleSubmitButton(false);
+      });
+
+      $('#register-form').on('ajax:error', function() {
+        toggleSubmitButton(true);
+      });
+
+      $('#register-form').on('ajax:success', function(event, json, xhr) {
+        var url = json.redirect_url || "${reverse('dashboard')}";
+        location.href = url;
+      });
+
+      $('#register-form').on('ajax:error', function(event, jqXHR, textStatus) {
+        toggleSubmitButton(true);
+        json = $.parseJSON(jqXHR.responseText);
+        $('.status.message.submission-error').addClass('is-shown').focus();
+        $('.status.message.submission-error .message-copy').html(json.value).stop().css("display", "block");
+        $(".field-error").removeClass('field-error');
+        $("[data-field='"+json.field+"']").addClass('field-error')
+      });
+    })(this);
+
+    function thirdPartySignin(event, url) {
+      event.preventDefault();
+      window.location.href = url;
+    }
+
+    function toggleSubmitButton(enable) {
+      var $submitButton = $('form .form-actions #submit');
+
+      if(enable) {
+        $submitButton.
+          removeClass('is-disabled').
+          attr('aria-disabled', false).
+          removeProp('disabled').
+          html("${_('Create My {platform_name} Account').format(platform_name=platform_name)}");
+      }
+      else {
+        $submitButton.
+          addClass('is-disabled').
+          prop('disabled', true).
+          text("${_('Processing your account information')}");
+      }
+    }
+  </script>
+</%block>
+
+
+<section class="cmc-login-signup">
+  <form role="form" id="register-form" method="post" data-remote="true" action="/create_account" novalidate>
+    <div class="container-bs cmc-login-signup__container">
+      <div class="cmc-login-signup__box">
+        <div class="cmc-login-signup__header">
+          <h1>${_("Register for {platform_name}.").format(platform_name=platform_name)}</h1>
+        </div>
+
+        <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
+
+        <!-- Status messages -->
+        <div role="alert" class="cmc-login-signup__status-message status message form-alert">
+          <h3 class="form__status-message__title">${_("We're sorry, {platform_name} enrollment is not available in your region").format(platform_name=platform_name)}</h3>
+        </div>
+        <div role="alert" class="cmc-login-signup__status-message status message submission-error form-error">
+          <h3 class="form__status-message__title">${_("The following errors occurred while processing your registration:")}</h3>
+          <ul class="message-copy"> </ul>
+        </div>
+        <!-- end of status messages -->
+
+        <div class="cmc-login-signup__body">
+          <div class="input__group">
+            % if third_party_auth.is_enabled():
+              % for enabled in provider.Registry.enabled():
+                ## Translators: provider_name is the name of an external, third-party user authentication service (like Google or LinkedIn).
+                <button type="submit" class="signup-form__button form__button" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.NAME]}');"><span class="icon fa ${enabled.ICON_CLASS}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.NAME)}</button>
+              % endfor
+            % endif
+          </div>
+          <div class="option-text">
+            Please provide the following information to register for CMC online training. If you have a Coordinate My Care system login, then please provide the information associated with your CMC system login. Otherwise, provide your organisational details.
+
+          </div>
+
+          % if has_extauth_info is UNDEFINED:
+            <div class="input__group">
+              <label for="name">Full Name <span class="required">*</span></label>
+              <input id="name" type="text" name="name" class="input__single" placehoder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
+            </div>
+            <div class="input__group">
+              <label for="username">CMC Username</label>
+              <input id="username" type="text" class="input__single" name="username" value="${username}" placehoder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
+            </div>
+            <div class="input__group">
+              <label for="email">E-mail <span class="required">*</span></label>
+              <input id="email" type="email" class="input__single" name="email" value="${email}" placehoder="${_('example: username@domain.com')}" required aria-required="true" />
+            </div>
+            <div class="input__group">
+              <label for="organisation">Organisation <span class="required">*</span></label>
+              <input type="text" class="input__single" id="organisation" placeholder="Your organisation">
+            </div>
+            <div class="input__group">
+              <label for="job-title">Job title</label>
+              <input type="text" class="input__single" id="job-title" placeholder="Your job title">
+            </div>
+            % if third_party_auth.is_enabled() and running_pipeline:
+              <div class="input__group">
+                <label for="password">${_('Password')} <span class="required">*</span></label>
+                <input id="password" type="password" class="input__single" name="password" value="" disabled required aria-required="true" />
+              </div>
+
+            % else:
+              <div class="input__group">
+                <label for="password">${_('Password')} <span class="required">*</span></label>
+                <input id="password" type="password" class="input__single" name="password" value="" required aria-required="true" />
+              </div>
+            % endif
+
+          % else:
+            <div class="input__group">
+              <label for="name">Full Name <span class="required">*</span></label>
+              <input id="name" type="text" name="name" class="input__single" placehoder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
+            </div>
+            <div class="input__group">
+              <label for="username">CMC Username</label>
+              <input id="username" type="text" class="input__single" name="username" value="" placehoder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
+            </div>
+            <div class="input__group">
+              <label for="email">E-mail <span class="required">*</span></label>
+              <input id="email" type="email" class="input__single" name="email" value="" placehoder="${_('example: username@domain.com')}" required aria-required="true" />
+            </div>
+            <div class="input__group">
+              <label for="organisation">Organisation <span class="required">*</span></label>
+              <input type="text" class="input__single" id="organisation" placeholder="Your organisation">
+            </div>
+            <div class="input__group">
+              <label for="job-title">Job title</label>
+              <input type="text" class="input__single" id="job-title" placeholder="Your job title">
+            </div>
+          % endif
+
+          % if has_extauth_info is UNDEFINED or ask_for_tos :
+
+            <div class="checkbox-group">
+              <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" class="input__checkbox">
+              <label for="accept-tos" class="checkbox-label">${_('I have read and agree to {link_start}Terms and Conditions{link_end}').format(
+                link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('TOS')),
+                link_end='</a>')} <span class="required">*</span></label>
+            </div>
+
+          % endif
+
+          % if settings.REGISTRATION_EXTRA_FIELDS['honor_code'] != 'hidden':
+          ## If the stanford theme isn't enabled, check if we have an Honor Code link in our marketing map
+          % if not self.stanford_theme_enabled() and marketing_link('HONOR') and marketing_link('HONOR') != '#':
+          <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['honor_code']} checkbox-group" id="field-honorcode">
+            <input id="honorcode-yes" type="checkbox" name="honor_code" value="true" class="input__checkbox" />
+            <%
+              ## TODO: provide a better way to override these links
+              if self.stanford_theme_enabled():
+                honor_code_path = marketing_link('TOS') + "#honor"
+              else:
+                honor_code_path = marketing_link('HONOR')
+            %>
+            <label class="checkbox-label" for="honorcode-yes">${_('I agree to the {link_start}Honor Code{link_end}').format(
+              link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=honor_code_path),
+              link_end='</a>')} <span class="required">*</span></label>
+          </div>
+          % endif
+          % endif
+
+          % if course_id and enrollment_action:
+            <input type="hidden" name="enrollment_action" value="${enrollment_action | h}" />
+            <input type="hidden" name="course_id" value="${course_id | h}" />
+          % endif
+
+          % if email_opt_in:
+            <input type="hidden" name="email_opt_in" value="${email_opt_in | h }" />
+          % endif
+
+          <div class="input__group">
+            <button class="input__submit" name="submit" type="submit" id="submit">Sign in</button>
+            <div class="extra-required">
+              <span class="required">*</span> = required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

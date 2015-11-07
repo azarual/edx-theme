@@ -1,0 +1,242 @@
+.login-register {
+	padding: 30px 15px;
+	margin-bottom: 40px;
+	@include sans-serif;
+	min-width: 240px;
+
+	& .form-type, & .toggle-form {
+		min-width: 240px;
+	}
+
+	& .form-field {
+		margin-bottom: 15px;
+		@include display(flex);
+		@include flex-wrap(wrap);
+		@include align-items(center);
+
+		& input, & select {
+			border-radius: $form-input-border-radius;
+			@include sans-serif;
+			width: auto;
+			@include flex-grow(1);
+			height: auto;
+			padding: 10px;
+			font-size: 16px;
+			@include transition(all 0.3s ease-in-out);
+			border: 1px solid #a1a1a1;
+			border-radius: 5px;
+			position: relative;
+			top: 0;
+
+			&:focus {
+				outline: none;
+				border-color: $brand-primary-color;
+			}
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+
+		& textarea {
+			border-radius: $form-input-border-radius;
+			box-shadow: none;
+			@include sans-serif;
+			width: 100%;
+			height: auto;
+			padding: 10px 5px;
+			font-size: 16px;
+			@include transition(all 0.3s ease-in-out);
+			border: 1px solid #ddd;
+
+			&:focus {
+				outline: none;
+				border: 2px solid $brand-primary-color;
+				margin-bottom: 13px;
+			}
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+
+		& label {
+			display: inline-block;
+			width: 110px;
+			@include sans-serif-semibold;
+			font-size: 16px;
+			margin: 10px 0 0 0;
+			padding: 0;
+
+			&.required {
+				@include sans-serif-bold;
+			}
+
+			@media(max-width:$screen-xs-max) {
+				margin-bottom: 8px;
+				width: 100%;
+			}
+		}
+
+		& label[for="register-honor_code"], & label[for="login-remember"] {
+			margin: 0;
+		}
+
+		& label[for="login-remember"] {
+			position: relative;
+			top: -5px;
+		}
+
+		&.checkbox-honor_code {
+			@include display(flex);
+			@include flex-wrap(nowrap);
+			@include align-items(center);
+		}
+
+		&.checkbox-remember {
+
+			@media(max-width:$screen-xs-max) {
+				@include flex-wrap(nowrap);
+			}
+		}
+
+		label[for="register-honor_code"] {
+			width: auto;
+
+			a {
+				@include sans-serif-bold;
+				color: $brand-primary-color;
+			}
+		}
+
+		#register-honor_code {
+			display: inline-block;
+			margin-top: 5px;
+			margin-right: 15px;
+		}
+
+		& .tip {
+			width: 100%;
+			padding-left: 110px;
+			font-size: 14px;
+			margin-top: 7px;
+
+			@media(max-width:$screen-xs-max) {
+				padding-left: 0;
+			}
+		}
+
+		& .forgot-password {
+			width: 100%;
+			padding-left: 110px;
+			margin-top: 7px;
+			font-size: 14px;
+			@include sans-serif-bold;
+
+			@media(max-width:$screen-xs-max) {
+				padding-left: 0;
+			}
+		}
+
+		#login-remember {
+			@include flex-grow(0);
+			margin-left: 110px;
+
+			@media(max-width:$screen-xs-max) {
+				margin-left: 0;
+			}
+		}
+
+		& label[for="login-remember"] {
+			@include flex-grow(1);
+			margin-left: 5px;
+			font-size: 14px;
+		}
+	}
+
+	& .action-primary {
+		@include button-positive($cmc-purple);
+		display: inline-block;
+		outline: none;
+		border: none;
+		font-size: 16px;
+		padding: 10px;
+		box-shadow: none;
+		@include transition(all 0.3s ease-in-out);
+		width: auto;
+		padding: 15px 40px;
+		border-radius: 10px;
+		@include sans-serif-bold;
+
+		&:hover, &:focus {
+			border-radius: 10px;
+		}
+	}
+
+	.nav-btn {
+		padding: 10px;
+		margin-top: 5px;
+		height: auto;
+		display: inline-block;
+		margin: 5px auto 0;
+		width: auto;
+		@include transition(all 0.3s ease-in-out);
+		color: $brand-primary-color;
+		border-color: $brand-primary-color;
+		border-width: 2px;
+		border-radius: 10px;
+		padding: 10px 30px;
+
+		&:hover, &:focus {
+			margin: 5px 0 0;
+			width: 100%;
+			color: darken($brand-primary-color, 10%);
+			background: transparent;
+			box-shadow: none;
+			border: 2px solid darken($brand-primary-color, 10%);
+		}
+	}
+}
+
+.login-register .section-title {
+	background-color: #f5f5f5;
+	padding: 20px 25px;
+	margin-top: 0;
+	margin-left: -25px;
+	margin-right: -25px;
+
+	&.lines {
+
+		& h2 {
+			text-align: left;
+			font-size: 26px;
+			@include sans-serif;
+
+			span.text {
+				padding: 0;
+				top: 0;
+				background: none;
+			}
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+}
+
+.toggle-form .section-title {
+	background-color: transparent;
+	padding-bottom: 5px;
+}
+
+.login-register .note {
+	display: inline-block;
+	margin: 35px 0 0 20px;
+	font-size: 14px;
+}
+
+#login-anchor, #register-anchor {
+	padding-left: 0;
+	padding-right: 0;
+}
