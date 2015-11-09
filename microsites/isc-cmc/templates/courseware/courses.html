@@ -68,9 +68,9 @@
   <div class="courses-list-header__container container-bs">
     <h2>Courses</h2>
     <div class="courses-list-header__categories">
-      <a href="#" class="courses-list-header__category">CMC System Access</a>
-      <a href="#" class="courses-list-header__category">CMC System Training</a>
-      <a href="#" class="courses-list-header__category">Clinical Guidance</a>
+      <a href="#cmcsystemaccess" class="courses-list-header__category">CMC System Access</a>
+      <a href="#cmcsystemtraining" class="courses-list-header__category">CMC System Training</a>
+      <a href="#clinicalguidance" class="courses-list-header__category">Clinical Guidance</a>
     </div>
   </div>
 </section>
@@ -100,32 +100,40 @@
   <div class="courses-list__container">
     <div class="container-bs">
 
-      <!-- single courses category -->
-      <div class="row courses-list__row courses-list__category">
+      %for category in courses.keys():
+        <%
+          cgroupshort = category.replace(" ", "").lower()
+        %>
+        <!-- single courses category -->
+        <a name="${cgroupshort}"/>
+        <div class="row courses-list__row courses-list__category">
 
-        <!-- single category header with category name -->
-        <div class="col-xs-12 courses-list__category__heading">
-          <h2>CMC System Access</h2>
-        </div>
-        <!-- end of category header -->
+          <!-- single category header with category name -->
+          %if category != 'ungrouped':
+          <div class="col-xs-12 courses-list__category__heading">
+            <h2>${category}</h2>
+          </div>
+          %endif
+          <!-- end of category header -->
 
-        %for course in courses:
-        <!-- single course tile template -->
-        <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
-          <div class="course-tile__body">
-            <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image:url('${course_image_url(course)}');"></a>
-            <div class="course-tile__info">
-              <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h}: </span>${get_course_about_section(course, 'title')}</a></span>
-              <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
-              <span class="course-tile__for" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">For: <span>Everyone</span></span>
+          %for course in courses[category]:
+          <!-- single course tile template -->
+          <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
+            <div class="course-tile__body">
+              <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image:url('${course_image_url(course)}');"></a>
+              <div class="course-tile__info">
+                <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h}: </span>${get_course_about_section(course, 'title')}</a></span>
+                <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
+                <span class="course-tile__for" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">For: <span>Everyone</span></span>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- end of single course tile template -->
-        %endfor
+          <!-- end of single course tile template -->
+          %endfor
 
-      </div>
-      <!-- end of single courses category -->
+        </div>
+        <!-- end of single courses category -->
+      %endfor 
 
     </div>
   </div>
