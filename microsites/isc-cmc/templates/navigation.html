@@ -1,6 +1,6 @@
 ## mako
-<%namespace name='static' file='static_content.html'/>
-<%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
+<%namespace name='static' file='/static_content.html'/>
+<%namespace file='/main.html' import="login_query, stanford_theme_enabled"/>
 <%!
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
@@ -41,8 +41,8 @@ site_status_msg = get_site_status_msg(course_id)
 <nav class="navbar navbar-default" id="navbar">
   <div class="navigation container-bs">
     <div class="navbar-header">
-      <a class="page-scroll navbar__logo navbar__logo__positive" href="${marketing_link('ROOT')}"><img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/brand-logo.svg')}" alt="${platform_name()}"></a>
-      <a class="page-scroll navbar__logo navbar__logo__negative" href="${marketing_link('ROOT')}"><img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/brand-logo-negative.svg')}" alt="${platform_name()}"></a>
+      <a class="page-scroll navbar__logo navbar__logo__positive" href="${marketing_link('ROOT')}"><img src="${static.url('isc-cmc/images/brand-logo.svg')}" alt="${platform_name()}"></a>
+      <a class="page-scroll navbar__logo navbar__logo__negative" href="${marketing_link('ROOT')}"><img src="${static.url('isc-cmc/images/brand-logo-negative.svg')}" alt="${platform_name()}"></a>
 
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#edx-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -83,8 +83,8 @@ site_status_msg = get_site_status_msg(course_id)
             <li>
               <span class="navigation-group__user__name">${user.username}</span>
 							<a href="#" class="navigation-group__user__toggle dropdown-toggle" id="userDropdownMenu" data-toggle="dropdown" aria-expanded="true">
-								<img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/header-caron.png')}"  class="caron-png">
-								<img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/user-icon.png')}" class="user-icon-png">
+								<img src="${static.url('isc-cmc/images/header-caron.png')}"  class="caron-png">
+								<img src="${static.url('isc-cmc/images/user-icon.png')}" class="user-icon-png">
 							</a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="userDropdownMenu">
                 <li><a href="${reverse('dashboard')}">Dashboard</a></li>
@@ -132,7 +132,7 @@ site_status_msg = get_site_status_msg(course_id)
   % endif
 
   %if not user.is_authenticated():
-    <%include file="forgot_password_modal.html" />
+    <%include file="/forgot_password_modal.html" />
   %endif
 
-  <%include file="help_modal.html"/>
+  <%include file="/help_modal.html"/>

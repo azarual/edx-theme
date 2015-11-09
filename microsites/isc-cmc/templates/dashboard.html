@@ -1,5 +1,3 @@
-<%inherit file="main.html" />
-<%namespace name='static' file='static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
 from django.template import RequestContext
@@ -88,7 +86,7 @@ from django.core.urlresolvers import reverse
               <% is_course_blocked = (course.id in block_courses) %>
               <% course_verification_status = verification_status_by_course.get(course.id, {}) %>
               <% course_requirements = courses_requirements_not_met.get(course.id) %>
-              <%include file='dashboard/_dashboard_course_listing.html' args="course=course, enrollment=enrollment, show_courseware_link=show_courseware_link, cert_status=cert_status, show_email_settings=show_email_settings, course_mode_info=course_mode_info, show_refund_option = show_refund_option, is_paid_course = is_paid_course, is_course_blocked = is_course_blocked, verification_status=course_verification_status, course_requirements=course_requirements" />
+              <%include file='/dashboard/_dashboard_course_listing.html' args="course=course, enrollment=enrollment, show_courseware_link=show_courseware_link, cert_status=cert_status, show_email_settings=show_email_settings, course_mode_info=course_mode_info, show_refund_option = show_refund_option, is_paid_course = is_paid_course, is_course_blocked = is_course_blocked, verification_status=course_verification_status, course_requirements=course_requirements" />
           % endfor
 
         % else:
@@ -132,7 +130,7 @@ from django.core.urlresolvers import reverse
         <p class="field-value">${ user.email | h }</p>
 
         %if len(language_options) > 1:
-        <%include file='dashboard/_dashboard_info_language.html' />
+        <%include file='/dashboard/_dashboard_info_language.html' />
         %endif
 
         % if third_party_auth.is_enabled():
@@ -202,9 +200,9 @@ from django.core.urlresolvers import reverse
         </form>
         % endif
 
-        <%include file='dashboard/_dashboard_status_verification.html' />
+        <%include file='/dashboard/_dashboard_status_verification.html' />
 
-        <%include file='dashboard/_dashboard_reverification_sidebar.html' />
+        <%include file='/dashboard/_dashboard_reverification_sidebar.html' />
       </div>
     </div>
   </div>
@@ -350,7 +348,7 @@ from django.core.urlresolvers import reverse
   </div>
 </section>
 
-<%include file='modal/_modal-settings-language.html' />
+<%include file='/modal/_modal-settings-language.html' />
 
 <section id="apply_name_change" class="modal" aria-hidden="true">
   <div class="inner-wrapper" role="dialog" aria-labelledby="change-name-title">

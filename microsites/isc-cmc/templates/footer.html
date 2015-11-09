@@ -1,7 +1,7 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
 <%! from django.utils.translation import ugettext as _ %>
-<%namespace name='static' file='static_content.html'/>
+<%namespace name='static' file='/static_content.html'/>
 <%! from microsite_configuration.templatetags.microsite import platform_name %>
 
 <footer class="footer">
@@ -18,7 +18,7 @@
     </div>
     <div class="footer__poweredby">
       <span>Built on:</span>
-      <a href="http://open.edx.org" target="_blank" class="footer__poweredby__logo" alt="Open edX"><img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/openedx-logo.svg')}" style="height: 14px;" alt="Open edX"></a>
+      <a href="http://open.edx.org" target="_blank" class="footer__poweredby__logo" alt="Open edX"><img src="${static.url('isc-cmc/images/openedx-logo.svg')}" style="height: 14px;" alt="Open edX"></a>
     </div>
   </div>
   <div class="container-bs footer__edx-legal">
@@ -31,13 +31,13 @@
 
 
     <!-- Include jQuery mobile -->
-    <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/jquery.mobile.custom.min.js')}"></script>
+    <script src="${static.url('isc-cmc/js/jquery.mobile.custom.min.js')}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/bootstrap.min.js')}"></script>
+    <script src="${static.url('isc-cmc/js/bootstrap.min.js')}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/bowser.min.js')}"></script>
+    <script src="${static.url('isc-cmc/js/bowser.min.js')}"></script>
     <!-- Custom base JavaScript -->
-    <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/base.js')}"></script>
+    <script src="${static.url('isc-cmc/js/base.js')}"></script>
 
     <!-- old IE redirect -->
     <script>
