@@ -66,7 +66,7 @@
 <!-- Header with categories -->
 <section class="courses-list-header">
   <div class="courses-list-header__container container-bs">
-    <h2>Courses</h2>
+    <h2>Modules</h2>
     <div class="courses-list-header__categories">
       <a href="#cmcsystemaccess" class="courses-list-header__category">CMC System Access</a>
       <a href="#cmcsystemtraining" class="courses-list-header__category">CMC System Training</a>
@@ -124,7 +124,6 @@
               <div class="course-tile__info">
                 <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h}: </span>${get_course_about_section(course, 'title')}</a></span>
                 <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
-                <span class="course-tile__for" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">For: <span>Everyone</span></span>
               </div>
             </div>
           </div>
@@ -133,7 +132,7 @@
 
         </div>
         <!-- end of single courses category -->
-      %endfor 
+      %endfor
 
     </div>
   </div>

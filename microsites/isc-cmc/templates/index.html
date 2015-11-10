@@ -60,8 +60,8 @@
 % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
   <section class="landing-courses">
     <div class="container-bs landing-courses__header">
-      <h2>Featured courses</h2>
-      <a href="/courses" class="landing-courses__header__view-all">Browse all courses</a>
+      <h2>Example modules</h2>
+      <a href="/courses" class="landing-courses__header__view-all">Browse all modules</a>
     </div>
 
     <div class="landing-courses__container">
@@ -78,7 +78,6 @@
                 <div class="course-tile__info">
                   <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h} </span>${get_course_about_section(course, 'title')}</a></span>
                   <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
-                  <span class="course-tile__for">For: <span>Everyone</span></span>
                 </div>
               </div>
             </div>
