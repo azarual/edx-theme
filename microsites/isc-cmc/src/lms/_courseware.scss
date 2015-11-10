@@ -1,6 +1,19 @@
 nav.courseware.wrapper-course-material {
   background-color: #f5f5f5;
   border-bottom: 1px solid #ccc;
+
+  &.progress {
+    height: auto;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.wrapper-course-material.progress {
+  height: auto;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+  overflow: visible;
 }
 
 .wrapper-course-material .course-material, .wrapper-preview-menu .preview-menu {
@@ -12,7 +25,7 @@ nav.courseware.wrapper-course-material {
   padding: 15px 0 0;
 }
 
-.wrapper-course-material ol.course-tabs li a {
+.wrapper-course-material ol.course-tabs li a, .wrapper-course-material.progress ol.course-tabs li a, .wrapper-course-material ol.course-tabs li a.active, .wrapper-course-material.progress ol.course-tabs li a.active {
   color: $brand-primary-color;
   font: inherit;
   font-size: 16px;
