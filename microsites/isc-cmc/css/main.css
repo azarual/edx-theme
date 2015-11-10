@@ -7812,7 +7812,8 @@ Copyright (c) 2015 Daniel Eden
         box-shadow: none; }
 
 .landing-courses {
-  padding: 40px 0; }
+  padding: 40px 0;
+  background-color: #fff; }
   .landing-courses__header {
     display: -webkit-box;
     display: -moz-box;
@@ -10361,7 +10362,13 @@ Copyright (c) 2015 Daniel Eden
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-style: normal; }
-    .cmc-course-body__description h2, .cmc-course-body__description h3 {
+    .cmc-course-body__description h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 16px;
+      margin: 0 0 15px 0; }
+    .cmc-course-body__description h3 {
       display: block;
       font-size: 21px;
       margin: 25px 0 20px; }

@@ -99,7 +99,13 @@
     font-size: 16px;
     @include sans-serif;
 
-    h2, h3 {
+    h2 {
+      @include sans-serif-bold;
+      font-size: 16px;
+      margin: 0 0 15px 0;
+    }
+
+    h3 {
       display: block;
       font-size: 21px;
       margin: 25px 0 20px;
