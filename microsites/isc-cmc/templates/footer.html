@@ -39,11 +39,13 @@
     <!-- Custom base JavaScript -->
     <script src="${static.url('isc-cmc/js/base.js')}"></script>
 
-    <!-- old IE redirect -->
-    <script>
-        $(document).ready(function() {
-          if (do_redirect && bowser.msie && bowser.version <= 8) {
-            $(location).attr('href','${marketing_link('FAQ')}');
-          }
-        });
-    </script>
+    % if user.is_authenticated():
+      <!-- old IE redirect -->
+      <script>
+          $(document).ready(function() {
+            if (do_redirect && bowser.msie && bowser.version <= 8) {
+              $(location).attr('href','http://cmc.learning.intersystems.com/ie-static');
+            }
+          });
+      </script>
+    % endif
