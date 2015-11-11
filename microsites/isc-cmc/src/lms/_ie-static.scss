@@ -137,3 +137,11 @@
     }
   }
 }
+
+.no-flexbox .ie-courses-header__container {
+  display: table;
+}
+
+.no-flexbox .ie-courses-header__container ul {
+  display: table-cell;
+}

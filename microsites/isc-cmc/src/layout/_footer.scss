@@ -174,3 +174,11 @@
 		color: rgba($footer-text-color, 0.4);
 	}
 }
+
+.no-flexbox {
+
+	.footer__content, .footer__poweredby {
+		display: table-cell !important;
+		width: auto !important;
+	}
+}

@@ -14,6 +14,12 @@ from status.status import get_site_status_msg
 <%! from microsite_configuration import microsite %>
 <%! from microsite_configuration.templatetags.microsite import platform_name %>
 
+<!-- Respond.js for IE -->
+<script src="${static.url('isc-cmc/js/respond.min.js')}"></script>
+
+<script>
+  var do_redirect = true;
+</script>
 
 ## Provide a hook for themes to inject branding on top.
 <%block name="navigation_top" />
@@ -53,7 +59,7 @@ site_status_msg = get_site_status_msg(course_id)
 
       ## If on a course page - display course info
       % if course:
-        <div class="navigation__course-name"><span class="navigation__course-name__provider">${course.display_number_with_default | h}:</span> ${course.display_number_with_default | h} ${course.display_name_with_default}</div>
+        <div class="navigation__course-name"><span class="navigation__course-name__provider">${course.display_number_with_default | h}:</span> ${course.display_name_with_default}</div>
       % else:
         <div class="navigation__course-name">
           <span class="homepage">online training</span>
@@ -72,11 +78,6 @@ site_status_msg = get_site_status_msg(course_id)
         </ul>
 
         % if user.is_authenticated():
-
-          ## if user is logged in, redirect him to courses static content if he uses old IE
-          <script>
-            var do_redirect = 'true';
-          </script>
 
           ## Display user section of menu
           <ul class="navigation-group navigation-group__user">

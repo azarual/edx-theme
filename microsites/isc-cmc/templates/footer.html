@@ -33,6 +33,8 @@
 
     <!-- Include jQuery mobile -->
     <script src="${static.url('isc-cmc/js/jquery.mobile.custom.min.js')}"></script>
+    <!-- Modernizr -->
+    <script src="${static.url('isc-cmc/js/modernizr-custom.js')}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="${static.url('isc-cmc/js/bootstrap.min.js')}"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -44,7 +46,7 @@
       <!-- old IE redirect -->
       <script>
           $(document).ready(function() {
-            if (do_redirect && bowser.msie && bowser.version <= 8) {
+            if (do_redirect && bowser.msie && bowser.version < 9) {
               $(location).attr('href','http://cmc.learning.intersystems.com/ie-static');
             }
           });

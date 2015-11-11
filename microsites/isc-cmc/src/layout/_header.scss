@@ -29,7 +29,7 @@
 		}
 
 		& img {
-			  width: auto;
+			  width: $header-logo-width;
 			  height: $header-logo-height;
 			  margin: $header-logo-margin;
 		}
@@ -343,5 +343,16 @@
 @media (max-width: $screen-xs-max) {
 	.navbar__logo {
 		margin-left: 10px;
+	}
+}
+
+.no-flexbox {
+
+	.navigation {
+		display: table !important;
+	}
+
+	.navigation-group {
+		display: table-cell !important;
 	}
 }
