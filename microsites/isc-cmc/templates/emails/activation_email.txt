@@ -1,0 +1,20 @@
+<%! from django.utils.translation import ugettext as _ %>
+
+${_("Thank you for signing up for Coordinate My Care Online Training account."
+"To activate your account, click the link below. Alternatively, copy and paste"
+" the URL into your web browser's address bar:")}
+
+% if is_secure:
+  https://${ site }/activate/${ key }
+% else:
+  http://${ site }/activate/${ key }
+% endif
+
+${_("If you didn't request this account, you don't need to do anything; you won't receive any more email from us. Please do not reply to this e-mail; "
+    "if you require assistance, please contact the CMC Help Desk via phone "
+    "between 9-5 Mon - Fri: 020 7811 8513.  Or contact the CMC training team "
+    "via email: CMC_training@nhs.net or alternatively you can call the "
+    "training team on 0207 811 8074. "
+ 
+"Regards, "
+"The CMC Training Team ")}
