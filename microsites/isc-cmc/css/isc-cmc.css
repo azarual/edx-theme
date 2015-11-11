@@ -7109,8 +7109,7 @@ Copyright (c) 2015 Daniel Eden
     .navbar__logo img {
       width: auto;
       height: 44px;
-      margin: 0;
-      max-width: 100%; }
+      margin: 0; }
     .navbar__logo__positive {
       display: none; }
     .navbar__logo__negative {
