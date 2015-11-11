@@ -8546,6 +8546,11 @@ Copyright (c) 2015 Daniel Eden
       background: none;
       background-color: #57386c; }
 
+.no-flexbox .cmc-login-signup__body .input-group {
+  display: table !important; }
+.no-flexbox .cmc-login-signup__body .checkbox-group {
+  display: table-cell !important; }
+
 .course-header {
   background-color: rgba(0, 0, 0, 0.02);
   border-top: 4px solid #00AFE4;

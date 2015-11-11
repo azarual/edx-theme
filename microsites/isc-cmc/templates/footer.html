@@ -42,7 +42,6 @@
     <!-- Custom base JavaScript -->
     <script src="${static.url('isc-cmc/js/base.js')}"></script>
 
-    % if user.is_authenticated():
       <!-- old IE redirect -->
       <script>
           $(document).ready(function() {
@@ -51,4 +50,3 @@
             }
           });
       </script>
-    % endif

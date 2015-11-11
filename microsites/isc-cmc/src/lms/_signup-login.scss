@@ -186,3 +186,17 @@
 		}
 	}
 }
+
+.no-flexbox {
+
+	.cmc-login-signup__body {
+
+		.input-group {
+			display: table !important;
+		}
+
+		.checkbox-group {
+			display: table-cell !important;
+		}
+	}
+}
