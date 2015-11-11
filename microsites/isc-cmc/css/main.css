@@ -8340,6 +8340,8 @@ Copyright (c) 2015 Daniel Eden
     width: 100%;
     max-width: 500px;
     border: 1px solid #ccc; }
+    .cmc-login-signup__box .alert {
+      padding: 30px; }
   .cmc-login-signup__header {
     background-color: #f5f5f5;
     border-bottom: 1px solid #ccc;
