@@ -1,5 +1,5 @@
-<%inherit file="/main.html" />
-<%namespace name='static' file='/static_content.html'/>
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
 
 <%!
   from django.utils.translation import ugettext as _
@@ -55,7 +55,7 @@
           % endif
         </div>
         <div class="landing-hero__graphic col-md-5">
-          <img src="${static.url('isc-cmc/images/landing-graphic.svg')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/landing-graphic.svg')}">
         </div>
       </div>
     </div>
@@ -92,16 +92,16 @@
       <!-- single course -->
       <div class="ie-course row">
         <div class="col-xs-12 col-sm-4 ie-course__image">
-          <img src="${static.url('isc-cmc/images/course-images/cmc-1.png')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/course-images/cmc-1.png')}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5 ie-course__info">
           <h3 class="ie-course__info__name">CMC100: Introduction to Coordinate My Care and Accessing the System</h3>
           <p>
-            Learn what Coordinate My Care is and how to get started in the system.
+            For all users. This module introduces the Coordinate My Care (CMC) organisation, explains the purpose of care plans and provides steps for requesting a Coordinate My Care system login.
           </p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 ie-course__resources">
-          <a href="#" class="ie-course__resources__pdf-button">Module content PDF</a>
+          <a href="http://training.intersystems.com/samples/cmc/live/CMC100/CMC100.IntroductiontoCoordinateMyCareandAccessingtheSystem.pdf" class="ie-course__resources__pdf-button">Module content PDF</a>
         </div>
       </div>
       <!-- end of single course -->
@@ -113,67 +113,59 @@
       <!-- single course -->
       <div class="ie-course row">
         <div class="col-xs-12 col-sm-4 ie-course__image">
-          <img src="${static.url('isc-cmc/images/course-images/cmc-8.png')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/course-images/cmc-8.png')}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5 ie-course__info">
           <h3 class="ie-course__info__name">CMC101: Logging In to the System</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            For all users. This module will instruct users how to log in to the Coordinate My Care system and change their password.
           </p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 ie-course__resources">
-          <a href="#" class="ie-course__resources__pdf-button">Module content PDF</a>
-          <ul>
-            <li>
-              Video
-            </li>
-            <li>
-              <a href="#">Logging in for the first time</a>
-            </li>
-          </ul>
+          <a href="http://training.intersystems.com/samples/cmc/live/CMC101/CMC101.LoggingIntotheCoordinateMyCareSystem.pdf" class="ie-course__resources__pdf-button">Module content PDF</a>
         </div>
       </div>
       <!-- end of single course -->
       <!-- single course -->
       <div class="ie-course row">
         <div class="col-xs-12 col-sm-4 ie-course__image">
-          <img src="${static.url('isc-cmc/images/course-images/cmc-9.png')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/course-images/cmc-9.png')}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5 ie-course__info">
           <h3 class="ie-course__info__name">CMC102: Creating a New Care Plan</h3>
           <p>
-            Nullam pharetra dolor nisl, non pellentesque tortor posuere vel.
+            For clinical and administrative users. This course will familiarize users with the care plan approval process and how to create a new care plan for a patient.
           </p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 ie-course__resources">
-          <a href="#" class="ie-course__resources__pdf-button">Module content PDF</a>
+          <a href="http://training.intersystems.com/samples/cmc/live/CMC102/CMC102.CreatingaNewCarePlan.pdf" class="ie-course__resources__pdf-button">Module content PDF</a>
           <ul>
             <li>
               Videos
             </li>
             <li>
-              <a href="#">Care Plan Life Cycle</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4605153993001_4601845877001.mp4">The Care Plan Life Cycle</a>
             </li>
             <li>
-              <a href="#">Creating a Care Plan</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4603497698001_4603480036001.mp4">The Home Screen</a>
             </li>
             <li>
-              <a href="#">Data Entry: Patient Details</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4598752625001_4598720329001.mp4">Creating a New Care Plan</a>
             </li>
             <li>
-              <a href="#">Data Entry: Patient Details</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4604911301001_4600277534001.mp4">Data Entry: Patient Details</a>
             </li>
             <li>
-              <a href="#">Data Entry: Significant Medical Details & Medications</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4605289972001_4601343768001.mp4">Data Entry: Significant Medical Details & Medications</a>
             </li>
             <li>
-              <a href="#">Data Entry: Preferences, CPR, Treatment Plan</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4605289972001_4601343768001.mp4">Data Entry: Preferences, CPR, Treatment Plan</a>
             </li>
             <li>
-              <a href="#">Data Entry: Contacts</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4605238890001_4602112148001.mp4">Data Entry: Contacts</a>
             </li>
             <li>
-              <a href="#">Care Plan Approval</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4601408046001_4601369934001.mp4">Care Plan Approval</a>
             </li>
           </ul>
         </div>
@@ -182,41 +174,41 @@
       <!-- single course -->
       <div class="ie-course row">
         <div class="col-xs-12 col-sm-4 ie-course__image">
-          <img src="${static.url('isc-cmc/images/course-images/cmc-4.png')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/course-images/cmc-4.png')}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5 ie-course__info">
           <h3 class="ie-course__info__name">CMC103: Reviewing, Updating and Recording Death</h3>
           <p>
-            Praesent sagittis tincidunt urna, sit amet euismod mauris eleifend eu.
+            For clinical and administrative users.  This module explains how to find a patient care plan and the difference between opening a care plan in View Only and Editing mode.
           </p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 ie-course__resources">
-          <a href="#" class="ie-course__resources__pdf-button">Module content PDF</a>
+          <a href="http://training.intersystems.com/samples/cmc/live/CMC103/CMC103.ReviewingUpdatingandRecordingDeath.pdf" class="ie-course__resources__pdf-button">Module content PDF</a>
         </div>
       </div>
       <!-- end of single course -->
       <!-- single course -->
       <div class="ie-course row">
         <div class="col-xs-12 col-sm-4 ie-course__image">
-          <img src="${static.url('isc-cmc/images/course-images/cmc-5.png')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/course-images/cmc-5.png')}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5 ie-course__info">
           <h3 class="ie-course__info__name">CMC104: Viewing a Care Plan</h3>
           <p>
-            Learn about the elements of a care plan and how to interpret them.
+            For urgent care users. This module provides an introduction to the Urgent Care Summary screen and navigation menus which provide access to detailed information about a patient and the patient's care plan.
           </p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 ie-course__resources">
-          <a href="#" class="ie-course__resources__pdf-button">Module content PDF</a>
+          <a href="http://training.intersystems.com/samples/cmc/live/CMC104/CMC104.ViewingaCarePlan.pdf" class="ie-course__resources__pdf-button">Module content PDF</a>
           <ul>
             <li>
               Videos
             </li>
             <li>
-              <a href="#">Viewing a Care Plan</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4605153993001_4601845877001.mp4">The Care Plan Life Cycle</a>
             </li>
             <li>
-              <a href="#">Breaking the Glass</a>
+              <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4603502645001_4603480040001.mp4">Viewing a Care Plan</a>
             </li>
           </ul>
         </div>
@@ -231,48 +223,48 @@
       <!-- single course -->
       <div class="ie-course row">
         <div class="col-xs-12 col-sm-4 ie-course__image">
-          <img src="${static.url('isc-cmc/images/course-images/cmc-3-1.png')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/course-images/cmc-3-1.png')}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5 ie-course__info">
           <h3 class="ie-course__info__name">CMC201: Patient Consent</h3>
           <p>
-            Learn about patient interaction and recording their wishes in a care plan.
+            For clinical users. This video explains the details of patient consent.
           </p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 ie-course__resources">
-          <a href="#" class="ie-course__resources__pdf-button">Video</a>
+          <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201510/90843153001_4584396803001_4584363623001.mp4" class="ie-course__resources__pdf-button">Video</a>
         </div>
       </div>
       <!-- end of single course -->
       <!-- single course -->
       <div class="ie-course row">
         <div class="col-xs-12 col-sm-4 ie-course__image">
-          <img src="${static.url('isc-cmc/images/course-images/cmc-3-2.png')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/course-images/cmc-3-2.png')}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5 ie-course__info">
           <h3 class="ie-course__info__name">CMC202: Mental Capacity </h3>
           <p>
-            In congue dui eu neque convallis condimentum. Nunc ornare tellus.
+            For clinical users. This video explains the details of mental capacity.
           </p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 ie-course__resources">
-          <a href="#" class="ie-course__resources__pdf-button">Video</a>
+          <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4604786598001_4604770431001.mp4" class="ie-course__resources__pdf-button">Video</a>
         </div>
       </div>
       <!-- end of single course -->
       <!-- single course -->
       <div class="ie-course row">
         <div class="col-xs-12 col-sm-4 ie-course__image">
-          <img src="${static.url('isc-cmc/images/course-images/cmc-3-3.png')}">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/course-images/cmc-3-3.png')}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5 ie-course__info">
           <h3 class="ie-course__info__name">CMC203: Advance Care Planning</h3>
           <p>
-            In congue dui eu neque convallis condimentum. Nunc ornare tellus.
+            For clinical users. This video explains the details of advance care planning.
           </p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3 ie-course__resources">
-          <a href="#" class="ie-course__resources__pdf-button">Video</a>
+          <a href="http://brightcove04.brightcove.com/hd2/41/90843153001/201511/90843153001_4604790369001_4604770445001.mp4" class="ie-course__resources__pdf-button">Video</a>
         </div>
       </div>
       <!-- end of single course -->
