@@ -355,4 +355,14 @@
 	.navigation-group {
 		display: table-cell !important;
 	}
+
+	.navbar-collapse {
+		position: relative;
+		top: 10px;
+	}
+
+	.navbar__logo {
+		position: relative;
+		top: 10px;
+	}
 }

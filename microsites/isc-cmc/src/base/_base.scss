@@ -99,3 +99,18 @@ textarea, input[type="text"], input[type="email"], input[type="password"], input
 	font-size: 16px;
 	@include sans-serif;
 }
+
+.svg-fallback.png {
+	display: none;
+}
+
+.no-svgasimg {
+
+	.svg-fallback.svg {
+		display: none;
+	}
+
+	.svg-fallback.png {
+		display: block;
+	}
+}

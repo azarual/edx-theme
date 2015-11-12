@@ -4515,6 +4515,14 @@ textarea, input[type="text"], input[type="email"], input[type="password"], input
   font-weight: 400;
   font-style: normal; }
 
+.svg-fallback.png {
+  display: none; }
+
+.no-svgasimg .svg-fallback.svg {
+  display: none; }
+.no-svgasimg .svg-fallback.png {
+  display: block; }
+
 .form a, .form a:link {
   color: #00AFE4; }
   .form a:hover, .form a:focus, .form a:link:hover, .form a:link:focus {
@@ -7469,6 +7477,12 @@ Copyright (c) 2015 Daniel Eden
   display: table !important; }
 .no-flexbox .navigation-group {
   display: table-cell !important; }
+.no-flexbox .navbar-collapse {
+  position: relative;
+  top: 10px; }
+.no-flexbox .navbar__logo {
+  position: relative;
+  top: 10px; }
 
 .page-header-arrow {
   padding: 40px 30px 50px;
