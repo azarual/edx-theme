@@ -10530,6 +10530,8 @@ Copyright (c) 2015 Daniel Eden
     background-color: #f6f7c4;
     border: 1px solid #ccc;
     font-size: 16px; }
+    .ie-warning p .red {
+      color: #d9534f; }
 
 .ie-courses-header {
   padding: 40px 0; }
@@ -10643,6 +10645,12 @@ Copyright (c) 2015 Daniel Eden
         font-family: 'Open Sans', sans-serif;
         font-weight: 700;
         font-style: normal; }
+        .ie-course__resources ul li.warning {
+          color: #d9534f;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 14px; }
         .ie-course__resources ul li a {
           color: #00AFE4;
           font-family: 'Open Sans', sans-serif;

@@ -9,6 +9,10 @@
     background-color: #f6f7c4;
     border: 1px solid #ccc;
     font-size: 16px;
+
+    .red {
+      color: $brand-danger;
+    }
   }
 }
 
@@ -128,6 +132,12 @@
         padding: 5px;
         display: block;
         @include sans-serif-bold;
+
+        &.warning {
+          color: $brand-danger;
+          @include sans-serif;
+          font-size: 14px;
+        }
 
         a {
           color: $brand-primary-color;
