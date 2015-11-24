@@ -7130,7 +7130,7 @@ Copyright (c) 2015 Daniel Eden
 .navbar-nav {
   margin-top: 0;
   font-size: 16px; }
-  @media (min-width: 768px) {
+  @media (min-width: 991px) {
     .navbar-nav {
       display: -webkit-box;
       display: -moz-box;
@@ -7156,13 +7156,13 @@ Copyright (c) 2015 Daniel Eden
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       float: right; } }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     .navbar-nav {
       text-align: center; } }
   .navbar-nav li {
     list-style-type: none;
     padding: 5px 1px; }
-    @media (min-width: 768px) {
+    @media (min-width: 991px) {
       .navbar-nav li {
         display: inline-block;
         padding: 0 0px; } }
@@ -7191,7 +7191,7 @@ Copyright (c) 2015 Daniel Eden
       border-radius: 5px 0 0 5px; }
     .navbar-nav li:last-child a {
       border-radius: 0 5px 5px 0; }
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       .navbar-nav li {
         padding: 15px; }
         .navbar-nav li:first-child a, .navbar-nav li:last-child a, .navbar-nav li a {
@@ -7245,7 +7245,7 @@ Copyright (c) 2015 Daniel Eden
     .navbar-nav .dropdown-menu .divider {
       padding: 0; }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .navigation {
     display: -webkit-box;
     display: -moz-box;
@@ -7281,7 +7281,7 @@ Copyright (c) 2015 Daniel Eden
 .navbar-nav .navigation-group {
   margin-top: 20px;
   padding: 0; }
-  @media (min-width: 768px) {
+  @media (min-width: 991px) {
     .navbar-nav .navigation-group {
       border-right: 1px solid rgba(0, 0, 0, 0.15);
       padding: 0;
@@ -7326,6 +7326,10 @@ Copyright (c) 2015 Daniel Eden
   .navbar-nav .navigation-group__user .user-icon-png {
     width: 25px;
     height: auto; }
+  .navbar-nav .navigation-group__user .dropdown-menu {
+    margin: 30px 0; }
+    .navbar-nav .navigation-group__user .dropdown-menu li a {
+      color: #fff !important; }
 
 .navbar-collapse {
   -webkit-flex-shrink: 0;
@@ -7336,7 +7340,7 @@ Copyright (c) 2015 Daniel Eden
   -moz-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1; }
-  @media (min-width: 768px) {
+  @media (min-width: 991px) {
     .navbar-collapse {
       display: -webkit-box;
       display: -moz-box;
@@ -7355,9 +7359,10 @@ Copyright (c) 2015 Daniel Eden
       align-items: center;
       -ms-flex-align: center;
       float: right; } }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     .navbar-collapse {
-      margin-top: 20px; } }
+      margin-top: 20px;
+      max-height: 100vh; } }
   .navbar-collapse:before, .navbar-collapse:after {
     display: none; }
 
@@ -7451,7 +7456,7 @@ Copyright (c) 2015 Daniel Eden
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: rgba(0, 0, 0, 0.2); }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .navbar .container-bs {
     display: -webkit-box;
     display: -moz-box;
@@ -7483,6 +7488,9 @@ Copyright (c) 2015 Daniel Eden
 .no-flexbox .navbar__logo {
   position: relative;
   top: 10px; }
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.3); }
 
 .page-header-arrow {
   padding: 40px 30px 50px;
