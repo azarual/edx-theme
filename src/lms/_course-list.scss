@@ -9,6 +9,7 @@
 	margin-bottom: 30px;
 	@include transition(all 0.3s ease-in-out);
 	opacity: 1;
+	list-style-type: none;
 
 	&.opaque {
 		opacity: 0.5;
@@ -132,4 +133,10 @@
 			}
 		}
 	}
+}
+
+.courses-listing-item {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
