@@ -13,7 +13,7 @@
 
   #show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
   #homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "jkIOi5bCMSo")
-  show_homepage_promo_video = True
+  show_homepage_promo_video = False
   homepage_promo_video_youtube_id = "jkIOi5bCMSo"
 
   show_partners = microsite.get_value('show_partners', True)
@@ -42,15 +42,15 @@
     <div class="container-bs">
       <div class="landing-hero__content">
         <div class="landing-hero__content__text">
-          <h1>Appsembler Academy</h1>
-          <p>Bringing you mobile optimized courses about Open edX</p>
+          <h1>Bodymind Institute</h1>
+          <p>Connecting You With Personal Education And Career Growth</p>
         </div>
 
         % if show_homepage_promo_video:
 
           <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View a sample video</a>
 
-        % endif  
+        % endif
       </div>
     </div>
   </section>
@@ -58,29 +58,16 @@
   <section class="landing-additional-text">
     <div class="container-bs">
       <div class="landing-additional-text__content">
-        <h2>The Open edX Enterprise Experts</h2>
+        <h2>Our Story</h2>
           <div class="landing-additional-text__separator"></div>
-          <p>Appsembler is a leader in delivering educational technology solutions. We are a full-service Open edX solutions provider offering hosting, support, expert assistance and custom development services. edX is a nonprofit online initiative created by founding partners Harvard and MIT and composed of dozens of leading global institutions, the xConsortium. EdX offers interactive online courses and MOOCs from the world’s best universities and institutions.</p>
-          <p>Open edX is the open source platform that powers edX courses, and the Open edX code is freely available to the community.</p>
+          <p>BodyMind Institute Founder, Lars Gustafsson recalls: In 2008, it was on one of my many, many personal trips into the Canadian Rocky Mountains, that I suddenly realized:</p>
+          <p><i>"Everything that I have been learning and preparing for, in creating online learning for the BodyMind Nutrition certifications, is actually meant to be in support of a much more broad holistic education vision!"</i>
+          <p>I clearly remember what it felt like to realize that, everything I had been preparing for, was intended to support the brilliant professional instructors (which I would later meet).  In those special personal moments in the mountains, I was enthralled, and I couldn’t wait to take this Canadian Rocky Mountain vision to our BodyMind advisory board. At that time, I had the incredible privilege, honor, and pleasure to retain an advisory board group with 17 of the most generous and intelligent doctors, business and life coaches, and wellness experts.  In one of our quarterly meetings, this group unanimously agreed to establish a holistic education institute.  This organization could carry each of the condensed principles of actionable education, into the many courses our collective of professional instructors could create.  We all held the vision that, together, the BodyMind holistic instructors and the students who seek them out could raise the vibration of the human spirit, and better life for individuals and their offline communities.  Holistic education really took the spotlight at this exciting meeting!</p>
+          <a href="http://www.bodymindinstitute.com" target="_blank" class="landing-additional-text__button">More on our homepage</a>
       </div>
     </div>
   </section>
 
-<!-- Search section is currently hidden until fully implemented -->
-<%doc>
-  <section class="landing-search">
-    <div class="container-bs landing-search">
-      <div class="hidden-xs col-sm-2 col-md-3 landing-search__filler">
-      </div>
-      <div class="col-xs-12 col-sm-8 col-md-6 landing-search__field">
-        <i class="fa fa-search"></i>
-        <input type="text" name="landing-search" placeholder="Search our courses">
-      </div>
-      <div class="hidden-xs col-sm-2 col-md-3 landing-search__filler">
-      </div>
-    </div>
-  </section>
-</%doc>
 
 % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
   <section class="landing-courses">
@@ -88,32 +75,11 @@
       <h2>Featured / newest courses</h2>
     </div>
 
-<%doc>
-    <div class="course-list-view container-bs">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-        %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
-          <div class="course-list-item">
-            <div class="course-list-item__image" style="background-image: url('${course_image_url(course)}');"></div>
-            <div class="course-list-item__info">
-              % if not course.start_date_is_still_default:
-                <span class="course-list-item__date">${course.start_datetime_text()}</span>
-              % endif
-              <span class="course-list-item__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
-              <span class="course-list-item__instructor">${get_course_about_section(course, 'university')}</span>
-              <div class="course-list-item__separator"></div>
-              <p class="course-list-item__description">${get_course_about_section(course, 'short_description')}</p>
-              <a class="course-list-item__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
-            </div>
-          </div>
-        %endfor
-      </div>
-    </div>
-</%doc>
-    
+
     <div class="landing-courses__container">
       <div class="container-bs">
         <div class="row">
-          <div class="landing-courses__logo"><img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/icon-black.svg')}"></div>
+          <div class="landing-courses__logo"><img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/icon-black.png')}"></div>
         </div>
         <div class="row">
           %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
@@ -134,28 +100,15 @@
         </div>
       </div>
     </div>
-  </section>      
+  </section>
 % endif
 
   <section class="landing-additional-text">
     <div class="container-bs">
       <div class="landing-additional-text__content">
-        <h2>Learn about Open edX at your own pace</h2>
+        <h2>Our Faculty</h2>
         <div class="landing-additional-text__separator"></div>
-        <p>We noticed that many of our customers wanted instruction in best practices in Open edX, so we created this site to provide self-paced courses for anyone to hone their Open edX skills. We hope that you enjoy learning more about all that Open edX has to offer!</p>
-        <p>If you'd like to learn more about Appsembler, click the following button.</p>
-        <!--HubSpot Call-to-Action Code -->
-        <span class="hs-cta-wrapper" id="hs-cta-wrapper-4b323cda-b971-47b5-ba64-a1d4bae9634c">
-            <span class="hs-cta-node hs-cta-4b323cda-b971-47b5-ba64-a1d4bae9634c" id="hs-cta-4b323cda-b971-47b5-ba64-a1d4bae9634c">
-                <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
-                <a href="http://cta-redirect.hubspot.com/cta/redirect/1550892/4b323cda-b971-47b5-ba64-a1d4bae9634c" ><img class="hs-cta-img" id="hs-cta-img-4b323cda-b971-47b5-ba64-a1d4bae9634c" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/1550892/4b323cda-b971-47b5-ba64-a1d4bae9634c.png"  alt="Learn more"/></a>
-            </span>
-            <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
-            <script type="text/javascript">
-                hbspt.cta.load(1550892, '4b323cda-b971-47b5-ba64-a1d4bae9634c');
-            </script>
-        </span>
-        <!-- end HubSpot Call-to-Action Code -->
+        <p>We, the collective faculty at BodyMind Institute, are dedicated to learning, applying, and growing ourselves into unique, sustainable, and holistic beings. We support holistic lifestyles which truly focus on the mind, body, & spirit of life. It is our collective pleasure that you are here now; to explore, learn, apply, and share what you’ve learned with others you know. The faculty of BodyMind Institute is supportive of your holistic education.</p>
       </div>
     </div>
   </section>
@@ -165,37 +118,37 @@
       <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
         <div class="instructors-marketing__text">
           <h2 class="instructors-marketing__text__title">
-            Learn from Open edX experts
+            Our Team
           </h2>
-          <p>We've been working with Open edX since 2013, and have helped our customers understand how Open edX works, and how to get the most out of it. Let us guide you on your Open edX journey!</p>
-          <p>And if you have any suggestions for other courses you'd like to see, click on the question mark icon in the lower right-hand corner of the screen.</p>
+          <p>Each of our mission embodies the essence of the sunrise.  The bright, hopeful energy of a new day that is filled with potential.  We bring this energy into everything we do personally in our own lives, in every moment.  It is from this wellspring of pure potential that we are inspired to bring you our highest and brightest energy, so that you can enjoy magnificent education that uplifts your life and of those you influence.</p>
+          <p>There are so many ways in which our team looks forward to helping you as you serve your community online and offline.   Every course, lesson and support mechanism that we have put into place is meant to serve you and your goals.  Every moment throughout every day that our team is privileged to serve you and our faculty, we invent new ways to bring education to you and those you love.  You will discover so much through the Edu-tainment newsletters, our Facebook and other online communities that can help you implement what you learn.   You will be an inspiration to others all over the world as you share with all of us what you are doing with the education you are receiving.</p>
         </div>
         <div class="instructors-marketing__list">
           <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/nate.jpg')}" alt="Nate Aune">
-            <h4 class="instructors-marketing__list__single__name">Nate Aune</h4>
-            <span class="instructors-marketing__list__single__title">Appsembler CEO</span>
+            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/team/lars.jpg')}" alt="Lars Gustafsson">
+            <h4 class="instructors-marketing__list__single__name">Lars Gustafsson</h4>
+            <span class="instructors-marketing__list__single__title">CEO and Founder</span>
           </div>
           <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/louis.jpg')}" alt="Louis Gudema">
-            <h4 class="instructors-marketing__list__single__name">Herbert Hansen</h4>
-            <span class="instructors-marketing__list__single__title">VP of Business Development</span>
+            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/team/alisha.jpg')}" alt="Alisha Bee">
+            <h4 class="instructors-marketing__list__single__name">Alisha Bee</h4>
+            <span class="instructors-marketing__list__single__title">Marketing Director</span>
           </div>
           <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/cody.jpg')}" alt="Cody Carson">
-            <h4 class="instructors-marketing__list__single__name">Cody Carson</h4>
-            <span class="instructors-marketing__list__single__title">Appsembled edX evangelist</span>
+            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/team/diane.jpg')}" alt="Diane Pascos">
+            <h4 class="instructors-marketing__list__single__name">Diane Pascos</h4>
+            <span class="instructors-marketing__list__single__title">Support Director</span>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 instructors-marketing__cta">
         <div class="instructors-marketing__cta__content">
-          <h3 class="instructors-marketing__cta__title">Join in on open education!</h3>
-          <p>Sign up to get started learning more about Open edX.</p>
-          <a class="instructors-marketing__cta__button" href="/register">Sign up!</a>
+          <h3 class="instructors-marketing__cta__title">Join our community</h3>
+          <p>As you enter this new phase of your life, journeying into the deeper knowledge and wisdom that David will bring you in this course, you will also begin to connect with everyone around you in new ways. It is a fact that as we take on new knowledge and apply it in our lives, the experiences we have shift the way in which we interact with others. Our energy shifts, vibration changes, and we literally magnetize new experiences, people and events. This is what makes this certification course and it’s global community so exciting. What is happening for you has been occurring for thousands of others in over 89 countries around the world!</p>
+          <a class="instructors-marketing__cta__button" href="http://bodymindinstitute.com/">Visit our website</a>
         </div>
       </div>
-    </div>  
+    </div>
   </section>
 
 

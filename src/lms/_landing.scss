@@ -8,13 +8,13 @@
 	color: $landing-hero-text-color;
 
 	&__content {
-		max-width: 880px;
+		max-width: 960px;
 		margin: 0 auto;
 
 		&__text {
 
 			& h1 {
-				@include sans-serif-black;
+				@include sans-serif-light;
 				font-size: 64px;
 				margin: 0 0 10px;
 
@@ -24,7 +24,7 @@
 			}
 
 			& p {
-				@include sans-serif;
+				@include sans-serif-italic;
 				font-size: 20px;
 				line-height: 130%;
 				color: #fff;
@@ -36,7 +36,7 @@
 			@include button-negative;
 			@include expanding-button(40px, 15px);
 			font-size: 20px;
-			margin-top: 20px;
+			margin-top: 30px;
 			color: #fff;
 			text-decoration: none;
 		}
@@ -50,7 +50,7 @@
 	&__point {
 
 		& h3 {
-			@include sans-serif;
+			@include sans-serif-light;
 			color: $brand-primary-color;
 			margin: 0 0 20px;
 		}
@@ -116,13 +116,16 @@
 
 
 .landing-courses {
+	margin-top: 30px;
 
 	& h2 {
-		@include sans-serif-bold;
-		font-size: 32px;
+		@include sans-serif-light;
+		font-size: 24px;
 		color: tint($base-text-color, 50%);
 		margin: 0 0 30px;
 		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 3px;
 	}
 
 	&__container {
@@ -187,12 +190,12 @@
 	text-align: center;
 
 	&__content {
-		max-width: 880px;
+		max-width: 960px;
 		margin: 0 auto;
 	}
 
 	& h2 {
-		@include sans-serif-bold;
+		@include sans-serif-light;
 		font-size: 36px;
 		margin: 0 0 30px;
 		color: $brand-primary-color;
@@ -210,6 +213,6 @@
 		@include button-positive($brand-primary-color);
 		@include expanding-button(30px, 15px);
 		font-size: 16px;
-		margin-top: 15px;
+		margin-top: 25px;
 	}
 }

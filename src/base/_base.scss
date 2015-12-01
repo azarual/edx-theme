@@ -1,17 +1,17 @@
 html {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 body {
 	@include sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	color: $base-text-color;
 }
 
 p {
 	@include sans-serif;
-	font-size: 14px;
-	line-height: 140%;
+	font-size: 16px;
+	line-height: 150%;
 }
 
 a {
