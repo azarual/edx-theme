@@ -7383,6 +7383,9 @@ Copyright (c) 2015 Daniel Eden
       height: 60px;
       margin: 4px 0 0;
       max-width: 100%; }
+      @media (max-width: 767px) {
+        .navbar__logo img {
+          height: 40px; } }
     .navbar__logo__positive {
       display: inline-block; }
     .navbar__logo__negative {
@@ -7881,6 +7884,9 @@ Copyright (c) 2015 Daniel Eden
       @media (max-width: 768px) {
         .landing-hero__content__text h1 {
           font-size: 42px; } }
+      @media (max-width: 767px) {
+        .landing-hero__content__text h1 {
+          font-size: 32px; } }
     .landing-hero__content__text p {
       font-family: 'Lato', sans-serif;
       font-weight: 400;

@@ -33,6 +33,10 @@
 			  height: $header-logo-height;
 			  margin: $header-logo-margin;
 			  max-width: 100%;
+
+				@media(max-width: $screen-xs-max) {
+					height: 40px;
+				}
 		}
 
 		&__positive {
