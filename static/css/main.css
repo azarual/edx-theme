@@ -7932,6 +7932,15 @@ Copyright (c) 2015 Daniel Eden
       .landing-hero__content__button:hover, .landing-hero__content__button:focus, .landing-hero__content__button:visited:hover, .landing-hero__content__button:visited:focus, .landing-hero__content__button:link:hover, .landing-hero__content__button:link:focus {
         padding-left: 55px;
         padding-right: 55px; }
+      @media (max-width: 991px) {
+        .landing-hero__content__button, .landing-hero__content__button:visited, .landing-hero__content__button:link {
+          padding: 15px 25px;
+          padding-left: 25px;
+          padding-right: 25px;
+          margin-bottom: 30px; }
+          .landing-hero__content__button:hover, .landing-hero__content__button:focus, .landing-hero__content__button:visited:hover, .landing-hero__content__button:visited:focus, .landing-hero__content__button:link:hover, .landing-hero__content__button:link:focus {
+            padding-left: 40px;
+            padding-right: 40px; } }
 
 .landing-featured-points {
   padding: 60px 30px; }

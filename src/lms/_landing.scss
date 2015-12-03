@@ -43,6 +43,12 @@
 			margin-top: 20px;
 			color: #fff;
 			text-decoration: none;
+
+			@media(max-width:$screen-sm-max) {
+				padding: 15px 25px;
+				@include expanding-button(25px, 15px);
+				margin-bottom: 30px;
+			}
 		}
 	}
 }
