@@ -15,28 +15,49 @@
 		}
 
 		&__heading {
-			margin: 0 0 10px;
+			margin: 0 0 15px;
+			@include sans-serif;
+			font-size: 20px;
+			color: $brand-primary-color;
+			text-transform: uppercase;
+		}
+
+		&__subheading {
+			margin-top: 16px;
 			@include sans-serif-bold;
-			font-size: 18px;
+		}
+
+		p {
+			margin: 5px 0;
+			font-size: 14px;
+		}
+
+		p a, p a:link, p a:visited {
+			color: $brand-primary-color;
+			@include sans-serif-semibold;
+
+			&.big {
+				font-size: 16px;
+			}
+
 		}
 
 		&__group {
-			margin-bottom: 20px;
-		}
+			margin-bottom: 30px;
+			font-size: 14px;
 
-		& p a, & p a:visited, & p a:link {
-			@include sans-serif-bold;
-			color: $brand-primary-color;
-			text-decoration: none;
+			&.contacts {
 
-			&:hover, &:focus {
-				opacity: 0.8;
-				text-decoration: none;
+				p a, p a:link, p a:visited {
+					color: $base-text-color;
+					@include sans-serif;
+				}
 			}
 		}
 
 		&__login-button, &__login-button:link, &__login-button:visited {
-			@include button-positive($brand-primary-color);
+			font: inherit;
+			@include button-positive(#ffa200);
 			padding: 8px 30px;
 			margin-bottom: 20px;
 		}

@@ -95,11 +95,20 @@
   </script>
 </%block>
 
-
-<section class="page-header-arrow">
+<section class="notification-stripe">
   <div class="container-bs">
-    <h1>${_("Welcome")}</h1>
-    <p>${_("Register below to create your {platform_name} account").format(platform_name=platform_name)}</p>
+    <p>Bodymind Institute is the Official host for <b>Accelerated Learning Institute</b></p>
+  </div>
+</section>
+
+<section class="bg-photo-hero">
+  <div class="container-bs">
+    <div class="bg-photo-hero__content">
+      <div class="bg-photo-hero__content__text">
+        <h1>${_("Welcome")}</h1>
+        <p>${_("Register below to create your {platform_name} account").format(platform_name=platform_name)}</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -144,7 +153,7 @@
               </h3>
               <h3 class="signup-form__instructions">
                 ${_('Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.')}
-              </h3>              
+              </h3>
 
             % else:
 

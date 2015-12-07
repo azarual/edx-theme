@@ -48,6 +48,12 @@
     <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/user-image-generate.js')}"></script>
 
     <script>
+      window.onload = function(){
+        $(".notification-stripe").addClass("loaded");
+      };
+    </script>
+
+    <script>
     window.intercomSettings = {
       app_id: "e4awi275",
       name: "{{ request.user.name }}", // Full name

@@ -25,7 +25,7 @@
 		line-height: 140%;
 	}
 
-	&__input {
+	&__input, textarea, input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
 		border-radius: $form-input-border-radius;
 		box-shadow: none;
 		@include sans-serif;
@@ -35,6 +35,7 @@
 		margin-bottom: 15px;
 		@include transition(all 0.3s ease-in-out);
 		border: 1px solid #ddd;
+		height: auto;
 
 		&:focus {
 			outline: none;
@@ -107,7 +108,8 @@
 	}
 
 	&__button {
-		@include button-positive($brand-primary-color);
+		@include button-positive(#ffa200);
+		font: inherit;
 		@include expanding-button(40px, 15px);
 		outline: none;
 		border: none;
@@ -190,24 +192,24 @@
 }
 
 textarea, input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
-	&.form-input {
-		border-radius: $form-input-border-radius;
-		box-shadow: none;
-		@include sans-serif;
-		width: 100%;
-		padding: 10px;
-		font-size: 16px;
-		margin-bottom: 15px;
-		@include transition(all 0.3s ease-in-out);
+	border-radius: $form-input-border-radius;
+	box-shadow: none;
+	@include sans-serif;
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	margin-bottom: 15px;
+	@include transition(all 0.3s ease-in-out);
+	border: 1px solid #ddd;
+	height: auto;
 
-		&:focus {
-			outline: none;
-			border: 2px solid $brand-primary-color;
-			margin-bottom: 13px;
-		}
+	&:focus {
+		outline: none;
+		border: 2px solid $brand-primary-color;
+		margin-bottom: 13px;
+	}
 
-		&:hover {
-			opacity: 0.5;
-		}
+	&:hover {
+		opacity: 0.5;
 	}
 }
