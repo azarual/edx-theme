@@ -2,6 +2,11 @@
 	padding: 40px 20px;
 	background-color: #fff;
 
+	#forgot-password-link {
+		color: #ff8400;
+		@include sans-serif-semibold;
+	}
+
 	&__instructions {
 		font-size: 18px;
 		margin: 0 0 20px;
@@ -18,7 +23,7 @@
 			margin: 0 0 15px;
 			@include sans-serif;
 			font-size: 20px;
-			color: $brand-primary-color;
+			color: #007eff;
 			text-transform: uppercase;
 		}
 
@@ -61,5 +66,10 @@
 			padding: 8px 30px;
 			margin-bottom: 20px;
 		}
+	}
+
+	#form-submit {
+		letter-spacing: 0;
+		@include sans-serif-semibold;
 	}
 }
