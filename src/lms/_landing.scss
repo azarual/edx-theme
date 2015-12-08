@@ -4,19 +4,21 @@
 	background-position: center center;
 	background-color: $landing-hero-bg-color;
 	background-size: cover;
-	text-align: center;
+	text-align: left;
 	color: $landing-hero-text-color;
+	border-bottom: 12px solid $brand-tertiary-color;
 
 	&__content {
-		max-width: 880px;
 		margin: 0 auto;
 
 		&__text {
 
 			& h1 {
-				@include sans-serif-black;
+				@include sans-serif-light;
 				font-size: 64px;
 				margin: 0 0 10px;
+				text-align: left;
+				color: $brand-secondary-color;
 
 				@media(max-width:$screen-sm-min) {
 					font-size: 42px;
@@ -24,21 +26,21 @@
 			}
 
 			& p {
-				@include sans-serif;
+				@include sans-serif-light;
 				font-size: 20px;
 				line-height: 130%;
-				color: #fff;
+				color: $base-text-color;
 			}
 		}
 
 		&__button, &__button:visited, &__button:link {
 			padding: 15px 40px;
-			@include button-negative;
+			@include button-positive($brand-secondary-color);
 			@include expanding-button(40px, 15px);
 			font-size: 20px;
 			margin-top: 20px;
-			color: #fff;
 			text-decoration: none;
+			font-size: 16px;
 		}
 	}
 }
@@ -116,19 +118,19 @@
 
 
 .landing-courses {
+	margin-top: 20px;
 
 	& h2 {
-		@include sans-serif-bold;
+		@include sans-serif-light;
 		font-size: 32px;
 		color: tint($base-text-color, 50%);
 		margin: 0 0 30px;
-		text-align: center;
+		text-align: left;
+		text-transform: uppercase;
 	}
 
 	&__container {
-		border-top: 2px solid tint($base-text-color, 80%);
-		border-bottom: 2px solid tint($base-text-color, 80%);
-		background-color: tint($base-text-color, 90%);
+		background-color: #F1F0F1;
 	}
 
 	&__logo {
@@ -149,6 +151,8 @@
 	& .row {
 		@include display(flex);
 		@include flex-wrap(wrap);
+		padding-top: 25px;
+		padding-bottom: 25px;
 
 		&:before, &:after {
 			display: none;
@@ -184,32 +188,58 @@
 
 .landing-additional-text {
 	padding: 90px 30px;
-	text-align: center;
+	text-align: left;
 
 	&__content {
-		max-width: 880px;
 		margin: 0 auto;
 	}
 
 	& h2 {
-		@include sans-serif-bold;
+		@include sans-serif-light;
 		font-size: 36px;
 		margin: 0 0 30px;
-		color: $brand-primary-color;
+		color: $brand-light-blue;
+	}
+
+	& h3 {
+		font-size: 22px;
+		@include sans-serif-light;
+	}
+
+	p {
+		line-height: 150%;
 	}
 
 	&__separator {
 		width: 100px;
 		height: 2px;
-		background-color: $brand-primary-color;
-		margin: 0 auto 25px;
+		background-color: $brand-tertiary-color;
+		margin: 0 0 25px;
 	}
 
 	&__button, &__button:link, &__button:visited {
 		padding: 12px 30px;
-		@include button-positive($brand-primary-color);
+		@include button-outlined($brand-light-blue);
 		@include expanding-button(30px, 15px);
 		font-size: 16px;
 		margin-top: 15px;
 	}
+
+	&.centered {
+		text-align: center;
+
+		h2, p {
+			text-align: center;
+		}
+
+		.landing-additional-text__separator {
+			margin: 0 auto 25px;
+		}
+	}
+}
+
+.landing-graphic-additional {
+	width: 100%;
+	height: auto;
+	margin: 0 30px;
 }

@@ -63,20 +63,20 @@
 	& li {
 		list-style-type: none;
 		padding: 10px;
-		
+
 		@media(min-width:$screen-sm-min) {
 			display: inline-block;
 			padding: 15px $header-li-padding-hor;
 		}
 
 		& a {
-			@include sans-serif;
+			@include sans-serif-bold;
 			font-size: $header-li-font-size;
 			text-transform: capitalize;
 			color: $navbar-text-color !important;
 			text-decoration: none;
 			@include transition(all 0.3s ease-in-out);
-			padding: 0;			
+			padding: 0;
 
 			&:hover, &:focus, &:active {
 				color: $navbar-text-color !important;
@@ -121,7 +121,7 @@
 			background-color: $navbar-button-bg;
 			text-transform: none;
 			padding: 10px 20px;
-			border-radius: 5px;
+			border-radius: 0;
 			display: inline-block;
 
 			&:hover, &:focus {
@@ -184,7 +184,7 @@
 	& .navigation-group {
 		margin-top: 20px;
 		padding: 0;
-		
+
 		@media(min-width:$screen-sm-min) {
 			border-right: 1px solid rgba($navbar-text-color, 0.15);
 			padding: 0;
@@ -236,7 +236,7 @@
 .navbar-collapse {
 	@include flex-shrink(0);
 	@include flex-grow(1);
-	
+
 	@media(min-width:$screen-sm-min) {
 		@include display(flex);
 		@include align-items(center);

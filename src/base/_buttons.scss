@@ -9,11 +9,12 @@
 	padding: 15px 25px;
 	color: #fff;
 	text-decoration: none;
-	display: inline-block;	
+	display: inline-block;
 	@include transition(all 0.3s ease-in-out);
 	line-height: inherit;
 	border: none;
 	box-shadow: none;
+	text-transform: uppercase;
 
 	&:hover, &:focus, &:hover:not(:disabled) {
 		background-image: none;
@@ -24,10 +25,41 @@
 		background-color: shade($bg-color, 10%);
 		color: #fff;
 		text-decoration: none;
+		text-transform: uppercase;
 	}
 
 	&:link {
 		color: #fff;
+	}
+}
+
+@mixin button-outlined($main-color) {
+	cursor: pointer;
+	@include sans-serif;
+	background: none;
+	background-image: none;
+	outline: none;
+	text-shadow: none;
+	border-radius: $form-button-border-radius;
+	border: 2px solid $main-color;
+	padding: 15px 25px;
+	text-decoration: none;
+	color: $main-color;
+	display: inline-block;
+	@include transition(all 0.3s ease-in-out);
+	line-height: inherit;
+	text-transform: uppercase;
+
+	&:hover, &:focus, &:hover:not(:disabled) {
+		background-image: none;
+		outline: none;
+		text-shadow: none;
+		border-radius: $form-button-border-radius;
+		outline: none;
+		opacity: 0.7;
+		text-decoration: none;
+		ccolor: $main-color;
+		text-transform: uppercase;
 	}
 }
 
@@ -43,9 +75,10 @@
 	padding: 15px 25px;
 	text-decoration: none;
 	color: #fff;
-	display: inline-block;	
+	display: inline-block;
 	@include transition(all 0.3s ease-in-out);
 	line-height: inherit;
+	text-transform: uppercase;
 
 	&:hover, &:focus, &:hover:not(:disabled) {
 		background-image: none;
@@ -56,6 +89,7 @@
 		opacity: 0.7;
 		text-decoration: none;
 		color: #fff;
+		text-transform: uppercase;
 	}
 }
 

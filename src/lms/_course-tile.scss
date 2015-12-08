@@ -1,117 +1,103 @@
 .course-tile {
-	@include display(flex);
-	margin-bottom: 30px;
-	@include transition(all 0.3s ease-in-out);
-	opacity: 1;
+  @include display(flex);
+  overflow: hidden;
+  position: relative;
+  min-height: 280px;
+  padding: 40px 30px 62px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  @include transition(all 0.3s ease-in-out);
+  margin: 15px 0;
 
-	&.opaque {
-		opacity: 0.5;
-	}
+  &:hover, &:focus {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
 
-	&__body {
-		border: 1px solid tint($base-text-color, 80%);
-		background-color: #fff;
-		width: 100%;
-	}
+  &__container {
+    @include display(flex);
+  }
 
-	&__image {
-		position: relative;
-		overflow: hidden;
-		height: 240px;
 
-		& img {
-			width: 100%;
-			min-height: 100%;
-			height: auto;
-			@include transition(all 0.3s ease-in-out);
-		}
+  &.big-tile {
+    background-color: $brand-light-blue;
+    color: #fff;
 
-		&:after {
-			content: " ";
-			width: 100%;
-			height: 4px;
-			background-color: #000;
-			opacity: 0.1;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			@include transition(all 0.3s ease-in-out);
-		}
-	}
+    &:hover, &:focus {
+      color: #fff;
+    }
 
-	&__info {
-		padding: 20px 20px;
-	}
+    .big-tile-content {
+      width: 55%;
+      @include flex-shrink(1);
+    }
 
-	&__date {
-		@include sans-serif-bold;
-		color: tint($base-text-color, 40%);
-		font-size: 14px;
-		display: block;
-		margin-bottom: 2px;
-	}
+    .course-tile__name {
+      font-size: 32px;
+    }
 
-	&__name {
-		@include sans-serif-bold;
-		color: $base-text-color;
-		font-size: 18px;
-		line-height: 130%;
-		display: block;
-		min-height: 46px;
+    .course-tile__image {
+      opacity: 1;
+    }
+  }
 
-		& a {
-			color: $base-text-color;
-			text-decoration: none;
+  &__date {
+    display: block;
+    @include sans-serif;
+    margin: 0 0 15px;
+    font-size: 16px;
+  }
 
-			&:hover, &:focus {
-				color: tint($base-text-color, 20%);
-			}
-		}
-	}
+  &__name {
+    @include sans-serif-light;
+    line-height: 150%;
+    margin: 0 0 30px;
+    font-size: 24px;
+  }
 
-	&__instructor {
-		@include sans-serif;
-		color: tint($base-text-color, 30%);
-		font-size: 12px;
-		display: block;
-	}
+  &__more {
+    @include sans-serif-bold;
+    font-size: 16px;
+    margin: 0;
+    position: absolute;
+    bottom: 30px;
+  }
 
-	&__separator {
-		width: 100px;
-		height: 4px;
-		margin: 15px 0;
-		background-color: $brand-primary-color;
-	}
+  &__image {
+    @include flex-shrink(0);
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    opacity: 0.1;
 
-	& p {
+    $tile-image-size: 280px;
+    width: $tile-image-size;
+    height: $tile-image-size;
+    bottom: -($tile-image-size/5);
+    right: -($tile-image-size/7);
 
-	}
+    @media(max-width:$screen-md-max) {
+      $tile-image-size: 280px;
+      width: $tile-image-size;
+      height: $tile-image-size;
+      bottom: -($tile-image-size/5);
+      right: -($tile-image-size/7);
+    }
 
-	&__cta, &__cta:link, &__cta:visited {
-		@include sans-serif-semibold;
-		font-size: 16px;
-		color: $brand-primary-color;
+    @media(max-width:$screen-sm-max) {
+      $tile-image-size: 260px;
+      width: $tile-image-size;
+      height: $tile-image-size;
+      bottom: -($tile-image-size/5);
+      right: -($tile-image-size/7);
+    }
 
-		&:hover, &:focus {
-			text-decoration: none;
-			color: shade($brand-primary-color, 10%);
-		}
-	}
-
-	&:hover, &:focus {
-		
-		& .course-tile {
-
-			&__image {
-
-				& img {
-					@include transform(scale(1.05));
-				}
-
-				&:after {
-					height: 6px;
-				}
-			}
-		}
-	}
+    @media(max-width:$screen-xs-max) {
+      $tile-image-size: 140px;
+      width: $tile-image-size;
+      height: $tile-image-size;
+      bottom: -($tile-image-size/5);
+      right: -($tile-image-size/7);
+    }
+  }
 }

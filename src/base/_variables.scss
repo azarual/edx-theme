@@ -12,16 +12,16 @@ $header-li-hover-expand: 10px;
 $header-logo-height: 60px;
 $header-logo-margin: 4px 0 0;
 $navbar-links-top-offset: 0;
-$header-bottom-border: none;
+$header-bottom-border: 1px solid #DEDEDE;
 $navbar-vert-padding: 15px;
 
 // calculations
 
 $navbar-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
-$navbar-text-color: calcNavbarTextColor($navbar-style, $base-text-color);
+$navbar-text-color: calcNavbarTextColor($navbar-style, $brand-secondary-color);
 $navbar-button-text-color: #fff;
 $navbar-button-border: calcNavbarButtonBorder($navbar-style);
-$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-primary-color);
+$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-secondary-color);
 $display-navbar-logo-positive: calcDisplayLogoPositive($navbar-style);
 $display-navbar-logo-negative: calcDisplayLogoNegative($navbar-style);
 
@@ -33,7 +33,7 @@ $display-navbar-logo-negative: calcDisplayLogoNegative($navbar-style);
 
 $landing-hero-bg-image: $hero-bg-image;
 $landing-hero-padding-ver: 90px;
-$landing-hero-text-color: #fff;
+$landing-hero-text-color: $base-text-color;
 $landing-hero-bg-color: $brand-primary-color;
 
 

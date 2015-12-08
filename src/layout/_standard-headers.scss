@@ -2,17 +2,17 @@
 	padding: 40px 30px 50px;
 	@include linear-gradient(to top, $brand-primary-color, tint($brand-primary-color, 10%), $fallback: $brand-primary-color);
 	color: #fff;
-	text-align: center;
+	text-align: left;
 	position: relative;
 
 	& h1 {
-		@include sans-serif-black;
+		@include sans-serif-light;
 		font-size: 64px;
 		margin: 0 0 10px;
 	}
 
 	& p {
-		@include sans-serif;	
+		@include sans-serif;
 		font-size: 20px;
 	}
 
@@ -38,7 +38,7 @@
 	background-position: center center;
 	background-size: cover;
 	text-align: center;
-	color: $landing-hero-text-color;
+	color: $brand-secondary-color;
 
 	&__content {
 		max-width: 880px;
@@ -47,7 +47,7 @@
 		&__text {
 
 			& h1 {
-				@include sans-serif-black;
+				@include sans-serif-light;
 				font-size: 64px;
 				margin: 0 0 10px;
 			}
@@ -56,7 +56,7 @@
 				@include sans-serif;
 				font-size: 20px;
 				line-height: 130%;
-				color: #fff;
+				color: $base-text-color;
 			}
 		}
 
