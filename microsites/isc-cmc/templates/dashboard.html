@@ -247,9 +247,6 @@ from student.helpers import (
                     </p>
                   %endif
 
-                  % if course.may_certify() and cert_status:
-                  <%include file='_dashboard_certificate_information.html' args='cert_status=cert_status,course=course, enrollment=enrollment'/>
-                  % endif
 
                   % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', True):
                     % if verification_status.get('status') in [VERIFY_STATUS_NEED_TO_VERIFY, VERIFY_STATUS_SUBMITTED, VERIFY_STATUS_APPROVED] and not is_course_blocked:
@@ -284,7 +281,12 @@ from student.helpers import (
                     % endif
                   % endif
 
+                  % if course.may_certify() and cert_status:                  
+                  ${_("Course Completed")}                
+                  % else:
                   <h4 class="cmc-dashboard-course__time"><span>Starts:</span>Self-paced</h4>
+                  % endif
+
                   <div class="cmc-dashboard-course__options">
 
                     % if show_email_settings:

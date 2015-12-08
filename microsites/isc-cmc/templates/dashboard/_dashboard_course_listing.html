@@ -13,7 +13,6 @@ from student.helpers import (
   VERIFY_STATUS_MISSED_DEADLINE
 )
 %>
-
 <%
   cert_name_short = course.cert_name_short
   if cert_name_short == "":
@@ -166,7 +165,9 @@ from student.helpers import (
       </p>
     %endif
 
+
     % if course.may_certify() and cert_status:
+    ${_("Course Completed")}                
     <%include file='_dashboard_certificate_information.html' args='cert_status=cert_status,course=course, enrollment=enrollment'/>
     % endif
 
