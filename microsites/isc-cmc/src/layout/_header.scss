@@ -348,6 +348,18 @@
 	}
 }
 
+.navigation {
+	@media(min-width:$screen-sm-max) {
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(space-between);
+	}
+
+	&:before, &:after {
+		display: none;
+	}
+}
+
 
 @media (max-width: $screen-xs-max) {
 	.navbar__logo {
