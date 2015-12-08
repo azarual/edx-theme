@@ -49,14 +49,14 @@
 	margin-top: $navbar-links-top-offset;
 	font-size: $header-li-font-size;
 
-	@media(min-width:$screen-sm-min) {
+	@media(min-width:$screen-sm-max) {
 		@include display(flex);
 		@include align-items(center);
 		@include flex-wrap(wrap);
 		float: right;
 	}
 
-	@media(max-width:$screen-sm-min) {
+	@media(max-width:$screen-sm-max) {
 		text-align: center;
 	}
 
@@ -64,7 +64,7 @@
 		list-style-type: none;
 		padding: 10px;
 
-		@media(min-width:$screen-sm-min) {
+		@media(min-width:$screen-sm-max) {
 			display: inline-block;
 			padding: 15px $header-li-padding-hor;
 		}
@@ -164,7 +164,7 @@
 }
 
 .navigation {
-	@media(min-width:$screen-sm-min) {
+	@media(min-width:$screen-sm-max) {
 		@include display(flex);
 		@include align-items(center);
 		@include justify-content(space-between);
@@ -185,7 +185,7 @@
 		margin-top: 20px;
 		padding: 0;
 
-		@media(min-width:$screen-sm-min) {
+		@media(min-width:$screen-sm-max) {
 			border-right: 1px solid rgba($navbar-text-color, 0.15);
 			padding: 0;
 			padding-right: $header-li-padding-hor;
@@ -237,13 +237,13 @@
 	@include flex-shrink(0);
 	@include flex-grow(1);
 
-	@media(min-width:$screen-sm-min) {
+	@media(min-width:$screen-sm-max) {
 		@include display(flex);
 		@include align-items(center);
 		float: right;
 	}
 
-	@media(max-width:$screen-sm-min) {
+	@media(max-width:$screen-sm-max) {
 		margin-top: 20px;
 	}
 
@@ -291,11 +291,28 @@
 	@include flex-shrink(1);
 	@include flex-grow(0);
 	@include flex-wrap(nowrap);
+
+	@media(max-width: $screen-sm-max) {
+		@include justify-content(space-between);
+
+		&:before, &:after {
+			display: none;
+		}
+	}
 }
 
 .navbar-toggle {
 	@include flex-shrink(0);
 	margin-left: 30px;
+
+	&:hover, &:focus {
+		background: none;
+		background-color: $brand-secondary-color;
+
+		.icon-bar {
+			background-color: #fff;
+		}
+	}
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
@@ -303,7 +320,7 @@
 }
 
 .navbar .container-bs {
-	@media(min-width: $screen-sm-min) {
+	@media(min-width: $screen-sm-max) {
 		@include display(flex);
 		@include align-items(center);
 	}
@@ -314,4 +331,8 @@
 	.navbar__logo {
 		margin-left: 10px;
 	}
+}
+
+input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disabled), button:hover:not(:disabled), .button:hover:not(:disabled) {
+	background-image: none;
 }

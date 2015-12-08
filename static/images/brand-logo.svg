@@ -5,10 +5,10 @@
 <style type="text/css">
 	.st0{fill:none;stroke:#636466;stroke-width:0.99;}
 	.st1{fill:#52B9E9;}
-	.st2{clip-path:url(#XMLID_109_);fill:#52B9E9;}
-	.st3{clip-path:url(#XMLID_109_);fill:#005884;}
+	.st2{clip-path:url(#XMLID_70_);fill:#52B9E9;}
+	.st3{clip-path:url(#XMLID_70_);fill:#005884;}
 	.st4{font-family:'TitilliumWeb-Bold';}
-	.st5{font-size:31.4537px;}
+	.st5{font-size:30.7732px;}
 </style>
 <g id="XMLID_1_">
 	<line id="XMLID_4_" class="st0" x1="126.5" y1="1.1" x2="126.5" y2="50"/>
@@ -19,7 +19,7 @@
 			<defs>
 				<rect id="XMLID_6_" x="1" y="8.6" width="111.5" height="32.1"/>
 			</defs>
-			<clipPath id="XMLID_109_">
+			<clipPath id="XMLID_70_">
 				<use xlink:href="#XMLID_6_"  style="overflow:visible;"/>
 			</clipPath>
 			<path id="XMLID_65_" class="st2" d="M38.5,35.3c0,0-1-0.1-1.5-0.1c-0.4,0-0.7,0.2-0.7,0.5c0,0.3,0.2,0.3,0.8,0.5
@@ -102,6 +102,6 @@
 				L111,14.8z M110.6,14.5h0.4c0.2,0,0.3-0.1,0.3-0.3c0-0.2-0.1-0.3-0.4-0.3h-0.3V14.5z"/>
 		</g>
 	</g>
-	<text id="XMLID_3_" transform="matrix(1 0 0 1 141.7893 32.4203)" class="st1 st4 st5">classroom</text>
+	<text id="XMLID_3_" transform="matrix(1 0 0 1 141.7896 32.6322)" class="st1 st4 st5">ondemand</text>
 </g>
 </svg>
