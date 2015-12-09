@@ -159,7 +159,7 @@ from microsite_configuration import microsite
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-md-7">
         <h3 class="form__instructions">
-          <strong>${_('Please provide the following information to log into your {platform_name} account.').format(platform_name=platform_name)}</strong>
+          <strong>${_('Please provide the following information to access your student dashboard.').format(platform_name=platform_name)}</strong>
         </h3>
         <h3 class="form__instructions">
           ${_('Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.')}
@@ -179,7 +179,7 @@ from microsite_configuration import microsite
           <div class="form__group form__group">
             <label for="email" class="form__label form__label required">E-mail *</label>
             <input class="form__input form__input" id="email" type="email" name="email" value="" placeholder="${_('example: username@domain.com')}" required aria-required="true" aria-described-by="email-tip">
-            <span class="input-form__input-clarification form__input-clarification">${_("This is the e-mail address you used to register with {platform}").format(platform=platform_name)}</span>
+            <span class="input-form__input-clarification form__input-clarification">${_("This is the e-mail address you used to register for your course.").format(platform=platform_name)}</span>
             <label for="password" class="form__label form__label required">Password *</label>
             <input class="form__input form__input" placehoder="Your password" id="password" type="password" name="password" value="" required aria-required="true">
             <a class="form__input__action" href="#forgot-password-modal" rel="leanModal" id="forgot-password-link" role="button" aria-haspopup="true">${_('Forgot your password? Click here')}</a>
@@ -197,7 +197,7 @@ from microsite_configuration import microsite
           % endif
 
           <div class="form__group form__group">
-            <button class="form__button form__button" type="submit" id="form-submit">Log into My Account + Access My Courses</button>
+            <button class="form__button form__button" type="submit" id="form-submit">Log into My Student Account</button>
           </div>
         </form>
 
