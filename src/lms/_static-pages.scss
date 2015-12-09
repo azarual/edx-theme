@@ -1,0 +1,13 @@
+.about {
+
+  h1, h2, h3 {
+    color: $brand-secondary-color;
+    text-align: left;
+    @include sans-serif-light;
+  }
+
+  p {
+    line-height: 150%;
+    @include sans-serif;
+  }
+}
