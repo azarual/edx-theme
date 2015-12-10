@@ -11,6 +11,18 @@
   @media(max-width: $screen-sm-max) {
     display: none;
   }
+
+  &__normal {
+    @media(max-width:$screen-xs-max) {
+      display: none !important;
+    }
+  }
+
+  &__xs {
+    @media(min-width:$screen-sm-min) {
+      display: none !important;
+    }
+  }
 }
 
 .notification-stripe {
