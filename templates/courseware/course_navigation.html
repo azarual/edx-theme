@@ -1,5 +1,6 @@
 ## mako
-<%! from django.utils.translation import ugettext as _ %>
+<%! from django.utils.translation import ugettext as _ 
+from microsite_configuration import microsite %>
 <%page args="active_page=None" />
 
 <%
@@ -65,7 +66,11 @@ def url_class(is_active):
           <li>
           % endif  
              <a href="${tab.link_func(course, reverse) | h}" class="${url_class(tab_is_active)}">
+                 % if tab.name == 'Courseware' and microsite.get_value('platform_name', None) == 'CMC Online Training': 
+                 Coursework
+                 % else:
                  ${_(tab.name) | h}
+                 %endif
                  % if tab_is_active:
                    <span class="sr">, current location</span>
                  %endif
