@@ -202,8 +202,9 @@
 
             <div class="checkbox-group">
               <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" class="input__checkbox">
-              <label for="accept-tos" class="checkbox-label">${_('I have read and agree to {link_start}Terms and Conditions{link_end}').format(
-                link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('TOS')),
+              <label for="accept-tos" class="checkbox-label">${_('I have read and agree to the {link_tc_start}Terms and Conditions{link_end} and {link_pp_start}Privacy Policy{link_end}').format(
+                link_tc_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('TOS')),
+                link_pp_start='<a href="/privacy" class="new-vp" tabindex="-1">',
                 link_end='</a>')} <span class="required">*</span></label>
             </div>
 
