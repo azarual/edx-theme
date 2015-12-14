@@ -102,6 +102,7 @@
 
       %for category in courses.keys():
         <%
+          cat_courses = courses[category]
           cgroupshort = category.replace(" ", "").lower()
         %>
         <!-- single courses category -->
@@ -116,7 +117,14 @@
           %endif
           <!-- end of category header -->
 
-          %for course in courses[category]:
+          %if category == 'ungrouped':
+            <% 
+            # move CMC000 to end of category
+            cat_courses = cat_courses + [cat_courses.pop(0)]
+            %>
+          %endif 
+
+          %for course in cat_courses:
           <!-- single course tile template -->
           <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
             <div class="course-tile__body">
