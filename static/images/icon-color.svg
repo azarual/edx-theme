@@ -1,25 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW X7 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="86mm" height="100mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 8600 10000"
- xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-   <![CDATA[
-    .fil1 {fill:#0090C1}
-    .fil0 {fill:#0090C1;fill-opacity:0.501961}
-   ]]>
-  </style>
- </defs>
- <g id="Layer_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_836192368">
-   <polygon class="fil0" points="5617,7475 5617,9950 4300,9190 2983,9950 2983,7475 4300,8235 "/>
-   <polygon class="fil1" points="4300,50 13,2525 13,7475 1003,6903 1003,3097 4300,1193 7597,3097 7597,6903 8587,7475 8587,2525 "/>
-   <path class="fil0" d="M13 7475l1980 1143 0 -1143 -990 -572 -990 572zm6594 1143l1980 -1143 -990 -572 -990 572 0 1143z"/>
-   <path class="fil1" d="M4300 2336l-2307 1332 0 2664 2307 1332 2307 -1332 0 -2664 -2307 -1332zm0 1144l-1317 760 0 1520 1317 760 1317 -760 0 -1520 -1317 -760z"/>
-   <path class="fil0" d="M4300 3480l-1317 760 0 1520 1317 760 1317 -760 0 -1520 -1317 -760zm0 1143l-327 188 0 378 327 188 327 -188 0 -378 -327 -188z"/>
-  </g>
- </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 221.1 283.5" style="enable-background:new 0 0 221.1 283.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#04BFE0;}
+	.st1{fill:#231F20;}
+</style>
+<g id="XMLID_18_">
+	<polygon id="XMLID_3_" class="st0" points="221,1.4 221,40 167.3,74.3 167.3,86.7 221,52.4 221,90.2 167.3,124.5 167.3,136.9 
+		221,102.7 221,142.2 110.6,211.6 110.6,71.8 	"/>
+	<polygon id="XMLID_2_" class="st1" points="0.1,1.4 221,142.2 221,205.9 160.9,167.6 160.9,179.6 221,218.4 221,282 32.4,161.8 
+		32.4,71.8 0.1,52.4 	"/>
+	<polygon id="XMLID_1_" class="st0" points="0.1,142.2 49.4,110.4 49.4,186.4 60.3,179.6 60.3,103.8 110.6,71.8 110.6,211.6 
+		0.1,282 	"/>
+</g>
 </svg>

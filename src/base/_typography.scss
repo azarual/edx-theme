@@ -1,41 +1,53 @@
 @mixin sans-serif-light {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-style: normal;
 }
 
 @mixin sans-serif {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	font-style: normal;
 }
 
 @mixin sans-serif-semibold {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 	font-style: normal;
 }
 
 @mixin sans-serif-bold {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 	font-style: normal;
 }
 
 @mixin sans-serif-black {
-	font-family: 'Lato', sans-serif;
-	font-weight: 900;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
 	font-style: normal;
 }
 
 @mixin sans-serif-italic {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	font-style: italic;
 }
 
 @mixin sans-serif-bold-italic {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 	font-style: italic;
+}
+
+@mixin slab-serif {
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin slab-serif-bold {
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: 700;
+	font-style: normal;
 }

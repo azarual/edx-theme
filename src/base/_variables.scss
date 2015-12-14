@@ -32,7 +32,7 @@ $display-navbar-logo-negative: calcDisplayLogoNegative($navbar-style);
 //  =========================
 
 $landing-hero-bg-image: $hero-bg-image;
-$landing-hero-padding-ver: 90px;
+$landing-hero-padding-ver: 130px;
 $landing-hero-text-color: #fff;
 $landing-hero-bg-color: $brand-primary-color;
 
@@ -54,7 +54,7 @@ $pages-photo-hero-padding-ver: 50px;
 //  Single course
 
 $course-header-bg-color: rgba(#000, 0.02);
-$course-header-title-color: $brand-primary-color;
+$course-header-title-color: $base-text-color;
 $course-enroll-button-bg-color: $brand-primary-color;
 $course-enroll-button-bg-color-unavailable: #BBB;
 

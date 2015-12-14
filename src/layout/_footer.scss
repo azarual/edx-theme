@@ -1,6 +1,6 @@
 .footer {
-	background-color: shade($brand-primary-color, 0%);
-	border-top: 2px solid shade($brand-primary-color, 10%);
+	background-color: #323232;
+	border-top: 2px solid shade(#323232, 10%);
 	padding: 40px 30px 60px;
 	@include sans-serif;
 	font-weight: $footer-menu-font-weight;

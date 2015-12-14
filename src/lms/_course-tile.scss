@@ -99,7 +99,7 @@
 	}
 
 	&:hover, &:focus {
-		
+
 		& .course-tile {
 
 			&__image {
@@ -112,6 +112,96 @@
 					height: 6px;
 				}
 			}
+		}
+	}
+}
+
+.utec-course-tile {
+  margin: 15px 0;
+  height: 240px;
+
+	&__container {
+		position: relative;
+		height: 100%;
+	}
+
+  &__image {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include linear-gradient(to top, $base-text-color, rgba(0,0,0,0));
+		background-color: transparent;
+  }
+
+	&__content {
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 30px 30px 40px;
+		@include display(flex);
+		@include align-items(flex-end);
+		@include flex-wrap(wrap);
+		color: #fff;
+		text-align: left;
+		@include transition(all 0.3s ease-in-out);
+
+		&:hover, &:focus {
+			padding: 30px 30px 60px;
+		}
+	}
+
+	&__date {
+		display: block;
+		font-size: 16px;
+		@include sans-serif;
+		margin: 25px 0 0;
+
+		time {
+			@include slab-serif-bold;
+		}
+	}
+
+	h2 {
+		font-size: 24px;
+		@include slab-serif;
+		margin: 0;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 140%;
+		margin: 0;
+		display: none;
+		@include sans-serif-light;
+	}
+
+	&:first-of-type {
+		height: 510px;
+
+		h2 {
+			font-size: 32px;
+			margin: 0 0 20px;
+		}
+
+		p {
+			display: block;
 		}
 	}
 }

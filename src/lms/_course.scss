@@ -7,7 +7,6 @@
 		@include display(flex);
 		@include align-items(center);
 		@include flex-wrap(wrap);
-		border-bottom: 4px solid $brand-primary-color;
 		padding-top: 40px;
 		padding-bottom: 40px;
 
@@ -63,9 +62,16 @@
 		}
 	}
 
+	&__number {
+		@include slab-serif;
+		color: $brand-primary-color;
+		font-size: 24px;
+		margin: 0 0 10px;
+	}
+
 	&__title {
-		@include sans-serif-bold;
-		font-size: 48px;
+		@include sans-serif-light;
+		font-size: 52px;
 		margin: 0 0 20px;
 		line-height: 130%;
 		color: $course-header-title-color;
@@ -77,8 +83,12 @@
 	}
 
 	&__short-info {
-		@include sans-serif;
-		font-size: 20px;
+		@include sans-serif-light;
+		font-size: 18px;
+		line-height: 150%;
+		padding-top: 20px;
+		margin-top: 20px;
+		border-top: 1px solid rgba($base-text-color, 0.2);
 	}
 }
 
@@ -230,7 +240,7 @@
 		&.unavailable {
 			@include button-positive($course-enroll-button-bg-color-unavailable);
 		}
-		
+
 		display: block;
 		padding: 15px;
 		font-size: 18px;
@@ -267,9 +277,11 @@
 		margin: 0 10px;
 		color: rgba($base-text-color, 0.5);
 		@include transition(all 0.3s ease-in-out);
+		position: relative;
+		top: 0px;
 
 		&:hover, &:focus {
-			margin: 0 15px;
+			top: -5px;
 		}
 
 		&.twitter:hover, &.twitter:focus {
@@ -286,26 +298,15 @@
 	}
 
 	&__share__container {
-		margin-top: 15px;
+		margin-top: 20px;
 		padding: 15px 0;
 
-		&:hover, &:focus {
-
-			& .share-helper-text {
-				opacity: 1;
-			}
+		span {
+			font-size: 18px;
+			display: inline-block;
+			margin-right: 10px;
+			color: rgba($base-text-color, 0.5);
 		}
-	}
-
-	& .share-helper-text {
-		opacity: 14px;
-		@include sans-serif;
-		color: rgba($base-text-color, 0.5);
-		display: block;
-		width: 100%;
-		@include transition(all 0.3s ease-in-out);
-		opacity: 0;
-		margin: 10px 0 0;
 	}
 }
 
@@ -331,7 +332,7 @@
 			box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
 			position: absolute;
 			top: 19px; left: -21px;
-				
+
 			&::before {
 				content: "";
 				position: absolute;
@@ -354,4 +355,33 @@
 				border-top: 3px solid darken($brand-primary-color, 15%);
 			}
 		}
+}
+
+.course-controls {
+
+	&__container {
+		border-top: 4px solid $brand-primary-color;
+		border-bottom: 4px solid $brand-primary-color;
+	}
+
+	&__wrapper {
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(space-between);
+		@include flex-wrap(wrap);
+
+		&:before, &:after {
+			display: none;
+		}
+	}
+
+	.start-info {
+		font-size: 20px;
+		margin: 0 30px 0 0;
+
+		span {
+			@include slab-serif-bold;
+			color: $brand-primary-color;
+		}
+	}
 }

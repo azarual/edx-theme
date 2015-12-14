@@ -6,25 +6,52 @@
 	background-size: cover;
 	text-align: center;
 	color: $landing-hero-text-color;
+	position: relative;
+
+	&__video {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+
+	&__video-overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		background-color: rgba($brand-primary-color, 0.25);
+	}
 
 	&__content {
-		max-width: 880px;
 		margin: 0 auto;
+		position: relative;
+		z-index: 3;
+		max-width: 920px;
 
 		&__text {
 
 			& h1 {
-				@include sans-serif-black;
-				font-size: 64px;
-				margin: 0 0 10px;
+				@include slab-serif-bold;
+				font-size: 48px;
+				margin: 0 0 25px;
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: $base-text-color;
+				color: #fff;
 
 				@media(max-width:$screen-sm-min) {
-					font-size: 42px;
+					font-size: 32px;
 				}
 			}
 
 			& p {
-				@include sans-serif;
+				@include sans-serif-light;
+				text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 				font-size: 20px;
 				line-height: 130%;
 				color: #fff;
@@ -33,9 +60,9 @@
 
 		&__button, &__button:visited, &__button:link {
 			padding: 15px 40px;
-			@include button-negative;
+			@include button-positive($brand-primary-color);
 			@include expanding-button(40px, 15px);
-			font-size: 20px;
+			font-size: 18px;
 			margin-top: 20px;
 			color: #fff;
 			text-decoration: none;
@@ -211,5 +238,139 @@
 		@include expanding-button(30px, 15px);
 		font-size: 16px;
 		margin-top: 15px;
+	}
+}
+
+.utec-landing-text-icons {
+	padding-top: 100px;
+	padding-bottom: 60px;
+
+	h1 {
+		@include sans-serif;
+		font-size: 36px;
+		margin: 0 0 20px;
+		text-align: left;
+		color: $base-text-color;
+
+		span {
+			color: lighten($base-text-color, 50%);
+		}
+	}
+
+	h2 {
+		@include sans-serif;
+		font-size: 24px;
+		margin: 0 0 30px;
+		text-align: left;
+		color: $base-text-color;
+	}
+
+	p {
+		@include sans-serif-light;
+		font-size: 16px;
+		line-height: 150%;
+		margin: 0 0 10px;
+	}
+
+	&__icons-container {
+		margin: 40px 0 0;
+	}
+
+	&__icon {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 10px 30px;
+		border-left: 1px solid rgba($base-text-color, 0.2);
+
+		&:last-child {
+			border-right: 1px solid rgba($base-text-color, 0.2);
+		}
+
+		&:nth-child(2n) {
+			@media(max-width:$screen-xs-max) {
+				border-right: 1px solid rgba($base-text-color, 0.2);
+			}
+		}
+
+		img {
+			width: 60%;
+			max-width: 80px;
+			display: block;
+			margin: 0 auto 30px;
+			@include transition(all 0.3s ease-in-out);
+			position: relative;
+			top: 0;
+		}
+
+		span {
+			display: block;
+			text-align: center;
+			@include sans-serif;
+			color: $base-text-color;
+			font-size: 16px;
+			@include transition(all 0.3s ease-in-out);
+			position: relative;
+			top: 0;
+		}
+
+		&:hover, &:focus {
+
+			img {
+				top: -10px;
+			}
+
+			span {
+				font-size: 18px;
+				top: -5px;
+			}
+		}
+	}
+}
+
+.utec-landing-courses {
+	padding-top: 40px;
+	padding-bottom: 100px;
+
+	h1 {
+		font-size: 36px;
+		@include sans-serif;
+		margin: 0 0 35px;
+		text-align: left;
+
+		span {
+			font-size: 42px;
+			@include slab-serif;
+			color: $brand-primary-color;
+		}
+	}
+
+	&__cta {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-top: 2px solid $brand-primary-color;
+		border-bottom: 2px solid $brand-primary-color;
+		margin-top: 35px;
+		text-align: center;
+		width: 100%;
+		float: left;
+
+		a {
+			font-size: 24px;
+			color: $base-text-color;
+			@include slab-serif;
+			display: inline-block;
+			@include transition(all 0.2s ease-in-out);
+
+			i {
+				color: lighten($base-text-color, 50%);
+				font-size: 24px;
+				margin-right: 10px;
+			}
+
+			&:hover, &:focus {
+				opacity: 0.65;
+				margin: 10px 0;
+			}
+		}
 	}
 }

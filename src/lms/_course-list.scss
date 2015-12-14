@@ -138,4 +138,30 @@
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+
+	.utec-course-tile {
+		height: 240px;
+
+		p {
+			display: none;
+		}
+
+		h2 {
+			font-size: 24px;
+		}
+	}
+
+	&:first-child {
+		.utec-course-tile {
+			height: 510px;
+
+			p {
+				display: block;
+			}
+
+			h2 {
+				font-size: 32px;
+			}
+		}
+	}
 }

@@ -63,7 +63,7 @@
 	& li {
 		list-style-type: none;
 		padding: 10px;
-		
+
 		@media(min-width:$screen-sm-min) {
 			display: inline-block;
 			padding: 15px $header-li-padding-hor;
@@ -76,7 +76,7 @@
 			color: $navbar-text-color !important;
 			text-decoration: none;
 			@include transition(all 0.3s ease-in-out);
-			padding: 0;			
+			padding: 0;
 
 			&:hover, &:focus, &:active {
 				color: $navbar-text-color !important;
@@ -116,20 +116,11 @@
 		}
 
 		& .navbar__button, & .navbar__button:link {
-			color: $navbar-button-text-color !important;
-			border: $navbar-button-border;
-			background-color: $navbar-button-bg;
-			text-transform: none;
+			@include button-outlined($brand-primary-color);
+			@include expanding-button(20px, $header-li-hover-expand);
+			text-transform: none !important;
 			padding: 10px 20px;
-			border-radius: 5px;
 			display: inline-block;
-
-			&:hover, &:focus {
-				text-transform: none;
-				background-color: darken($navbar-button-bg, 15%);
-				padding: 10px (20px + $header-li-hover-expand);
-				color: $navbar-button-text-color !important;
-			}
 		}
 	}
 
@@ -184,7 +175,7 @@
 	& .navigation-group {
 		margin-top: 20px;
 		padding: 0;
-		
+
 		@media(min-width:$screen-sm-min) {
 			border-right: 1px solid rgba($navbar-text-color, 0.15);
 			padding: 0;
@@ -236,7 +227,7 @@
 .navbar-collapse {
 	@include flex-shrink(0);
 	@include flex-grow(1);
-	
+
 	@media(min-width:$screen-sm-min) {
 		@include display(flex);
 		@include align-items(center);
@@ -291,6 +282,14 @@
 	@include flex-shrink(1);
 	@include flex-grow(0);
 	@include flex-wrap(nowrap);
+
+	@media(max-width:$screen-sm-max) {
+		@include justify-content(space-between);
+
+		&:before, &:after {
+			display: none;
+		}
+	}
 }
 
 .navbar-toggle {

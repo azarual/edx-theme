@@ -57,7 +57,7 @@ define(['jquery', 'backbone'], function ($, Backbone) {
 
         showNumberOfResults: function (term) {
             var msg = interpolate(
-                gettext('Showing %s course(s).'),
+                gettext('Displaying <span>%s course(s).</span>'),
                 [_.escape(term)]
             );
             this.$message.html(msg);

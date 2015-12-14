@@ -169,6 +169,7 @@
 		list-style-type: none;
 		@include display(flex);
 		@include flex-wrap(wrap);
+		@include align-items(center);
 		padding-top: 30px;
 		padding-bottom: 30px;
 		border-bottom: 1px solid $standard-line-separator-color;
@@ -190,72 +191,89 @@
 			background-position: center center;
 			border: 1px solid $standard-image-border-color;
 			width: 100%;
+			height: 280px;
+			position: relative;
+
+			@media(max-width:$screen-xs-max) {
+				height: 160px;
+			}
+
+			&__content {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				@include display(flex);
+				@include justify-content(center);
+				@include align-items(center);
+				z-index: 2;
+			}
+
+			&:before {
+				position: absolute;
+				content: ' ';
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				@include linear-gradient(to top, $base-text-color, rgba(0,0,0,0));
+				background-color: transparent;
+				opacity: 0.5;
+				z-index: 1;
+			}
 		}
 
 		&__info {
 			@include display(flex);
 			@include flex-wrap(wrap);
-			@include align-items(center);
+			@include align-items(flex-start);
 			padding-top: 15px;
 			padding-bottom: 15px;
-
-			@media(max-width:$screen-sm-max) {
-				padding-left: 0;
-			}
 		}
 
-		&__name {
+		&__number {
+			@include slab-serif;
+			color: $brand-primary-color;
+			display: block;
+			margin: 0 0 5px;
+			width: 100%;
 			font-size: 24px;
-			margin: 0 0 15px;
-			color: $brand-primary-color;
-			@include sans-serif-bold;
-		}
 
-		&__meta {
-			padding: 0;
-			margin-bottom: 3px;
-			margin-top: 0;
-
-			& li {
-				list-style-type: none;
-				padding: 3px 8px;
-				margin: 2px 0;
-				display: inline-block;
-				border-right: 1px solid $standard-line-separator-color;
-				font-size: 16px;
-				@include sans-serif-bold;
-				color: rgba($base-text-color, 0.7);
-
-				&:first-child {
-					padding-left: 0;
-				}
-
-				&:last-child {
-					padding-right: 0;
-					border-right: 0;
-				}
-
-				&.started {
-					color: $ok-color;
-				}
-
-				&.ended {
-					color: $error-color;
-				}
-
-				@media(max-width:$screen-sm-max) {
-					display: block;
-					padding: 3px 0;
-					border: none;
-				}
+			@media(max-width: $screen-xs-max) {
+				font-size: 18px;
 			}
 		}
 
-		&__date-block {
-			margin-bottom: 5px;
+		&__name, a.dashboard-courses__course__name {
+			font-size: 32px;
+			line-height: 140%;
+			margin: 0 0 20px;
+			color: $base-text-color;
+			@include sans-serif-light;
+
+			@media(max-width:$screen-xs-max) {
+				font-size: 24px;
+			}
+		}
+
+		&__date {
+			margin: 0 0 15px;
+			padding: 15px 0;
+			border-top: 1px solid rgba($base-text-color, 0.3);
+			border-bottom: 1px solid rgba($base-text-color, 0.3);
+			display: block;
+			width: 100%;
+			color: lighten($base-text-color, 50%);
 			font-size: 16px;
-			@include sans-serif-bold;
-			color: $brand-primary-color;
+
+			.started {
+				color: $ok-color;
+			}
+
+			.ended {
+				color: $error-color;
+			}
 		}
 
 		&__description {
@@ -266,22 +284,26 @@
 		}
 
 		&__options {
-			margin: 20px 0 0;
-			padding: 15px 0 0;
-			border-top: 2px solid $standard-line-separator-color;
+			margin: 0;
+			padding: 0;
+			font-size: 18px;
+
+			@media(max-width:$screen-xs-max) {
+				font-size: 16px;
+			}
 		}
 
 		&__option {
 			margin: 5px 20px 0 0;
 			list-style-type: none;
 			display: inline-block;
-			@include sans-serif-bold;
+			@include sans-serif;
 
 			& a, & a:link {
 				color: $base-text-color;
 				opacity: 0.6;
 				@include transition(all 0.3s ease-in-out);
-				@include sans-serif-bold;
+				@include sans-serif;
 
 				&:hover, &:focus {
 					opacity: 1;
@@ -298,43 +320,15 @@
 		}
 
 		&__view-button {
-			@include button-positive($brand-primary-color);
-			width: 100%;
-			position: relative;
-			overflow: hidden;
+			@include button-negative;
+			width: auto;
+			color: #fff !important;
+			text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+			@include sans-serif-bold;
+			font-size: 18px !important;
 
 			&:hover, &:focus {
 
-				& .inner-container {
-					left: -50%;
-				}
-			}
-
-			@media(max-width:$screen-sm-max) {
-				margin-top: 30px;
-			}
-
-			& .inner-container {
-				width: 400%;
-				position: relative;
-				left: -250%;
-				@include transition(all 0.15s ease-in-out);
-			}
-
-			& span {
-				width: 50%;
-				text-align: center;
-				display: inline-block;
-			}
-
-			& .icon {
-				width: 50%;
-				font-family: FontAwesome;
-				font-size: 18px;
-    			text-rendering: auto;
-    			content: "\f061";
-    			display: inline-block;
-    			text-align: center;
 			}
 		}
 	}
@@ -420,7 +414,7 @@
 
 
 .dashboard-header {
-	padding-top: 20px;
+	padding-top: 30px;
 	padding-bottom: 20px;
 	border-bottom: 2px solid $brand-primary-color;
 
@@ -431,11 +425,17 @@
 	}
 
 	& h2 {
-		@include sans-serif-bold;
-		font-size: 24px;
+		@include sans-serif;
+		font-size: 20px;
 		color: rgba($base-text-color, 0.7);
 		width: 100%;
 		@include flex-shrink(1);
+		letter-spacing: 0;
+
+		span {
+			@include slab-serif-bold;
+			color: $brand-primary-color;
+		}
 	}
 
 	&__search-trigger {
