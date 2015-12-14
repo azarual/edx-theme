@@ -117,7 +117,7 @@
           %endif
           <!-- end of category header -->
 
-          %if category == 'ungrouped':
+          %if category.lower() == 'cmc system training':
             <% 
             # move CMC000 to end of category
             cat_courses = cat_courses + [cat_courses.pop(0)]
