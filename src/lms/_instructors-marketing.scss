@@ -1,12 +1,11 @@
 .instructors-marketing {
 	padding: 50px 10px;
 	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
 
 	@media(max-width:$screen-sm-min) {
 		padding: 50px 30px;
 	}
-	
+
 	&>.row {
 		@include display(flex);
 		@include flex-wrap(wrap);
@@ -22,7 +21,7 @@
 		text-align: justify;
 
 		&__title {
-			@include sans-serif-bold;
+			@include sans-serif-light;
 			font-size: 36px;
 			margin: 0 0 15px;
 			color: $brand-primary-color;
@@ -86,7 +85,7 @@
 		}
 
 		&__title {
-			@include sans-serif-black;
+			@include sans-serif-bold;
 			font-size: 24px;
 			margin: 0 0 20px;
 		}

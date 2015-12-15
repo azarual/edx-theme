@@ -6,13 +6,13 @@
 	position: relative;
 
 	& h1 {
-		@include sans-serif-black;
+		@include sans-serif-light;
 		font-size: 64px;
 		margin: 0 0 10px;
 	}
 
 	& p {
-		@include sans-serif;	
+		@include sans-serif;
 		font-size: 20px;
 	}
 

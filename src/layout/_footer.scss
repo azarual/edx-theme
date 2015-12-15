@@ -1,7 +1,8 @@
 .footer {
-	background-color: shade($brand-primary-color, 0%);
-	border-top: 2px solid shade($brand-primary-color, 10%);
-	padding: 40px 30px 60px;
+	background-color: #fff;
+	border-top: 2px solid #ddd;
+	padding: 50px 30px 60px;
+	margin-top: 40px;
 	@include sans-serif;
 	font-weight: $footer-menu-font-weight;
 	color: $footer-text-color;
@@ -172,5 +173,35 @@
 		font-size: 12px;
 		text-align: center;
 		color: rgba($footer-text-color, 0.4);
+	}
+
+	&__dhis2-sponsors {
+		margin-bottom: 50px;
+		padding-bottom: 50px;
+		border-bottom: 1px solid rgba($footer-text-color, 0.1);
+		font-size: 12px;
+		text-align: center;
+		color: rgba($footer-text-color, 0.4);
+		@include display(flex);
+		@include align-items(center);
+		@include flex-wrap(wrap);
+		@include justify-content(space-around);
+
+		&:before, &:after {
+			display: none;
+		}
+
+		span {
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+		img {
+			display: inline-block;
+			margin: 10px;
+			max-width: 200px;
+			height: auto;
+		}
 	}
 }

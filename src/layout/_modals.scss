@@ -60,3 +60,45 @@
 		}
 	}
 }
+
+.modal {
+	width: 100%;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.modal__video-regular {
+	height: 100%;
+	@include display(flex);
+	@include align-items(center);
+
+	&__wrapper {
+
+	}
+
+	&__close {
+		font-size: 24px;
+		color: #fff;
+		width: 140px;
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100vh;
+		@include linear-gradient(to right, rgba(#000, 0), rgba(#000, 0.5)	);
+		text-align: center;
+
+		& a, & a:link {
+			color: #fff;
+
+			&:hover, &:focus {
+				color: #fff;
+				opacity: 0.65;
+			}
+		}
+
+		& i {
+			margin: 20px auto 0;
+			padding-right: 10px;
+			text-shadow: 1px 1px 3px rgba(150, 150, 150, 0.91);
+		}
+	}
+}
