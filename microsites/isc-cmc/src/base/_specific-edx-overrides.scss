@@ -7,3 +7,41 @@ span {
 	color: inherit;
 }
 
+.view-passwordreset {
+
+	.introduction {
+
+		header {
+			background: none;
+			height: auto;
+			padding: 50px 20px;
+
+			h1 {
+				margin: 0;
+				font: inherit;
+				@include sans-serif-bold;
+				font-size: 28px;
+				color: $brand-primary-color;
+				padding: 0;
+				position: relative;
+				top: 0;
+				left: 0;
+
+				span.title-super {
+					font: inherit;
+					color: inherit;
+					text-transform: none;
+				}
+			}
+		}
+	}
+
+	.passwordreset form .instructions {
+		font-weight: 400;
+		font-size: 16px;
+	}
+}
+
+.passwordreset a:link {
+	color: $brand-primary-color;
+}
