@@ -32,7 +32,7 @@
 			  width: auto;
 			  height: $header-logo-height;
 			  margin: $header-logo-margin;
-			  max-width: 100%;
+			  max-width: none;
 
 				@media(max-width: $screen-xs-max) {
 					height: 40px;

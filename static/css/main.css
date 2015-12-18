@@ -4623,9 +4623,6 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
   flex-direction: column;
   -ms-flex-direction: column; }
 
-.content-wrapper {
-  flex: 1; }
-
 .form a, .form a:link {
   color: #006ab6; }
   .form a:hover, .form a:focus, .form a:link:hover, .form a:link:focus {
@@ -7382,7 +7379,7 @@ Copyright (c) 2015 Daniel Eden
       width: auto;
       height: 50px;
       margin: 4px 0 0;
-      max-width: 100%; }
+      max-width: none; }
       @media (max-width: 767px) {
         .navbar__logo img {
           height: 40px; } }
@@ -7860,6 +7857,50 @@ Copyright (c) 2015 Daniel Eden
         color: #fff;
         opacity: 0.65; }
     .modal__video-fullscreen__close i {
+      margin: 20px auto 0;
+      padding-right: 10px;
+      text-shadow: 1px 1px 3px rgba(150, 150, 150, 0.91); }
+
+.modal {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.modal__video-regular {
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center; }
+  .modal__video-regular__close {
+    font-size: 24px;
+    color: #fff;
+    width: 140px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(to right,transparent, rgba(0, 0, 0, 0.5), , , , , , , , );
+    text-align: center; }
+    .modal__video-regular__close a, .modal__video-regular__close a:link {
+      color: #fff; }
+      .modal__video-regular__close a:hover, .modal__video-regular__close a:focus, .modal__video-regular__close a:link:hover, .modal__video-regular__close a:link:focus {
+        color: #fff;
+        opacity: 0.65; }
+    .modal__video-regular__close i {
       margin: 20px auto 0;
       padding-right: 10px;
       text-shadow: 1px 1px 3px rgba(150, 150, 150, 0.91); }
@@ -10137,6 +10178,11 @@ Copyright (c) 2015 Daniel Eden
   .account-settings-sections a:hover, .account-settings-sections a:focus, .account-settings-sections a span:hover, .account-settings-sections a span:focus {
     color: #003d6a; }
 
+.animate-on-load {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
 .landing-hero {
   position: relative;
   min-height: 70vh;
@@ -10197,9 +10243,21 @@ Copyright (c) 2015 Daniel Eden
       font-family: 'Lato', sans-serif;
       font-weight: 700;
       font-style: normal;
-      line-height: 120%; }
+      line-height: 120%;
+      position: relative;
+      opacity: 0;
+      top: 100px;
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out; }
+      .landing-hero__content__text h1.loaded {
+        top: 0;
+        opacity: 1; }
     .landing-hero__content__text p {
-      margin: 2rem 0; }
+      margin: 2rem 0;
+      opacity: 0; }
+      .landing-hero__content__text p.loaded {
+        opacity: 1; }
       .landing-hero__content__text p a {
         font-family: 'Lato', sans-serif;
         font-weight: 800;
@@ -10208,6 +10266,10 @@ Copyright (c) 2015 Daniel Eden
         .landing-hero__content__text p a:hover, .landing-hero__content__text p a:focus {
           opacity: 0.7;
           color: #fff; }
+    .landing-hero__content__button {
+      opacity: 0; }
+      .landing-hero__content__button.loaded {
+        opacity: 1; }
   .landing-hero__graphic img {
     max-width: 100%;
     width: 100%; }
