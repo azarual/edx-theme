@@ -7276,6 +7276,8 @@ Copyright (c) 2015 Daniel Eden
         margin: 0 auto 30px; }
         .footer__logo img {
           height: 56px; } }
+    .footer__logo__positive {
+      display: none; }
   .footer__poweredby {
     -webkit-flex-shrink: 1;
     -moz-flex-shrink: 1;
@@ -7333,6 +7335,10 @@ Copyright (c) 2015 Daniel Eden
       opacity: 0.6; }
       .footer__poweredby__logo:hover, .footer__poweredby__logo:focus {
         opacity: 1; }
+      .footer__poweredby__logo.positive {
+        display: none; }
+      .footer__poweredby__logo.negative {
+        display: block; }
     .footer__poweredby img {
       height: 24px;
       width: auto; }
@@ -7343,6 +7349,46 @@ Copyright (c) 2015 Daniel Eden
     font-size: 12px;
     text-align: center;
     color: rgba(255, 255, 255, 0.4); }
+  .footer.white {
+    color: rgba(61, 61, 61, 0.8);
+    background-color: #fff; }
+    .footer.white a, .footer.white a:link, .footer.white a:visited {
+      color: #006ab6; }
+      .footer.white a:hover, .footer.white a:focus, .footer.white a:link:hover, .footer.white a:link:focus, .footer.white a:visited:hover, .footer.white a:visited:focus {
+        color: rgba(0, 106, 182, 0.7);
+        text-decoration: none; }
+    .footer.white .footer a, .footer.white .footer a:link, .footer.white .footer a:visited {
+      color: #006ab6; }
+      .footer.white .footer a:hover, .footer.white .footer a:focus, .footer.white .footer a:link:hover, .footer.white .footer a:link:focus, .footer.white .footer a:visited:hover, .footer.white .footer a:visited:focus {
+        color: rgba(0, 106, 182, 0.7); }
+    .footer.white .footer__links li {
+      border-right: 1px solid rgba(61, 61, 61, 0.3); }
+      .footer.white .footer__links li:last-child {
+        padding-right: 0;
+        border-right: none; }
+    @media (max-width: 992px) {
+      .footer.white .footer__legal {
+        border-bottom: 1px solid rgba(61, 61, 61, 0.3); } }
+    .footer.white .footer__logo {
+      border-right: 1px solid rgba(61, 61, 61, 0.3); }
+      .footer.white .footer__logo__positive {
+        display: block; }
+      .footer.white .footer__logo__negative {
+        display: none; }
+    .footer.white .footer__poweredby {
+      border-left: 1px solid #ccc; }
+      @media (max-width: 992px) {
+        .footer.white .footer__poweredby {
+          border-top: 1px solid rgba(61, 61, 61, 0.3); } }
+      .footer.white .footer__poweredby span {
+        color: #3d3d3d; }
+      .footer.white .footer__poweredby__logo.positive {
+        display: block; }
+      .footer.white .footer__poweredby__logo.negative {
+        display: none; }
+    .footer.white .footer__edx-legal {
+      border-top: 1px solid rgba(61, 61, 61, 0.1);
+      color: rgba(61, 61, 61, 0.4); }
 
 .navbar {
   background-color: #fff;
