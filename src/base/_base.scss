@@ -89,3 +89,9 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 .content-wrapper {
 	flex: 1;
 }
+
+.container, section {
+	@media(max-width:$screen-sm-max) {
+		min-width: 0;
+	}
+}
