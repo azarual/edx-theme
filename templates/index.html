@@ -20,35 +20,20 @@
 %>
 
 
-% if show_homepage_promo_video:
 
-<!-- Video modal -->
-<div class="modal fade modal__video-regular__wrapper" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal__video-regular">
-    <div class="modal__video-regular__container container-bs" id="modalYoutube">
-      <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_wnkyb0rwex videoFoam=true" style="height:100%;width:100%"> </div></div></div>
-    </div>
-    <div class="modal__video-regular__close">
-      <a href="#" data-dismiss="modal" aria-label="Close"><i class="fa fa-remove"></i></a>
-    </div>
-  </div>
-</div>
-
-% endif
 
 
 <!-- LMS landing page hero portion -->
   <section class="landing-hero">
     <div class="container-bs">
       <div class="landing-hero__content row">
-        <div class="landing-hero__content__text col-xs-12">
+        <div class="landing-hero__content__text col-xs-12 col-sm-6">
           <h1 class="animate-on-load">Welcome to <br>Metalogix Academy!</h1>
           <p class="animate-on-load"><a href="/login">Sign in</a> or <a href="/register">register</a> to access our courses.</p>
-          % if show_homepage_promo_video:
-
-            <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button animate-on-load">View our Welcome video</a>
-
-          % endif
+        </div>
+        <div class="text-center col-xs-12 col-sm-6">
+          <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+          <div class="wistia_embed wistia_async_yycokrmh83 popover=true popoverAnimateThumbnail=true" style="display:inline-block;height:169px;width:300px">&nbsp;</div>
         </div>
       </div>
     </div>

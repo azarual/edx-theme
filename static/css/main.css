@@ -7962,25 +7962,32 @@ Copyright (c) 2015 Daniel Eden
   .landing-hero__content {
     max-width: 880px;
     margin: 0 auto; }
-    .landing-hero__content__text h1 {
-      font-family: 'Lato', sans-serif;
-      font-weight: 800;
-      font-style: normal;
-      font-size: 64px;
-      margin: 0 0 10px; }
-      @media (max-width: 768px) {
-        .landing-hero__content__text h1 {
-          font-size: 42px; } }
+    .landing-hero__content__text {
+      text-align: left; }
       @media (max-width: 767px) {
-        .landing-hero__content__text h1 {
-          font-size: 32px; } }
-    .landing-hero__content__text p {
-      font-family: 'Lato', sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 20px;
-      line-height: 130%;
-      color: #fff; }
+        .landing-hero__content__text {
+          text-align: center; } }
+      .landing-hero__content__text h1 {
+        font-family: 'Lato', sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 64px;
+        margin: 0 0 10px;
+        text-align: left; }
+        @media (max-width: 768px) {
+          .landing-hero__content__text h1 {
+            font-size: 42px; } }
+        @media (max-width: 767px) {
+          .landing-hero__content__text h1 {
+            font-size: 32px;
+            text-align: center; } }
+      .landing-hero__content__text p {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 130%;
+        color: #fff; }
     .landing-hero__content__button, .landing-hero__content__button:visited, .landing-hero__content__button:link {
       padding: 15px 40px;
       cursor: pointer;
