@@ -149,3 +149,8 @@
 		width: 100%;
 	}
 }
+
+.course-list-view.courses-listing {
+	@include display(flex);
+	@include flex-wrap(wrap);
+}
