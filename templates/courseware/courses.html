@@ -101,8 +101,7 @@
 <!-- courses view -->
 <section class="courses-courses courses${'' if course_discovery_enabled else ' no-course-discovery'}">
   <div class="course-list-view container-bs courses-listing">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+    <div class="row courses-blocks__row">
         %for course in courses:
           <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
             <div class="course-tile__body">
@@ -118,7 +117,6 @@
             </div>
           </div>
         %endfor
-      </div>
     </div>
   </div>
 </section>

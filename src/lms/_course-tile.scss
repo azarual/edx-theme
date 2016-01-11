@@ -108,7 +108,7 @@
 	}
 
 	&:hover, &:focus {
-		
+
 		& .course-tile {
 
 			&__image {
@@ -123,4 +123,9 @@
 			}
 		}
 	}
+}
+
+.courses-blocks__row {
+	@include display(flex);
+	@include flex-wrap(wrap);
 }

@@ -8373,6 +8373,22 @@ Copyright (c) 2015 Daniel Eden
   .course-tile:hover .course-tile__image:after, .course-tile:focus .course-tile__image:after {
     height: 6px; }
 
+.courses-blocks__row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
 .course-list-view {
   padding: 30px;
   border-top: 1px solid #ddd;
