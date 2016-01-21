@@ -10,7 +10,7 @@
 //-----------------
 
 //Main Color Variables
-$main-color: #1482C5;
+$main-color: #126F9A;
 $dark-color: #126f9a; //Link Color
 $light-color: #f4e00c; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
 $bg-color: #f7fe81; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
@@ -245,3 +245,4 @@ section.container {
 // Import Custom SASS
 @import "bourbon/bourbon";
 @import "custom/footer";
+@import "custom/homepage-custom";

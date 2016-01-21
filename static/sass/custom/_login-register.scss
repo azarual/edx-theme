@@ -1,0 +1,44 @@
+.login aside, .register aside {
+  width: 270px;
+}
+
+.view-register .introduction header .title, .view-login .introduction header .title, .view-passwordreset .introduction header .title {
+  width: 490px;
+}
+
+#field-tos {
+  margin-right: 20px;
+}
+
+.view-register .content-wrapper, .view-login .content-wrapper, .view-passwordreset .content-wrapper {
+  background: #fff;
+}
+
+.view-register .container, .view-register section.outside-app, .view-register .wrapper-account-settings, .view-register .view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-account_privacy, .view-profile .profile-self .wrapper-profile-field-account-privacy .view-register .u-field-account_privacy, .view-register .view-profile .wrapper-profile-sections, .view-profile .view-register .wrapper-profile-sections, .view-register .introduction, .view-login .container, .view-login section.outside-app, .view-login .wrapper-account-settings, .view-login .view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-account_privacy, .view-profile .profile-self .wrapper-profile-field-account-privacy .view-login .u-field-account_privacy, .view-login .view-profile .wrapper-profile-sections, .view-profile .view-login .wrapper-profile-sections, .view-login .introduction, .view-passwordreset .container, .view-passwordreset section.outside-app, .view-passwordreset .wrapper-account-settings, .view-passwordreset .view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-account_privacy, .view-profile .profile-self .wrapper-profile-field-account-privacy .view-passwordreset .u-field-account_privacy, .view-passwordreset .view-profile .wrapper-profile-sections, .view-profile .view-passwordreset .wrapper-profile-sections, .view-passwordreset .introduction {
+  background: #fff;
+}
+
+.view-register .container, .view-login .container {
+  padding-bottom: 70px;
+}
+
+.register__already-registered {
+  padding-top: 50px;
+  text-align: center;
+
+  h2 {
+    font-size: 20px !important;
+    text-transform: none !important;
+  }
+
+  &__cta {
+    display: block;
+    padding: 10px 30px;
+    border: 1px solid;
+    font-size: 18px;
+
+    &:hover, &:focus {
+      opacity: 0.7;
+    }
+  }
+}
