@@ -103,3 +103,21 @@
 		font-size: 32px;
 	}
 }
+
+.login-form {
+
+	#forgot-password-link {
+		float: none;
+		display: block;
+	}
+
+	#remember-yes {
+		float: none;
+		display: inline-block;
+	}
+
+	label.form__checkbox-label {
+		float: none;
+		display: inline-block;
+	}
+}

@@ -128,4 +128,9 @@
 .courses-blocks__row {
 	@include display(flex);
 	@include flex-wrap(wrap);
+	width: 100%;
+}
+
+li.courses-listing-item .course-tile {
+	width: 100%;
 }
