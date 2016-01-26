@@ -89,7 +89,7 @@ $site-status-color: $bg-color;
 $header-graphic-super-color: $dark-color;
 $header-graphic-sub-color: $lighter-base-font-color;
 
-$header-link-color: #4d4d4d;
+$header-link-color: $main-color;
 $header-link-hover: lighten($header-link-color, 15%);
 
 $button-color: $main-color;

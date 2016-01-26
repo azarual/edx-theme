@@ -1,2 +1,3 @@
 .DS_Store
 config.codekit
+static/sass/.sass-cache

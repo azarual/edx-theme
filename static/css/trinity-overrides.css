@@ -1,4 +1,8 @@
 @charset "UTF-8";
+header.global .nav-move_right {
+  float: right;
+  margin-right: 30px; }
+
 .container-bs {
   margin-right: auto;
   margin-left: auto;
@@ -254,6 +258,12 @@
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   border-top: 1px solid #ccc; }
+
+.homepage-courses__heading {
+  font-size: 32px;
+  color: #126F9A;
+  text-align: left;
+  margin: 30px 0 0; }
 
 .login aside, .register aside {
   width: 270px; }
