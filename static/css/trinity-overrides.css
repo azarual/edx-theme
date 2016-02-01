@@ -296,3 +296,6 @@ header.global .nav-move_right {
     font-size: 18px; }
     .register__already-registered__cta:hover, .register__already-registered__cta:focus {
       opacity: 0.7; }
+
+ul li {
+  margin-bottom: 10px; }
