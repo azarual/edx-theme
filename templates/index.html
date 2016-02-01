@@ -42,17 +42,6 @@ from microsite_configuration import microsite
           % endif
           </%doc>
         </hgroup>
-        % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-          <div class="course-search">
-            <form method="get" action="/courses">
-              <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-              <button class="search-button" type="submit">
-                <i class="icon fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
-        % endif
-
       </div>
 
       % if show_homepage_promo_video:
