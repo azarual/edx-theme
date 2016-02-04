@@ -83,16 +83,16 @@
                                 options: fieldsData.language.options
                             })
                         },
-                        {
-                            view: new FieldViews.DropdownFieldView({
-                                model: userAccountModel,
-                                required: true,
-                                title: gettext('Country or Region'),
-                                valueAttribute: 'country',
-                                options: fieldsData['country']['options']
-                            })
-                        },
-                        ,
+                        // {
+                        //     view: new FieldViews.DropdownFieldView({
+                        //         model: userAccountModel,
+                        //         required: true,
+                        //         title: gettext('Country or Region'),
+                        //         valueAttribute: 'country',
+                        //         options: fieldsData['country']['options']
+                        //     })
+                        // },
+                        // ,
                         {
                             view: new FieldViews.DropdownFieldView({
                                 model: userTrinityUserProfileModel,
@@ -108,22 +108,22 @@
                 {
                     title: gettext('Additional Information (optional)'),
                     fields: [
-                        {
-                            view: new FieldViews.DropdownFieldView({
-                                model: userAccountModel,
-                                title: gettext('Education Completed'),
-                                valueAttribute: 'level_of_education',
-                                options: fieldsData.level_of_education.options
-                            })
-                        },
-                        {
-                            view: new FieldViews.DropdownFieldView({
-                                model: userAccountModel,
-                                title: gettext('Gender'),
-                                valueAttribute: 'gender',
-                                options: fieldsData.gender.options
-                            })
-                        },
+                        // {
+                        //     view: new FieldViews.DropdownFieldView({
+                        //         model: userAccountModel,
+                        //         title: gettext('Education Completed'),
+                        //         valueAttribute: 'level_of_education',
+                        //         options: fieldsData.level_of_education.options
+                        //     })
+                        // },
+                        // {
+                        //     view: new FieldViews.DropdownFieldView({
+                        //         model: userAccountModel,
+                        //         title: gettext('Gender'),
+                        //         valueAttribute: 'gender',
+                        //         options: fieldsData.gender.options
+                        //     })
+                        // },
                         {
                             view: new FieldViews.DropdownFieldView({
                                 model: userAccountModel,
