@@ -36,13 +36,15 @@ ${_("This email was automatically sent by {site_name} because someone "
     )}
 
 % elif stanford_theme_enabled():  ## Temporary hack until we develop a better way to adjust language
+${_("If you didn't request this, you don't need to do anything; you won't "
+      "receive any more email from us. Please do not reply to this e-mail; "
+      "if you require assistance, check the about section of the "
+      "{platform_name} Courses web site.").format(platform_name=settings.PLATFORM_NAME)}
+
+% else:
 ${_("Once your account is activated, you can start enrolling in courses. "
     "Need help getting started? Visit our Help page to learn more: "
     "www.texascourses.org/help")}
-% else:
-${_("If you didn't request this, you don't need to do anything; you won't "
-      "receive any more email from us. Please do not reply to this e-mail; "
-      "if you require assistance, check the help section of the "
-      "{platform_name} website.").format(platform_name=settings.PLATFORM_NAME)}
+
 
 % endif
