@@ -85,3 +85,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 	@include display(flex);
 	@include flex-direction(column);
 }
+
+.xmodule_display.xmodule_SequenceModule .sequence-nav {
+	z-index: 0;
+}
