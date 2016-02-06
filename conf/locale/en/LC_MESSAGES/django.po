@@ -1,0 +1,10 @@
+# custom strings
+# you will need to run $ paver i18n_fastgenerate 
+
+#: openedx/core/djangoapps/user_api/views.py
+msgid "I agree to the {platform_name} {terms_of_service}."
+msgstr "I agree to the {terms_of_service}."
+
+#: lms/templates/student_account/register.underscore
+msgid "Create your account"
+msgstr "Create your Gateway account"
