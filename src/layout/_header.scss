@@ -296,6 +296,10 @@
 .navbar-toggle {
 	@include flex-shrink(0);
 	margin-left: 30px;
+	box-shadow: none;
+	position: absolute;
+	right: 0;
+  top: 23px;
 }
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
