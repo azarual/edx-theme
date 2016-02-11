@@ -297,5 +297,12 @@ header.global .nav-move_right {
     .register__already-registered__cta:hover, .register__already-registered__cta:focus {
       opacity: 0.7; }
 
+.login-register .form-field.checkbox-honor_code, .login-register .form-field.checkbox-terms_of_service {
+  display: flex; }
+  .login-register .form-field.checkbox-honor_code input.checkbox, .login-register .form-field.checkbox-terms_of_service input.checkbox {
+    margin: 0 10px 0 0; }
+  .login-register .form-field.checkbox-honor_code label, .login-register .form-field.checkbox-terms_of_service label {
+    margin: 4px 0 0 0; }
+
 ul li {
   margin-bottom: 10px; }
