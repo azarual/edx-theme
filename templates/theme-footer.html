@@ -4,10 +4,12 @@
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
 
+<% current_year = datetime.now().year %>
+
 <div class="wrapper-footer">
   <footer>
     <div class="colophon">
-           <small>&copy; 1996-2015 InterSystems Corporation, Cambridge, MA. Notices/Terms &amp; Conditions. All Rights Reserved. <br />Privacy Policy.</small>
+           <small>&copy; 1996-${current_year} InterSystems Corporation, Cambridge, MA. Notices/Terms &amp; Conditions. All Rights Reserved. <br />Privacy Policy.</small>
     </div>
     <div class="references">
       <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
