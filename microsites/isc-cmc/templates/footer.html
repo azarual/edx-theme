@@ -4,12 +4,14 @@
 <%namespace name='static' file='/static_content.html'/>
 <%! from microsite_configuration.templatetags.microsite import platform_name %>
 
+<% current_year = datetime.now().year %>
+
 <footer class="footer">
   <div class="container-bs footer__container">
     <div class="footer__content">
         <ul class="footer__links">
             <li>
-              © 2015 Coordinate My Care. All rights reserved.
+              &copy; ${current_year} Coordinate My Care. All rights reserved.
             </li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/tos">Terms of Service</a></li>
