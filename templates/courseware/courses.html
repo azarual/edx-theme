@@ -13,15 +13,11 @@
   from courseware.courses import course_image_url, get_course_about_section
 %>
 
-<% 
-  from itertools import groupby 
-  from courseware.courses import get_course_about_section 
-%>  
+<% from courseware.courses import get_course_about_section %>
 
 <% 
   by_name = lambda c: get_course_about_section(c, 'title')
-  by_org = lambda c: get_course_about_section(c, 'university')
-  grouped_courses = groupby(sorted(courses,key=by_name), by_org)
+  sorted_courses = sorted(courses,key=by_name) 
 %>
 
 <%block name="header_extras">
@@ -113,26 +109,21 @@
 <section class="courses-courses courses${'' if course_discovery_enabled else ' no-course-discovery'}">
   <div class="course-list-view container-bs courses-listing">
     <div class="row courses-blocks__row">
-        %for organization, org_courses in grouped_courses:
-          <div>
-            <h2 class="course-organization">${organization}</h2>
-            %for course in org_courses:
-              <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
-                <div class="course-tile__body">
-                  <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image: url('${course_image_url(course)}');"></a>
-                  <div class="course-tile__info">
-                    <span class="course-tile__date">${course.start_datetime_text()}</span>
-                    <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
-                    <span class="course-tile__instructor">${get_course_about_section(course, 'university')}</span>
-                    <div class="course-tile__separator"></div>
-                    <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
-                    <a class="course-tile__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
-                  </div>
-                </div>
-              %endfor
+        %for course in sorted_courses:
+          <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
+            <div class="course-tile__body">
+              <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image: url('${course_image_url(course)}');"></a>
+              <div class="course-tile__info">
+                <span class="course-tile__date">${course.start_datetime_text()}</span>
+                <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
+                <span class="course-tile__instructor">${get_course_about_section(course, 'university')}</span>
+                <div class="course-tile__separator"></div>
+                <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
+                <a class="course-tile__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
+              </div>
             </div>
+          </div>
         %endfor
-      </div>
     </div>
   </div>
 </section>
