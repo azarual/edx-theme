@@ -13,6 +13,13 @@
   from courseware.courses import course_image_url, get_course_about_section
 %>
 
+<% from courseware.courses import get_course_about_section %>
+
+<% 
+  by_name = lambda c: get_course_about_section(c, 'title')
+  sorted_courses = sorted(courses,key=by_name) 
+%>
+
 <%block name="header_extras">
   % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
   % for template_name in ["result_item", "filter_bar", "filter", "search_facets_list", "search_facets_section", "search_facet", "more_less_links"]:
@@ -102,7 +109,7 @@
 <section class="courses-courses courses${'' if course_discovery_enabled else ' no-course-discovery'}">
   <div class="course-list-view container-bs courses-listing">
     <div class="row courses-blocks__row">
-        %for course in courses:
+        %for course in sorted_courses:
           <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
             <div class="course-tile__body">
               <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image: url('${course_image_url(course)}');"></a>
