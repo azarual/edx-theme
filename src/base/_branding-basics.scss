@@ -1,11 +1,11 @@
-$brand-primary-color: #0090c1;
-$navbar-style: "white";  // brand or white
+$brand-primary-color: #000;
+$navbar-style: "brand";  // brand or white
 $base-text-color: #666;
 
 $cta-button-bg: $brand-primary-color;
 $cta-button-border: none;
 
-$header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
+$header-bg-color: calcNavbarBg($navbar-style, #000);
 $header-logo-height: 6rem;
 $header-padding-top: 1.5rem;
 $header-padding-bottom: $header-padding-top;
@@ -41,15 +41,15 @@ $buttons-border-radius: 4rem;
 
 $footer-padding-top: 4rem;
 $footer-padding-bottom: 1.5*$footer-padding-top;
-$footer-bg-color: #eee;
+$footer-bg-color: #000;
 $footer-top-border: none;
-$footer-text-color: lighten($base-text-color, 15%);
+$footer-text-color: rgba(#fff, 0.85);
 $footer-link-color: $footer-text-color;
 $footer-link-hover-color: lighten($footer-text-color, 15%);
 $footer-link-breathe-space: 1.5rem;
 $footer-logo-breathe-space: 3rem;
 $footer-logo-padding-vertical: 1rem;
-$footer-logo-width: 4rem;
+$footer-logo-width: 10rem;
 $footer-logo-opacity: 0.5;
 $footer-copyright-text-size: 1.2rem;
 $footer-copyright-text-color: lighten($footer-text-color, 15%);

@@ -51,6 +51,7 @@
     padding-left: 2rem;
     @include primary-font-light;
     font-size: 1.6rem;
+    color: $header-text-color;
 
     @media (max-width: $screen-sm-max) {
       display: none;
@@ -107,6 +108,8 @@
       a {
         color: $header-text-color;
         @include underline_expanding_hover;
+        text-transform: uppercase;
+        @include primary-font-bold;
 
         &:hover, &:focus {
           color: lighten($header-text-color, 20%);
@@ -145,7 +148,7 @@
     }
 
     &.a--user-avatar {
-      color: rgba($base-text-color, 0.6);
+      color: rgba($header-text-color, 0.6);
     }
   }
 }
