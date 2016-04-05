@@ -1,0 +1,20 @@
+#: common/lib/xmodule/xmodule/capa_base.py:425
+# specific check answer button text change for InterSystems
+msgid "Check"
+msgstr "Submit answer"
+
+# progress.html
+msgid "Your certificate is available"
+msgstr "Course Completed"
+
+# progress.html
+msgid "You can keep working for a higher grade, or request your certificate now."
+msgstr "You already have completed this course."
+
+# progress.html
+msgid "Congratulations, you qualified for a certificate!"
+msgstr "You have enough credits to pass this course. Click on the Complete Course button to receive your final grade."
+
+# progress.html
+msgid "Request Certificate"
+msgstr "Complete Course"
