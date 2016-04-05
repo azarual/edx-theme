@@ -57,7 +57,7 @@
     font-size: 1.6rem;
     color: $header-text-color;
 
-    @media (max-width: $screen-sm-max) {
+    @media (max-width: $screen-md-max) {
       display: none;
     }
 
