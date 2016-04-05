@@ -58,8 +58,8 @@
 <%def name="get_header_menu_logged_out_extra_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['NYIF.COM', 'http://www.nyif.com', '']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ANCHOR_ARG']
+      ['NYIF.COM', 'http://www.nyif.com', '', 'target = "_blank"']
     ]
   %>
 </%def>
@@ -70,8 +70,8 @@
 <%def name="get_header_menu_logged_in_extra_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['NYIF.COM', 'http://www.nyif.com', '']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ANCHOR_ARG']
+      ['NYIF.COM', 'http://www.nyif.com', '', 'target = "_blank"']
     ]
   %>
 </%def>
@@ -82,16 +82,16 @@
 <%def name="get_footer_menu_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['Terms of Service', 'http://www.nyif.com/terms-of-use', ''],
-      ['Privacy Policy', 'http://www.nyif.com/privacy-cookie-policy/', ''],
-      ['Contact us', 'mailto:customerservice@nyif.com', ''],
-      ['Copyright', reverse('tos'), ''],
-      ['Contact', reverse('tos'), ''],
-      ['Help', reverse('tos'), ''],
-      ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com', 'a--linkedin'],
-      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com', 'a--facebook'],
-      ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com', 'a--twitter']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ANCHOR_ARG']
+      ['Terms of Service', 'http://www.nyif.com/terms-of-use', '', ''],
+      ['Privacy Policy', 'http://www.nyif.com/privacy-cookie-policy/', '', ''],
+      ['Contact us', 'mailto:customerservice@nyif.com', '', ''],
+      ['Copyright', reverse('tos'), '', ''],
+      ['Contact', reverse('tos'), '', ''],
+      ['Help', reverse('tos'), '', ''],
+      ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com', 'a--linkedin', ''],
+      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com', 'a--facebook', ''],
+      ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com', 'a--twitter', '']
     ]
   %>
 </%def>

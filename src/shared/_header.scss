@@ -21,6 +21,10 @@
   &__logo {
     height: $header-logo-height;
 
+    @media (max-width: $screen-xs-max) {
+      max-width: 18rem;
+    }
+
     &__container {
       @include flex-shrink(0);
     }
