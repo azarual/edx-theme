@@ -45,7 +45,7 @@
   }
 
   &__group-right {
-    @include flex-shrink(0);
+    @include flex-shrink(1);
   }
 
   &__course-name {
@@ -167,6 +167,7 @@ button.a--site-nav__mobile-toggle {
   height: $nav-toggle-bar-width !important;
   padding: 0;
   position: relative;
+  z-index: 100000;
   bottom: 0.2rem;
   margin-left: $nav-toggle-bar-margin;
 
@@ -309,8 +310,9 @@ ul.a--slide-menu__container {
   z-index: 1001;
   width: 100%;
   padding-top: 10rem;
-  padding-bottom: 50rem;
-  min-height: 100vh;
+  padding-bottom: 3rem;
+  height: 100vh;
+  overflow-y: scroll;
   left: 0;
   top: 0;
   background-color: $slideout-menu-background-color;
@@ -321,7 +323,6 @@ ul.a--slide-menu__container {
   transition: transform 0.4s;
   -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
   transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-  overflow: hidden;
 
   li {
     display: block;
@@ -401,6 +402,7 @@ ul.a--slide-menu__container {
       transform: translate3d(0,200vh,0);
       -webkit-transition: -webkit-transform 1s;
       transition: transform 1s;
+      margin-bottom: 8rem;
     }
 
     a {
