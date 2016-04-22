@@ -1,0 +1,389 @@
+/****************************************************************************************************
+*   Stanford Theming File
+*
+*   Contains all the theme color definitions for the Stanford Open Source MOOC Project
+*
+****************************************************************************************************/
+
+@import 'base/typography';
+@import 'base/grid-settings';
+@import 'neat/neat'; // lib - Neat
+
+$button-size: ($baseline*2.75);
+$course-search-input-height: ($button-size);
+
+
+//-----------------
+//  Color variables (from Stanford palette unless noted)
+//-----------------
+
+//Main Color Variables
+//$main-color: #f7691f; // orange
+//$dark-color: #ea281f; //Link Color  (red)
+//$light-color: #f4e00c; //Selected Header BG Color, ie. calendar  (yellow)
+//$bg-color: #f7fe81; //Selected Content BG Color, ie. calendar    (light yellow)
+
+$main-color: #45a0c2; 
+$dark-color: #2a5db0; //Link Color  
+$light-color: #f4e00c; //Selected Header BG Color, ie. calendar  (yellow)
+$bg-color: #f7fe81; //Selected Content BG Color, ie. calendar    (light yellow)
+
+//Main BG Color Variables
+$main-bg: #818181;
+$main-bg-60: lighten($main-bg, 18.5%); //Main Border/HR Color
+$main-bg-25: lighten($main-bg, 25%); 
+
+//Secondary Color Variables
+$secondary: #cde3ec;
+$secondary-50: lighten($secondary, 9%);
+$secondary-25: lighten($secondary, 20%); //Important Heading BG Color 
+
+//Gray Color Variables
+$gray: #3f3f3f; //Main Text Color
+$gray-75: lighten($gray, 18.25%); //Lighter Text Color
+
+$gray-3: #e9e9e9; //Block/Course BG Color
+$gray-2: #f2f2f2;
+$gray-1: #fbfbfb; //Main BG Color
+$white: $gray-1;
+
+$black: #2e2e2e;
+$black-80: #585858;
+
+
+
+//-----------------
+//  Font Assignment
+//-----------------
+
+$theme-sans-font: 'Source Sans';
+$sans-serif: $theme-sans-font, $sans-serif;
+$body-font-family: $sans-serif;
+
+$theme-serif-font: 'Crimson Text';
+$serif: $theme-serif-font, $serif;
+
+
+
+
+//-----------------
+//  Theme Element Assignments
+//------------------
+
+$body-bg: $gray-1;
+$container-bg: $gray-1;
+$login-register-bg: $gray-1;
+$content-wrapper-bg: $gray-1;
+$header-image: none;
+$header-bg: transparentize(lighten($secondary, 18.5%), .25);
+$courseware-header-image: none;
+$courseware-header-bg: transparentize(lighten($secondary, 18.5%), .25);
+$footer-bg: $secondary-25;
+$courseware-footer-border: 1px solid $main-bg-60;
+$courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, .1));
+$courseware-footer-margin: 50px;
+
+$faded-hr-image-1: linear-gradient($main-bg-60 0%, $main-bg-60);
+$faded-hr-image-2: linear-gradient($main-bg-60 0%, $main-bg-60);
+$faded-hr-image-3: linear-gradient($main-bg-60 0%, $main-bg-60);
+$faded-hr-image-4: linear-gradient($main-bg-60 0%, $main-bg-60);
+$faded-hr-image-5: linear-gradient($main-bg-60 0%, $main-bg-60);
+$faded-hr-image-6: linear-gradient($main-bg-60 0%, $main-bg-60);
+
+$base-font-color: $black;
+$lighter-base-font-color: $black-80;
+$very-light-text: $gray-1;
+
+$link-color: $dark-color;
+$link-color-d1: $dark-color;
+$link-hover: $light-color;
+$site-status-color: $bg-color;
+
+$header-graphic-super-color: $dark-color;
+$header-graphic-sub-color: $lighter-base-font-color;
+
+$header-link-color: $dark-color;
+$header-link-hover: $light-color;
+
+$button-color: $main-color;
+$button-archive-color: $gray-3;
+
+$shadow-color: $gray;
+
+// actions
+$button-bg-image: none;
+$button-bg-color: $gray-3;
+$button-bg-hover-color: $gray-1;
+
+// actions - primary
+$action-primary-bg: $main-color;
+$action-primary-fg: $gray-2;
+$action-primary-shadow: none;
+
+// focused - hover/active pseudo states
+$action-primary-focused-bg: $dark-color;
+$action-primary-focused-fg: $gray-1;
+
+// current or active navigation item
+$action-primary-active-bg: $dark-color;
+$action-primary-active-fg: $gray-1;
+$action-primary-active-shadow: none;
+$action-primary-active-focused-fg: $gray-2;
+$action-primary-active-focused-shadow: none;
+
+// disabled
+$action-primary-disabled-bg: $gray-75;
+$action-prmary-disabled-fg: $gray-1;
+
+
+
+// actions - secondary
+$action-secondary-bg: $secondary;
+$action-secondary-fg: $gray;
+$action-secondary-shadow: none;
+
+// focused - hover/active pseudo states
+$action-secondary-focused-bg: $secondary-50;
+$action-secondary-focused-fg: $gray;
+
+// current or active navigation item
+$action-secondary-active-bg: $secondary-50;
+$action-secondary-active-fg: $gray;
+$action-secondary-active-shadow: none;
+$action-secondary-active-focused-fg: $gray-75;
+$action-secondary-active-focused-shadow: none;
+
+// disabled
+$action-secondary-disabled-bg: $gray-3;
+$action-secondary-disabled-fg: $gray;
+
+//
+
+$border-color-1: $main-bg-60;
+$border-color-2: $main-bg-60;
+$border-color-3: $main-bg-60;
+$outer-border-color: $main-bg-60;
+
+$sidebar-color: $gray-1;
+
+$homepage__header--gradient__color--alpha: $secondary-25;
+$homepage__header--gradient__color--bravo: $secondary-25;
+$homepage__header--background: $secondary-25;
+$dashboard-profile-header-image: none;
+$dashboard-profile-header-color: $secondary-25;
+$dashboard-profile-color: $gray-3;
+$dot-color: $main-bg-60;
+
+$course-bg-color: $gray-3;
+$course-bg-image: none;
+$account-content-wrapper-bg: $gray-1;
+
+$course-profile-bg: $gray-1;
+$course-header-bg: transparentize($gray-1, .1);
+
+$sidebar-chapter-bg-top: transparentize($gray-1, .3);
+$sidebar-chapter-bg-bottom: transparentize($gray-1, .9);
+$sidebar-chapter-bg: $gray-2;
+$sidebar-active-image: $gray-3;
+
+$form-bg-color: $gray-1;
+$modal-bg-color: $gray-1;
+
+//TOP HEADER IMAGE MARGIN
+$header_image_margin: 0px;
+
+//FOOTER MARGIN
+$footer_margin: ($baseline/4) 0;
+
+//-----------------
+//  CSS BG Images
+//-----------------
+//$homepage-bg-image: url('../themes/default/images/sunrise.jpg');
+$homepage-bg-image: url('../themes/edx-theme/images/hero-learning.jpg');
+
+$login-banner-image: none;
+$register-banner-image: none;
+
+$video-thumb-url: '../themes/edx-theme/images/healthshare-thumbnail.png';
+
+//-----------------
+//  Mixin Styles
+//-----------------
+@mixin login_register_h1_style {
+    clip: auto !important;
+    height: 50px;
+    width: 550px;
+    top: 0;
+}
+
+@mixin footer_references_style {
+    margin: 0 !important;
+    text-align: right;
+}
+
+//index page
+.home>header {
+	.outer-wrapper {
+		margin: 0 auto;
+		padding: 150px 10px 0px;
+		position: relative;
+		max-width: 1200px;
+		min-width: 760px;
+	}
+
+	.title2 {
+		background: #FFF;
+		background: rgba(0,0,0,0);
+		min-height: 120px;
+		float: left;
+		position: relative;
+		vertical-align: top;
+
+		hgroup.hero-text {
+			h1 {
+				color: white;
+				font-size: 63px;
+				font-family: sans-serif;
+				margin: 0px;
+			}
+
+			h2 {
+				color: white;
+				font-weight: bold;
+				font-size: 42px;
+				text-transform: none;
+				font-family: sans-serif;
+
+			}
+
+			h3 {
+				color: white;
+				padding-top: 20px;
+				font-weight: bold;
+				font-size: 20px;	
+				font-family: sans-serif;
+
+				a span {
+					background-color: #76d153;
+					color: white;
+					padding: 15px 45px 15px 45px;
+					font-weight: bold;
+					text-decoration: none;				
+					text-shadow: 1px 1px #999;
+
+				}
+				a.underline {
+					color: white;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+.home .course-search {
+	@include span-columns(8);
+    @include shift(2);
+    @include box-sizing(border-box);
+    @include transition(all 0.2s linear 0s);
+    padding: 0;
+    position: relative;
+
+	.search-input {
+	  @include float(left);
+	  @include padding-right($button-size);
+	  @include padding-left($baseline*0.5);
+	  @extend %ui-depth1;
+	  @extend %t-title5;
+	  border: 2px solid $gray-l3;
+	  border-radius: 3px;
+	  box-shadow: none;
+	  width: 100%;
+	  height: $course-search-input-height;
+	  color: $black;
+	  font-style: normal;
+	  font-weight: normal;
+
+	  // STATE: focus
+	  &:focus {
+	    @extend %no-outline;
+	    border-color: $m-blue-d1;
+	  }
+	}
+
+	.search-button {
+      @include border-radius(1px, 3px, 3px, 1px);
+      @extend %ui-depth2;
+      @extend %t-icon3;
+      @extend %t-strong;
+      position: absolute;
+      right: 0;
+      border: 2px solid $m-blue-d1;
+      box-shadow: none;
+      background-color: rgb(69, 160, 194);
+      padding: 0 ($baseline*0.7);
+      height: $course-search-input-height;
+      color: $white;
+      text-shadow: none;
+
+      // STATE: hover and focus
+      &:hover, &:focus {
+        background: $m-blue-l1;
+      }
+    }
+}	
+
+
+// Register page
+body.view-register {
+	.introduction header {
+		.title .title-super {
+			font-size: 26px;
+			line-height: 26.64px;
+			text-transform: uppercase;
+			text-align: center;
+			color: #2a5db0;
+		}
+
+		h1.title {
+			span.title-sub {
+				font-size: 20px;
+				font-weight: bold;
+				margin-left: 40px;
+				margin-top: 13px;
+				text-align: center;
+				text-transform: none;
+				color: #000000;
+			}
+		}
+	}
+	.register form .instructions {
+		font-size: 18px;
+		margin: 0 0 20px 0;
+		font-weight: 300;
+		color: #2e2e2e;
+		font-family: 'Open Sans', sans-serif;
+		line-height: 1.55733em;
+		text-align: center;
+
+	}
+}
+
+
+//course listings on dashboard and index
+
+.org-courses-callout {
+    @include span-columns(10);
+    @include shift(1);
+    @include box-sizing(border-box);
+
+    .cta {
+        background-color: rgb(69, 160, 194);
+        color: #f2f2f2;
+        border: none;
+        padding: 10px 20px;
+        margin-left: 2em;
+        text-align: center;
+        font-weight: 500;
+    }
+}

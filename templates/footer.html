@@ -1,0 +1,37 @@
+## mako
+<%!
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+  from datetime import datetime
+%>
+<% current_year = datetime.now().year %>
+<% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/>
+
+<div class="wrapper-footer">
+  <footer>
+    <div class="colophon">
+           <small>© 1996-${current_year} InterSystems Corporation, Cambridge, MA. All Rights Reserved. <br>
+           <a href="/tos">Terms of Service</a>&nbsp;|&nbsp;
+           <a href="http://www.intersystems.com/privacy-policy/">Privacy Policy</a>&nbsp;|&nbsp;
+           <a href="/faq">Frequently Asked Questions</a>&nbsp;|&nbsp;
+           <a href="mailto:onlinetraining@intersystems.com">Contact us</a></small>
+    </div>
+    <div class="references">
+      <span>Built on <a href="http://code.edx.org">Open edX</a>.</span>
+    </div>
+  </footer>
+</div>
+
+% if include_dependencies:
+  <%static:js group='base_vendor'/>
+  <%static:css group='style-vendor'/>
+  <%include file="widgets/segment-io.html" />
+  <%include file="widgets/segment-io-footer.html" />
+% endif
+% if footer_css_urls:
+  % for url in footer_css_urls:
+    <link rel="stylesheet" type="text/css" href="${url}"></link>
+  % endfor
+% endif
