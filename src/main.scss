@@ -1,8 +1,14 @@
-// Import Bootstrap Defaults
-@import "bootstrap";
+
 
 // Import Bourbon.io
 @import "bourbon/bourbon";
+
+// Import Bootstrap variables
+@import "bootstrap/variables";
+@import "bootstrap";
+
+// Import various vendor specific scss
+@import "vendors/animate";
 
 // Import typography
 @import "base/typography";
@@ -11,35 +17,49 @@
 @import "base/functions";
 
 // Import variables
-@import "basic-branding";
 @import "base/variables";
-
-// Import basic styles
-@import "base/specific-edx-overrides";
-@import "base/base";
-@import "base/buttons";
-@import "base/forms";
-@import "base/animate-lib";
 
 // Import mixins
 @import "base/mixins";
 
-// Import site base layout
-@import "layout/footer";
-@import "layout/header";
-@import "layout/standard-headers";
-@import "layout/modals";
+// edX normalizer for elements
+@import "base/edx-overrides";
 
-// import page specific sass
-@import "lms/landing";
-@import "lms/course-tile";
-@import "lms/course-list";
-@import "lms/instructors-marketing";
-@import "lms/signup-login";
-@import "lms/course";
-@import "lms/dashboard";
+// Import basic styles
+@import "base/branding-basics";
+@import "base/base";
+@import "base/buttons";
+@import "base/modals";
+@import "base/expanding-section";
 
-//
-@import "lms/login-register";
-@import "lms/view-profile";
-@import "lms/account-settings";
+// Import site shared layout
+@import "shared/header";
+@import "shared/footer";
+
+// Import static-blocks specific sass
+@import "static-blocks/hero-section-01";
+@import "static-blocks/header-plus-text-plus-cta";
+@import "static-blocks/plain-content-01";
+@import "static-blocks/expanding-sections-list-01";
+@import "static-blocks/line-separator";
+@import "static-blocks/photo-grid-01";
+
+// Import live-blocks specific sass
+@import "live-blocks/single-course/course-tile-01";
+@import "live-blocks/single-course/course-tile-02";
+@import "live-blocks/single-course/course-tile-03";
+@import "live-blocks/course-listing/course-listing-01";
+@import "live-blocks/discovery/search-01";
+@import "live-blocks/discovery/facets-01";
+@import "live-blocks/dashboard-course-listing/dashboard-course-listing-01";
+@import "live-blocks/dashboard-search-results/dashboard-search-results--default";
+
+
+// Import page specific templates sass
+@import "pages/course-about-01";
+@import "pages/course-catalogue-01";
+@import "pages/combined-login-register";
+@import "pages/account-settings";
+@import "pages/profile-settings";
+@import "pages/sysadmin-dashboard";
+@import "pages/dashboard-01";
