@@ -2,6 +2,7 @@
 
 <%!
 import urllib
+import re
 
 from django.utils.translation import ugettext as _
 from django.utils.translation import ungettext
@@ -75,7 +76,7 @@ from student.helpers import (
         % if course.has_ended():
           <li class="ended">${_("Ended on {end_date}").format(end_date=course.end_datetime_text("SHORT_DATE"))}</li>
         % elif course.has_started():
-          % if (course.start_datetime_text("SHORT_DATE") == "Self-Paced"):
+          % if bool(re.match('.elf.*aced', course.start_datetime_text("SHORT_DATE"))):
             <li class="started">${_("{start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}</li>
           % else:
             <li class="started">${_("Started on {start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}</li>
