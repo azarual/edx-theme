@@ -3103,13 +3103,35 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/static\/images\/hero-image.jpg": {
+	"\/static\/images\/inceptures-dark-bg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 77042,
-		"inputAbbreviatedPath": "\/static\/images\/hero-image.jpg",
-		"outputAbbreviatedPath": "\/static\/images\/hero-image.jpg",
+		"initialSize": 46090,
+		"inputAbbreviatedPath": "\/static\/images\/inceptures-dark-bg.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/inceptures-dark-bg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/inceptures-hero-image.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 146856,
+		"inputAbbreviatedPath": "\/static\/images\/inceptures-hero-image.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/inceptures-hero-image.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/inceptures-red-bg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 39550,
+		"inputAbbreviatedPath": "\/static\/images\/inceptures-red-bg.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/inceptures-red-bg.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3257,15 +3279,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/static\/sass\/_appsembler-dogwood.scss": {
+	"\/static\/sass\/_inceptures-dogwood.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/sass\/_appsembler-dogwood.scss",
-		"outputAbbreviatedPath": "\/static\/css\/_appsembler-dogwood.css",
+		"inputAbbreviatedPath": "\/static\/sass\/_inceptures-dogwood.scss",
+		"outputAbbreviatedPath": "\/static\/css\/_inceptures-dogwood.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3768,8 +3790,8 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "appsembler-dogwood",
-	"displayValueWasSetByUser": 0,
+	"displayValue": "inceptures-dogwood",
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "globe_yellow"
 	},
 "projectSettings": {

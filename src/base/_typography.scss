@@ -1,43 +1,49 @@
 @mixin primary-font-light {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: 300;
 }
 
 @mixin primary-font {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 }
 
 @mixin primary-font-bold {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: 700;
 }
 
 @mixin primary-font-black {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
-	font-weight: 900;
+	font-weight: 800;
 }
 
 @mixin primary-font-light-italic {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
 	font-weight: 300;
 }
 
 @mixin primary-font-italic {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
 	font-weight: 400;
 }
 
 @mixin primary-font-bold-italic {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
 	font-weight: 700;
+}
+
+@mixin oswald-headings {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	text-transform: uppercase !important;
 }
 
 
@@ -51,7 +57,7 @@
 }
 
 @mixin big-headings-font {
-	@include primary-font-light;
+	@include oswald-headings;
 }
 
 @mixin small-headings-font {

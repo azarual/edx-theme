@@ -1,25 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW X7 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="86mm" height="100mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 8600 10000"
- xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-   <![CDATA[
-    .fil1 {fill:#FEFEFE}
-    .fil0 {fill:#FEFEFE;fill-opacity:0.501961}
-   ]]>
-  </style>
- </defs>
- <g id="Layer_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_836103984">
-   <polygon class="fil0" points="5617,7475 5617,9950 4300,9190 2983,9950 2983,7475 4300,8235 "/>
-   <polygon class="fil1" points="4300,50 13,2525 13,7475 1003,6903 1003,3097 4300,1193 7597,3097 7597,6903 8587,7475 8587,2525 "/>
-   <path class="fil0" d="M13 7475l1980 1143 0 -1143 -990 -572 -990 572zm6594 1143l1980 -1143 -990 -572 -990 572 0 1143z"/>
-   <path class="fil1" d="M4300 2336l-2307 1332 0 2664 2307 1332 2307 -1332 0 -2664 -2307 -1332zm0 1144l-1317 760 0 1520 1317 760 1317 -760 0 -1520 -1317 -760z"/>
-   <path class="fil0" d="M4300 3480l-1317 760 0 1520 1317 760 1317 -760 0 -1520 -1317 -760zm0 1143l-327 188 0 378 327 188 327 -188 0 -378 -327 -188z"/>
-  </g>
- </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 113.4 113.4" style="enable-background:new 0 0 113.4 113.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<polygon id="XMLID_4_" class="st0" points="84.3,52.5 84.3,52.5 84.3,52.5 "/>
+<path id="XMLID_3_" class="st0" d="M87.8,58.9C82.9,75.6,71.9,89,58.1,96.7c-8.5,4.8-18.1,7.4-28.1,7.4c8.1,3.3,16.6,5.8,25.6,7.4
+	c17.8,3.1,35.3,2.3,52-1.9c0,0,0,0,0,0c0.6-10.4,0.2-20.5-1.3-30.4C101.7,71,95.4,64.1,87.8,58.9z"/>
+<path id="XMLID_2_" class="st0" d="M54.5,90.3c-10.4-12-16.1-28.4-15.1-45.7c0.2-2.5,0.5-5.1,0.9-7.7c1.2-7.1,3.5-13.6,6.7-19.6
+	C27.2,34.7,11.8,58.1,3.7,85.4c0,0,0,0.1,0,0.1c7.1,4.8,14.7,8.9,22.7,12.2C36.4,97.7,46,95,54.5,90.3z"/>
+<path id="XMLID_1_" class="st0" d="M46.4,43.7c7.4-1.9,15.3-2.2,23.2-0.8c8,1.4,15.2,4.5,21.6,8.8c7.6,5.2,13.9,12.1,18.4,20.3
+	c-4-27.2-15.4-52.2-32.4-71.9C69,4.6,61.2,10.1,54,16.5c-3.1,6-5.4,12.5-6.7,19.6C46.8,38.6,46.5,41.2,46.4,43.7z"/>
 </svg>
