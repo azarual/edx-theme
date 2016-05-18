@@ -75,11 +75,19 @@ from student.helpers import (
         % if course.has_ended():
           <li class="ended">${_("Ended on {end_date}").format(end_date=course.end_datetime_text("SHORT_DATE"))}</li>
         % elif course.has_started():
-          <li class="started">${_("Started on {start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}</li>
+          % if (course.start_datetime_text("SHORT_DATE") == "Self-Paced"):
+            <li class="started">${_("{start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}</li>
+          % else:
+            <li class="started">${_("Started on {start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}</li>
+          % endif
         % elif course.start_date_is_still_default: # Course start date TBD
           <li>${_("Coming Soon")}</li>
         % else:   # hasn't started yet
-        <li>${_("Starts on {start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}</li>
+          % if (course.start_datetime_text("SHORT_DATE") == "Self-Paced"):
+            <li>${_("{start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}</li>
+          % else:
+            <li>${_("Starts on {start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}</li>
+          % endif
         % endif
       </ul>
       <!-- end of course meta -->
@@ -143,7 +151,7 @@ from student.helpers import (
 
           % if credit_status is not None:
             <%include file="_dashboard_credit_info.html" args="credit_status=credit_status"/>
-          % endif 
+          % endif
 
           % if verification_status.get('status') in [VERIFY_STATUS_NEED_TO_VERIFY, VERIFY_STATUS_SUBMITTED, VERIFY_STATUS_APPROVED, VERIFY_STATUS_NEED_TO_REVERIFY] and not is_course_blocked:
             <div class="message message-status wrapper-message-primary is-shown">
