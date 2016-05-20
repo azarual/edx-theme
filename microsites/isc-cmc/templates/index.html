@@ -1,97 +1,108 @@
-<%inherit file="/main.html" />
+<%inherit file="/isc-cmc/templates/main.html" />
 <%namespace name='static' file='/static_content.html'/>
-
 <%!
-  from django.utils.translation import ugettext as _
-  from django.core.urlresolvers import reverse
-  from microsite_configuration import microsite
-  from courseware.courses import get_course_about_section
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+from microsite_configuration import microsite
 %>
 
 <%
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
 
-  #show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
-  #homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "jkIOi5bCMSo")
-  show_homepage_promo_video = False
-  homepage_promo_video_youtube_id = "jkIOi5bCMSo"
+  ## To display a welcome video, change False to True, and add a YouTube ID (11 chars, eg "123456789xX") in the following line
+  show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', False)
+  homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "your-youtube-id")
 
   show_partners = microsite.get_value('show_partners', True)
+
 %>
 
+<!-- LMS landing page hero portion -->
+<section class="landing-hero">
+  <div class="container-bs">
+    <div class="landing-hero__content row">
+      <div class="landing-hero__content__text col-xs-12 col-md-7">
+        <p>Coordinate My Care is a clinical service that allows health and social care professionals to create urgent care plans reflecting patients' clinical needs, wishes and preferences to be shared with the urgent care providers 24/7.</p>
 
-% if show_homepage_promo_video:
+        % if show_homepage_promo_video:
 
-<!-- Video modal -->
-<div class="modal fade modal__video-fullscreen__wrapper" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal__video-fullscreen">
-    <div class="modal__video-fullscreen__container">
-      <iframe src='https://www.youtube.com/embed/${homepage_promo_video_youtube_id}?rel=0&controls=0&showinfo=0' frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="modal__video-fullscreen__close">
-      <a href="#" data-dismiss="modal" aria-label="Close"><i class="fa fa-remove"></i></a>
+          <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View a sample video</a>
+
+        % endif
+      </div>
+      <div class="landing-hero__graphic col-md-5">
+        <img class="svg-fallback svg" src="${static.url('isc-cmc/images/landing-graphic.svg')}">
+        <img class="svg-fallback png" src="${static.url('isc-cmc/images/landing-graphic.png')}">
+      </div>
     </div>
   </div>
-</div>
-
-% endif
+</section>
 
 
-<!-- LMS landing page hero portion -->
-  <section class="landing-hero">
-    <div class="container-bs">
-      <div class="landing-hero__content row">
-        <div class="landing-hero__content__text col-xs-12 col-md-7">
-          <p>Coordinate My Care is a clinical service that allows health and social care professionals to create urgent care plans reflecting patients' clinical needs, wishes and preferences to be shared with the urgent care providers 24/7.</p>
+<section class="home">
 
-          % if show_homepage_promo_video:
+  <section class="courses-container">
 
-            <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View a sample video</a>
-
-          % endif
-        </div>
-        <div class="landing-hero__graphic col-md-5">
-          <img class="svg-fallback svg" src="${static.url('isc-cmc/images/landing-graphic.svg')}">
-          <img class="svg-fallback png" src="${static.url('isc-cmc/images/landing-graphic.png')}">
-        </div>
+    % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY') and False:
+      <div class="course-search">
+        <form method="get" action="/courses">
+          <label style="display:block"><span class="sr">${_("Search for a course")}</span>
+            <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+          </label>
+          <button class="search-button" type="submit">
+            <i class="icon fa fa-search" aria-hidden="true"></i><span class="sr">${_("Search")}</span>
+          </button>
+        </form>
       </div>
-    </div>
-  </section>
+    % endif
 
-% if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-  <section class="landing-courses">
-    <div class="container-bs landing-courses__header">
-      <h2>Example modules</h2>
-      <a href="/courses" class="landing-courses__header__view-all">Browse all modules</a>
-    </div>
+    % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+    <section class="landing-courses">
+      <div class="container-bs landing-courses__header">
+        <h2>Example modules</h2>
+        <a href="/courses" class="landing-courses__header__view-all">Browse all modules</a>
+      </div>
 
-    <div class="landing-courses__container">
-      <div class="container-bs">
-        <div class="row landing-courses__row">
-          <% course_count = 0 %>
+      <div class="landing-courses__container">
+        <div class="container-bs">
+          <div class="row landing-courses__row">
+            <% course_count = 0 %>
 
-          %for course in courses:
-            <% course_count += 1 %>
-            <!-- single course tile -->
-            <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
-              <div class="course-tile__body">
-                <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image:url('${course.course_image_url}');"></a>
-                <div class="course-tile__info">
-                  <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h} </span>${course.display_name}</a></span>
-                  <p class="course-tile__description">${course.short_description}</p>
+            %for course in courses:
+              <% course_count += 1 %>
+              <!-- single course tile -->
+              <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
+                <div class="course-tile__body">
+                  <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image:url('${course.course_image_url}');"></a>
+                  <div class="course-tile__info">
+                    <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h} </span>${course.display_name}</a></span>
+                    <p class="course-tile__description">${course.short_description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            %if course_count == 3:
-              <% break %>
-            %endif
-          %endfor
+              %if course_count == 3:
+                <% break %>
+              %endif
+            %endfor
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-% endif
+    </section>
+  % endif
 
+  </section>
+</section>
+
+<section id="video-modal" class="modal home-page-video-modal video-modal">
+  <div class="inner-wrapper">
+    <%
+      youtube_video_id = homepage_promo_video_youtube_id
+      if self.stanford_theme_enabled():
+        youtube_video_id = "2gmreZObCY4"
+    %>
+    <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
 
 <%block name="js_extra">
    <script type="text/javascript">

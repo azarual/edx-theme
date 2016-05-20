@@ -7,7 +7,7 @@ from third_party_auth import pipeline
 from microsite_configuration import microsite
 from django.core.urlresolvers import reverse
 from markupsafe import escape
-from courseware.courses import course_image_url, get_course_about_section
+from courseware.courses import get_course_about_section
 from student.helpers import (
   VERIFY_STATUS_NEED_TO_VERIFY,
   VERIFY_STATUS_SUBMITTED,
@@ -134,7 +134,7 @@ from student.helpers import (
                 % if show_courseware_link:
                   % if not is_course_blocked:
                     <a href="${course_target}" class="col-xs-12 col-sm-5 col-md-6 cmc-dashboard-course__image">
-                      <img src="${course_image_url(course)}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
+                      <img src="${course.course_image_url}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
                       % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
                         % if enrollment.mode == "verified":
                           % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', False):
@@ -159,7 +159,7 @@ from student.helpers import (
                     </a>
                   % else:
                     <div class="col-xs-12 col-sm-5 col-md-6 cmc-dashboard-course__image course-blocked">
-                      <img src="${course_image_url(course)}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
+                      <img src="${course.course_image_url}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
                       % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
                         % if enrollment.mode == "verified":
                           % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', False):
@@ -185,7 +185,7 @@ from student.helpers import (
                   % endif
                 % else:
                   <div class="col-xs-12 col-sm-5 col-md-6 cmc-dashboard-course__image">
-                    <img src="${course_image_url(course)}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
+                    <img src="${course.course_image_url}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
                     % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
                       % if enrollment.mode == "verified":
                         % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', False):

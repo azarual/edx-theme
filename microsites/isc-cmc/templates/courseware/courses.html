@@ -10,11 +10,10 @@
 <%
   from django.utils.translation import ugettext as _
   from django.core.urlresolvers import reverse
-  from courseware.courses import course_image_url, get_course_about_section
 %>
 
 <%block name="header_extras">
-  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY') and False:
   % for template_name in ["result_item", "filter_bar", "filter", "search_facets_list", "search_facets_section", "search_facet", "more_less_links"]:
   <script type="text/template" id="${template_name}-tpl">
       <%static:include path="discovery/${template_name}.underscore" />
@@ -31,7 +30,7 @@
 </%block>
 
 <%block name="js_extra">
-  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY') and False:
   <%static:js group='discovery'/>
   % endif
 </%block>
@@ -39,7 +38,7 @@
 <%block name="pagetitle">${_("Courses")}</%block>
 <%
   platform_name = microsite.get_value('platform_name', settings.PLATFORM_NAME)
-  course_discovery_enabled = settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')
+  course_discovery_enabled = False
   if self.stanford_theme_enabled():
     course_index_overlay_text = _("Explore free courses from {university_name}.").format(university_name="Stanford University")
     logo_file = static.url('themes/stanford/images/seal.png')
@@ -128,10 +127,10 @@
           <!-- single course tile template -->
           <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
             <div class="course-tile__body">
-              <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image:url('${course_image_url(course)}');"></a>
+              <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile__image" style="background-image:url('${course.course_image_url}');"></a>
               <div class="course-tile__info">
-                <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h}: </span>${get_course_about_section(course, 'title')}</a></span>
-                <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
+                <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}"><span class="course-id">${course.display_number_with_default | h}: </span>${course.display_name}</a></span>
+                <p class="course-tile__description">${course.short_description}</p>
               </div>
             </div>
           </div>

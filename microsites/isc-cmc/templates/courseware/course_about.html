@@ -1,7 +1,7 @@
 <%! from django.utils.translation import ugettext as _ %>
 <%!
   from django.core.urlresolvers import reverse
-  from courseware.courses import course_image_url, get_course_about_section
+  from courseware.courses import get_course_about_section
   from django.conf import settings
   from edxmako.shortcuts import marketing_link
 
@@ -172,14 +172,14 @@
 
         %if get_course_about_section(course, "video"):
           <a class="cmc-course-body__image" style="display: block;" data-toggle="modal" data-target="#videoModal">
-            <img src="${course_image_url(course)}" alt="${course.display_number_with_default | h} ${get_course_about_section(course, 'title')} Cover Image">
+            <img src="${course.course_image_url}" alt="${course.display_number_with_default | h} ${course.display_name} Cover Image">
             %if course.is_newish:
               <div class="course-ribbon"><span>NEW</span></div>
             %endif
           </a>
         %else:
         <div class="cmc-course-body__image">
-          <img src="${course_image_url(course)}" alt="${course.display_number_with_default | h} ${get_course_about_section(course, 'title')} Cover Image">
+          <img src="${course.course_image_url}" alt="${course.display_number_with_default | h} ${course.display_name} Cover Image">
           %if course.is_newish:
             <div class="course-ribbon"><span>NEW</span></div>
           %endif
@@ -196,7 +196,7 @@
         </div>
         end of meta part -->
         <div class="cmc-course-body__description">
-          ${get_course_about_section(course, "overview")}
+          ${get_course_about_section(course.short_description}
         </div>
       </div>
     </div>

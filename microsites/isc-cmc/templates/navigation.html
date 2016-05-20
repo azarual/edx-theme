@@ -83,10 +83,10 @@ site_status_msg = get_site_status_msg(course_id)
           <ul class="navigation-group navigation-group__user">
             <li>
               <span class="navigation-group__user__name">${user.username}</span>
-							<a href="#" class="navigation-group__user__toggle dropdown-toggle" id="userDropdownMenu" data-toggle="dropdown" aria-expanded="true">
-								<img src="${static.url('isc-cmc/images/header-caron.png')}"  class="caron-png">
-								<img src="${static.url('isc-cmc/images/user-icon.png')}" class="user-icon-png">
-							</a>
+              <a href="#" class="navigation-group__user__toggle dropdown-toggle" id="userDropdownMenu" data-toggle="dropdown" aria-expanded="true">
+                <img src="${static.url('isc-cmc/images/header-caron.png')}"  class="caron-png">
+                <img src="${static.url('isc-cmc/images/user-icon.png')}" class="user-icon-png">
+              </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="userDropdownMenu">
                 <li><a href="${reverse('dashboard')}">Dashboard</a></li>
                 <li class="divider"></li>
