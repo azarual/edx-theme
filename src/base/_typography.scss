@@ -1,49 +1,43 @@
 @mixin primary-font-light {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-style: normal;
 	font-weight: 300;
 }
 
 @mixin primary-font {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 }
 
 @mixin primary-font-bold {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+}
+
+@mixin primary-font-black {
+	font-family: 'Ubuntu', sans-serif;
 	font-style: normal;
 	font-weight: 700;
 }
 
-@mixin primary-font-black {
-	font-family: 'Open Sans', sans-serif;
-	font-style: normal;
-	font-weight: 800;
-}
-
 @mixin primary-font-light-italic {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-style: italic;
 	font-weight: 300;
 }
 
 @mixin primary-font-italic {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-style: italic;
 	font-weight: 400;
 }
 
 @mixin primary-font-bold-italic {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-style: italic;
-	font-weight: 700;
-}
-
-@mixin oswald-headings {
-	font-family: 'Oswald', sans-serif;
-	font-weight: 400;
-	text-transform: uppercase !important;
+	font-weight: 500;
 }
 
 
@@ -57,7 +51,7 @@
 }
 
 @mixin big-headings-font {
-	@include oswald-headings;
+	@include primary-font-light;
 }
 
 @mixin small-headings-font {
