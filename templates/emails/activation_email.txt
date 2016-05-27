@@ -35,6 +35,6 @@ ${_("If you didn't request this, you don't need to do anything; you won't "
       "{platform_name} Courses web site.").format(platform_name=settings.PLATFORM_NAME)}
 % else:
 ${_("Once your account is activated, you can start enrolling in courses. "
-    "Need help getting started? Visit our Help page to learn more: "
-    "www.texascourses.org/help")}
+    "Need help getting started? Visit our Help Center to learn more: "
+    "http://support.texascourses.org/hc/en-us")}
 % endif
