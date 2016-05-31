@@ -132,8 +132,8 @@
         [
           'static-block', 'static-blocks/_hero-section-01.html', {
             # template settings
-            'hero_title' : "Welcome to this test site, buddy!", ## leave value empty if you don't want it displayed.
-            'hero_subtitle' : "Bringing you mobile optimized courses about Open edX. We're Appsembler. Awesome!", ## leave value empty if you don't want it displayed.
+            'hero_title' : microsite.get_value('hero_title') or "Welcome to this test site, buddy!", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : microsite.get_value('hero_subtitle') or "Bringing you mobile optimized courses about Open edX. We're Appsembler. Awesome!", ## leave value empty if you don't want it displayed.
             'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
             'cta_link_text' : "Awesome link!", ## leave value empty if you don't want a CTA button displayed.
             'popup_video_url' : "MZrctLnsF4M", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
