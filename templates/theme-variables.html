@@ -46,8 +46,10 @@
 <%def name="get_header_footer_templates()">
   <%
   return {
-    'header_template' : 'header/_header-appsembler-01.html', ## required
-    'footer_template' : 'footer/_footer-appsembler-01.html' ## required
+    'header_template' : 'header/_header-appsembler-{}.html'.format(
+      microsite.get_value('page_elements').get('header_template_type', '01')), ## required
+    'footer_template' : 'footer/_footer-appsembler-{}.html'.format(
+      microsite.get_value('page_elements').get('footer_template_type', '01')), ## required
   }
   %>
 </%def>
