@@ -59,11 +59,7 @@
 
 <%def name="get_header_menu_logged_out_extra_items()">
   <%
-    return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['Our web', 'http://www.appsembler.com', ''],
-      ['About us', reverse('about'), '']
-    ]
+    return microsite.get_value('page_elements').get('header', {}).get('logged_out_items')
   %>
 </%def>
 
@@ -72,11 +68,7 @@
 
 <%def name="get_header_menu_logged_in_extra_items()">
   <%
-    return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['About us', reverse('about'), ''],
-      ['Awesome!', 'www.awesome.com', 'class_awesomee']
-    ]
+    return microsite.get_value('page_elements').get('header', {}).get('logged_in_items')
   %>
 </%def>
 
