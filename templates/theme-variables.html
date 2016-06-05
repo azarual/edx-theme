@@ -77,18 +77,7 @@
 
 <%def name="get_footer_menu_items()">
   <%
-    return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['Terms of Service', reverse('tos'), ''],
-      ['FAQ', marketing_link('FAQ'), ''],
-      ['About', reverse('about'), ''],
-      ['Copyright', reverse('tos'), ''],
-      ['Contact', reverse('tos'), ''],
-      ['Help', reverse('tos'), ''],
-      ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com', 'a--linkedin'],
-      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com', 'a--facebook'],
-      ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com', 'a--twitter']
-    ]
+    return microsite.get_value('page_elements').get('footer', {}).get('items')
   %>
 </%def>
 
