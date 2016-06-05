@@ -5,9 +5,8 @@
 
 
 <%
-  theme_name = "appsembler-dogwood"
+  theme_name = "amc-beta"
 %>
-
 
 
 ## =======================================================
@@ -31,11 +30,11 @@
 <%def name="get_brand_logos()">
   <%
   return {
-    'logo_positive' : microsite.get_value('logo_positive') or '/images/branding/brand-logo.svg', ## required
-    'logo_negative' : microsite.get_value('logo_negative') or '/images/branding/brand-logo-negative.svg', ## required
-    'icon_color' : microsite.get_value('icon_color') or '/images/branding/icon-color.svg', ## required
-    'icon_white' : microsite.get_value('icon_white') or '/images/branding/icon-white.svg', ## required
-    'icon_black' : microsite.get_value('icon_black') or '/images/branding/icon-black.svg', ## required
+    'logo_positive' : microsite.get_value('logo_positive') or '/static/themes/amc-beta/images/branding/brand-logo.svg', ## required
+    'logo_negative' : microsite.get_value('logo_negative') or '/static/themes/amc-beta/images/branding/brand-logo-negative.svg', ## required
+    'icon_color' : microsite.get_value('icon_color') or '/static/themes/amc-beta/images/branding/icon-color.svg', ## required
+    'icon_white' : microsite.get_value('icon_white') or '/static/themes/amc-beta/images/branding/icon-white.svg', ## required
+    'icon_black' : microsite.get_value('icon_black') or '/static/themes/amc-beta/images/branding/icon-black.svg', ## required
   }
   %>
 </%def>
