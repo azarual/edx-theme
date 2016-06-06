@@ -46,9 +46,9 @@
   <%
   return {
     'header_template' : 'header/_header-appsembler-{}.html'.format(
-      microsite.get_value('page_elements').get('header_template_type', '01')), ## required
+      microsite.get_value('page_elements', {}).get('header_template_type', '01')), ## required
     'footer_template' : 'footer/_footer-appsembler-{}.html'.format(
-      microsite.get_value('page_elements').get('footer_template_type', '01')), ## required
+      microsite.get_value('page_elements', {}).get('footer_template_type', '01')), ## required
   }
   %>
 </%def>
@@ -58,7 +58,7 @@
 
 <%def name="get_header_menu_logged_out_extra_items()">
   <%
-    return microsite.get_value('page_elements').get('header', {}).get('logged_out_items', [])
+    return microsite.get_value('page_elements', {}).get('header', {}).get('logged_out_items', [])
   %>
 </%def>
 
@@ -67,7 +67,7 @@
 
 <%def name="get_header_menu_logged_in_extra_items()">
   <%
-    return microsite.get_value('page_elements').get('header', {}).get('logged_in_items', [])
+    return microsite.get_value('page_elements', {}).get('header', {}).get('logged_in_items', [])
   %>
 </%def>
 
@@ -76,7 +76,7 @@
 
 <%def name="get_footer_menu_items()">
   <%
-    return microsite.get_value('page_elements').get('footer', {}).get('items', [])
+    return microsite.get_value('page_elements', {}).get('footer', {}).get('items', [])
   %>
 </%def>
 
@@ -85,7 +85,7 @@
 
 <%def name="get_footer_settings()">
   <%
-    footer_settings = microsite.get_value('page_elements').get('footer', {}).get('settings', {})
+    footer_settings = microsite.get_value('page_elements', {}).get('footer', {}).get('settings', {})
     footer_settings['footer_logo'] = get_brand_logos()['icon_black']
     return footer_settings
   %>
@@ -104,7 +104,7 @@
     #     ...
     #   }
     #]
-    return microsite.get_value('page_elements').get('index', [])
+    return microsite.get_value('page_elements', {}).get('index', [])
   %>
 </%def>
 
