@@ -7,6 +7,15 @@
 	}
 }
 
+@function calcNavbarBgInverse ($navbar-style, $brand-primary-color) {
+	@if $navbar-style == "white" {
+		$navbar-bg-color: $brand-primary-color;
+		@return $navbar-bg-color;
+	} @else {
+		@return #fff;
+	}
+}
+
 @function calcNavbarUnderlineColor ($navbar-style, $brand-primary-color) {
 	@if $navbar-style == "brand" {
 		$underline-color: #fff;
