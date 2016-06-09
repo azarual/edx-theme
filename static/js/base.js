@@ -112,7 +112,6 @@ function onYouTubePlayerAPIReady() {
 function createYTEvent(frameID, identifier) {
 	return function (event) {
 		buttonId = "a--video-modal-close-" + frameID;
-		console.log(buttonId);
 		var pauseButton = document.getElementById(buttonId);
 		pauseButton.addEventListener("click", function() {
 			youTubePlayers[frameID].pauseVideo();
