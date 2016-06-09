@@ -3014,17 +3014,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/images\/OnDemand-Layout_FINAL.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/static\/images\/OnDemand-Layout_FINAL.jpg",
-		"outputAbbreviatedPath": "\/static\/images\/OnDemand-Layout_FINAL.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/static\/images\/openedx-default-course-pic.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
