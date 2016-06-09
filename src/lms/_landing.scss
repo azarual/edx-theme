@@ -1,5 +1,5 @@
 .landing-hero {
-	padding: $landing-hero-padding-ver 30px;
+	padding: 0 30px;
 	background-image: $landing-hero-bg-image;
 	background-position: center center;
 	background-color: $landing-hero-bg-color;
@@ -9,25 +9,42 @@
 	border-bottom: 12px solid $brand-tertiary-color;
 
 	&__content {
-		margin: 0 auto;
+		padding-top: $landing-hero-padding-ver;
+		padding-bottom: $landing-hero-padding-ver;
+		margin: 0;
+		max-width: 48rem;
+		position: relative;
+
+		&:after {
+			left: -20rem;
+			right: -20rem;
+			top: 0;
+			bottom: 0;
+			content: "";
+			position: absolute;
+			z-index: 1;
+			@include linear-gradient(to right, rgba(#fff, 0.0) 0%, rgba(#fff, 0.9) 20%, rgba(#fff, 1) 50%, rgba(#fff, 0.9) 75%, rgba(#fff, 0.0) 100%);
+		}
 
 		&__text {
+			position: relative;
+			z-index: 2;
 
 			& h1 {
 				@include sans-serif-light;
-				font-size: 64px;
+				font-size: 60px;
 				margin: 0 0 10px;
 				text-align: left;
-				color: $brand-secondary-color;
+				color: $brand-primary-color;
 
 				@media(max-width:$screen-sm-min) {
-					font-size: 42px;
+					font-size: 36px;
 				}
 			}
 
 			& p {
 				@include sans-serif-light;
-				font-size: 20px;
+				font-size: 18px;
 				line-height: 130%;
 				color: $base-text-color;
 			}
@@ -38,9 +55,10 @@
 			@include button-positive($brand-secondary-color);
 			@include expanding-button(40px, 15px);
 			font-size: 20px;
-			margin-top: 20px;
+			margin-top: 35px;
 			text-decoration: none;
 			font-size: 16px;
+			border-radius: $buttons-border-radius;
 		}
 	}
 }
@@ -52,7 +70,7 @@
 	&__point {
 
 		& h3 {
-			@include sans-serif;
+			@include sans-serif-light;
 			color: $brand-primary-color;
 			margin: 0 0 20px;
 		}
@@ -118,15 +136,25 @@
 
 
 .landing-courses {
-	margin-top: 20px;
+	background-color: #f1f0f1;
+	padding-top: 80px;
+	padding-bottom: 80px;
 
 	& h2 {
 		@include sans-serif-light;
-		font-size: 32px;
-		color: tint($base-text-color, 50%);
-		margin: 0 0 30px;
-		text-align: left;
-		text-transform: uppercase;
+		font-size: 36px;
+		margin: 0 0 50px;
+		color: $brand-light-blue;
+		text-align: center;
+	}
+
+	p {
+		line-height: 150%;
+		@include sans-serif-light;
+		font-size: 16px;
+		max-width: 720px;
+		margin: 0 auto 40px;
+		text-align: center;
 	}
 
 	&__container {
@@ -187,11 +215,11 @@
 }
 
 .landing-additional-text {
-	padding: 90px 30px;
 	text-align: left;
 
 	&__content {
 		margin: 0 auto;
+		padding: 80px 30px;
 	}
 
 	& h2 {
@@ -208,6 +236,10 @@
 
 	p {
 		line-height: 150%;
+		@include sans-serif-light;
+		font-size: 16px;
+		max-width: 720px;
+		margin: 0 auto;
 	}
 
 	&__separator {
@@ -219,10 +251,10 @@
 
 	&__button, &__button:link, &__button:visited {
 		padding: 12px 30px;
-		@include button-outlined($brand-light-blue);
+		@include button-outlined($brand-secondary-color);
 		@include expanding-button(30px, 15px);
 		font-size: 16px;
-		margin-top: 15px;
+		margin-top: 35px;
 	}
 
 	&.centered {
@@ -238,8 +270,18 @@
 	}
 }
 
+.landing-graphic-additional--container {
+	padding: 0;
+	@include display(flex);
+	@include align-items(flex-end);
+}
+
 .landing-graphic-additional {
-	width: 100%;
+	width: 90%;
 	height: auto;
-	margin: 0 30px;
+	margin: 0 5%;
+}
+
+.landing-graphic-additional--text {
+	padding: 80px 0;
 }

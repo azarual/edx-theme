@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	@include sans-serif;
+	@include sans-serif-light;
 	font-size: 14px;
 	color: $base-text-color;
 }

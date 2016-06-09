@@ -56,15 +56,19 @@
 
   <section class="landing-additional-text">
     <div class="container-bs">
-      <div class="row">
-        <div class="col-xs-12 col-sm-7 col-md-7">
-          <h2>Data helps solve the world's biggest problems</h2>
-          <div class="landing-additional-text__separator"></div>
-          <p>Transform your organization with Cloudera. We deliver the modern platform for data management and analytics to help you get value from all your data..</p>
+      <div class="row landing-additional-text__content landing-graphic-additional--container">
+        <div class="col-xs-12 col-sm-7 col-md-7 landing-graphic-additional--text">
+          <h2>Training to meet your needs</h2>
+          <p>
+            Cloudera OnDemand provides a video training option where you can learn from senior instructors—who deliver our most popular courses in a virtual classroom setting—without incurring travel costs or time away from the office.
+          </p>
+          <p>
+            Cloudera OnDemand training is designed to facilitate individual, or enterprise-wide, training to help accelerate the ROI of Cloudera deployments. Get access to all of Cloudera’s training courses in a single package, or choose the course(s) specific to you needs.
+          </p>
           <a class="landing-additional-text__button" href="/login">Sign in</a>
         </div>
         <div class="col-xs-12 col-sm-5 col-md-5">
-          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/data-art.png')}" class="landing-graphic-additional">
+          <img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/cloudera-gfx-2.png')}" class="landing-graphic-additional">
         </div>
       </div>
     </div>
@@ -76,6 +80,9 @@
   <section class="landing-courses">
     <div class="container-bs">
       <h2>Featured / newest courses</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </p>
     </div>
 
 
@@ -120,58 +127,12 @@
     <div class="container-bs">
       <div class="landing-additional-text__content">
         <h2>About Cloudera</h2>
-        <div class="landing-additional-text__separator"></div>
-        <h3>No one knows Apache Hadoop like Cloudera!</h3>
+        <p>No one knows Apache Hadoop like Cloudera!</p>
         <p>We provide the world’s fastest, easiest, and most secure data platform built on Hadoop. We help solve your most demanding business challenges with data.</p>
-        <a class="landing-additional-text__button" href="http://www.cloudera.com">Learn more</a>
       </div>
     </div>
   </section>
-<%doc>
-  <section class="instructors-marketing container-bs">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
-        <div class="instructors-marketing__text">
-          <h2 class="instructors-marketing__text__title">
-            Learn how to work with Cloudera...
-          </h2>
-          <h2 class="instructors-marketing__text__title second-color">
-            ...straight from the people that built it!
-          <h2>
-        </div>
-        <div class="instructors-marketing__list">
-          <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/edwin.jpg')}" alt="Nate Aune">
-            <h4 class="instructors-marketing__list__single__name">Name Surname</h4>
-            <span class="instructors-marketing__list__single__title">Position</span>
-          </div>
-          <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/lynn.jpg')}" alt="Louis Gudema">
-            <h4 class="instructors-marketing__list__single__name">Name Surname</h4>
-            <span class="instructors-marketing__list__single__title">Position</span>
-          </div>
-          <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/misty.jpg')}" alt="Cody Carson">
-            <h4 class="instructors-marketing__list__single__name">Name Surname</h4>
-            <span class="instructors-marketing__list__single__title">Position</span>
-          </div>
-          <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/francis.jpg')}" alt="Cody Carson">
-            <h4 class="instructors-marketing__list__single__name">Name Surname</h4>
-            <span class="instructors-marketing__list__single__title">Position</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 instructors-marketing__cta">
-        <div class="instructors-marketing__cta__content">
-          <h3 class="instructors-marketing__cta__title">Start learning about Cloudera!</h3>
-          <p>Sign in or sign up to start learning about all the exciting ways Cloudera can help you in the cloud business.</p>
-          <a class="instructors-marketing__cta__button" href="/register">Sign up!</a>
-        </div>
-      </div>
-    </div>
-  </section>
-</%doc>
+
 
 <%block name="js_extra">
    <script type="text/javascript">

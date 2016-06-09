@@ -33,18 +33,34 @@
 }
 
 .bg-photo-hero {
-	padding: $pages-photo-hero-padding-ver 30px;
+	padding: 0 30px;
 	background-image: $landing-hero-bg-image;
 	background-position: center center;
 	background-size: cover;
 	text-align: center;
-	color: $brand-secondary-color;
+	color: $brand-primary-color;
 
 	&__content {
 		max-width: 880px;
 		margin: 0 auto;
+		padding-top: $pages-photo-hero-padding-ver;
+		padding-bottom: $pages-photo-hero-padding-ver;
+		position: relative;
+
+		&:after {
+			left: -20rem;
+			right: -20rem;
+			top: 0;
+			bottom: 0;
+			content: "";
+			position: absolute;
+			z-index: 1;
+			@include linear-gradient(to right, rgba(#fff, 0.0) 0%, rgba(#fff, 0.9) 20%, rgba(#fff, 1) 50%, rgba(#fff, 0.9) 75%, rgba(#fff, 0.0) 100%);
+		}
 
 		&__text {
+			position: relative;
+			z-index: 2;
 
 			& h1 {
 				@include sans-serif-light;

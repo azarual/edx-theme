@@ -15,6 +15,10 @@
 
   &__container {
     @include display(flex);
+
+    .course-tile {
+      width: 100%;
+    }
   }
 
 

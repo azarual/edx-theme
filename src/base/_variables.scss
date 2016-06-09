@@ -9,7 +9,7 @@ $navbar-height: 80px;
 $header-li-font-size: 16px;
 $header-li-padding-hor: 15px;
 $header-li-hover-expand: 10px;
-$header-logo-height: 60px;
+$header-logo-height: 32px;
 $header-logo-margin: 4px 0 0;
 $navbar-links-top-offset: 0;
 $header-bottom-border: 1px solid #DEDEDE;
@@ -25,6 +25,8 @@ $navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-secondary-color);
 $display-navbar-logo-positive: calcDisplayLogoPositive($navbar-style);
 $display-navbar-logo-negative: calcDisplayLogoNegative($navbar-style);
 
+
+$buttons-border-radius: 6px;
 
 
 //  Landing page hero portion
@@ -72,5 +74,5 @@ $standard-image-border-color: #ddd;
 
 //	Forms
 
-$form-button-border-radius: 0;
+$form-button-border-radius: 6px;
 $form-input-border-radius: 0;

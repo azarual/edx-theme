@@ -75,7 +75,7 @@
 		}
 
 		& a {
-			@include sans-serif-bold;
+			@include sans-serif;
 			font-size: $header-li-font-size;
 			text-transform: capitalize;
 			color: $navbar-text-color !important;
@@ -123,10 +123,10 @@
 		& .navbar__button, & .navbar__button:link {
 			color: $navbar-button-text-color !important;
 			border: $navbar-button-border;
+			border-radius: $buttons-border-radius;
 			background-color: $navbar-button-bg;
 			text-transform: none;
 			padding: 10px 20px;
-			border-radius: 0;
 			display: inline-block;
 
 			&:hover, &:focus {
@@ -263,7 +263,7 @@
 		display: inline-block;
 		margin-left: 20px;
 		font-size: $header-li-font-size;
-		@include sans-serif-bold;
+		@include sans-serif;
 		color: $navbar-text-color;
 		margin-top: 5px;
 	}
