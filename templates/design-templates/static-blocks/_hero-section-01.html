@@ -1,19 +1,14 @@
 <%page args="template_settings" />
 
 <%
-  bg_image_url = template_settings['bg_image_url']
+  text_color = template_settings.get('text_color',"")
+  background_color = template_settings.get('background_color',"")
+  bg_image_url = template_settings.get('bg_image_url',"")
+  optional_classes = template_settings.get('optional_classes',"")
+  extra_css = template_settings.get('extra_css',"")
 %>
 
-<section class="a--hero-section-01"
-  style="
-  % if bg_image_url:
-    background-image: url('${bg_image_url}');
-  % endif
-  % if template_settings['extra_css']:
-    ${template_settings['extra_css']}
-  % endif
-  "
->
+<section class="a--hero-section-01 ${optional_classes}" style="background-image: url('${bg_image_url}'); color: ${text_color}; background-color: ${background_color}; ${extra_css}">
   <div class="bs-container a--container a--hero-section-01__container">
       <h1>${template_settings['hero_title']}</h1>
       <h4>${template_settings['hero_subtitle']}</h4>
