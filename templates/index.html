@@ -91,7 +91,7 @@
       <div class="container-bs">
         <div class="row">
           <% i = 0; %>
-          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+          %for course in courses[:3]:
             %if i == 0:
               <div class="col-xs-12 col-sm-8 col-lg-6 course-tile__container">
                 <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="course-tile big-tile">
