@@ -6,6 +6,7 @@
 <%block name="pagetitle">${_("Courses")}</%block>
 
 <%! from microsite_configuration import microsite %>
+<% import urllib2 %>
 
 <!--
 Start of DoubleClick Floodlight Tag: Please do not remove
@@ -25,7 +26,6 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
 <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
 
 <section class="find-courses" id="gym-catalog">
-
 
   <div class="course-title container-fluid">
     <header class="container">
@@ -90,7 +90,7 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
             </div>
             <section class="text-center">
               <div class="row">
-                <p class="col-md-12">Register to recieve email updates about new and upcoming classes.</p>
+                <p class="col-md-12">Register to receive email updates about new and upcoming classes.</p>
               </div>
               <div class="row">
                 <div class="col-md-12">
@@ -102,24 +102,14 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
               <p>or <a href="/login">Sign in</a>
             </section>
         </div>
-        % else:
-          <!-- right hand column content for when users are logged in -->
-          <h1>Upcoming</h1>
-          <section>
-            <h2>Advanced Rapid Prototyping with Axure</h2>
-            <p>This course is for developers who want to create an interactive prototype in Axure that can pass data such as variable values, text and conditions from one page to another. You will learn how to build a simple four-page prototype capable of demonstrating multiple userflows.</p>
-          </section>
-
-          <section>
-            <h2>Creating HTML5 Web Banners</h2>
-            <p>This course is for developers who want a practical overview of how to build animated banner ads in HTML5 and compare this approach with alternatives such as Adobe Animate CC, hand-coding HTML, CSS3, and JavaScript utilizing the GreenSock Animation Platform (GSAP) library.</p>
-          </section>
         % endif
+
+        ## include sidebar content from git repo
+        ${_(urllib2.urlopen('https://raw.githubusercontent.com/gymnasium/static-site-content/gh-pages/upcoming-courses.html').read())}
       </aside>
     </div>
   </main>
 </section>
-
 
 <script>
   $(function(){
@@ -135,24 +125,5 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
         $(elem).remove();
       }
     });
-
-
   })
 </script>
-
-<!--
-Start of DoubleClick Floodlight Tag: Please do not remove
-Activity name of this tag: Completed Course Registrations
-URL of the webpage where the tag is expected to be placed: http://gymnasium.aquent.com/courses
-This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
-Creation Date: 12/18/2015
--->
-<script type="text/javascript">
-var axel = Math.random() + "";
-var a = axel * 10000000000000;
-document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=5255816;type=count0;cat=compl0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" alt=""/>');
-</script>
-<noscript>
-<img src="https://ad.doubleclick.net/ddm/activity/src=5255816;type=count0;cat=compl0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" alt=""/>
-</noscript>
-<!-- End of DoubleClick Floodlight Tag: Please do not remove -->

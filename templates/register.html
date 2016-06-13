@@ -79,7 +79,7 @@
           case "GYM/100/0":
           case "GYM/104/0":
           case "GYM/106/0":
-            Gymnasium.injectFBTrackingPixel();
+            //Gymnasium.injectFBTrackingPixel();
             break;
           default:
             //not a special course, we won't do tracking here
@@ -100,7 +100,17 @@
 
       $('#register-form').on('ajax:success', function(event, json, xhr) {
         var url = json.redirect_url || "${reverse('dashboard')}";
-        location.href = url;
+
+        var fname = $('#name').val().split(" ")[0];
+        var lname = $('#name').val().split(" ")[1];
+        var market_id = $('#market').val();
+        var market_name = $('#market option:selected').text();
+        var email = $('#email').val();
+
+        Gymnasium.RecordRegistration(email, fname, lname, market_id, function(){
+            //navigate AFTER we confirm the registration is complete.
+            location.href = url;
+        });
       });
 
       $('#register-form').on('ajax:error', function(event, jqXHR, textStatus) {
@@ -166,23 +176,6 @@
             <div role="alert" class="status err-message submission-error" tabindex="-1">
               <h3 class="err-message-title">${_("The following errors occurred while processing your registration:")} </h3>
               <ul class="err-message-copy"> </ul>
-            </div>
-
-            <div role="alert" class="status err-message temp-message is-shown" tabindex="-1" >
-              <h3 class="err-message-title">Important:</h3><br />
-              <p class="migration-message">
-                We recently moved Gymnasium to an all new platform – you’re looking at it right now! <br />
-                <b>If you had an account with us before November of 2015:</b>
-              </p>
-
-              <ol class="err-message-copy">
-                <li>Please use the form below to create an account with the same email address you’d used before.</li>
-                <li>You will receive an email with a link to activate your new account. You <em>must activate your new account</em> before your previous course enrollments and certificates can transfer.</li>
-              </ol>
-              <div class="migration-message">
-                <p>For more details, you can check out <a href="http://gymnasium.github.io/2015/11/08/its-alive/" target="_blank" style="font-family:'Helvetica Neue'; color:#d9534f; border-bottom:1px solid; font-weight:bold;">this post</a> on our blog.</p>
-                <p>If anything else seems wrong, drop us a line at help@thegymnasium.com, and we'll do our very best to help you.</p>
-            </div>
             </div>
 
             % if third_party_auth.is_enabled():

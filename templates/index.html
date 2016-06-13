@@ -48,16 +48,8 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
         </div>
         <div class="col-md-3 col-sm-12">
           <hgroup class="title">
-            % if homepage_overlay_html:
-              ${homepage_overlay_html}
-            % else:
-              % if self.stanford_theme_enabled():
-                <h1>${_("Free courses from <strong>{university_name}</strong>").format(university_name="Stanford")}</h1>
-              % else:
-                <h1>${_("Join Gymnasium")}</h1>
-              % endif
-              <h2 class="tk-brandon-grotesque">${_("Free courses. Practical skills. Unlimited potential.")}</h2>
-            % endif
+            <h1>${_("Join Gymnasium")}</h1>
+            <h2 class="tk-brandon-grotesque">${_("Free courses. Practical skills. Unlimited potential.")}</h2>
             <a class="gym-button" href="/courses">Enroll in a Class</a>
           </hgroup>
         </div>
@@ -105,17 +97,17 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
       </header>
 
       <section class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-12">
           <h2>Real World Skills</h2>
           <p>Gymnasium offers free online courses designed to teach creative professionals in-demand skills.  We know these skills are in demand because our clients tell us what they are looking for, but can't find.</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-12">
           <h2>Expert Instruction</h2>
           <p>Our courses are all self-paced and taught by experienced practitioners with a passion for sharing practical lessons from the design trenches.</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-12">
           <h2>Career Opportunities</h2>
           <p>Once you finish a course, you will be able to use your new skills in your current role, or use them to land a new job. <a href="http://aquent.com/find-work/" target="_blank">We can even help with that!</a></p>
         </div>
@@ -137,7 +129,7 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
                 <ul class="course-list row">
                   %for idx, course in enumerate(courses):
                     % if course.is_newish:
-                        <li class="course-list-item col-lg-4  col-md-6 col-sm-6 col-xs-12 ">
+                        <li class="course-list-item col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
                           <%include file="course.html" args="course=course" />
                         </li>
 
@@ -335,23 +327,6 @@ document.write('<iframe src="https://5255816.fls.doubleclick.net/activityi;src=5
          Gymnasium.injectFBTrackingPixel();
       })
    </script>
-
-    <!--
-    Start of DoubleClick Floodlight Tag: Please do not remove
-    Activity name of this tag: Sign Up for An Account
-    URL of the webpage where the tag is expected to be placed: http://gymnasium.aquent.com/
-    This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
-    Creation Date: 12/18/2015
-    -->
-    <script type="text/javascript">
-    var axel = Math.random() + "";
-    var a = axel * 10000000000000;
-    document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=5255816;type=count0;cat=signu0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" alt=""/>');
-    </script>
-    <noscript>
-    <img src="https://ad.doubleclick.net/ddm/activity/src=5255816;type=count0;cat=signu0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" alt=""/>
-    </noscript>
-    <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
 
 </%block>
 
