@@ -6,6 +6,7 @@
 <%namespace name='static' file='/static_content.html'/>
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
+<% current_year = datetime.now().year %>
 
 <footer class="footer">
   <div class="container-bs footer__container">
@@ -15,7 +16,7 @@
     </div>
     <div class="footer__content">
       <div class="footer__legal">
-        Copyright © 2015 Metalogix International GmbH. All rights reserved.
+        Copyright &copy; ${current_year} Metalogix International GmbH. All rights reserved.
       </div>
       <ul class="footer__links">
         <li><a href="http://www.metalogix.com/About.aspx">About</a></li>
