@@ -6,6 +6,7 @@
 <%namespace name='static' file='/static_content.html'/>
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
+<% current_year = datetime.now().year %>
 
 <footer class="footer">
   <div class="container-bs footer__container">
@@ -14,7 +15,7 @@
     </div>
     <div class="footer__content">
       <div class="footer__legal">
-        © 2015 Cloudera OnDemand. All rights reserved.
+        &copy; Copyright 2010-${current_year} Cloudera. All rights reserved. Not to be reproduced or shared without prior written consent from Cloudera.
       </div>
       <ul class="footer__links">
         <li><a href="http://www.cloudera.com">Cloudera Web</a></li>
