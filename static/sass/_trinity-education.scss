@@ -1,3 +1,5 @@
+@import "bourbon/bourbon";
+
 /****************************************************************************************************
 *   Stanford Theming File
 *
@@ -256,7 +258,26 @@ section.container {
   margin-bottom: 18px;
 }
 
+.login-register {
+  padding-bottom: 80px;
+}
+
+.login-register .form-field {
+
+  &.checkbox-honor_code, &.checkbox-terms_of_service {
+    @include display(flex);
+    @include align-items(center);
+
+    input.checkbox {
+      margin: 0 10px 0 0;
+    }
+
+    label {
+      margin: 0;
+    }
+  }
+}
+
 // Import Custom SASS
-@import "bourbon/bourbon";
 @import "custom/footer";
 @import "custom/homepage-custom";
