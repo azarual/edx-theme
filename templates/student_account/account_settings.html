@@ -10,9 +10,16 @@ from microsite_configuration import microsite
 
 <%inherit file="/main.html" />
 <%namespace name='static' file='/static_content.html'/>
+<%namespace file='/trinity_districts.html' import="district_opts"/>
 
 <%block name="pagetitle">${_("Account Settings")}</%block>
 <%block name="nav_skip">#content</%block>
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+<script type="text/javascript">
+  $('#district').select2();
+</script>
 
 % if duplicate_provider:
     <section>
@@ -29,11 +36,14 @@ from microsite_configuration import microsite
 <%block name="js_extra">
 <%static:require_module module_name="js/student_account/views/account_settings_factory" class_name="AccountSettingsFactory">
     var fieldsData = ${ json.dumps(fields) };
+    fieldsData['district'] = ${ json.dumps(district_opts()) };
     var authData = ${ json.dumps(auth) };
     var platformName = ${ json.dumps(microsite.get_value('platform_name', settings.PLATFORM_NAME))};
 
     AccountSettingsFactory(
-        fieldsData, authData, '${user_accounts_api_url}', '${user_preferences_api_url}', ${user.id}, platformName
+        fieldsData, authData, '${user_accounts_api_url}', '${user_preferences_api_url}',
+         '${reverse("trinityuserprofile_api", kwargs={"username": user.username})}',
+          ${user.id}, platformName
     );
 </%static:require_module>
 </%block>
