@@ -1,5 +1,5 @@
-$brand-primary-color: #34495e;
-$brand-accent-color: #7f8c8d;
+$brand-primary-color: #36748F;
+$brand-accent-color: #EE3124;
 $navbar-style: "white";  // brand or white
 $base-text-color: #2C2A2F;
 
@@ -14,7 +14,7 @@ $primary-font-weight-black: 800;
 }
 
 @mixin large-cta-font {
-	@include primary-font;
+	@include primary-font-light;
 }
 
 @mixin big-headings-font {
@@ -22,15 +22,15 @@ $primary-font-weight-black: 800;
 }
 
 @mixin small-headings-font {
-	@include primary-font-bold;
+	@include primary-font-light;
 }
 
 $cta-button-bg: $brand-accent-color;
 $cta-button-text-color: #fff;
 $cta-button-border: none;
 
-$header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
-$header-logo-height: 4.8rem;
+$header-bg-color: calcNavbarBg($navbar-style, #304049);
+$header-logo-height: 3.2rem;
 $header-padding-top: 1.5rem;
 $header-padding-bottom: $header-padding-top;
 $header-padding-sm-top: 1.5rem;
@@ -67,9 +67,9 @@ $buttons-border-radius: 0.5rem;
 
 $footer-padding-top: 4rem;
 $footer-padding-bottom: 1.5*$footer-padding-top;
-$footer-bg-color: #eee;
+$footer-bg-color: #304049;
 $footer-top-border: none;
-$footer-text-color: lighten($base-text-color, 15%);
+$footer-text-color: darken(#fff, 15%);
 $footer-link-color: $footer-text-color;
 $footer-link-hover-color: lighten($footer-text-color, 15%);
 $footer-link-breathe-space: 1.5rem;
@@ -148,6 +148,6 @@ $courseware-top-nav-bottom-margin: 2rem;
 $sequence-nav-bottom-padding: 1.6rem;
 $courseware-content-bottom-nav-width: 30%;
 
-$courseware-link-hover: "expanding-underline";  // can be "hover-pop", "expanding-underline", "brand-color" or "opacity"
+$courseware-link-hover: "hover-pop";  // can be "hover-pop", "expanding-underline", "brand-color" or "opacity"
 $courseware-content-font-size: 16px;
 $courseware-content-line-height: 20px;
