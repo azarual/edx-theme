@@ -228,6 +228,21 @@ header.global h1.logo {
     margin-right: 40px !important;
 }
 
+header {
+  .nav-wrapper .nav-global.nav-move_right {
+    float: right;
+    margin-right: 30px;
+  }
+}
+
+.homepage-courses__heading {
+  padding: 0 15px;
+}
+
+.home .courses-container .courses {
+  padding: 40px 15px 15px;
+}
+
 .course-info header.course-profile {
     min-height: 280px !important;
     height: auto !important;
