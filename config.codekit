@@ -3146,6 +3146,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/static\/images\/hero-photo-01.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 53109,
+		"inputAbbreviatedPath": "\/static\/images\/hero-photo-01.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/hero-photo-01.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/static\/images\/temp-photos\/temp-photo-01.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3289,15 +3300,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/static\/sass\/_dogwood-theme-codebase.scss": {
+	"\/static\/sass\/_qa-dogwood.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/sass\/_dogwood-theme-codebase.scss",
-		"outputAbbreviatedPath": "\/static\/css\/_dogwood-theme-codebase.css",
+		"inputAbbreviatedPath": "\/static\/sass\/_qa-dogwood.scss",
+		"outputAbbreviatedPath": "\/static\/css\/_qa-dogwood.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3908,7 +3919,7 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "dogwood-theme-codebase",
+	"displayValue": "qa-dogwood",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "globe_yellow"
 	},
