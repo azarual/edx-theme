@@ -1,13 +1,13 @@
-$brand-primary-color: #34495e;
-$brand-accent-color: #7f8c8d;
+$brand-primary-color: #F9B500;
+$brand-accent-color: #7BB1DB;
 $navbar-style: "white";  // brand or white
-$base-text-color: #2C2A2F;
+$base-text-color: #646464;
 
-$primary-font-name: "Open Sans";
+$primary-font-name: "Lato";
 $primary-font-weight-light: 300;
 $primary-font-weight-regular: 400;
 $primary-font-weight-bold: 700;
-$primary-font-weight-black: 800;
+$primary-font-weight-black: 900;
 
 @mixin body-base-font {
 	@include primary-font;
@@ -18,14 +18,15 @@ $primary-font-weight-black: 800;
 }
 
 @mixin big-headings-font {
-	@include primary-font-light;
+	@include primary-font-black;
+	text-transform: uppercase;
 }
 
 @mixin small-headings-font {
-	@include primary-font-bold;
+	@include primary-font-black;
 }
 
-$cta-button-bg: $brand-accent-color;
+$cta-button-bg: $brand-primary-color;
 $cta-button-text-color: #fff;
 $cta-button-border: none;
 
@@ -67,7 +68,7 @@ $buttons-border-radius: 0.5rem;
 
 $footer-padding-top: 4rem;
 $footer-padding-bottom: 1.5*$footer-padding-top;
-$footer-bg-color: #eee;
+$footer-bg-color: #F2F2F5;
 $footer-top-border: none;
 $footer-text-color: lighten($base-text-color, 15%);
 $footer-link-color: $footer-text-color;
@@ -151,3 +152,16 @@ $courseware-content-bottom-nav-width: 30%;
 $courseware-link-hover: "expanding-underline";  // can be "hover-pop", "expanding-underline", "brand-color" or "opacity"
 $courseware-content-font-size: 16px;
 $courseware-content-line-height: 20px;
+
+
+// specific overrides
+
+.a--hero-section-01__container {
+	text-align: left !important;
+	padding-left: 0;
+	padding-right: 0;
+
+	h1, h4 {
+		max-width: 72rem;
+	}
+}
