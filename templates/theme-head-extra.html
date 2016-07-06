@@ -59,7 +59,7 @@ from django.conf import settings
 			//TODO: Unhack this silly logic to hide forum tab for gym shorts
 
 			//we're looking at the href property of this anchor to see if it contains
-			//a course link that has "Gym/00" in it.  All gym shorts start with "00"
+			//a course link that has "Gym/00" in it.  All gym shorts start with "0"
 			//so that should hide this link. Note that this does _not_ disable
 			//forums... those pages will still exist, but we won't like to them.
 			if ($(value).attr("href").toLowerCase().indexOf("gym/0") > 0)
@@ -71,4 +71,21 @@ from django.conf import settings
 		$('.course-tabs li:contains("Progress")').hide();
 		$('.course-tabs').show();
 	});
+</script>
+
+<!-- eloqua tracking code -->
+<script type="text/javascript">
+    var _elqQ = _elqQ || [];
+  _elqQ.push(['elqSetSiteId', '386085125']);
+    _elqQ.push(['elqTrackPageView']);
+
+    (function () {
+        function async_load() {
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+            s.src = '//img04.en25.com/i/elqCfg.min.js';
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        }
+        if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+        else if (window.attachEvent) window.attachEvent('onload', async_load);
+    })();
 </script>
