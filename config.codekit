@@ -3135,6 +3135,72 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/static\/images\/accreditations\/accr00.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45935,
+		"inputAbbreviatedPath": "\/static\/images\/accreditations\/accr00.png",
+		"outputAbbreviatedPath": "\/static\/images\/accreditations\/accr00.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/accreditations\/accr01.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23116,
+		"inputAbbreviatedPath": "\/static\/images\/accreditations\/accr01.png",
+		"outputAbbreviatedPath": "\/static\/images\/accreditations\/accr01.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/accreditations\/accr02.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45185,
+		"inputAbbreviatedPath": "\/static\/images\/accreditations\/accr02.png",
+		"outputAbbreviatedPath": "\/static\/images\/accreditations\/accr02.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/accreditations\/accr03.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 70956,
+		"inputAbbreviatedPath": "\/static\/images\/accreditations\/accr03.png",
+		"outputAbbreviatedPath": "\/static\/images\/accreditations\/accr03.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/accreditations\/accr04.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 58357,
+		"inputAbbreviatedPath": "\/static\/images\/accreditations\/accr04.png",
+		"outputAbbreviatedPath": "\/static\/images\/accreditations\/accr04.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/accreditations\/accr05.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 48030,
+		"inputAbbreviatedPath": "\/static\/images\/accreditations\/accr05.png",
+		"outputAbbreviatedPath": "\/static\/images\/accreditations\/accr05.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/static\/images\/hero--example-background.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3153,6 +3219,17 @@
 		"initialSize": 53109,
 		"inputAbbreviatedPath": "\/static\/images\/hero-photo-01.jpg",
 		"outputAbbreviatedPath": "\/static\/images\/hero-photo-01.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/hero-photo-02.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 85070,
+		"inputAbbreviatedPath": "\/static\/images\/hero-photo-02.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/hero-photo-02.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

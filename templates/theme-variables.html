@@ -61,8 +61,7 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Menu item 1', '#', '', ''],
-      ['Menu item 2', '#', '', '']
+      ['QA.com', 'http://www.qa.com', '', 'target="_blank"']
     ]
   %>
 </%def>
@@ -74,7 +73,7 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Menu item 1', '#', '', '']
+      ['QA.com', 'http://www.qa.com', '', 'target="_blank"']
     ]
   %>
 </%def>
@@ -86,10 +85,9 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Example item', '#', '', 'target="_blank"'],
       ['FAQ', marketing_link('FAQ'), '', ''],
-      ['Contact', reverse('contact'), '', ''],
-      ['Terms and Conditions', 'http://apprenticeships.qa.com/about-us/legal-notices/terms-and-conditions', '', ''],
+      ['Contact us', reverse('contact'), '', ''],
+      ['Terms & Conditions', 'http://apprenticeships.qa.com/about-us/legal-notices/terms-and-conditions', '', ''],
       ['Privacy Policy', 'http://apprenticeships.qa.com/about-us/legal-notices/privacy-policy', '', '']
     ]
   %>
@@ -129,26 +127,26 @@
         [
           'static-block', 'static-blocks/_hero-section-01.html', {
             # template settings
-            'hero_title' : "Example title of the hero section", ## leave value empty if you don't want it displayed.
-            'hero_subtitle' : "This is the hero subtitle. Below this you can have a CTA button. You can choose what it says and what it does - it can either lead to another page, or it can open a YouTube video popup. Or you can have both those buttons at the same time!", ## leave value empty if you don't want it displayed.
-            'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
-            'popup_video_url' : "r5YdS_ZjXnc", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
-            'popup_video_text' : "Watch our video", ## leave value empty if you don't want a video button and modal displayed.
+            'hero_title' : "Award-winning professional training", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : "", ## leave value empty if you don't want it displayed.
+            'cta_link' : "/register", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "Register", ## leave value empty if you don't want a CTA button displayed.
+            'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+            'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
             'text_color' : "#fff",
-            'bg_image_url' : '/static/themes/qa-dogwood/images/hero-photo-01.jpg', ## leave empty if you want just a full color background
+            'bg_image_url' : '/static/themes/qa-dogwood/images/hero-photo-02.jpg', ## leave empty if you want just a full color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ],
         [
           'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
             # template settings
-            'heading' : "Heading for an additional text block", ## leave value empty if you don't want it displayed.
-            'text' : "<p>You can have additional text blocks on the landing page.</p><p>It can have solid background with white text on it (see the one below on this page), or one like this which is white with standard text color. You can have a CTA below this text chunk that leads to another page, with custom button text.</p><p>The text can be aligned left or centered.</p>", ## leave value empty if you don't want it displayed.
-            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
-            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
+            'heading' : "5 reasons to choose QA OpenEdX for virtual training", ## leave value empty if you don't want it displayed.
+            'text' : '<h2 style="font-size: 2rem; margin: 2.5rem 0 1.5rem;">Classroom-style experience</h2><p>Our effective ‘C3’ (collaborative, contextual, conversational) methodology applies the principles of our classroom courses in a virtual setting</p><h2 style="font-size: 2rem; margin: 2.5rem 0 1.5rem;">Unique online resources</h2><p>Our virtual learning platform, OpenEdX, allows you to network, stream course recordings and view new content added by the learning professionals</p><h2 style="font-size: 2rem; margin: 2.5rem 0 1.5rem;">Learn from anywhere</h2><p>You can access each learning session from anywhere with internet access, ensuring your comfort and saving you time and travel costs</p><h2 style="font-size: 2rem; margin: 2.5rem 0 1.5rem;">Bitesize learning sessions</h2><p>There is no need for long periods off work, with multiple short and focussed learning sessions spaced over a few weeks</p><h2 style="font-size: 2rem; margin: 2.5rem 0 1.5rem;">Full interactions</h2><p>You will be capable of full virtual interactions with the experienced learning professional and the other attendees during each session</p>', ## leave value empty if you don't want it displayed.
+            'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
+            'optional_classes' : "", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ],
@@ -165,8 +163,8 @@
             'max_courses' : 4, ## required, sets max number of courses to be displayed in the block
             'course_template_class' : 'a--course-tile-01', ## required, defined as "a--{template-name}"
             'course_template' : 'single-course/_course-tile-01.html', ## required
-            'section_heading' : "Our latest courses:", ## leave value empty if you don't want it displayed.
-            'section_text' : "The title above for the courses listing is customisable, as well sa this piece of text. There are three different types of course tiles (all three types displayed). Text can be aligned left or centered.", ## leave value empty if you don't want it displayed.
+            'section_heading' : "What courses are available?", ## leave value empty if you don't want it displayed.
+            'section_text' : "A number of our most popular courses are available in virtual learning format. See the full list below:", ## leave value empty if you don't want it displayed.
             'optional_classes' : "", ## can be "centered" to have all text centered
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
@@ -174,10 +172,10 @@
         [
           'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
             # template settings
-            'heading' : "Additional text block headline", ## leave value empty if you don't want it displayed.
-            'text' : "<p>This one's aligned left.</p><p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>", ## leave value empty if you don't want it displayed.
-            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
+            'heading' : "Trusted, awarded and accredited", ## leave value empty if you don't want it displayed.
+            'text' : '<p>Fully accredited to ensure we provide the highest possible standards in learning.</p><div style="margin-top: 3rem; display: -webkit-box; display: -moz-box; display: box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex;-webkit-justify-content: space-between; justify-content: space-between; align-items: center; -webkit-align-items: center;"><img src="/static/themes/qa-dogwood/images/accreditations/accr00.png" style="width: 16.66%; height: auto; max-width: 13rem;" /><img src="/static/themes/qa-dogwood/images/accreditations/accr01.png" style="width: 16.66%; height: auto; max-width: 13rem;" /><img src="/static/themes/qa-dogwood/images/accreditations/accr02.png" style="width: 16.66%; height: auto; max-width: 13rem;" /><img src="/static/themes/qa-dogwood/images/accreditations/accr03.png" style="width: 16.66%; height: auto; max-width: 13rem;" /><img src="/static/themes/qa-dogwood/images/accreditations/accr04.png" style="width: 16.66%; height: auto; max-width: 13rem;" /><img src="/static/themes/qa-dogwood/images/accreditations/accr05.png" style="width: 16.66%; height: auto; max-width: 13rem;" /></div>', ## leave value empty if you don't want it displayed.
+            'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
             'optional_classes' : "negative", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
@@ -203,24 +201,6 @@
           'about-course-template', 'pages/course-about/_course-about-01.html', {
             # template settings
             'optional_classes' : "", ##
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'courses-list', 'static-blocks/_line-separator.html', {
-            # template settings
-            'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
-            # template settings
-            'heading' : "Optional content title", ## leave value empty if you don't want it displayed.
-            'text' : "<p>You can add some additional content here. You can add a CTA under this section as well.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>", ## leave value empty if you don't want it displayed.
-            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "CTA button", ## leave value empty if you don't want a CTA button displayed.
-            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ]
@@ -258,19 +238,16 @@
       #   }
       #]
       [
-        'static-block', 'static-blocks/_hero-section-01.html', {
+        'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
           # template settings
-          'hero_title' : "Your custom title", ## leave value empty if you don't want it displayed.
-          'hero_subtitle' : "You can change the text that goes here. You can also change the background image of this area.", ## leave value empty if you don't want it displayed.
+          'heading' : "", ## leave value empty if you don't want it displayed.
+          'text' : '<h2 style="font-size: 3.2rem; line-height: 140%; max-width: 86rem; margin: 2.5rem auto 1.5rem;">View our comprehensive training catalogue and check out our flagship training centres.</h2>', ## leave value empty if you don't want it displayed.
           'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
           'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
-          'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
-          'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
-          'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
+          'optional_classes' : "centered negative", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
           'text_color' : "#fff",
-          'bg_image_url' : "", ## leave empty if you want just a full color background
           'extra_css' : "padding-top: 5rem; padding-bottom: 5rem;" ## add custom css to be added inline to the wrapper element
-         }
+        }
       ],
       [
         'course-catalogue', 'pages/course-catalogue/_course-catalogue-01.html', {
@@ -281,17 +258,6 @@
         'courses-list', 'static-blocks/_line-separator.html', {
           # template settings
           'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
-          'extra_css' : "" ## add custom css to be added inline to the wrapper element
-        }
-      ],
-      [
-        'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
-          # template settings
-          'heading' : "Optional content can go here", ## leave value empty if you don't want it displayed.
-          'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>", ## leave value empty if you don't want it displayed.
-          'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
-          'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
-          'optional_classes' : "", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
           'extra_css' : "" ## add custom css to be added inline to the wrapper element
         }
       ]
@@ -313,7 +279,7 @@
       'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
       'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html', ## design which discovery-search block design to use
       'promote_course_catalog' : True,
-      'promote_course_catalog_text' : "Check out our course catalog and enroll in some awesome courses!"
+      'promote_course_catalog_text' : "Browse our Microsoft training course catalogue and enrol now!"
     }
   %>
 </%def>
