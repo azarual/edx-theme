@@ -164,9 +164,20 @@
             'course_template_class' : 'a--course-tile-01', ## required, defined as "a--{template-name}"
             'course_template' : 'single-course/_course-tile-01.html', ## required
             'section_heading' : "What courses are available?", ## leave value empty if you don't want it displayed.
-            'section_text' : "A number of our most popular courses are available in virtual learning format. See the full list below:", ## leave value empty if you don't want it displayed.
+            'section_text' : 'A number of our most popular courses are available in virtual learning format. See some of our courses below, or go to our <a href="/courses">full course catalog</a> to view all available courses:', ## leave value empty if you don't want it displayed.
             'optional_classes' : "", ## can be "centered" to have all text centered
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ],
+        [
+          'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
+            # template settings
+            'heading' : "", ## leave value empty if you don't want it displayed.
+            'text' : '', ## leave value empty if you don't want it displayed.
+            'cta_link' : "/courses", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "Full course catalog", ## leave value empty if you don't want a CTA button displayed.
+            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
+            'extra_css' : "padding-top: 0; margin-bottom: 4rem;" ## add custom css to be added inline to the wrapper element
           }
         ],
         [
