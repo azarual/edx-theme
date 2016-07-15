@@ -7,9 +7,24 @@ from courseware.courses import get_course_about_section
 from django.conf import settings
 from edxmako.shortcuts import marketing_link
 from openedx.core.lib.courses import course_image_url
+from hr_management.utils import requested_access_for_course
 %>
 
 <%namespace file='../theme-variables.html' import="get_course_about_content" />
+
+<%
+    if settings.FEATURES.get('REQUIRE_APPROVAL_FOR_COURSE_ACCESS', False):
+      require_approval = True
+      form_action=reverse('require_course_access')
+      enrollment_action='request_access'
+      has_requested_access = requested_access_for_course(course, user)
+      active_reg_button = not has_requested_access
+    else:
+      require_approval = False
+      has_requested_access = False
+      form_action=reverse('change_enrollment')
+      enrollment_action='enroll'
+%>
 
 <%inherit file="../main.html" />
 <%block name="headextra">
@@ -51,6 +66,11 @@ from openedx.core.lib.courses import course_image_url
         })
         event.preventDefault();
       });
+    % elif require_approval:
+      <a href="#" class="register">
+        ${_("Request access to {course_name}").format(course_name=course.display_number_with_default) | h}
+      </a>
+      <div id="register_error"></div>
     % endif
 
     ## making the conditional around this entire JS block for sanity
@@ -159,6 +179,8 @@ from openedx.core.lib.courses import course_image_url
   course_about_vars['can_add_course_to_cart'] = can_add_course_to_cart
   course_about_vars['is_shib_course'] = is_shib_course
   course_about_vars['user_has_staff_access'] = staff_access
+  course_about_vars['require_approval'] = require_approval
+  course_about_vars['has_requested_access'] = has_requested_access
 
   if microsite.get_value('course_about_show_social_links', True):
     course_about_vars['course_about_show_social_links'] = True
@@ -206,14 +228,13 @@ from openedx.core.lib.courses import course_image_url
 ## which is when the student is not registered.
 %if active_reg_button or is_shib_course:
   <div style="display: none;">
-    <form id="class_enroll_form" method="post" data-remote="true" action="${reverse('change_enrollment')}">
-      <fieldset class="enroll_fieldset">
+    <form id="class_enroll_form" method="post" data-remote="true" action="${form_action}">      <fieldset class="enroll_fieldset">
         <legend class="sr">${_("Enroll")}</legend>
         <input name="course_id" type="hidden" value="${course.id | h}">
-        <input name="enrollment_action" type="hidden" value="enroll">
+        <input name="enrollment_action" type="hidden" value="${enrollment_action}">
       </fieldset>
       <div class="submit">
-        <input name="submit" type="submit" value="${_('enroll')}">
+        <input name="submit" type="submit" value="${enrollment_action}">
       </div>
     </form>
   </div>
