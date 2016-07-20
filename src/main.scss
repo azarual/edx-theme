@@ -10,9 +10,6 @@
 // Import various vendor specific scss
 @import "vendors/animate";
 
-// Import typography
-@import "base/typography";
-
 // Import bg functions
 @import "base/functions";
 
@@ -22,19 +19,27 @@
 // Import mixins
 @import "base/mixins";
 
+// Import basic styles
+@import "base/branding-basics";
+
+// Import typography
+@import "base/typography";
+
 // edX normalizer for elements
 @import "base/edx-overrides";
 
 // Import basic styles
-@import "base/branding-basics";
 @import "base/base";
 @import "base/buttons";
 @import "base/modals";
 @import "base/expanding-section";
 
 // Import site shared layout
-@import "shared/header";
 @import "shared/footer";
+
+// Import header styles
+@import "header/header-appsembler-01";
+@import "header/header-appsembler-02";
 
 // Import static-blocks specific sass
 @import "static-blocks/hero-section-01";
@@ -53,6 +58,16 @@
 @import "live-blocks/discovery/facets-01";
 @import "live-blocks/dashboard-course-listing/dashboard-course-listing-01";
 @import "live-blocks/dashboard-search-results/dashboard-search-results--default";
+
+// Import courseware stuff
+@import "courseware/top-nav-01";
+@import "courseware/courseware-banner-01";
+@import "courseware/courseware-wrapper-01";
+@import "courseware/course-info-01";
+@import "courseware/course-content-01";
+@import "courseware/course-progress-01";
+@import "courseware/discussion-in-course";
+@import "courseware/courseware-textbook";
 
 
 // Import page specific templates sass

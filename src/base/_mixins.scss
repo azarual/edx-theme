@@ -52,17 +52,17 @@
   border-radius: $buttons-border-radius;
 }
 
-@mixin underline_expanding_hover {
+@mixin underline_expanding_hover($line_color, $distance) {
   position: relative;
 
   &:after {
     position: absolute;
-    bottom: -1rem;
+    bottom: -$distance;
     left: 0;
     width: 0;
     height: 0.2rem;
     border-radius: 0.05rem;
-    background-color: $header-text-color;
+    background-color: $line_color;
     content: "";
     @include transition(0.2s all ease-in-out);
   }
@@ -72,6 +72,68 @@
     &:after {
       width: 100%;
     }
+  }
+}
+
+@mixin hover_pop($pop_top, $pop_left) {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include transition(all 0.3s ease-in-out);
+
+  &:hover, &:focus {
+    top: $pop_top;
+    left: $pop_left;
+  }
+}
+
+@mixin hover_pop_horizontal($parameter) {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include transition(all 0.3s ease-in-out);
+
+  &:hover, &:focus {
+    left: $parameter;
+  }
+}
+
+@mixin hover_pop_vertical($parameter) {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include transition(all 0.3s ease-in-out);
+
+  &:hover, &:focus {
+    top: $parameter;
+  }
+}
+
+@mixin hover_style_macro($chosen_style, $parameter) {
+  @if $chosen_style == "expanding-underline" {
+      @include underline_expanding_hover($brand-primary-color, $parameter);
+  } @else if $chosen_style == "hover_pop_vertical" {
+      @include hover_pop_vertical($parameter)
+  } @else if $chosen_style == "hover_pop_horizontal" {
+      @include hover_pop_horizontal($parameter)
+  } @else if $chosen_style == "hover-custom-color" {
+      &:hover, &:focus {
+        color: $brand-primary-color;
+      }
+  } @else if $chosen_style == "opacity" {
+      opacity: 1;
+      &:hover, &:focus {
+        opacity: $parameter;
+      }
+
+  } @else {
+
   }
 }
 
