@@ -2,6 +2,7 @@
 <%!
   from django.core.urlresolvers import reverse
   from courseware.courses import get_course_about_section
+  from openedx.core.lib.courses import course_image_url
   from django.conf import settings
   from edxmako.shortcuts import marketing_link
 
@@ -20,8 +21,8 @@
 
   ## OG (Open Graph) title and description added below to give social media info to display
   ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
-  <meta property="og:title" content="${get_course_about_section(course, 'title')}" />
-  <meta property="og:description" content="${get_course_about_section(course, 'short_description')}" />
+  <meta property="og:title" content="${course.display_name_with_default}" />
+  <meta property="og:description" content="${get_course_about_section(request, course, 'short_description')}" />
 </%block>
 
 <%block name="js_extra">
@@ -109,12 +110,12 @@
   <script src="${static.url('js/course_info.js')}"></script>
 </%block>
 
-<%block name="pagetitle">${get_course_about_section(course, "title")}</%block>
+<%block name="pagetitle">${course.display_name_with_default}</%block>
 
 
 <section class="cmc-course-header">
   <div class="container-bs cmc-course-header__container">
-    <h1><span>${course.display_number_with_default | h}:</span>${get_course_about_section(course, 'title')}</h1>
+    <h1><span>${course.display_number_with_default | h}:</span>${course.display_name_with_default}</h1>
 
     %if user.is_authenticated() and registered:
 
@@ -170,16 +171,16 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7 cmc-course-body__right">
 
-        %if get_course_about_section(course, "video"):
+        %if get_course_about_section(request, course, "video"):
           <a class="cmc-course-body__image" style="display: block;" data-toggle="modal" data-target="#videoModal">
-            <img src="${course.course_image_url}" alt="${course.display_number_with_default | h} ${course.display_name} Cover Image">
+            <img src="${course_image_url(course)}" alt="${course.display_number_with_default | h} ${course.display_name} Cover Image">
             %if course.is_newish:
               <div class="course-ribbon"><span>NEW</span></div>
             %endif
           </a>
         %else:
         <div class="cmc-course-body__image">
-          <img src="${course.course_image_url}" alt="${course.display_number_with_default | h} ${course.display_name} Cover Image">
+          <img src="${course_image_url(course)}" alt="${course.display_number_with_default | h} ${course.display_name} Cover Image">
           %if course.is_newish:
             <div class="course-ribbon"><span>NEW</span></div>
           %endif
@@ -196,7 +197,7 @@
         </div>
         end of meta part -->
         <div class="cmc-course-body__description">
-          ${get_course_about_section(course.short_description}
+          ${get_course_about_section(request, course, 'short_description')}
         </div>
       </div>
     </div>
@@ -206,7 +207,7 @@
 <div class="modal fade modal__video-fullscreen__wrapper" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal__video-fullscreen">
     <div class="modal__video-fullscreen__container">
-      < ${get_course_about_section(course, "video")}
+      < ${get_course_about_section(request, course, "video")}
     </div>
     <div class="modal__video-fullscreen__close">
       <a href="#" data-dismiss="modal" aria-label="Close"><i class="fa fa-remove"></i></a>
