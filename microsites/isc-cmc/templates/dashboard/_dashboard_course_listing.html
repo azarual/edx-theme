@@ -1,4 +1,4 @@
-<%page args="course, enrollment, show_courseware_link, cert_status, show_email_settings, course_mode_info, show_refund_option, is_paid_course, is_course_blocked, verification_status, course_requirements" />
+<%page args="course_overview, enrollment, show_courseware_link, cert_status, show_email_settings, course_mode_info, show_refund_option, is_paid_course, is_course_blocked, verification_status, course_requirements" />
 
 <%!
 from django.utils.translation import ugettext as _
@@ -13,13 +13,17 @@ from student.helpers import (
   VERIFY_STATUS_APPROVED,
   VERIFY_STATUS_MISSED_DEADLINE
 )
+from xmodule.modulestore.django import modulestore
 %>
 <%
-  cert_name_short = course.cert_name_short
+  store = modulestore()
+  full_course = store.get_course(course_overview.id)
+
+  cert_name_short = course_overview.cert_name_short
   if cert_name_short == "":
     cert_name_short = settings.CERT_NAME_SHORT
 
-  cert_name_long = course.cert_name_long
+  cert_name_long = course_overview.cert_name_long
   if cert_name_long == "":
     cert_name_long = settings.CERT_NAME_LONG
   billing_email = settings.PAYMENT_SUPPORT_EMAIL
@@ -47,13 +51,13 @@ from student.helpers import (
   % endif
 
   <%
-    course_target = reverse('info', args=[course.id.to_deprecated_string()])
+    course_target = reverse('info', args=[course_overview.id.to_deprecated_string()])
   %>
 
   % if show_courseware_link:
     % if not is_course_blocked:
       <a href="${course_target}" class="col-xs-12 col-sm-5 col-md-6 cmc-dashboard-course__image">
-        <img src="${course_image_url(course)}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
+        <img src="${course_overview.course_image_url}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default) |h}">
         % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
           % if enrollment.mode == "verified":
             % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', False):
@@ -78,7 +82,7 @@ from student.helpers import (
       </a>
     % else:
       <div class="col-xs-12 col-sm-5 col-md-6 cmc-dashboard-course__image course-blocked">
-        <img src="${course_image_url(course)}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
+        <img src="${course_overview.course_image_url}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default) |h}">
         % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
           % if enrollment.mode == "verified":
             % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', False):
@@ -104,7 +108,7 @@ from student.helpers import (
     % endif
   % else:
     <div class="col-xs-12 col-sm-5 col-md-6 cmc-dashboard-course__image">
-      <img src="${course_image_url(course)}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}">
+      <img src="${course_overview.course_image_url}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default) |h}">
       % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
         % if enrollment.mode == "verified":
           % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', False):
@@ -135,13 +139,13 @@ from student.helpers import (
   <div class="col-xs-12 col-sm-7 col-md-6 cmc-dashboard-course__info">
     % if show_courseware_link:
       % if not is_course_blocked:
-        <a href="${course_target}" class="cmc-dashboard-course__name"><span>${course.display_number_with_default | h}:</span>${get_course_about_section(course, 'title')}</a>
+        <a href="${course_target}" class="cmc-dashboard-course__name"><span>${course_overview.display_number_with_default | h}:</span>${course_overview.display_name}</a>
       % else:
-        <h3 class="cmc-dashboard-course__name"><span>${course.display_number_with_default | h}:</span>${get_course_about_section(course, 'title')}</h3>
+        <h3 class="cmc-dashboard-course__name"><span>${course_overview.display_number_with_default | h}:</span>${course_overview.display_name}</h3>
       % endif
     %endif
     <p class="cmc-dashboard-course__description">
-      ${get_course_about_section(course, 'short_description')}
+      ${get_course_about_section(request, full_course, 'short_description')}
     </p>
 
     % if is_course_blocked:
@@ -157,8 +161,8 @@ from student.helpers import (
             '<a id="unregister_block_course" rel="leanModal" '
             'data-course-id="{course_id}" data-course-number="{course_number}" '
             'href="#unenroll-modal">'.format(
-              course_id=escape(course.id),
-              course_number=escape(course.number),
+              course_id=escape(course_overview.id),
+              course_number=escape(course_overview.number),
             )
           ),
           unenroll_link_end="</a>",
@@ -167,9 +171,9 @@ from student.helpers import (
     %endif
 
 
-    % if course.may_certify() and cert_status:
+    % if course_overview.may_certify() and cert_status:
     ${_("Course Completed")}                
-    <%include file='_dashboard_certificate_information.html' args='cert_status=cert_status,course=course, enrollment=enrollment'/>
+    <%include file='_dashboard_certificate_information.html' args='cert_status=cert_status,course=course_overview, enrollment=enrollment'/>
     % endif
 
     % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', True):
@@ -180,17 +184,17 @@ from student.helpers import (
             % if verification_status['days_until_deadline'] is not None:
               <h4 class="message-title">${_('Verification not yet complete.')}</h4>
               <p class="message-copy">${ungettext(
-                'You only have {days} day left to verify for this course.',
-                'You only have {days} days left to verify for this course.',
+                'You only have {days} day left to verify for this course_overview.',
+                'You only have {days} days left to verify for this course_overview.',
                 verification_status['days_until_deadline']
               ).format(days=verification_status['days_until_deadline'])}</p>
             % else:
               <h4 class="message-title">${_('Almost there!')}</h4>
-              <p class="message-copy">${_('You still need to verify for this course.')}</p>
+              <p class="message-copy">${_('You still need to verify for this course_overview.')}</p>
             % endif
           </div>
           <div class="verification-cta">
-            <a href="${reverse('verify_student_verify_later', kwargs={'course_id': unicode(course.id)})}" class="cta" data-course-id="${course.id | h}">${_('Verify Now')}</a>
+            <a href="${reverse('verify_student_verify_later', kwargs={'course_id': unicode(course_overview.id)})}" class="cta" data-course-id="${course_overview.id | h}">${_('Verify Now')}</a>
           </div>
         % elif verification_status['status'] == VERIFY_STATUS_SUBMITTED:
           <h4 class="message-title">${_('You have already verified your ID!')}</h4>
@@ -210,21 +214,21 @@ from student.helpers import (
 
       % if show_email_settings:
               % if not is_course_blocked:
-              <a href="#email-settings-modal" class="email-settings cmc-dashboard-course__options__email" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-optout="${unicode(course.id) in course_optouts}">${_('Email Settings')}</a>
+              <a href="#email-settings-modal" class="email-settings cmc-dashboard-course__options__email" rel="leanModal" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" data-optout="${unicode(course_overview.id) in course_optouts}">${_('Email Settings')}</a>
               % else:
-              <a class="disable-look-settings cmc-dashboard-course__options__email" data-course-id="${course.id| h}" data-course-number="${course.number | h}" data-optout="${unicode(course.id) in course_optouts}">${_('Email Settings')}</a>
+              <a class="disable-look-settings cmc-dashboard-course__options__email" data-course-id="${course_overview.id| h}" data-course-number="${course_overview.number | h}" data-optout="${unicode(course_overview.id) in course_optouts}">${_('Email Settings')}</a>
               % endif
       % endif
 
       % if is_paid_course and show_refund_option:
         ## Translators: The course's name will be added to the end of this sentence.
         % if not is_course_blocked:
-        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the purchased course")}';
+        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the purchased course")}';
         document.getElementById('refund-info').innerHTML=gettext('You will be refunded the amount you paid.')">
           ${_('Unenroll')}
         </a>
         % else:
-        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the purchased course")}';
+        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the purchased course")}';
         document.getElementById('refund-info').innerHTML=gettext('You will be refunded the amount you paid.')">
           ${_('Unenroll')}
         </a>
@@ -232,12 +236,12 @@ from student.helpers import (
       % elif is_paid_course and not show_refund_option:
         ## Translators: The course's name will be added to the end of this sentence.
         % if not is_course_blocked:
-        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the purchased course")}';
+        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the purchased course")}';
         document.getElementById('refund-info').innerHTML=gettext('You will not be refunded the amount you paid.')">
           ${_('Unenroll')}
         </a>
         % else:
-        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the purchased course")}';
+        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the purchased course")}';
         document.getElementById('refund-info').innerHTML=gettext('You will not be refunded the amount you paid.')">
           ${_('Unenroll')}
         </a>
@@ -245,23 +249,23 @@ from student.helpers import (
       % elif enrollment.mode != "verified":
         ## Translators: The course's name will be added to the end of this sentence.
         % if not is_course_blocked:
-        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from")}'; document.getElementById('refund-info').innerHTML=''">
+        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from")}'; document.getElementById('refund-info').innerHTML=''">
           ${_('Unenroll')}
         </a>
         % else:
-        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from")}'; document.getElementById('refund-info').innerHTML=''">
+        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from")}'; document.getElementById('refund-info').innerHTML=''">
           ${_('Unenroll')}
         </a>
         % endif
       % elif show_refund_option:
         ## Translators: The course's name will be added to the end of this sentence.
         % if not is_course_blocked:
-        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the verified {cert_name_long} track of").format(cert_name_long=cert_name_long)}';
+        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the verified {cert_name_long} track of").format(cert_name_long=cert_name_long)}';
         document.getElementById('refund-info').innerHTML=gettext('You will be refunded the amount you paid.')">
           ${_('Unenroll')}
         </a>
         % else:
-        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the verified {cert_name_long} track of").format(cert_name_long=cert_name_long)}';
+        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the verified {cert_name_long} track of").format(cert_name_long=cert_name_long)}';
         document.getElementById('refund-info').innerHTML=gettext('You will be refunded the amount you paid.')">
           ${_('Unenroll')}
         </a>
@@ -269,12 +273,12 @@ from student.helpers import (
       % else:
         ## Translators: The course's name will be added to the end of this sentence.
         % if not is_course_blocked:
-        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the verified {cert_name_long} track of").format(cert_name_long=cert_name_long)}';
+        <a href="#unenroll-modal" class="unenroll cmc-dashboard-course__options__unenroll" rel="leanModal" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the verified {cert_name_long} track of").format(cert_name_long=cert_name_long)}';
         document.getElementById('refund-info').innerHTML=gettext('The refund deadline for this course has passed, so you will not receive a refund.')">
           ${_('Unenroll')}
         </a>
         % else:
-        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course.id | h}" data-course-number="${course.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the verified {cert_name_long} track of").format(cert_name_long=cert_name_long)}';
+        <a class="disable-look-unregister cmc-dashboard-course__options__unenroll" data-course-id="${course_overview.id | h}" data-course-number="${course_overview.number | h}" onclick="document.getElementById('track-info').innerHTML='${_("Are you sure you want to unenroll from the verified {cert_name_long} track of").format(cert_name_long=cert_name_long)}';
         document.getElementById('refund-info').innerHTML=gettext('The refund deadline for this course has passed, so you will not receive a refund.')">
           ${_('Unenroll')}
         </a>
@@ -288,7 +292,7 @@ from student.helpers import (
       <% prc_target = reverse('about_course', args=[unicode(course_requirements['courses'][0]['key'])]) %>
       <section class="prerequisites">
         <p class="tip">
-          ${_("You must successfully complete {link_start}{prc_display}{link_end} before you begin this course.").format(
+          ${_("You must successfully complete {link_start}{prc_display}{link_end} before you begin this course_overview.").format(
               link_start='<a href="{}">'.format(prc_target),
               link_end='</a>',
               prc_display=course_requirements['courses'][0]['display'],
