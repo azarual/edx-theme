@@ -13,7 +13,7 @@ from hr_management.utils import requested_access_for_course
 <%namespace file='../theme-variables.html' import="get_course_about_content" />
 
 <%
-    if settings.FEATURES.get('REQUIRE_APPROVAL_FOR_COURSE_ACCESS', False):
+    if require_access_request:
       require_approval = True
       form_action=reverse('require_course_access')
       enrollment_action='request_access'
@@ -24,6 +24,7 @@ from hr_management.utils import requested_access_for_course
       has_requested_access = False
       form_action=reverse('change_enrollment')
       enrollment_action='enroll'
+      active_reg_button = True
 %>
 
 <%inherit file="../main.html" />
