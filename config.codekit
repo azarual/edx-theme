@@ -2242,22 +2242,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/src\/lms\/_login-register.scss": {
-		"createSourceMap": 0,
-		"debugStyle": 0,
-		"decimalPrecision": 10,
-		"fileType": 4,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/src\/lms\/_login-register.scss",
-		"outputAbbreviatedPath": "\/src\/css\/_login-register.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 0
-		},
 	"\/src\/lms\/_my-profile.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -2840,15 +2824,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/static\/css\/main.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/css\/main.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/static\/images\/cloudera-gfx-2.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3316,6 +3291,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/templates\/static_templates\/theme-faq.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/static_templates\/theme-tos.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/static_templates\/theme-tos.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

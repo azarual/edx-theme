@@ -113,3 +113,16 @@
 		}
 	}
 }
+
+.form-wrapper .form-field.checkbox-terms_of_service {
+	@include display(flex);
+	@include align-items(center);
+
+	input {
+		margin: 0 1rem 0 0;
+	}
+
+	label {
+		margin: 0;
+	}
+}
