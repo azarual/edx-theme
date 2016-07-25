@@ -1,27 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 85 102" style="enable-background:new 0 0 85 102;" xml:space="preserve">
-<style type="text/css">
-	.st0{clip-path:url(#SVGID_2_);}
-	.st1{clip-path:url(#XMLID_19_);fill:#7B7B7B;}
-</style>
-<g>
-	<defs>
-		<path id="SVGID_1_" d="M63.3,70V46.5c0-3.3-2.9-6.2-6.4-6.2H28.1c-3.6,0-6.4,2.9-6.4,6.2v27.3c0,3.3,2.9,6.2,6.4,6.2h45.7L63.3,70
-			z M19.3,20.2h44L84.3,0.5V82c0,9.6-8.1,17.8-18.5,17.8H19.3C8.9,99.8,0.8,91.6,0.8,82V38.2C0.8,28.5,8.9,20.2,19.3,20.2z"/>
-	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-	</clipPath>
-	<g class="st0">
-		<defs>
-			<rect id="XMLID_3_" x="-1500.3" y="-110" width="2945" height="2666.8"/>
-		</defs>
-		<clipPath id="XMLID_19_">
-			<use xlink:href="#XMLID_3_"  style="overflow:visible;"/>
-		</clipPath>
-		<rect id="XMLID_4_" x="-9.4" y="-9.8" class="st1" width="103.9" height="119.8"/>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="50mm" height="48mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 5000 4800"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:#004274}
+    .fil0 {fill:#1A75CF}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0" points="1862,1348 1443,3394 1800,3394 2024,2291 2444,3421 2576,3421 2995,2291 3211,3394 3569,3394 3144,1348 2950,1348 2509,2726 2059,1348 "/>
+  <path class="fil1" d="M2500 21c1353,0 2450,1065 2450,2379 0,1314 -1097,2379 -2450,2379 -1353,0 -2450,-1065 -2450,-2379 0,-1314 1097,-2379 2450,-2379zm9 184c1245,0 2255,983 2255,2195 0,1212 -1010,2195 -2255,2195 -1246,0 -2256,-983 -2256,-2195 0,-1212 1010,-2195 2256,-2195z"/>
+  <path class="fil0" d="M2509 271c1209,0 2189,953 2189,2129 0,1176 -980,2129 -2189,2129 -1210,0 -2190,-953 -2190,-2129 0,-1176 980,-2129 2190,-2129zm0 670c881,0 1595,682 1595,1525 0,842 -714,1525 -1595,1525 -881,0 -1595,-683 -1595,-1525 0,-843 714,-1525 1595,-1525z"/>
+ </g>
 </svg>

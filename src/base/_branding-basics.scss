@@ -1,13 +1,13 @@
-$brand-primary-color: #34495e;
-$brand-accent-color: #7f8c8d;
+$brand-primary-color: #006ab6;
+$brand-accent-color: #006ab6;
 $navbar-style: "white";  // brand or white
-$base-text-color: #2C2A2F;
+$base-text-color: #3d3d3d;
 
 $primary-font-name: "Open Sans";
 $primary-font-weight-light: 300;
 $primary-font-weight-regular: 400;
 $primary-font-weight-bold: 700;
-$primary-font-weight-black: 800;
+$primary-font-weight-black: 900;
 
 @mixin body-base-font {
 	@include primary-font;
@@ -31,7 +31,7 @@ $cta-button-border: none;
 
 $header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
 $header-logo-height: 4.8rem;
-$header-padding-top: 1.5rem;
+$header-padding-top: 1rem;
 $header-padding-bottom: $header-padding-top;
 $header-padding-sm-top: 1.5rem;
 $header-padding-sm-bottom: 1.5rem;
@@ -67,16 +67,16 @@ $buttons-border-radius: 0.5rem;
 
 $footer-padding-top: 4rem;
 $footer-padding-bottom: 1.5*$footer-padding-top;
-$footer-bg-color: #eee;
+$footer-bg-color: #fff;
 $footer-top-border: none;
 $footer-text-color: lighten($base-text-color, 15%);
-$footer-link-color: $footer-text-color;
+$footer-link-color: $brand-primary-color;
 $footer-link-hover-color: lighten($footer-text-color, 15%);
 $footer-link-breathe-space: 1.5rem;
 $footer-logo-breathe-space: 3rem;
 $footer-logo-padding-vertical: 1rem;
 $footer-logo-width: 4rem;
-$footer-logo-opacity: 0.5;
+$footer-logo-opacity: 1;
 $footer-copyright-text-size: 1.2rem;
 $footer-copyright-text-color: lighten($footer-text-color, 15%);
 $footer-copyright-breathe-space: 1rem;
