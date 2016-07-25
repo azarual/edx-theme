@@ -24,7 +24,6 @@
 </head>
 
 <body class="{% block bodyclass %}{% endblock %} lang_{{LANGUAGE_CODE}}">
-  BOKTE JESAM TI JA TU
   <div class="window-wrap" dir="${static.dir_rtl()}">
     <a class="nav-skip" href="{% block nav_skip %}#content{% endblock %}">{% trans "Skip to main content" %}</a>
     {% with course=request.course %}
@@ -40,7 +39,7 @@
       {% block bodyextra %}{% endblock %}
     </div>
     {% with course=request.course %}
-      {% elif IS_EDX_DOMAIN %}
+      {% if IS_EDX_DOMAIN %}
         {% include "footer.html" %}
       {% else %}
         {% include "theme-footer.html" %}
