@@ -1,7 +1,7 @@
-$brand-primary-color: #34495e;
-$brand-accent-color: #7f8c8d;
-$navbar-style: "white";  // brand or white
-$base-text-color: #2C2A2F;
+$brand-primary-color: #1F427C;
+$brand-accent-color: #2C76C7;
+$navbar-style: "brand";  // brand or white
+$base-text-color: #162037;
 
 $primary-font-name: "Open Sans";
 $primary-font-weight-light: 300;
@@ -14,15 +14,21 @@ $primary-font-weight-black: 800;
 }
 
 @mixin large-cta-font {
-	@include primary-font;
+	font-family: 'Roboto Slab', serif;
+	font-style: normal;
+	font-weight: 400;
 }
 
 @mixin big-headings-font {
-	@include primary-font-light;
+	font-family: 'Roboto Slab', serif;
+	font-style: normal;
+	font-weight: 300;
 }
 
 @mixin small-headings-font {
-	@include primary-font-bold;
+	font-family: 'Roboto Slab', serif;
+	font-style: normal;
+	font-weight: 400;
 }
 
 $cta-button-bg: $brand-accent-color;
@@ -30,8 +36,8 @@ $cta-button-text-color: #fff;
 $cta-button-border: none;
 
 $header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
-$header-logo-height: 4.8rem;
-$header-padding-top: 1.5rem;
+$header-logo-height: 6.4rem;
+$header-padding-top: 2rem;
 $header-padding-bottom: $header-padding-top;
 $header-padding-sm-top: 1.5rem;
 $header-padding-sm-bottom: 1.5rem;
@@ -39,7 +45,7 @@ $header-group-separation: 4rem;
 $header-font-size: 1.6rem;
 $header-text-color: calcNavbarTextColor($navbar-style, $base-text-color);
 $navbar-button-border: calcNavbarButtonBorder($navbar-style);
-$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-accent-color);
+$navbar-button-bg: transparent;
 $navbar-anchor-underline-color: calcNavbarUnderlineColor($navbar-style, $brand-primary-color);
 $navbar-link-hover: "expanding-underline";  // can be "hover-pop", "expanding-underline", "brand-color" or "opacity"
 
