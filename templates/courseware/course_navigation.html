@@ -89,7 +89,11 @@ include_special_exams = settings.FEATURES.get('ENABLE_SPECIAL_EXAMS', False) and
         <%
             tab_is_active = (tab.tab_id == active_page) or (tab.tab_id == default_tab)
         %>
-          <li>
+          % if tab.name in ("Discussion",) and course.discussion_blackouts:
+            <li class="hidden">
+          % else:
+            <li>
+          % endif 
              <a href="${tab.link_func(course, reverse) | h}" class="${url_class(tab_is_active)}">
                  % if tab.name == 'Courseware' and microsite.get_value('platform_name', None) == 'CMC Online Training': 
                  Coursework
