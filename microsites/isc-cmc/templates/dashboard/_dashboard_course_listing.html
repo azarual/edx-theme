@@ -172,8 +172,9 @@ from xmodule.modulestore.django import modulestore
 
 
     % if course_overview.may_certify() and cert_status:
-    ${_("Course Completed")}                
-    <%include file='_dashboard_certificate_information.html' args='cert_status=cert_status,course=course_overview, enrollment=enrollment'/>
+    <h4 class="cmc-dashboard-course__time"><span>${_("Module Completed")}</span></h4>
+    % else:
+    <h4 class="cmc-dashboard-course__time"><span>Starts:</span>Self-paced</h4>
     % endif
 
     % if settings.FEATURES.get('SEPARATE_VERIFICATION_FROM_PAYMENT') and request.session.get('separate-verified', True):
@@ -209,7 +210,6 @@ from xmodule.modulestore.django import modulestore
       % endif
     % endif
 
-    <h4 class="cmc-dashboard-course__time"><span>Starts:</span>Self-paced</h4>
     <div class="cmc-dashboard-course__options">
 
       % if show_email_settings:
