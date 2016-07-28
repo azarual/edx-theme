@@ -38,12 +38,12 @@ $(document).ready(function(){
 </%block>
 
 <section class="a--courseware-wrapper">
-  % if user.is_authenticated():
+  % if (user.is_authenticated() and user.is_staff):
 
     <div class="a--courseware-wrapper__admin-notifications bs-container a--container">
       <a class="a--courseware-wrapper__admin-notifications__cta" href="${studio_url}">${_("View Updates in Studio")}</a>
     </div>
-    
+
   % endif
 
 
