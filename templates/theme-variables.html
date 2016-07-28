@@ -62,8 +62,7 @@
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
       ['OU Website', 'http://www.open.ac.uk/', '', ''],
-      ['StudentHome', 'https://msds.open.ac.uk/students/index.aspx', '', 'target="_blank"'],
-      ['About us', reverse('about'), '', '']
+      ['StudentHome', 'https://msds.open.ac.uk/students/index.aspx', '', 'target="_blank"']
     ]
   %>
 </%def>
@@ -91,7 +90,6 @@
       ['StudentHome', 'https://msds.open.ac.uk/students/index.aspx', '', 'target="_blank"'],
       ['Help', reverse('help'), '', ''],
       ['FAQ', marketing_link('FAQ'), '', ''],
-      ['Contact', reverse('contact'), '', ''],
       ['Conditions of Use', reverse('tos'), '', ''],
       ['Copyright', marketing_link('copyright'), '', '']
     ]
@@ -304,7 +302,7 @@
       'discovery_facet' : '_facet-01.underscore', ## define which template for facets to use
       'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
       'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html', ## design which discovery-search block design to use
-      'promote_course_catalog' : True,
+      'promote_course_catalog' : False,
       'promote_course_catalog_text' : "Check out our course catalog and enroll in some awesome courses!"
     }
   %>
