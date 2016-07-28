@@ -62,6 +62,8 @@ import calendar
           location.href = json.redirect_url;
 	      }
         else {
+          $('section.introduction').addClass('is-hidden');
+          $('section.register aside .cta').not('.cta-nextsteps, .cta-help').addClass('is-hidden');
           $('.status.message.submission-error').removeClass('is-shown');
           $('.status.message.submission-success').addClass('is-shown').focus();
           $('#register-form .form-actions, #register-form .group-form, #register-form .instructions').hide();
@@ -127,7 +129,7 @@ import calendar
       </div>
 
       <div role="alert" class="status message submission-success" tabindex="-1">
-        <h3 class="message-title">${_("Registration succeeded.  Please follow the instructions in 'Next Steps' below to proceed.")} </h3>
+        <h3 class="message-title">${_("Registration succeeded.  Please follow the instructions in 'Next Steps' to proceed.")} </h3>
         <ul class="message-copy"> </ul>
       </div>
 
