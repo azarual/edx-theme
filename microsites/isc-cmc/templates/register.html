@@ -57,6 +57,8 @@
       $('#register-form').on('ajax:success', function(event, json, xhr) {
         if (json.redirect_url) location.href = url;
         else {
+          $('section.introduction').addClass('is-hidden');
+          $('section.register aside .cta').not('.cta-nextsteps, .cta-help').addClass('is-hidden');
           $('.status.message.submission-success').addClass('is-shown').focus();
           $('.status.message.submission-error').removeClass('is-shown');
           $('.cmc-login-signup__body').hide();
