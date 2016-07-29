@@ -23,7 +23,12 @@
       margin-left: 3rem;
 
       &>ol {
-        padding: 0;
+        padding: 0 0 0 1.5rem;
+      }
+
+      .treeview-handoutsnav a {
+        @include primary-font-bold;
+        color: $brand-primary-color;
       }
 
       @media(max-width: $screen-sm-max) {
@@ -55,7 +60,7 @@
   &__admin-notifications {
     padding-bottom: 2rem;
 
-    &__cta {
+    a.a--courseware-wrapper__admin-notifications__cta {
       display: inline-block;
       padding: 1rem 1.5rem;
       font-size: 1.6rem;
