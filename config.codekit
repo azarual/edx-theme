@@ -3168,6 +3168,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/static\/images\/RittmanMeadTODHeader.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 344270,
+		"inputAbbreviatedPath": "\/static\/images\/RittmanMeadTODHeader.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/RittmanMeadTODHeader.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/static\/images\/temp-photos\/temp-photo-01.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
