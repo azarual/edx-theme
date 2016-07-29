@@ -3135,6 +3135,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/static\/css\/main.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/static\/css\/main.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/static\/images\/hero-image.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3917,7 +3926,7 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "appsembler-dogwood",
+	"displayValue": "academy dogwood",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "globe_yellow"
 	},
