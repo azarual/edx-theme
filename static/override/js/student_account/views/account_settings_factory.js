@@ -104,7 +104,7 @@
                                 title: gettext('District'),
                                 valueAttribute: 'district',
                                 options: fieldsData['district']['options'],
-                                helpMessage: 'Your Texas school district yeehaw.',
+                                helpMessage: 'Your Texas school district.',
                                 persistChanges: true
                             })
                         }
