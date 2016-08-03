@@ -3135,6 +3135,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/static\/images\/AFWI_LMS_Banner.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 53489,
+		"inputAbbreviatedPath": "\/static\/images\/AFWI_LMS_Banner.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/AFWI_LMS_Banner.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/static\/images\/hero--example-background.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3289,15 +3300,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/static\/sass\/_dogwood-theme-codebase.scss": {
+	"\/static\/sass\/_palix-dogwood.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/sass\/_dogwood-theme-codebase.scss",
-		"outputAbbreviatedPath": "\/static\/css\/_dogwood-theme-codebase.css",
+		"inputAbbreviatedPath": "\/static\/sass\/_palix-dogwood.scss",
+		"outputAbbreviatedPath": "\/static\/css\/_palix-dogwood.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

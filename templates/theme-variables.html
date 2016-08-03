@@ -138,8 +138,8 @@
             'popup_video_text' : "Watch our video", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
             'text_color' : "#fff",
-            'bg_image_url' : '/static/themes/dogwood-theme-codebase/images/hero--example-background.jpg', ## leave empty if you want just a full color background
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+            'bg_image_url' : '/static/themes/palix-dogwood/images/AFWI_LMS_Banner.jpg', ## leave empty if you want just a full color background
+            'extra_css' : "padding-top: 15rem; padding-bottom: 15rem;" ## add custom css to be added inline to the wrapper element
           }
         ],
         [
@@ -163,47 +163,9 @@
         [
           'courses-list', 'live-blocks/course-listing/_course-listing-01.html', {
             # template settings
-            'max_courses' : 7, ## required, sets max number of courses to be displayed in the block
+            'max_courses' : 4, ## required, sets max number of courses to be displayed in the block
             'course_template_class' : 'a--course-tile-01', ## required, defined as "a--{template-name}"
             'course_template' : 'single-course/_course-tile-01.html', ## required
-            'section_heading' : "Our latest courses:", ## leave value empty if you don't want it displayed.
-            'section_text' : "The title above for the courses listing is customisable, as well sa this piece of text. There are three different types of course tiles (all three types displayed). Text can be aligned left or centered.", ## leave value empty if you don't want it displayed.
-            'optional_classes' : "centered", ## can be "centered" to have all text centered
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', 'static-blocks/_line-separator.html', {
-            # template settings
-            'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'courses-list', 'live-blocks/course-listing/_course-listing-01.html', {
-            # template settings
-            'max_courses' : 7, ## required, sets max number of courses to be displayed in the block
-            'course_template_class' : 'a--course-tile-02', ## required, defined as "a--{template-name}"
-            'course_template' : 'single-course/_course-tile-02.html', ## required
-            'section_heading' : "Our latest courses:", ## leave value empty if you don't want it displayed.
-            'section_text' : "The title above for the courses listing is customisable, as well sa this piece of text. There are three different types of course tiles (all three types displayed). Text can be aligned left or centered.", ## leave value empty if you don't want it displayed.
-            'optional_classes' : "centered", ## can be "centered" to have all text centered
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', 'static-blocks/_line-separator.html', {
-            # template settings
-            'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'courses-list', 'live-blocks/course-listing/_course-listing-01.html', {
-            # template settings
-            'max_courses' : 7, ## required, sets max number of courses to be displayed in the block
-            'course_template_class' : 'a--course-tile-03', ## required, defined as "a--{template-name}"
-            'course_template' : 'single-course/_course-tile-03.html', ## required
             'section_heading' : "Our latest courses:", ## leave value empty if you don't want it displayed.
             'section_text' : "The title above for the courses listing is customisable, as well sa this piece of text. There are three different types of course tiles (all three types displayed). Text can be aligned left or centered.", ## leave value empty if you don't want it displayed.
             'optional_classes' : "centered", ## can be "centered" to have all text centered
@@ -274,11 +236,11 @@
   <%
     return {
       'default_edx_view' : false, ## required boolean value. Set to "true" if you want the default edX look and feel.
-      'discovery_course_card' : '_course-tile-02.underscore', ## define which tile template to use for results
+      'discovery_course_card' : '_course-tile-01.underscore', ## define which tile template to use for results
       'discovery_facet' : '_facet-01.underscore', ## define which template for facets to use
       'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
-      'course_template_class' : 'a--course-tile-02', ## required, defined as "a--{template-name}"
-      'course_template' : 'live-blocks/single-course/_course-tile-02.html', ## required
+      'course_template_class' : 'a--course-tile-01', ## required, defined as "a--{template-name}"
+      'course_template' : 'live-blocks/single-course/_course-tile-01.html', ## required
       'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html' ## design which discovery-search block design to use
     }
   %>
