@@ -1,3 +1,11 @@
 @import "customer-specific/nxp-header";
 @import "customer-specific/nxp-hero";
 @import "customer-specific/nxp-heading-plus-text-plus-cta";
+
+.nxp--heading-plus-text-plus-cta h2, .a--course-listing-01__section-heading,  {
+  color: #e66a08;
+}
+
+a {
+  color: #5e89c1;
+}

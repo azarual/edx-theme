@@ -10,7 +10,9 @@ $primary-font-weight-bold: 700;
 $primary-font-weight-black: 900;
 
 @mixin body-base-font {
-	@include primary-font;
+	font-family: "Arial", sans-serif;
+	font-weight: normal;
+	line-height: 130%;
 }
 
 @mixin large-cta-font {
@@ -24,6 +26,7 @@ $primary-font-weight-black: 900;
 
 @mixin small-headings-font {
 	@include primary-font-black;
+	color: #e66a08;
 }
 
 $cta-button-bg: $brand-primary-color;
