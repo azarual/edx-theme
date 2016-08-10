@@ -53,3 +53,13 @@ $(document).ready(function(){
     $("#discovery-expanding-area").slideToggle();
 	})
 });
+
+function toggleCoursewareNavChevrons() {
+	var childrenTotalWidth = 0;
+	$('#courseware-top-nav-list li').each(function(){
+    childrenTotalWidth += $(this).width();
+	});
+	if ($('#courseware-top-nav-container').width() < childrenTotalWidth) {
+		$('#courseware-top-nav-chevron').addClass("visible");
+	}
+}
