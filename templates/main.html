@@ -140,7 +140,7 @@ from branding import api as branding_api
     </div>
 
     % if not disable_footer:
-        <%include file="theme-footer.html" />
+        <%include file="${microsite.get_template_path('footer.html')}" />
     % endif
 
 % if not disable_window_wrap:

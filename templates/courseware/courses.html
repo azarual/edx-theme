@@ -4,12 +4,12 @@
   from microsite_configuration import microsite
   from openedx.core.lib.js_utils import escape_json_dumps
 %>
-<%inherit file="../main.html" />
+<%inherit file="/main.html" />
 <%
   course_discovery_enabled = settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')
 %>
 
-<%namespace name='static' file='../static_content.html'/>
+<%namespace name='static' file='/static_content.html'/>
 
 % if course_discovery_enabled:
 <%block name="header_extras">
