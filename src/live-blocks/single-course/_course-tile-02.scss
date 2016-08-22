@@ -128,6 +128,7 @@
   &__title {
     @include primary-font;
     font-size: 2rem;
+    line-height: 130%;
     margin: 0 0 1.5rem;
     padding-bottom: 1.5rem;
     color: $brand-primary-color;
