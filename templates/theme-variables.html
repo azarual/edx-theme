@@ -22,7 +22,7 @@
     'enable_registration_button' : True,
     'google_fonts_to_import' : 'https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&subset=latin-ext',
     'apple_app_id' : '',
-    ##'header_logo_target' : ''
+    'header_logo_target' : 'http://www.nxp.com/'
   }
   %>
 </%def>
@@ -61,8 +61,9 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Menu item 1', '#', '', ''],
-      ['Menu item 2', '#', '', '']
+      ['Training Home', 'http://training.nxp.com', '', ''],
+      ['Find Courses', '/courses', '', ''],
+      ['Classroom Training & Events', 'http://www.nxp.com/support/classroom-training-events:CLASSROOM-TRAINING-EVENTS', '', '']
     ]
   %>
 </%def>
@@ -74,7 +75,11 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Menu item 1', '#', '', '']
+      ['Training Home', 'http://training.nxp.com', '', ''],
+      ['Find Courses', '/courses', '', ''],
+      ['Classroom Training & Events', 'http://www.nxp.com/support/classroom-training-events:CLASSROOM-TRAINING-EVENTS', '', ''],
+      ['My Courses', '/dashboard', '', ''],
+      ['MyAccount', '#', '', '']
     ]
   %>
 </%def>
@@ -203,27 +208,9 @@
         #   }
         #]
         [
-          'about-course-template', 'pages/course-about/_course-about-01.html', {
+          'about-course-template', '../customer-specific/_nxp-course-about.html', {
             # template settings
             'optional_classes' : "", ##
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'courses-list', 'static-blocks/_line-separator.html', {
-            # template settings
-            'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', '../customer-specific/_nxp-heading-plus-text-plus-cta.html', {
-            # template settings
-            'heading' : "Optional content title", ## leave value empty if you don't want it displayed.
-            'text' : "<p>You can add some additional content here. You can add a CTA under this section as well.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>", ## leave value empty if you don't want it displayed.
-            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "CTA button", ## leave value empty if you don't want a CTA button displayed.
-            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ]
@@ -261,42 +248,8 @@
       #   }
       #]
       [
-        'static-block', '../customer-specific/_nxp-hero.html', {
-          # template settings
-          'hero_title' : "Your custom title", ## leave value empty if you don't want it displayed.
-          'hero_subtitle' : "You can change the text that goes here. You can also change the background image of this area.", ## leave value empty if you don't want it displayed.
-          'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
-          'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
-          'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
-          'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
-          'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
-          'text_color' : "#fff",
-          'background_color' : "#7BB1DB",
-          'bg_image_url' : "", ## leave empty if you want just a full color background
-          'extra_css' : "padding-top: 8rem; padding-bottom: 5rem; text-align: left;" ## add custom css to be added inline to the wrapper element
-         }
-      ],
-      [
-        'course-catalogue', 'pages/course-catalogue/_course-catalogue-01.html', {
+        'course-catalogue', '../customer-specific/_nxp-course-catalogue.html', {
           # just include the course-catalogue template with the search, facets and results/listing at a place on the page
-        }
-      ],
-      [
-        'courses-list', 'static-blocks/_line-separator.html', {
-          # template settings
-          'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
-          'extra_css' : "" ## add custom css to be added inline to the wrapper element
-        }
-      ],
-      [
-        'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
-          # template settings
-          'heading' : "Optional content can go here", ## leave value empty if you don't want it displayed.
-          'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>", ## leave value empty if you don't want it displayed.
-          'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
-          'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
-          'optional_classes' : "", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
-          'extra_css' : "" ## add custom css to be added inline to the wrapper element
         }
       ]
     ]

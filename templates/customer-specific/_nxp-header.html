@@ -1,5 +1,14 @@
 <%page args="user_authenticated, user_name, theme_folder, logo_positive, logo_negative, logo_url, display_shopping_cart, shopping_cart_url, display_course_name, course_number, course_name, menu_items, slideout_menu_items" />
+<%namespace file='../theme-variables.html' import="get_header_menu_logged_out_extra_items, get_header_menu_logged_in_extra_items" />
 ## mako
+
+<%
+  if user_authenticated:
+    menu_items = get_header_menu_logged_in_extra_items()
+  else:
+    menu_items = get_header_menu_logged_out_extra_items()
+  endif
+%>
 
 
 <section class="nxp--header">
@@ -13,13 +22,16 @@
           <span>${course_number}</span>${course_name}
         </div>
       % endif
-      <div class="nxp--header__upper-links">
+      <ul class="nxp--header__upper-links">
         % if user_authenticated:
-          <div class="upper-welcome">Welcome, <span>${user_name}</span>.</div>
-        % else:
-          <a class="upper-link" href="https://www.nxp.com" target="_blank">nxp.com<i class="fa fa-external-link"></i></a>
+          <li>
+            <div class="upper-welcome">Welcome, <span>${user_name}</span>.</div>
+          </li>
         % endif
-      </div>
+        <li>
+          <a class="upper-link" href="https://www.nxp.com" target="_blank">nxp.com<i class="fa fa-external-link"></i></a>
+        </li>
+      </ul>
       <button type="button" id="site-menu-toggle" class="nxp--header__mobile-toggle" aria-label="toggle menu">
         <span class="a--toggle-bar"></span>
         <span class="a--toggle-bar"></span>
@@ -31,17 +43,30 @@
     <div class="nxp--header__lower">
       <nav class="nxp--header__menu">
         <ul class="nxp--header__menu__container" id="slide-menu">
-          % for menu_group in slideout_menu_items:
           <li class="nxp--header__menu__group">
             <ul>
-              % for item in menu_group:
-              <li class="a--${item[2]}">
-                <a href="${item[1]}" ${item[3]}>${item[0]}</a>
-              </li>
+              % for item in menu_items:
+                <li class="a--${item[2]}">
+                  <a href="${item[1]}" ${item[3]}>${item[0]}</a>
+                </li>
               % endfor
             </ul>
           </li>
-          % endfor
+          <li class="nxp--header__menu__group">
+            % if user_authenticated:
+              <ul>
+                <li class="">
+                  <a href="/logout">Sign Out</a>
+                </li>
+              </ul>
+            % else:
+              <ul>
+                <li class="">
+                  <a href="/login">Sign In or Register</a>
+                </li>
+              </ul>
+            % endif
+          </li>
         </ul>
       </nav>
     </div>

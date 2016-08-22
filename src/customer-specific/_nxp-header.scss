@@ -1,6 +1,6 @@
 .nxp--header {
   margin-bottom: 3rem;
-  
+
   &__container {
 
   }
@@ -24,6 +24,12 @@
     margin-left: 2rem;
     padding: 0.6rem 2rem;
     border-left: 0.1rem solid rgba($base-text-color, 0.5);
+    font-size: 1.4rem;
+
+    span {
+      margin-right: 0.5rem;
+      @include primary-font-bold;
+    }
 
     @media (max-width: $screen-sm-max) {
       display: none;
@@ -35,14 +41,25 @@
     font-size: 1.4rem;
     position: relative;
     top: 0.5rem;
-    margin-left: auto;
+    margin: 0 0 0 auto;
+    padding: 0 1.5rem 0 0;
+
+    li {
+      display: inline-block;
+      padding: 0 1rem;
+      border-right: 0.1rem solid $base-text-color;
+
+      &:last-child {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
 
     @media (max-width: $screen-sm-max) {
       display: none;
     }
 
     .upper-welcome {
-      margin-right: 1.5rem;
 
       span {
         @include primary-font-bold;
@@ -75,7 +92,7 @@
     padding: 0;
     position: relative;
     bottom: 0.2rem;
-    margin-left: $nav-toggle-bar-margin;
+    margin-left: auto;
 
     // IE fix hack
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
