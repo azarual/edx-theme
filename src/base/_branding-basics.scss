@@ -18,8 +18,7 @@ $primary-font-weight-black: 800;
 }
 
 @mixin big-headings-font {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-weight: normal;
+	@include primary-font;
 }
 
 @mixin small-headings-font {
