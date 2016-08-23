@@ -34,6 +34,10 @@
 @import "base/modals";
 @import "base/expanding-section";
 
+// Import common elements
+@import "common-elements/staff-graded-assignments";
+@import "common-elements/activation";
+
 // Import site shared layout
 @import "shared/footer";
 
@@ -78,3 +82,6 @@
 @import "pages/profile-settings";
 @import "pages/sysadmin-dashboard";
 @import "pages/dashboard-01";
+
+// Import customer specific sass
+@import "customer-specific";
