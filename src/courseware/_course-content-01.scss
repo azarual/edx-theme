@@ -356,13 +356,16 @@
 
                 p {
                   white-space: inherit;
-                  width: 24rem;
-                  padding: 2rem;
+                  font-size: 1.4rem;
+                  width: 42rem;
+                  padding: 1rem;
                   z-index: 1000;
-                  background-color: $brand-primary-color;
+
+                  @media (max-width: $screen-sm-max) {
+                    display: none;
+                  }
 
                   &:after {
-                    background-color: $brand-primary-color;
                   }
                 }
               }
@@ -422,7 +425,7 @@
 
       // overall course content default stylings
 
-      h2 {
+      h1 {
         text-transform: none;
         @include primary-font;
         font-size: 2.4 * $courseware-content-font-size;
