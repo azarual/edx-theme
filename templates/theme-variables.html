@@ -91,13 +91,14 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['About us', reverse('about'), '', ''],
-      ['FAQ', marketing_link('FAQ'), '', ''],
-      ['Contact', reverse('contact'), '', ''],
-      ['Conditions of Use', reverse('tos'), '', ''],
-      ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com/company/appsembler', 'a--linkedin', 'target="_blank"'],
-      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com/appsembler', 'a--facebook', 'target="_blank"'],
-      ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com/appsembler', 'a--twitter', 'target="_blank"']
+      ['Privacy', 'http://www.nxp.com/about/about-nxp/privacy:PRIVACYPRACTICES', '', ''],
+      ['Terms of Use', 'http://www.nxp.com/about/about-nxp/terms-of-use:TERMSOFUSE', '', ''],
+      ['Terms of Sale', 'http://www.nxp.com/about/about-nxp/our-terms-and-conditions-of-commercial-sale:TERMSCONDITIONSSALE', '', ''],
+      ['Contact Us', 'mailto:support.training@nxp.com', '', ''],
+      ['<span class="icon-twitter2"></span>', 'https://twitter.com/NXP', '', ''],
+      ['<span class="icon-linkedin"></span>', 'https://www.linkedin.com/company/nxp-semiconductors', '', ''],
+      ['<span class="icon-facebook"></span>', 'https://www.facebook.com/NXPsemi', '', ''],
+      ['<span class="icon-envelop3"></span>', 'https://contact.nxp.com/Subscription-Center', '', '']
     ]
   %>
 </%def>
@@ -137,25 +138,25 @@
           'static-block', '../customer-specific//_nxp-hero.html', {
             # template settings
             'hero_title' : "Online Academy", ## leave value empty if you don't want it displayed.
-            'hero_subtitle' : "Tap into our free on-demand coursware. Hours of training and presentations on NXP® products, applications, software, and tools. Modules provide links to other resources to help you start designing with NXP today.", ## leave value empty if you don't want it displayed.
-            'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
-            'popup_video_url' : "r5YdS_ZjXnc", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
-            'popup_video_text' : "Watch our video", ## leave value empty if you don't want a video button and modal displayed.
+            'hero_subtitle' : "Tap into our free on-demand courseware. Hours of training and presentations on NXP® products, applications, software, and tools. Modules provide links to other resources to help you start designing with NXP today.", ## leave value empty if you don't want it displayed.
+            'cta_link' : "/courses", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "Find courses", ## leave value empty if you don't want a CTA button displayed.
+            'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+            'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
             'text_color' : "#fff",
-            'bg_image_url' : '/static/themes/nxp-dogwood/images/hero-image-02.jpg', ## leave empty if you want just a full color background
-            'extra_css' : "text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);" ## add custom css to be added inline to the wrapper element
+            'bg_image_url' : '/static/themes/nxp-dogwood/images/hero-image-03.png', ## leave empty if you want just a full color background
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ],
         [
-          'courses-list', 'live-blocks/course-listing/_course-listing-01.html', {
+          'courses-list', '../customer-specific/_nxp-course-listing.html', {
             # template settings
-            'max_courses' : 7, ## required, sets max number of courses to be displayed in the block
-            'course_template_class' : 'a--course-tile-02', ## required, defined as "a--{template-name}"
-            'course_template' : 'single-course/_course-tile-02.html', ## required
-            'section_heading' : "Our latest courses:", ## leave value empty if you don't want it displayed.
-            'section_text' : "The title above for the courses listing is customisable, as well sa this piece of text. There are three different types of course tiles (all three types displayed). Text can be aligned left or centered.", ## leave value empty if you don't want it displayed.
+            'max_courses' : 4, ## required, sets max number of courses to be displayed in the block
+            'course_template_class' : 'a--course-tile-03', ## required, defined as "a--{template-name}"
+            'course_template' : 'design-templates/live-blocks/single-course/_course-tile-03.html', ## required
+            'section_heading' : "Recent courses:", ## leave value empty if you don't want it displayed.
+            'section_text' : "", ## leave value empty if you don't want it displayed.
             'optional_classes' : "", ## can be "centered" to have all text centered
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }

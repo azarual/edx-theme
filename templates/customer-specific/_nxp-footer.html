@@ -2,15 +2,15 @@
 <%namespace file='../theme-variables.html' import="get_footer_settings" />
 <%! from django.utils.translation import ugettext as _ %>
 
-<footer class="a--footer">
-  <div class="bs-container a--container a--footer__container">
-    <div class="a--footer__main-wrapper">
-      <div class="a--footer__main">
-        <div class="a--footer__nav">
-          <p class="a--footer__copyright-text">
+<footer class="nxp--footer">
+  <div class="bs-container a--container nxp--footer__container">
+    <div class="nxp--footer__main-wrapper">
+      <div class="nxp--footer__main">
+        <div class="nxp--footer__nav">
+          <p class="nxp--footer__copyright-text">
             ${footer_copyright_text}
           </p>
-          <ul class="a--footer__links-container">
+          <ul class="nxp--footer__links-container">
             % if get_footer_settings().get('display_app_link', False):
               <li>
                 <a href="${get_footer_settings().get('app_url')}" target="_blank">
@@ -27,7 +27,7 @@
         </div>
       </div>
       % if display_poweredby:
-        <div class="a--footer__powered-by">
+        <div class="nxp--footer__powered-by">
           <p>
             Powered by:
           </p>
@@ -41,7 +41,7 @@
       % endif
     </div>
     % if display_edx_disclaimer:
-      <div class="a--footer__edx-disclaimer">
+      <div class="nxp--footer__edx-disclaimer">
         ${edx_disclaimer}
       </div>
     % endif

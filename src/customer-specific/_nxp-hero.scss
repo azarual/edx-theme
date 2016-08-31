@@ -1,7 +1,7 @@
 .nxp--hero {
 
   &__container {
-    text-align: center;
+    text-align: left;
     background-position: center center;
     background-size: cover;
     background-color: $brand-primary-color;
@@ -13,10 +13,12 @@
   }
 
   h1 {
-    @include big-headings-font;
-    font-size: 5.8rem;
+    @include primary-font-bold;
+    font-size: 4.8rem;
     margin: 0 0 2rem;
-    color: inherit;;
+    color: inherit;
+    text-transform: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
     @media(max-width: $screen-sm-max) {
       font-size: 4.2rem;
@@ -24,26 +26,27 @@
   }
 
   h4 {
-    @include small-headings-font;
+    @include primary-font;
     font-size: 1.6rem;
     margin: 0;
     color: inherit;
-    opacity: 0.75
+    opacity: 0.85;
+    max-width: 82rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 
   &__cta-container {
     margin: 3.5rem 0 0;
 
     & .a--cta {
-      @include large-cta-font;
       background-color: $cta-button-bg;
       border: $navbar-button-border;
       display: inline-block;
       padding: 1.5rem 2rem;
-      font-size: 2.0rem;
-      margin: 1rem;
-      @include large-cta-font;
-      color: $cta-button-text-color;
+      font-size: 1.8rem;
+      margin: 1rem 1rem 1rem 0;
+      @include primary-font;
+      color: #fff;
       @include button_radius;
       @include button_splash($buttons-border-radius);
 

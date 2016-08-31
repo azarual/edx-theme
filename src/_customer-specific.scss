@@ -1,8 +1,11 @@
 @import "customer-specific/nxp-header";
+@import "customer-specific/nxp-footer";
 @import "customer-specific/nxp-hero";
 @import "customer-specific/nxp-heading-plus-text-plus-cta";
 @import "customer-specific/nxp-course-catalogue";
 @import "customer-specific/nxp-course-about";
+@import "customer-specific/nxp-course-listing";
+@import "customer-specific/nxp-icons-only";
 
 .nxp--heading-plus-text-plus-cta h2, .a--course-listing-01__section-heading,  {
   color: #e66a08;
@@ -10,4 +13,60 @@
 
 a {
   color: #5e89c1;
+}
+
+.a--course-tile-03 {
+  max-width: 120rem;
+  margin: 1.5rem;
+}
+
+.a--course-content {
+
+  .main-content {
+
+    // overall course content default stylings
+
+    h1 {
+      text-transform: none;
+      @include primary-font;
+      font-size: 3.2rem;
+      color: #19191A;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      text-transform: none;
+      @include primary-font;
+      font-size: 2.2rem;
+      color: #19191A;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      text-transform: none;
+      @include primary-font-bold;
+      color: $brand-primary-color;
+      font-size: 2rem;
+      letter-spacing: 0;
+    }
+
+    h4 {
+      text-transform: none;
+      @include primary-font-bold;
+      color: rgba($base-text-color, 0.75);
+      font-size: 1.8rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      @include primary-font;
+      font-size: 1.4rem;
+      color: #646464;
+    }
+
+    a {
+      @include primary-font;
+      color: #7BB1DB;
+    }
+  }
 }
