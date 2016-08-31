@@ -10,7 +10,16 @@
   endif
 %>
 
-
+<%
+import third_party_auth
+from third_party_auth import pipeline
+custom_login_url = ''
+try:
+  tpa_idp = third_party_auth.provider.Registry.accepting_logins()[0]
+  custom_login_url = pipeline.get_login_url(tpa_idp.provider_id, pipeline.AUTH_ENTRY_REGISTER, redirect_url=request.path)
+except:
+  custom_login_url = '/login'
+%>
 <section class="nxp--header">
   <div class="bs-container a--container nxp--header__container">
     <div class="nxp--header__upper">
@@ -62,7 +71,7 @@
             % else:
               <ul>
                 <li class="">
-                  <a href="https://www.nxp.com/security/login?TARGET=https%3A%2F%2Fwww.nxp.com%2Fruhp%2FmyAccount.html">Sign In or Register</a>
+                  <a href="${custom_login_url}">Sign In or Register</a>
                 </li>
               </ul>
             % endif
