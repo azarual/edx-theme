@@ -61,8 +61,8 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Menu item 1', '#', '', ''],
-      ['Menu item 2', '#', '', '']
+      ['Rittman Mead', 'http://www.rittmanmead.com/', '', ''],
+      ['About Us', 'http://www.rittmanmead.com/about-us/', '', '']
     ]
   %>
 </%def>
@@ -74,7 +74,6 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Menu item 1', '#', '', '']
     ]
   %>
 </%def>
@@ -86,8 +85,6 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Example item', '#', '', 'target="_blank"'],
-      ['Help', reverse('help'), '', ''],
       ['FAQ', marketing_link('FAQ'), '', ''],
       ['Contact', reverse('contact'), '', ''],
       ['Conditions of Use', reverse('tos'), '', ''],
@@ -139,24 +136,6 @@
             'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
             'text_color' : "#fff",
             'bg_image_url' : '/static/themes/rittmanmead-dogwood/images/RittmanMeadTODHeader.jpg', ## leave empty if you want just a full color background
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
-            # template settings
-            'heading' : "Heading for an additional text block", ## leave value empty if you don't want it displayed.
-            'text' : "<p>You can have additional text blocks on the landing page.</p><p>It can have solid background with white text on it (see the one below on this page), or one like this which is white with standard text color. You can have a CTA below this text chunk that leads to another page, with custom button text.</p><p>The text can be aligned left or centered.</p>", ## leave value empty if you don't want it displayed.
-            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
-            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', 'static-blocks/_line-separator.html', {
-            # template settings
-            'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ],
