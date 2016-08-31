@@ -380,10 +380,11 @@
               color: #fff;
               padding: 0.8rem 1.5rem;
               display: block;
+              font-size: 1.4rem;
 
               &:hover, &:focus {
-                background-color: rgba(#000, 0.1);
-                color: #000;
+                background-color: #ededf0;
+                color: #007088;
               }
             }
           }
