@@ -6,6 +6,7 @@
 @import "customer-specific/nxp-course-about";
 @import "customer-specific/nxp-course-listing";
 @import "customer-specific/nxp-icons-only";
+@import "customer-specific/nxp-course-tile";
 
 .nxp--heading-plus-text-plus-cta h2, .a--course-listing-01__section-heading,  {
   color: #e66a08;
@@ -67,6 +68,24 @@ a {
     a {
       @include primary-font;
       color: #7BB1DB;
+    }
+  }
+}
+
+.a--dashboard-course-listing-01 {
+
+  &__course-name, &__course-name:visited {
+    color: $brand-primary-color;
+  }
+
+  &__course-organisation-id {
+    color: $brand-primary-color;
+  }
+
+  &__course-dates {
+
+    .course-coming-soon, .course-starts-soon, .course-ended, .course-started {
+      color: rgba(100,100,100,0.7);
     }
   }
 }
