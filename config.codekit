@@ -64,6 +64,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/src\/_hero-section-01.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/_hero-section-01.scss",
+		"outputAbbreviatedPath": "\/css\/_hero-section-01.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/src\/base\/_base.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -2256,6 +2272,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/src\/customer-specific\/_trinity-hero.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/customer-specific\/_trinity-hero.scss",
+		"outputAbbreviatedPath": "\/src\/css\/_trinity-hero.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/src\/header\/_header-appsembler-01.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -3183,6 +3215,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/static\/images\/branding\/brand-logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3514,
+		"inputAbbreviatedPath": "\/static\/images\/branding\/brand-logo.png",
+		"outputAbbreviatedPath": "\/static\/images\/branding\/brand-logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/branding\/tea-logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9177,
+		"inputAbbreviatedPath": "\/static\/images\/branding\/tea-logo.png",
+		"outputAbbreviatedPath": "\/static\/images\/branding\/tea-logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/static\/images\/hero--example-background.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3190,6 +3244,17 @@
 		"initialSize": 167209,
 		"inputAbbreviatedPath": "\/static\/images\/hero--example-background.jpg",
 		"outputAbbreviatedPath": "\/static\/images\/hero--example-background.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/hero-texas-courses.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 94837,
+		"inputAbbreviatedPath": "\/static\/images\/hero-texas-courses.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/hero-texas-courses.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3337,15 +3402,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/static\/sass\/_dogwood-theme-codebase.scss": {
+	"\/static\/sass\/_trinity-dogwood.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/sass\/_dogwood-theme-codebase.scss",
-		"outputAbbreviatedPath": "\/static\/css\/_dogwood-theme-codebase.css",
+		"inputAbbreviatedPath": "\/static\/sass\/_trinity-dogwood.scss",
+		"outputAbbreviatedPath": "\/static\/css\/_trinity-dogwood.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3421,6 +3486,33 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/templates\/courseware\/static_tab.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/customer-specific\/_trinity-course-about.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/customer-specific\/_trinity-course-about.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/customer-specific\/_trinity-course-catalogue.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/customer-specific\/_trinity-course-catalogue.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/customer-specific\/_trinity-hero.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/customer-specific\/_trinity-hero.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -3956,7 +4048,7 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "dogwood-theme-codebase",
+	"displayValue": "trinity-dogwood",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "globe_yellow"
 	},

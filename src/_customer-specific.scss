@@ -1,0 +1,19 @@
+@import "customer-specific/trinity-hero";
+
+.a--course-tile-01-parent-element.courses-listing-narrower.no-facets li.courses-listing-item {
+  padding: 1.5rem;
+  width: 25%;
+  @include display(flex);
+
+  @media(max-width:$screen-md-max) {
+    width: 33.3%;
+  }
+
+  @media(max-width:$screen-sm-max) {
+    width: 50%;
+  }
+
+  @media(max-width:$screen-xs-max) {
+    width: 100%;
+  }
+}

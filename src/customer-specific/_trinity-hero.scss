@@ -1,0 +1,57 @@
+.trinity--hero-section {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-color: $brand-primary-color;
+  line-height: 150%;
+
+  &__container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  h1 {
+    @include big-headings-font;
+    font-size: 5.2rem;
+    margin: 0 0 2rem;
+    color: inherit;
+    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.4);
+
+    @media(max-width: $screen-sm-max) {
+      font-size: 4.2rem;
+    }
+  }
+
+  h4 {
+    @include small-headings-font;
+    font-size: 1.6rem;
+    margin: 0;
+    color: inherit;
+    opacity: 0.75
+  }
+
+  &__cta-container {
+    margin: 3.5rem 0 0;
+
+    & .a--cta {
+      @include large-cta-font;
+      background-color: transparent;
+      border: 0.2rem solid #fff;
+      display: inline-block;
+      padding: 1.5rem 3rem;
+      font-size: 1.8rem;
+      margin: 1rem;
+      text-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.4);
+      @include large-cta-font;
+      color: #fff;
+      @include button_radius;
+      @include button_splash($buttons-border-radius);
+
+      &:hover, &:focus {
+        color: rgba($cta-button-text-color, 0.8);
+      }
+    }
+  }
+}
