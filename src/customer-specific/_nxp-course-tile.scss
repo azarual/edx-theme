@@ -147,9 +147,16 @@
       width: 100%;
     }
 
-    .a--course-tile-01__wrapper {
-      padding: 0;
-      width: 100%;
+    .nxp--course-tile {
+
+      &__title-container {
+        border-bottom: 0.1rem solid rgba($base-text-color, 0.1);
+      }
+
+      &__wrapper {
+        padding: 0;
+        width: 100%;
+      }
     }
   }
 }
