@@ -79,7 +79,7 @@
       ['Find Courses', '/courses', '', ''],
       ['Classroom Training & Events', 'http://www.nxp.com/support/classroom-training-events:CLASSROOM-TRAINING-EVENTS', '', ''],
       ['My Courses', '/dashboard', '', ''],
-      ['MyAccount', '#', '', '']
+      ['MyAccount', 'https://www.nxp.com/security/login?TARGET=https%3A%2F%2Fwww.nxp.com%2Fruhp%2FmyAccount.html', '', '']
     ]
   %>
 </%def>
@@ -153,9 +153,9 @@
           'courses-list', '../customer-specific/_nxp-course-listing.html', {
             # template settings
             'max_courses' : 4, ## required, sets max number of courses to be displayed in the block
-            'course_template_class' : 'a--course-tile-03', ## required, defined as "a--{template-name}"
-            'course_template' : 'design-templates/live-blocks/single-course/_course-tile-03.html', ## required
-            'section_heading' : "Recent courses:", ## leave value empty if you don't want it displayed.
+            'course_template_class' : 'a--course-tile-01', ## required, defined as "a--{template-name}"
+            'course_template' : 'customer-specific/_nxp-course-tile.html', ## required
+            'section_heading' : "Recent Courses:", ## leave value empty if you don't want it displayed.
             'section_text' : "", ## leave value empty if you don't want it displayed.
             'optional_classes' : "", ## can be "centered" to have all text centered
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
