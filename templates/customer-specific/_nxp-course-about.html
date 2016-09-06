@@ -5,6 +5,17 @@ from django.utils.translation import ugettext as _
 <%page args="template_settings, course_vars" />
 
 <%
+import third_party_auth
+from third_party_auth import pipeline
+custom_login_url = ''
+try:
+  tpa_idp = third_party_auth.provider.Registry.accepting_logins()[0]
+  custom_login_url = pipeline.get_login_url(tpa_idp.provider_id, pipeline.AUTH_ENTRY_REGISTER, redirect_url=request.path)
+except:
+  custom_login_url = '/login'
+%>
+
+<%
   course_image = course_vars['course_image']
 
   courseware_button_already_enrolled_text = template_settings.get('courseware_button_already_enrolled_text', _("You are enrolled in this course"))
@@ -38,47 +49,53 @@ from django.utils.translation import ugettext as _
         </div>
       % endif
       <div class="nxp--course-about__courseware-button-wrapper">
-        % if course_vars['user_authenticated'] and course_vars['course_registered']:
-          % if course_vars['show_courseware_link']:
-            <a href="${course_vars['course_href_target']}" class="nxp--course-about__courseware-btn register">
-              ${courseware_button_view_courseware_text}
-            </a>
-          % else:
-            <span class="nxp--course-about__courseware-btn register disabled">
+        % if course_vars['user_authenticated']:
+          % if course_vars['user_authenticated'] and course_vars['course_registered']:
+            % if course_vars['show_courseware_link']:
+              <a href="${course_vars['course_href_target']}" class="nxp--course-about__courseware-btn register">
+                ${courseware_button_view_courseware_text}
+              </a>
+            % else:
+              <span class="nxp--course-about__courseware-btn register disabled">
+                ${courseware_button_already_enrolled_text}
+              </span>
+            % endif
+          % elif course_vars['course_in_cart']:
+            <a href="${course_vars['cart_link']}" class="nxp--course-about__courseware-btn add-to-cart">
               ${courseware_button_already_enrolled_text}
+            </a>
+          % elif course_vars['course_is_full']:
+            <span class="nxp--course-about__courseware-btn register disabled">
+              ${courseware_button_course_full_text}
             </span>
-          % endif
-        % elif course_vars['course_in_cart']:
-          <a href="${course_vars['cart_link']}" class="nxp--course-about__courseware-btn add-to-cart">
-            ${courseware_button_already_enrolled_text}
-          </a>
-        % elif course_vars['course_is_full']:
-          <span class="nxp--course-about__courseware-btn register disabled">
-            ${courseware_button_course_full_text}
-          </span>
-        % elif course_vars['course_is_invitation_only'] and not course_vars['user_can_enroll']:
-          <span class="nxp--course-about__courseware-btn register disabled">
-            ${courseware_button_invitation_only_text}
-          </span>
-        % elif not course_vars['is_shib_course'] and not course_vars['user_can_enroll']:
-          <span class="nxp--course-about__courseware-btn register disabled">
-            ${courseware_button_enrollment_closed_text}
-          </span>
-        % elif course_vars['can_add_course_to_cart']:
-          % if course_vars['user_authenticated']:
-            <a href="#" id="${course_vars['user_authenticated_reg_element_id']}" class="nxp--course-about__courseware-btn add-to-cart">
-              ${courseware_button_add_to_cart_text}
-            </a>
+          % elif course_vars['course_is_invitation_only'] and not course_vars['user_can_enroll']:
+            <span class="nxp--course-about__courseware-btn register disabled">
+              ${courseware_button_invitation_only_text}
+            </span>
+          % elif not course_vars['is_shib_course'] and not course_vars['user_can_enroll']:
+            <span class="nxp--course-about__courseware-btn register disabled">
+              ${courseware_button_enrollment_closed_text}
+            </span>
+          % elif course_vars['can_add_course_to_cart']:
+            % if course_vars['user_authenticated']:
+              <a href="#" id="${course_vars['user_authenticated_reg_element_id']}" class="nxp--course-about__courseware-btn add-to-cart">
+                ${courseware_button_add_to_cart_text}
+              </a>
+            % else:
+              <a href="${course_vars['public_reg_element_href']}" id="${course_vars['public_reg_element_id']}" class="nxp--course-about__courseware-btn add-to-cart">
+                ${courseware_button_add_to_cart_text}
+              </a>
+            % endif
           % else:
-            <a href="${course_vars['public_reg_element_href']}" id="${course_vars['public_reg_element_id']}" class="nxp--course-about__courseware-btn add-to-cart">
-              ${courseware_button_add_to_cart_text}
+            <a href="#" class="nxp--course-about__courseware-btn register">
+              ${courseware_button_enroll_text}
             </a>
+            <div id="register_error"></div>
           % endif
         % else:
-          <a href="#" class="nxp--course-about__courseware-btn register">
-            ${courseware_button_enroll_text}
+          <a href="${custom_login_url}" class="nxp--course-about__courseware-btn">
+            ${_("Sign in to enroll")}
           </a>
-          <div id="register_error"></div>
         % endif
 
         % if course_vars['user_has_staff_access'] and course_vars['course_studio_url'] is not None:

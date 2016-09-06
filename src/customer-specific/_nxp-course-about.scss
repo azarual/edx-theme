@@ -157,7 +157,7 @@
       color: #fff;
     }
 
-    &:hover, &:focus {
+    &:hover, &:focus, &:visited:hover, &:visited:focus {
       color: rgba(#fff, 0.8);
     }
   }
