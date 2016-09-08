@@ -14,6 +14,17 @@ from django.utils.translation import ugettext as _
   </%block>
 % endif
 
+<%
+  import third_party_auth
+  from third_party_auth import pipeline
+  custom_login_url = ''
+  try:
+    tpa_idp = third_party_auth.provider.Registry.accepting_logins()[0]
+    custom_login_url = pipeline.get_login_url(tpa_idp.provider_id, pipeline.AUTH_ENTRY_REGISTER, redirect_url=request.path)
+  except:
+    custom_login_url = '/login'
+%>
+
 <!-- top navigation -->
 <section class="a--header-design-01 a--site-nav">
   <div class="bs-container a--container a--site-nav__container">
@@ -69,7 +80,7 @@ from django.utils.translation import ugettext as _
           <li class="a--site-menu__group">
             <ul>
               <li class="hioa--feide-login-cta">
-                <a href="/auth/login/tpa-saml/?auth_entry=login\u0026next=%2Fdashboard\u0026idp=feide-saml" class="button-saml-feide-saml login-saml-feide-saml">
+                <a href="${custom_login_url}" class="button-saml-feide-saml login-saml-feide-saml">
                   <i class="fa fa-sign-in"></i>
                   <span class="cta-title">${_("FEIDE account")}</span>
                   <span class="sr">${_("Sign in with FEIDE account")}</span>
@@ -134,7 +145,7 @@ from django.utils.translation import ugettext as _
               </li>
               <li class="a--spacer"></li>
               <li class="hioa--feide-login-cta">
-                <a href="/auth/login/tpa-saml/?auth_entry=login\u0026next=%2Fdashboard\u0026idp=feide-saml" class="button-saml-feide-saml sidebar-button login-saml-feide-saml">
+                <a href="${custom_login_url}" class="button-saml-feide-saml sidebar-button login-saml-feide-saml">
                   <i class="fa fa-sign-in"></i>
                   <span class="cta-title">${_("FEIDE account")}</span>
                   <span class="sr">${_("Sign in with FEIDE account")}</span>
