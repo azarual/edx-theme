@@ -100,8 +100,11 @@
   .tickLabels {
 
     .tickLabel {
-      font-size: 1.4em;
+      font-size: 1.2em;
       line-height: 1.12em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
