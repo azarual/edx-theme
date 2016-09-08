@@ -2288,6 +2288,38 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/src\/customer-specific\/_nxp-course-content.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/customer-specific\/_nxp-course-content.scss",
+		"outputAbbreviatedPath": "\/src\/css\/_nxp-course-content.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/src\/customer-specific\/_nxp-course-info.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/customer-specific\/_nxp-course-info.scss",
+		"outputAbbreviatedPath": "\/src\/css\/_nxp-course-info.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/src\/customer-specific\/_nxp-course-listing.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,

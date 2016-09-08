@@ -1,0 +1,175 @@
+.a--course-content {
+
+  &__nav {
+
+    .courseware-search-bar {
+
+      .search-button {
+
+        &:hover, &:focus {
+          color: #e66a08;
+        }
+      }
+    }
+
+    .accordion {
+
+      .course-navigation {
+
+        .button-chapter {
+
+          @if $courseware-link-hover == "expanding-underline" {
+              @include underline_expanding_hover(#e66a08, 0.2rem);
+          } @else if $courseware-link-hover == "hover-pop" {
+              @include hover_pop(0, -0.5rem);
+          } @else if $courseware-link-hover == "hover-custom-color" {
+              &:hover, &:focus {
+                color: #e66a08;
+              }
+          } @else if $courseware-link-hover == "opacity" {
+              opacity: 1;
+              &:hover, &:focus {
+                opacity: 0.5;
+              }
+          }
+
+          &.active {
+
+            .group-heading {
+
+              &:after {
+                background-color: #e66a08;
+              }
+            }
+          }
+        }
+
+        .chapter-content-container {
+
+          .menu-item {
+
+            a {
+
+              &:hover, &:focus {
+                color: #e66a08;
+              }
+            }
+
+            &.active {
+
+              a {
+                color: #e66a08;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__main-content {
+
+    .course-content {
+
+      // top nav inside course-content
+
+      .sequence-nav {
+
+        .sequence-nav-button {
+
+          @if $courseware-link-hover == "expanding-underline" {
+              @include underline_expanding_hover(#e66a08, 0.2rem);
+          } @else if $courseware-link-hover == "hover-pop" {
+              @include hover_pop(-0.5rem, 0);
+          } @else if $courseware-link-hover == "hover-custom-color" {
+              &:hover, &:focus {
+                color: #e66a08;
+              }
+          } @else if $courseware-link-hover == "opacity" {
+              opacity: 1;
+              &:hover, &:focus {
+                opacity: 0.5;
+              }
+          }
+
+          &:hover, &:focus {
+            color: $base-text-color;
+          }
+        }
+
+        ol {
+
+            li {
+
+              a {
+                position: relative;
+                border: none;
+                @include transition(all 0.3s ease-in-out);
+
+                &:hover, &:focus {
+                  background-color: #efefef;
+                }
+
+                @if $courseware-link-hover == "expanding-underline" {
+                    @include underline_expanding_hover(#e66a08, 0.2rem);
+                } @else if $courseware-link-hover == "hover-pop" {
+                    .icon {
+                      @include hover_pop(-0.5rem, 0);
+                    }
+                } @else if $courseware-link-hover == "hover-custom-color" {
+                    &:hover, &:focus {
+                      color: #e66a08;
+                    }
+                } @else if $courseware-link-hover == "opacity" {
+                    opacity: 1;
+                    &:hover, &:focus {
+                      opacity: 0.5;
+                    }
+                }
+
+                &.active {
+                  background-color: #efefef;
+
+                  .icon {
+                    color: #e66a08;
+                  }
+
+                  &:hover, &:focus {
+                    background-color: #efefef;
+                  }
+
+                  &:after {
+                    background-color: #e66a08;
+                  }
+                }
+
+                p {
+                  background-color: #e66a08;
+
+                  &:after {
+                    background-color: #e66a08;
+                  }
+                }
+              }
+            }
+        }
+      }
+
+      // bottom nav in course content
+
+
+      // overall course content default stylings
+
+      h2 {
+        color: #e66a08;
+      }
+
+      h3 {
+        color: #e66a08;
+      }
+
+      h4 {
+      }
+    }
+  }
+}

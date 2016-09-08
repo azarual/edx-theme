@@ -1,5 +1,8 @@
 <%page args="user_authenticated, user_name, theme_folder, logo_positive, logo_negative, logo_url, display_shopping_cart, shopping_cart_url, display_course_name, course_number, course_name, menu_items, slideout_menu_items" />
 <%namespace file='../theme-variables.html' import="get_header_menu_logged_out_extra_items, get_header_menu_logged_in_extra_items" />
+<%!
+from django.utils.translation import ugettext as _
+%>
 ## mako
 
 <%
@@ -28,17 +31,17 @@ except:
       </a>
       % if display_course_name:
         <div class="nxp--header__course-name">
-          <span>${course_number}</span>${course_name}
+          <span>${_(course_number)}</span>${_(course_name)}
         </div>
       % endif
       <ul class="nxp--header__upper-links">
         % if user_authenticated:
           <li>
-            <div class="upper-welcome">Welcome, <span>${user_name}</span>.</div>
+            <div class="upper-welcome">${_("Welcome")}, <span>${_(user_name)}</span>.</div>
           </li>
         % endif
         <li>
-          <a class="upper-link" href="https://www.nxp.com" target="_blank">nxp.com<i class="fa fa-external-link"></i></a>
+          <a class="upper-link" href="https://www.nxp.com" target="_blank">${_("nxp.com")}<i class="fa fa-external-link"></i></a>
         </li>
       </ul>
       <button type="button" id="site-menu-toggle" class="nxp--header__mobile-toggle" aria-label="toggle menu">
@@ -56,7 +59,7 @@ except:
             <ul>
               % for item in menu_items:
                 <li class="a--${item[2]}">
-                  <a href="${item[1]}" ${item[3]}>${item[0]}</a>
+                  <a href="${item[1]}" ${item[3]}>${_(item[0])}</a>
                 </li>
               % endfor
             </ul>
@@ -65,13 +68,13 @@ except:
             % if user_authenticated:
               <ul>
                 <li class="">
-                  <a href="/logout">Sign Out</a>
+                  <a href="/logout">${_("Sign Out")}</a>
                 </li>
               </ul>
             % else:
               <ul>
                 <li class="">
-                  <a href="${custom_login_url}">Sign In or Register</a>
+                  <a href="${custom_login_url}">${_("Sign In or Register")}</a>
                 </li>
               </ul>
             % endif

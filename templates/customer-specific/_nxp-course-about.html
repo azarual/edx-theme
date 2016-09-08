@@ -25,7 +25,7 @@ except:
   courseware_button_invitation_only_text = template_settings.get('courseware_button_invitation_only_text', _("Enrollment in this course is by invitation only"))
   courseware_button_enrollment_closed_text = template_settings.get('courseware_button_enrollment_closed_text', _("Enrollment is Closed"))
   courseware_button_add_to_cart_text = template_settings.get('courseware_button_add_to_cart_text', _("Add to Cart / Price: ")) + course_vars['course_price']
-  courseware_button_enroll_text = template_settings.get('courseware_button_add_to_cart_text', _("Enroll in ")) + course_vars['course_name']
+  courseware_button_enroll_text = template_settings.get('courseware_button_add_to_cart_text', _("Enroll"))
   view_in_studio_button_text = template_settings.get('view_in_studio_button_text', _("View About Page in studio"))
 %>
 
@@ -52,7 +52,7 @@ except:
         % if course_vars['user_authenticated']:
           % if course_vars['user_authenticated'] and course_vars['course_registered']:
             % if course_vars['show_courseware_link']:
-              <a href="${course_vars['course_href_target']}" class="nxp--course-about__courseware-btn register">
+              <a href="${course_vars['course_href_target']}" class="nxp--course-about__courseware-btn">
                 ${courseware_button_view_courseware_text}
               </a>
             % else:

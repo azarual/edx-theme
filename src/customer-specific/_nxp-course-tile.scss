@@ -79,7 +79,7 @@
     font-size: 1.8rem;
     margin: 0;
     padding-bottom: 1.5rem;
-    color: $brand-primary-color;
+    color: #e66a08;
     display: block;
   }
 
@@ -98,7 +98,7 @@
 
   &__start-date {
     @include primary-font-bold;
-    color: $brand-primary-color;
+    color: #e66a08;
     font-size: 1.4rem;
     text-transform: uppercase;
     margin: 0;

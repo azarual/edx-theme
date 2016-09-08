@@ -7,6 +7,7 @@
 @import "customer-specific/nxp-course-listing";
 @import "customer-specific/nxp-icons-only";
 @import "customer-specific/nxp-course-tile";
+@import "customer-specific/nxp-course-content";
 
 .nxp--heading-plus-text-plus-cta h2, .a--course-listing-01__section-heading,  {
   color: #e66a08;
@@ -75,11 +76,11 @@ a {
 .a--dashboard-course-listing-01 {
 
   &__course-name, &__course-name:visited {
-    color: $brand-primary-color;
+    color: #e66a08;
   }
 
   &__course-organisation-id {
-    color: $brand-primary-color;
+    color: #e66a08;
   }
 
   &__course-dates {
@@ -92,4 +93,8 @@ a {
 
 .a--discovery-search-01__main h2 {
   text-transform: capitalize;
+}
+
+.a--course-info__main-title {
+  color: #e66a08;
 }
