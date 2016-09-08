@@ -1,1 +1,27 @@
 @import "customer-specific/hioa-hero-section";
+@import "customer-specific/hioa-header";
+
+.courses-listing.a--course-tile-01-parent-element {
+  li.courses-listing-item {
+    padding: 1.5rem;
+    width: 25%;
+    @include display(flex);
+
+    @media(max-width:$screen-md-max) {
+      width: 33.3%;
+    }
+
+    @media(max-width:$screen-sm-max) {
+      width: 50%;
+    }
+
+    @media(max-width:$screen-xs-max) {
+      width: 100%;
+    }
+
+    .a--course-tile-01__wrapper {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}

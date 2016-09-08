@@ -48,7 +48,7 @@
 <%def name="get_header_footer_templates()">
   <%
   return {
-    'header_template' : 'header/_header-appsembler-01.html', ## required
+    'header_template' : '../customer-specific/_hioa-header.html', ## required
     'footer_template' : 'footer/_footer-appsembler-01.html' ## required
   }
   %>
@@ -61,8 +61,8 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Menu item 1', '#', '', ''],
-      ['Menu item 2', '#', '', '']
+      ['MOOCAHUSET', 'http://moocahuset.net/', '', ''],
+      ['Om Bokskapet', 'https://blogg.hioa.no/bokskapet', '', '']
     ]
   %>
 </%def>
@@ -74,7 +74,8 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Menu item 1', '#', '', '']
+      ['MOOCAHUSET', 'http://moocahuset.net/', '', ''],
+      ['Om Bokskapet', 'https://blogg.hioa.no/bokskapet', '', '']
     ]
   %>
 </%def>
@@ -86,13 +87,13 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['About us', reverse('about'), '', ''],
-      ['FAQ', marketing_link('FAQ'), '', ''],
-      ['Contact', reverse('contact'), '', ''],
+      ['About', reverse('about'), '', ''],
+      ['FAQ', 'http://moocahuset.net/wiki/wiki/faq/', '', ''],
+      ['Contact', 'http://moocahuset.net', '', 'target="_blank"'],
       ['Conditions of Use', reverse('tos'), '', ''],
-      ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com/company/appsembler', 'a--linkedin', 'target="_blank"'],
-      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com/appsembler', 'a--facebook', 'target="_blank"'],
-      ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com/appsembler', 'a--twitter', 'target="_blank"']
+      ['<i class="fa fa-linkedin"></i>', 'http://no.linkedin.com/company/h-gskolen-i-oslo-og-akershus', 'a--linkedin', 'target="_blank"'],
+      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com/hioa', 'a--facebook', 'target="_blank"'],
+      ['<i class="fa fa-twitter"></i>', 'https://twitter.com/HiOA_info', 'a--twitter', 'target="_blank"']
     ]
   %>
 </%def>
@@ -139,7 +140,7 @@
             'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
             'text_color' : "#000",
-            'bg_image_url' : '/static/themes/hioa/images/hero-image.jpg', ## leave empty if you want just a full color background
+            'bg_image_url' : '/static/themes/hioa/images/hero-image-03.jpg', ## leave empty if you want just a full color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ],
@@ -158,10 +159,10 @@
         [
           'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
             # template settings
-            'heading' : "Become a course creator at HiOA!", ## leave value empty if you don't want it displayed.
-            'text' : "<p>We are looking for more students and teachers to help us develop course content.</p><p>Get in touch with LæreVerkStedet, our own Markerspace in P48 2nd floor.</p><p>Opening hours Monday - Thursday 13-15.00.</p>", ## leave value empty if you don't want it displayed.
+            'heading' : "Publiser i Bokskapet!", ## leave value empty if you don't want it displayed.
+            'text' : "<p>Vil du være med å utvikle i Bokskapet? Har du kursmateriell som du vil bearbeide for digital plattform slik at der når ut til flere?</p><p>Vi er på utkikk etter studenter og lærere som har lyst til å bidra som forfattere, redaktører, eller med tekst, foto og video.</p><p>Opplæring blir gitt.</p><p>Kom til LæreVerkStedet i 3. egt Pilestredet 48 man-tors 13:00-15:00</p>", ## leave value empty if you don't want it displayed.
             'cta_link' : "https://blogg.hioa.no/verkstedet", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "Do it!", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "Jeg vil!", ## leave value empty if you don't want a CTA button displayed.
             'optional_classes' : "negative", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'background_color' : '#000',
             'text_color' : '#fff',
@@ -251,23 +252,22 @@
       #   }
       #]
       [
-        'static-block', 'static-blocks/_hero-section-01.html', {
+        'static-block', '../customer-specific/_hioa-hero-section.html', {
           # template settings
-          'hero_title' : "Your custom title", ## leave value empty if you don't want it displayed.
-          'hero_subtitle' : "You can change the text that goes here. You can also change the background image of this area.", ## leave value empty if you don't want it displayed.
+          'hero_title' : "Bokskapet", ## leave value empty if you don't want it displayed.
+          'hero_subtitle' : "", ## leave value empty if you don't want it displayed.
           'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
           'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
           'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
           'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
-          'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
-          'text_color' : "#fff",
-          'background_color' : "#000",
-          'bg_image_url' : "", ## leave empty if you want just a full color background
-          'extra_css' : "padding-top: 6rem; padding-bottom: 5rem;" ## add custom css to be added inline to the wrapper element
-         }
+          'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
+          'text_color' : "#000",
+          'bg_image_url' : '/static/themes/hioa/images/hero-image-03.jpg', ## leave empty if you want just a full color background
+          'extra_css' : "" ## add custom css to be added inline to the wrapper element
+        }
       ],
       [
-        'course-catalogue', 'pages/course-catalogue/_course-catalogue-01.html', {
+        'course-catalogue', '../customer-specific/_hioa-course-catalogue.html', {
           # just include the course-catalogue template with the search, facets and results/listing at a place on the page
         }
       ],
@@ -281,12 +281,21 @@
       [
         'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
           # template settings
-          'heading' : "Optional content can go here", ## leave value empty if you don't want it displayed.
-          'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>", ## leave value empty if you don't want it displayed.
-          'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
-          'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
-          'optional_classes' : "", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
+          'heading' : "Publiser i Bokskapet!", ## leave value empty if you don't want it displayed.
+          'text' : "<p>Vil du være med å utvikle i Bokskapet? Har du kursmateriell som du vil bearbeide for digital plattform slik at der når ut til flere?</p><p>Vi er på utkikk etter studenter og lærere som har lyst til å bidra som forfattere, redaktører, eller med tekst, foto og video.</p><p>Opplæring blir gitt.</p><p>Kom til LæreVerkStedet i 3. egt Pilestredet 48 man-tors 13:00-15:00</p>", ## leave value empty if you don't want it displayed.
+          'cta_link' : "https://blogg.hioa.no/verkstedet", ## leave value empty if you don't want a CTA button displayed.
+          'cta_link_text' : "Jeg vil!", ## leave value empty if you don't want a CTA button displayed.
+          'optional_classes' : "negative", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
+          'background_color' : '#000',
+          'text_color' : '#fff',
           'extra_css' : "" ## add custom css to be added inline to the wrapper element
+        }
+      ],
+      [
+        'static-block', 'static-blocks/_line-separator.html', {
+          # template settings
+          'optional_classes' : "a--8px", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
+          'extra_css' : "background-color: #ea7126; width: 100%; height: 0.5rem;" ## add custom css to be added inline to the wrapper element
         }
       ]
     ]
@@ -491,22 +500,22 @@
         [
           'static-block', 'static-blocks/_hero-section-01.html', {
             # template settings
-            'hero_title' : "Static page title", ## leave value empty if you don't want it displayed.
-            'hero_subtitle' : "You can have a subtitle here as well, even an CTA button if you'd like (that leads to another page or opens a popup YouTube video)", ## leave value empty if you don't want it displayed.
-            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
+            'hero_title' : "About", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : "Bokskapet er et program og et nettsted for å bygge opp og vedlikeholde en samling av digitale læreverk og andre læringsressurser ved Læringssenter og bibliotek ved Høgskolen i Oslo og Akershus.", ## leave value empty if you don't want it displayed.
+            'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
             'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
             'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
             'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
             'text_color' : "#fff",
             'bg_image_url' : '', ## leave empty if you want just a full color background
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+            'extra_css' : "text-align: left;" ## add custom css to be added inline to the wrapper element
           }
         ],
         [
           'static-block', 'static-blocks/_plain-content-01.html', {
             # template settings
-            'content' : '<h1>This is an example of h1 heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus diam lectus, vitae porta purus varius ut. Praesent mollis pharetra odio, sed venenatis lectus bibendum non. Nullam laoreet in ipsum congue rhoncus. Curabitur tristique elementum sapien, et convallis magna auctor ac. Maecenas in sodales massa. Nulla ornare dui vel quam ornare, vel laoreet augue egestas. Curabitur ullamcorper justo nec nulla tincidunt accumsan. Maecenas ac risus venenatis, porta justo in, dignissim justo. Mauris tincidunt sed enim quis accumsan. Sed eget turpis sem. Vestibulum vel ante non quam facilisis hendrerit. Ut at maximus quam, sed imperdiet nisi. Aliquam sollicitudin felis varius, semper magna et, dignissim tellus. Duis iaculis, tortor et tincidunt condimentum, tellus tortor vehicula quam, in aliquet dui lorem eget erat. Suspendisse ut tempor tortor. Cras ut purus at odio sagittis pharetra eget sed ex.</p><h2>This is an example of h2 heading</h2><p>Curabitur placerat aliquet tortor nec dapibus. Sed fermentum, dolor hendrerit scelerisque pulvinar, erat arcu fermentum lacus, at commodo sapien nisl eu turpis. Vestibulum sodales sagittis ligula vitae bibendum. Cras pharetra sem sed lacus consequat, sit amet blandit velit rhoncus. Sed convallis scelerisque massa, et gravida tortor ullamcorper et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla convallis efficitur pulvinar. Aenean justo augue, varius id pellentesque in, posuere eu velit. Nam facilisis quis magna non sodales. In tempus, mi in consequat scelerisque, dui tortor molestie lectus, at dapibus nunc nibh interdum justo. In condimentum felis eget leo convallis fringilla. Curabitur eu neque fermentum, bibendum purus at, facilisis dui.</p><h3>This is an example of h3 heading</h3><p>Cras malesuada facilisis ipsum imperdiet tempus. Nullam ac consectetur orci. Nam bibendum ac velit et interdum. Mauris aliquet sit amet diam facilisis mollis. Integer volutpat ultrices elit id molestie. Duis iaculis consectetur sapien ornare vulputate. Quisque id est non metus consectetur feugiat. Integer enim justo, bibendum vitae cursus a, faucibus viverra est. Suspendisse ut laoreet nisi.</p><h3>This is an example of h3 heading</h3><p>In nec aliquam eros, eget facilisis tellus. Nullam non enim augue. Nulla lacus lorem, efficitur quis nisl in, congue gravida nulla. Nam placerat, nunc ut fermentum scelerisque, velit tellus pulvinar orci, id sagittis elit nulla quis odio. Nunc nisl quam, dapibus non nisi in, porta aliquam ante. Nunc eu elit malesuada est convallis accumsan et et elit. Integer dapibus pretium odio, vitae tincidunt dolor. Maecenas eget semper lectus. Mauris sollicitudin mattis ornare. In et mattis tellus. Suspendisse pellentesque urna a varius laoreet. Nulla ac pretium sapien. Maecenas in tempor arcu.</p><h3>This is an example of h3 heading</h3><p>Donec in orci accumsan, bibendum tortor et, lacinia elit. Aenean auctor ex in quam rutrum convallis. Pellentesque consectetur ut erat at molestie. Aliquam ultricies dapibus nulla, nec commodo odio bibendum ac. Vestibulum interdum, ante non placerat viverra, felis tortor mollis tortor, vitae blandit augue tellus in neque. Etiam mi dui, mattis at fermentum vitae, mattis vel ipsum. Donec interdum, quam a bibendum vulputate, massa dolor eleifend enim, at fringilla nisl risus vel dolor. Praesent id blandit magna.</p>', ## block content, place iline HTML here
+            'content' : '<p>Det støtter seg på en pedagogisk begrunnet modell som vi har kalt PISA for hvordan de best kan lages og brukes, men ikke alle kurs følger nødvendigvis modellen i ett og alt. Modellen har fire hovedelementer:</p><ul><li><b>Presentasjon</b> som er korte videoer, tekst, stillbilder, PDF-filer, lydopptak osv som kan erstatte eller supplere forelesninger.</li><li>Pedagogisk Programmert <b>Interaksjon</b> som er online quizzer, læringsstier, faglige spill, simlueringer o.l. som studentene løser på datamaskin alene eller i grupper.</li><li>Pedagogisk Organisert <b>Samhandling</b> som er gruppearbeid, framføringer, ekskursjoner, sanntids diskusjoner, studentdrevet produksjon, publisering og samskriving (f.eks. diskusjonsforum,  blogg/wiki, digital fortelling, ebok), felles utviklings- og forsknings-aktiviteter osv.</li><li><b>Analyse</b> der vi spør; <i>Hva skjer egentlig når studentene jobber online og offline? Hvordan kan vi lage bedre opplegg? Hvordan kan studentene lære bedre?</i></li></ul><p>Vi bruker Open edX-plattformen. Derved støttes også at materialet kan leveres på andre plattformer via LTI (Learning Tools Interoperability).</p><p>Les mer om Bokskapet på</p><ul><li><a href="http://moocahuset.net/">http://moocahuset.net/</a></li><li><a href="https://blogg.hioa.no/bokskapet">https://blogg.hioa.no/bokskapet</a></li></ul>', ## block content, place iline HTML here
             'optional_classes' : "", ##
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
