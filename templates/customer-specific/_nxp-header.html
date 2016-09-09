@@ -2,6 +2,7 @@
 <%namespace file='../theme-variables.html' import="get_header_menu_logged_out_extra_items, get_header_menu_logged_in_extra_items" />
 <%!
 from django.utils.translation import ugettext as _
+from student.models import UserProfile
 %>
 ## mako
 
@@ -23,6 +24,17 @@ try:
 except:
   custom_login_url = '/login'
 %>
+<%
+profile = UserProfile.objects.get(user=request.user)
+try:
+  user_first_name = profile.name.split(' ')[0]
+except:
+  user_first_name = user_name
+
+if user_first_name == '':
+  user_first_name = user_name
+
+%>
 <section class="nxp--header">
   <div class="bs-container a--container nxp--header__container">
     <div class="nxp--header__upper">
@@ -37,7 +49,7 @@ except:
       <ul class="nxp--header__upper-links">
         % if user_authenticated:
           <li>
-            <div class="upper-welcome">${_("Welcome")}, <span>${_(user_name)}</span>.</div>
+            <div class="upper-welcome">${_("Welcome")}, <span>${_(user_first_name)}</span>.</div>
           </li>
         % endif
         <li>
