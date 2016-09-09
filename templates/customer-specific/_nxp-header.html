@@ -25,14 +25,15 @@ except:
   custom_login_url = '/login'
 %>
 <%
-profile = UserProfile.objects.get(user=request.user)
-try:
-  user_first_name = profile.name.split(' ')[0]
-except:
-  user_first_name = user_name
+if user_authenticated:
+  profile = UserProfile.objects.get(user=request.user)
+  try:
+    user_first_name = profile.name.split(' ')[0]
+  except:
+    user_first_name = user_name
 
-if user_first_name == '':
-  user_first_name = user_name
+  if user_first_name == '':
+    user_first_name = user_name
 
 %>
 <section class="nxp--header">
