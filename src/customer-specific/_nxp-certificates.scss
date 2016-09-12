@@ -64,3 +64,41 @@
 	}
 
 }
+
+@media print {
+	
+	.nxp--certificates {		
+
+		&__certificate {
+
+			margin-top: 0 !important;
+
+			.label {
+				border: 0;
+			}
+
+			a:after {
+				content: none;
+			}
+
+			.accomplishment-rendering .wrapper-statement-and-signatories {
+				border-bottom: 0;
+			}
+		}
+
+		&__accomplishment-rendering {
+			border-top: 1px solid rgb(211, 209, 209);
+			padding-top: 5rem;			
+
+			.accomplishment-statement {
+				margin-bottom: 5.5rem;
+			}
+
+			.accomplishment-type-label {
+				width: 100%;
+				margin-bottom: 3.5rem;
+			}
+		}
+
+	}
+}
