@@ -1,0 +1,66 @@
+.nxp--certificates {
+
+	&__certificate {
+		font-size: 1rem;
+	}
+
+	&__header-app-title {
+		text-align:right;
+		float: right;
+		height: 6rem;
+		margin-top: -6rem;
+
+		.logo {
+			width: 13.25rem;
+		}
+	}
+
+	&__accomplishment-rendering {
+		border-top: 0;
+		outline: 0.1rem solid #4f585c;
+    	outline-offset: -0.8rem;
+    	padding: 10rem 7rem 2rem 7rem;
+	}
+
+	&__accomplishment-type {
+		margin: 0 auto;
+		text-align: center;
+
+		.accomplishment-type-label {
+			text-transform: uppercase;
+			display: block;
+			margin-bottom: 5rem;
+			font-size: 3rem;
+		}
+	}
+
+	&__accomplishment-recipient {
+		text-transform: uppercase;
+		font-size: 3.5rem;
+	}
+
+	&__accomplishment-statement-lead {
+		margin-bottom: 4rem;
+	}
+
+	&__accomplishment-course-name {
+		font-family: inherit;
+		font-weight: 800;	
+	}
+
+	&__wrapper-accomplishment-metadata {
+
+		dd {
+			-webkit-margin-start: 0;
+			-moz-margin-start: 0;
+			-o-margin-start: 0;
+			-ms-margin-start: 0;
+		}
+
+		.accomplishment-date {
+			font-weight: 800;
+		}
+
+	}
+
+}
