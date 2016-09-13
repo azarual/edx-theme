@@ -26,8 +26,8 @@ except:
 %>
 <%
 if user_authenticated:
-  profile = UserProfile.objects.get(user=request.user)
   try:
+    profile = UserProfile.objects.get(user=request.user)
     user_first_name = profile.name.split(' ')[0]
   except:
     user_first_name = user_name
