@@ -1,7 +1,7 @@
 $brand-primary-color: #1F427C;
-$brand-accent-color: #2C76C7;
-$navbar-style: "brand";  // brand or white
-$base-text-color: #162037;
+$brand-accent-color: #EFC900;
+$navbar-style: "white";  // brand or white
+$base-text-color: #2C2A2F;
 
 $primary-font-name: "Open Sans";
 $primary-font-weight-light: 300;
@@ -14,21 +14,15 @@ $primary-font-weight-black: 800;
 }
 
 @mixin large-cta-font {
-	font-family: 'Roboto Slab', serif;
-	font-style: normal;
-	font-weight: 400;
+	@include primary-font;
 }
 
 @mixin big-headings-font {
 	font-family: 'Roboto Slab', serif;
-	font-style: normal;
-	font-weight: 300;
 }
 
 @mixin small-headings-font {
-	font-family: 'Roboto Slab', serif;
-	font-style: normal;
-	font-weight: 400;
+	@include primary-font-bold;
 }
 
 $cta-button-bg: $brand-accent-color;
@@ -36,16 +30,16 @@ $cta-button-text-color: #fff;
 $cta-button-border: none;
 
 $header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
-$header-logo-height: 6.4rem;
-$header-padding-top: 2rem;
+$header-logo-height: 7rem;
+$header-padding-top: 1.5rem;
 $header-padding-bottom: $header-padding-top;
 $header-padding-sm-top: 1.5rem;
 $header-padding-sm-bottom: 1.5rem;
 $header-group-separation: 4rem;
-$header-font-size: 1.6rem;
+$header-font-size: 1.4rem;
 $header-text-color: calcNavbarTextColor($navbar-style, $base-text-color);
 $navbar-button-border: calcNavbarButtonBorder($navbar-style);
-$navbar-button-bg: transparent;
+$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-primary-color);
 $navbar-anchor-underline-color: calcNavbarUnderlineColor($navbar-style, $brand-primary-color);
 $navbar-link-hover: "expanding-underline";  // can be "hover-pop", "expanding-underline", "brand-color" or "opacity"
 
@@ -68,7 +62,7 @@ $slideout-menu-item-padding: 1.4rem;
 
 $base-letter-spacing: 0;
 
-$buttons-border-radius: 0.5rem;
+$buttons-border-radius: 0.2rem;
 
 
 $footer-padding-top: 4rem;
@@ -82,7 +76,7 @@ $footer-link-breathe-space: 1.5rem;
 $footer-logo-breathe-space: 3rem;
 $footer-logo-padding-vertical: 1rem;
 $footer-logo-width: 4rem;
-$footer-logo-opacity: 0.5;
+$footer-logo-opacity: 1;
 $footer-copyright-text-size: 1.2rem;
 $footer-copyright-text-color: lighten($footer-text-color, 15%);
 $footer-copyright-breathe-space: 1rem;
