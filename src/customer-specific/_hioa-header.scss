@@ -1,0 +1,45 @@
+.a--site-nav {
+
+  .button-saml-feide-saml {
+    background: none;
+    box-shadow: none;
+    outline: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    font: inherit;
+    @include primary-font;
+    padding: 1rem 1.5rem;
+    border-radius: $buttons-border-radius;
+    border: 0.2rem solid $brand-primary-color;
+    @include transition(all 0.3s ease-in-out);
+
+    i {
+      margin-right: 1rem;
+    }
+
+    span.cta-title {
+      font-size: 1.4rem;
+      letter-spacing: 0;
+    }
+
+    &:hover, &:focus, &:hover:not(:disabled) {
+      background-color: $brand-primary-color;
+      border: 0.2rem solid $brand-primary-color;
+
+      &:after {
+        display: none !important;
+      }
+    }
+
+    &.sidebar-button {
+      border-color: #fff;
+
+      &:hover, &:focus, &:hover:not(:disabled) {
+        border-color: #fff;
+        background-color: #fff;
+        color: $brand-primary-color;
+      }
+    }
+  }
+}
