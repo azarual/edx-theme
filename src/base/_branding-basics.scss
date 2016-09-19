@@ -1,13 +1,13 @@
-$brand-primary-color: #0090c1;
-$brand-accent-color: #194154;
-$navbar-style: "white";  // brand or white
+$brand-primary-color: #34495e;
+$brand-accent-color: #7f8c8d;
+$navbar-style: "brand";  // brand or white
 $base-text-color: #2C2A2F;
 
-$primary-font-name: "Lato";
+$primary-font-name: "Open Sans";
 $primary-font-weight-light: 300;
 $primary-font-weight-regular: 400;
 $primary-font-weight-bold: 700;
-$primary-font-weight-black: 900;
+$primary-font-weight-black: 800;
 
 @mixin body-base-font {
 	@include primary-font;
@@ -25,12 +25,12 @@ $primary-font-weight-black: 900;
 	@include primary-font-bold;
 }
 
-$cta-button-bg: $brand-primary-color;
+$cta-button-bg: $brand-accent-color;
 $cta-button-text-color: #fff;
 $cta-button-border: none;
 
 $header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
-$header-logo-height: 6rem;
+$header-logo-height: 4.8rem;
 $header-padding-top: 1.5rem;
 $header-padding-bottom: $header-padding-top;
 $header-padding-sm-top: 1.5rem;
@@ -39,7 +39,7 @@ $header-group-separation: 4rem;
 $header-font-size: 1.6rem;
 $header-text-color: calcNavbarTextColor($navbar-style, $base-text-color);
 $navbar-button-border: calcNavbarButtonBorder($navbar-style);
-$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-primary-color);
+$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-accent-color);
 $navbar-anchor-underline-color: calcNavbarUnderlineColor($navbar-style, $brand-primary-color);
 $navbar-link-hover: "expanding-underline";  // can be "hover-pop", "expanding-underline", "brand-color" or "opacity"
 
@@ -62,7 +62,7 @@ $slideout-menu-item-padding: 1.4rem;
 
 $base-letter-spacing: 0;
 
-$buttons-border-radius: 5rem;
+$buttons-border-radius: 0.5rem;
 
 
 $footer-padding-top: 4rem;
