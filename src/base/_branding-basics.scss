@@ -1,6 +1,6 @@
-$brand-primary-color: #34495e;
-$brand-accent-color: #7f8c8d;
-$navbar-style: "brand";  // brand or white
+$brand-primary-color: #0090c1;
+$brand-accent-color: #0090c1;
+$navbar-style: "white";  // brand or white
 $base-text-color: #2C2A2F;
 
 $primary-font-name: "Open Sans";
@@ -30,7 +30,7 @@ $cta-button-text-color: #fff;
 $cta-button-border: none;
 
 $header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
-$header-logo-height: 4.8rem;
+$header-logo-height: 6rem;
 $header-padding-top: 1.5rem;
 $header-padding-bottom: $header-padding-top;
 $header-padding-sm-top: 1.5rem;
@@ -62,7 +62,7 @@ $slideout-menu-item-padding: 1.4rem;
 
 $base-letter-spacing: 0;
 
-$buttons-border-radius: 0.5rem;
+$buttons-border-radius: 5rem;
 
 
 $footer-padding-top: 4rem;
