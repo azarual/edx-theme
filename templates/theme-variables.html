@@ -22,7 +22,7 @@
     'enable_registration_button' : True,
     'google_fonts_to_import' : 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800|Roboto+Slab&subset=latin-ext',
     'apple_app_id' : '',
-    ##'header_logo_target' : ''
+    'header_logo_target' : 'http://extension.psu.edu/'
   }
   %>
 </%def>
@@ -48,7 +48,7 @@
 <%def name="get_header_footer_templates()">
   <%
   return {
-    'header_template' : 'header/_header-appsembler-01.html', ## required
+    'header_template' : '../customer-specific/_psu-header-01.html', ## required
     'footer_template' : 'footer/_footer-appsembler-01.html' ## required
   }
   %>
