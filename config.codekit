@@ -3231,6 +3231,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/static\/images\/customer\/help-page\/help--module-sign-in.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51738,
+		"inputAbbreviatedPath": "\/static\/images\/customer\/help-page\/help--module-sign-in.png",
+		"outputAbbreviatedPath": "\/static\/images\/customer\/help-page\/help--module-sign-in.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/static\/images\/customer\/help-page\/help--sign-in.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 124743,
+		"inputAbbreviatedPath": "\/static\/images\/customer\/help-page\/help--sign-in.png",
+		"outputAbbreviatedPath": "\/static\/images\/customer\/help-page\/help--sign-in.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/static\/images\/ou-hero-bg-01.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
