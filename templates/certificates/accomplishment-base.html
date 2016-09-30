@@ -18,15 +18,11 @@ course_mode_class = course_mode if course_mode else ''
     <title>${document_title}</title>
 
     <%static:css group='style-certificates'/>
-    <link rel="stylesheet" href="/static/themes/nxp-dogwood/css/main.css" />
-    <style type="text/css" media="print">
-        @page {
-           size: A4 landscape; 
-        }
-    </style>
+    <link rel="stylesheet" href="/static/themes/nyif-dogwood/css/main.css" />
+
 </head>
 
-<body class="layout-accomplishment view-valid-accomplishment ${dir_rtl} nxp--certificates__certificate certificate-${course_mode_class}" data-view="valid-accomplishment">
+<body class="layout-accomplishment view-valid-accomplishment ${dir_rtl} nyif--certificates__certificate certificate-${course_mode_class}" data-view="valid-accomplishment">
 
     <div class="wrapper-view" dir="${dir_rtl}">
 
