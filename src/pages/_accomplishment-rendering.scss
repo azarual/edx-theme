@@ -112,18 +112,17 @@
     }
 
 	.nyif--certificates__certificate {
-
-		padding-top: 1em; 
-		margin-top: 0 !important;
+		margin:0 !important;
+		padding: 1em 0 0; 		
 		border: 12px solid rgb(56,65,149);
-		width: 88%;
+		width: 100%;
 
 		.header-app {
 			height: 80px;
 		}
 
 		.nyif--certificates__wrapper-accomplishment-rendering {
-			width: 90%;
+			width: 100%;
 			margin: auto;
 			border-width: 0;
 
@@ -178,6 +177,13 @@
 			.wrapper-signatories, .wrapper-signatories * {
 				text-align: right;
 			}			
+
+			.accomplishment-signatories {
+				position: absolute;
+				top: 37em;
+				right: 2em;
+				margin-bottom: 0;
+			}
 
 		}
 	}
