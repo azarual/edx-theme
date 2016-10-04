@@ -88,17 +88,27 @@
 		}
 
 		.accomplishment-metadata {
-			float:left;
-
 			.metadata .value.copy-meta {
 				font-size: 0.8rem;
 			}
 		}
 
 		.accomplishment-signatories {
-			position: relative;
-			top: -10em;
-			margin-bottom: -10em;
+
+			.wrapper-signatories, .wrapper-signatories * {
+				text-align: left;
+			}		
+
+			.wrapper-signatories {
+
+				.list-signatories .signatory:first-child {
+					float:left;
+				}
+
+	    		.signatory-signature {
+	    			min-height: 100px;
+	    		}
+			}
 		}
 		
 	}
@@ -153,6 +163,10 @@
 				margin-bottom: 5.5rem;
 			}
 
+			.accomplishment-type-label {
+				margin-bottom: 0.5em;
+			}			
+
 			.nyif--certificates__accomplishment-statement-detail {
 				margin-top: 2em;
 
@@ -170,20 +184,29 @@
 				margin-bottom: 0;
 			}
 
+			.nyif--certificates__accomplishment-statement-detail {
+				margin-top: 1em;
+			}
+
+			.accomplishment-summary {
+				margin-bottom: 1em;
+			}
+
+			.nyif--certificates__wrapper-accomplishment-accreditation-info {
+				font-size: 80%;
+			}
+
+			.list-signatories .signatory {
+				display: inline-block;
+				max-width: 40%;
+			}
+
 			img.signatory-signature {
-				height: auto;
+				min-height: 60px !important;
+				max-height: 70px !important;
 			}
 
-			.wrapper-signatories, .wrapper-signatories * {
-				text-align: right;
-			}			
 
-			.accomplishment-signatories {
-				position: absolute;
-				top: 37em;
-				right: 2em;
-				margin-bottom: 0;
-			}
 
 		}
 	}
