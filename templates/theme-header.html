@@ -46,7 +46,7 @@ site_status_msg = get_site_status_msg(course_id)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
       </button>
-      <a class="navbar__logo" href="${marketing_link('ROOT')}"><img src="${static.url('themes/mit/images/header-logo-composition-negative.svg')}"  alt="${platform_name()}"/></a>
+      <a class="navbar__logo" href="${marketing_link('ROOT')}"><img src="${static.url('themes/mit/images/mit-sloan-logo-negative.svg')}"  alt="${platform_name()}"/></a>
 
       ## If on a course page - display course info
       % if course:
@@ -78,7 +78,7 @@ site_status_msg = get_site_status_msg(course_id)
             </li>
             % if display_shopping_cart:
               <li class="navigation-group__user__cart"><a href="${reverse('shoppingcart.views.show_cart')}"><i class="fa fa-shopping-cart"></i></a></li>
-            % endif  
+            % endif
           </ul>
 
         ## Elements to display to non authenticated users
