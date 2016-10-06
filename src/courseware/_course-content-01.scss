@@ -216,6 +216,8 @@
 
   &__main-content {
     width: 100%;
+    min-width: 0;
+    word-wrap: break-word;
     @include flex-shrink(1);
 
     label {
