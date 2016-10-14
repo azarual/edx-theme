@@ -112,7 +112,7 @@ span.a--underlined {
 .spacer {
 	width: 100%;
 
-	&.1rem {
+	&.one-rem {
 		height: 1rem;
 	}
 }
@@ -120,4 +120,22 @@ span.a--underlined {
 .discovery-course-tile {
 	list-style-type: none;
 	display: inline-block;
+}
+
+.window-wrap {
+	@include display(flex);
+	@include flex-direction(column);
+	min-height: 100vh;
+
+	.a--site-nav {
+		@include flex-grow(0);
+	}
+
+	.content-wrapper {
+		@include flex-grow(1);
+	}
+
+	.a--footer {
+		@include flex-grow(0);
+	}
 }

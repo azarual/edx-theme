@@ -4,7 +4,7 @@
 
 
 <%
-  theme_name = "inceptures-dogwood"
+  theme_name = "ou-dogwood"
 %>
 
 
@@ -19,7 +19,10 @@
 <%def name="get_global_settings()">
   <%
   return {
-    'enable_registration_button' : True
+    'enable_registration_button' : True,
+    'google_fonts_to_import' : 'https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700,300italic,400italic,500italic',
+    'apple_app_id' : '',
+    'header_logo_target' : 'http://www.open.ac.uk'
   }
   %>
 </%def>
@@ -57,9 +60,9 @@
 <%def name="get_header_menu_logged_out_extra_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['Inceptures Web', 'http://www.inceptures.com', ''],
-      ['About us', reverse('about'), '']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
+      ['Inceptures Web', 'http://www.inceptures.com', '', ''],
+      ['About us', reverse('about'), '', '']
     ]
   %>
 </%def>
@@ -70,8 +73,8 @@
 <%def name="get_header_menu_logged_in_extra_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['About us', reverse('about'), '']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
+      ['About us', reverse('about'), '', '']
     ]
   %>
 </%def>
@@ -82,16 +85,16 @@
 <%def name="get_footer_menu_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['Terms of Service', reverse('tos'), ''],
-      ['FAQ', marketing_link('FAQ'), ''],
-      ['About', reverse('about'), ''],
-      ['Copyright', reverse('tos'), ''],
-      ['Contact', reverse('tos'), ''],
-      ['Help', reverse('tos'), ''],
-      ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com', 'a--linkedin'],
-      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com', 'a--facebook'],
-      ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com', 'a--twitter']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
+      ['Terms of Service', reverse('tos'), '', ''],
+      ['FAQ', marketing_link('FAQ'), '', ''],
+      ['About', reverse('about'), '', ''],
+      ['Copyright', reverse('tos'), '', ''],
+      ['Contact', reverse('tos'), '', ''],
+      ['Help', reverse('tos'), '', ''],
+      ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com', 'a--linkedin', ''],
+      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com', 'a--facebook', ''],
+      ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com', 'a--twitter', '']
     ]
   %>
 </%def>
@@ -138,7 +141,7 @@
             'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
             'bg_image_url' : '/static/themes/inceptures-dogwood/images/inceptures-hero-image.jpg', ## leave empty if you want just a full color background
-            'extra_css' : "padding-top: 15rem; padding-bottom: 15rem;" ## add custom css to be added inline to the wrapper element
+            'extra_css' : "padding-top: 15rem; padding-bottom: 15rem; color: #fff;" ## add custom css to be added inline to the wrapper element
           }
         ],
         [
@@ -194,6 +197,141 @@
 </%def>
 
 
+## course about page content
+
+<%def name="get_course_about_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+        [
+          'about-course-template', 'pages/course-about/_course-about-01.html', {
+            # template settings
+            'optional_classes' : "", ##
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ],
+        [
+          'courses-list', 'static-blocks/_line-separator.html', {
+            # template settings
+            'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ],
+        [
+          'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
+            # template settings
+            'heading' : "Great! You’re interested in becoming a programming.", ## leave value empty if you don't want it displayed.
+            'text' : "<p>Click Apply Now and someone from Admissions will contact you shortly.</p>", ## leave value empty if you don't want it displayed.
+            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "Apply Now", ## leave value empty if you don't want a CTA button displayed.
+            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ]
+    ]
+  %>
+</%def>
+
+
+## course catalogue page settings
+
+<%def name="get_course_catalogue_settings()">
+  <%
+    return {
+      'default_edx_view' : false, ## required boolean value. Set to "true" if you want the default edX look and feel.
+      'discovery_course_card' : '_course-tile-02.underscore', ## define which tile template to use for results
+      'discovery_facet' : '_facet-01.underscore', ## define which template for facets to use
+      'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
+      'course_template_class' : 'a--course-tile-02', ## required, defined as "a--{template-name}"
+      'course_template' : 'live-blocks/single-course/_course-tile-02.html', ## required
+      'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html' ## design which discovery-search block design to use
+    }
+  %>
+</%def>
+
+## course catalogue page content
+
+<%def name="get_course_catalogue_content()">
+  <%
+    return [
+      #[
+      #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+      #     'template_setting_01': "value",
+      #     'template_setting_02': "value2",
+      #     ...
+      #   }
+      #]
+      [
+        'static-block', 'static-blocks/_hero-section-01.html', {
+          # template settings
+          'hero_title' : "Course catalogue", ## leave value empty if you don't want it displayed.
+          'hero_subtitle' : "You can browse the Inceptures Software School courses below", ## leave value empty if you don't want it displayed.
+          'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
+          'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
+          'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+          'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
+          'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
+          'bg_image_url' : "/static/themes/inceptures-dogwood/images/inceptures-hero-image.jpg", ## leave empty if you want just a full color background
+          'extra_css' : "padding-top: 5rem; padding-bottom: 5rem; color: #fff;" ## add custom css to be added inline to the wrapper element
+         }
+      ],
+      [
+        'course-catalogue', 'pages/course-catalogue/_course-catalogue-01.html', {
+          # just include the course-catalogue template with the search, facets and results/listing at a place on the page
+        }
+      ]
+    ]
+  %>
+</%def>
+
+
+## dashboard settings
+
+<%def name="get_dashboard_settings()">
+  <%
+    return {
+      'default_edx_view' : False, ## required boolean value. Set to "true" if you want the default edX look and feel.
+      'dashboard_search_enabled' : True,
+      'dashboard_course_listing' : 'live-blocks/dashboard-course-listing/_dashboard-course-listing-01.html', ## set which template should be used to display a single course in the dashboard
+      'discovery_course_card' : '_course-tile-02.underscore', ## define which tile template to use for results
+      'discovery_facet' : '_facet-01.underscore', ## define which template for facets to use
+      'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
+      'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html', ## design which discovery-search block design to use
+      'promote_course_catalog' : True,
+      'promote_course_catalog_text' : "Check out our course catalog and enroll in some awesome courses!"
+    }
+  %>
+</%def>
+
+
+## dashboard page content
+
+<%def name="get_dashboard_content()">
+  <%
+    return [
+      #[
+      #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+      #     'template_setting_01': "value",
+      #     'template_setting_02': "value2",
+      #     ...
+      #   }
+      #]
+      [
+        'dashboard', 'pages/dashboard/_dashboard-01.html', {
+          # just include the course-catalogue template with the search, facets and results/listing at a place on the page
+        }
+      ]
+    ]
+  %>
+</%def>
+
+
 ## faq page content
 
 <%def name="get_faq_content()">
@@ -209,15 +347,16 @@
         [
           'static-block', 'static-blocks/_hero-section-01.html', {
             # template settings
-            'hero_title' : "This is our sites FAQ section", ## leave value empty if you don't want it displayed.
+            'hero_title' : "This is the title for the FAQ static page", ## leave value empty if you don't want it displayed.
             'hero_subtitle' : "Got any questions for us? Check out the ones we already have answered below, and if you don't find yours - click to contact us!", ## leave value empty if you don't want it displayed.
-            'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
             'cta_link_text' : "Contact us", ## leave value empty if you don't want a CTA button displayed.
             'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
             'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'text_color' : "#fff",
             'extra_css' : "", ## add custom css to be added inline to the wrapper element
-            'bg_image_url' : '/static/themes/inceptures-dogwood/images/inceptures-hero-image.jpg' ## leave empty if you want just a full color background
+            'bg_image_url' : '' ## leave empty if you want just a full color background
           }
         ],
         [
@@ -269,21 +408,62 @@
         [
           'static-block', 'static-blocks/_hero-section-01.html', {
             # template settings
-            'hero_title' : "This is our sites TOS section", ## leave value empty if you don't want it displayed.
-            'hero_subtitle' : "Got any questions for us? Check out the ones we already have answered below, and if you don't find yours - click to contact us!", ## leave value empty if you don't want it displayed.
-            'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "Contact us", ## leave value empty if you don't want a CTA button displayed.
+            'hero_title' : "Static page title", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : "You can have a subtitle here as well, even an CTA button if you'd like (that leads to another page or opens a popup YouTube video)", ## leave value empty if you don't want it displayed.
+            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
             'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
             'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
-            'bg_image_url' : '/static/themes/inceptures-dogwood/images/inceptures-hero-image.jpg', ## leave empty if you want just a full color background
+            'text_color' : "#fff",
+            'bg_image_url' : '', ## leave empty if you want just a full color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ],
         [
           'static-block', 'static-blocks/_plain-content-01.html', {
             # template settings
-            'content' : '<h1>Terms of Service</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </p><h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p><h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.<h3>Subheading here</h3><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.<h3>Subheading here</h3><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus.<h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.', ## block content, place iline HTML here
+            'content' : '<h1>This is an example of h1 heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus diam lectus, vitae porta purus varius ut. Praesent mollis pharetra odio, sed venenatis lectus bibendum non. Nullam laoreet in ipsum congue rhoncus. Curabitur tristique elementum sapien, et convallis magna auctor ac. Maecenas in sodales massa. Nulla ornare dui vel quam ornare, vel laoreet augue egestas. Curabitur ullamcorper justo nec nulla tincidunt accumsan. Maecenas ac risus venenatis, porta justo in, dignissim justo. Mauris tincidunt sed enim quis accumsan. Sed eget turpis sem. Vestibulum vel ante non quam facilisis hendrerit. Ut at maximus quam, sed imperdiet nisi. Aliquam sollicitudin felis varius, semper magna et, dignissim tellus. Duis iaculis, tortor et tincidunt condimentum, tellus tortor vehicula quam, in aliquet dui lorem eget erat. Suspendisse ut tempor tortor. Cras ut purus at odio sagittis pharetra eget sed ex.</p><h2>This is an example of h2 heading</h2><p>Curabitur placerat aliquet tortor nec dapibus. Sed fermentum, dolor hendrerit scelerisque pulvinar, erat arcu fermentum lacus, at commodo sapien nisl eu turpis. Vestibulum sodales sagittis ligula vitae bibendum. Cras pharetra sem sed lacus consequat, sit amet blandit velit rhoncus. Sed convallis scelerisque massa, et gravida tortor ullamcorper et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla convallis efficitur pulvinar. Aenean justo augue, varius id pellentesque in, posuere eu velit. Nam facilisis quis magna non sodales. In tempus, mi in consequat scelerisque, dui tortor molestie lectus, at dapibus nunc nibh interdum justo. In condimentum felis eget leo convallis fringilla. Curabitur eu neque fermentum, bibendum purus at, facilisis dui.</p><h3>This is an example of h3 heading</h3><p>Cras malesuada facilisis ipsum imperdiet tempus. Nullam ac consectetur orci. Nam bibendum ac velit et interdum. Mauris aliquet sit amet diam facilisis mollis. Integer volutpat ultrices elit id molestie. Duis iaculis consectetur sapien ornare vulputate. Quisque id est non metus consectetur feugiat. Integer enim justo, bibendum vitae cursus a, faucibus viverra est. Suspendisse ut laoreet nisi.</p><h3>This is an example of h3 heading</h3><p>In nec aliquam eros, eget facilisis tellus. Nullam non enim augue. Nulla lacus lorem, efficitur quis nisl in, congue gravida nulla. Nam placerat, nunc ut fermentum scelerisque, velit tellus pulvinar orci, id sagittis elit nulla quis odio. Nunc nisl quam, dapibus non nisi in, porta aliquam ante. Nunc eu elit malesuada est convallis accumsan et et elit. Integer dapibus pretium odio, vitae tincidunt dolor. Maecenas eget semper lectus. Mauris sollicitudin mattis ornare. In et mattis tellus. Suspendisse pellentesque urna a varius laoreet. Nulla ac pretium sapien. Maecenas in tempor arcu.</p><h3>This is an example of h3 heading</h3><p>Donec in orci accumsan, bibendum tortor et, lacinia elit. Aenean auctor ex in quam rutrum convallis. Pellentesque consectetur ut erat at molestie. Aliquam ultricies dapibus nulla, nec commodo odio bibendum ac. Vestibulum interdum, ante non placerat viverra, felis tortor mollis tortor, vitae blandit augue tellus in neque. Etiam mi dui, mattis at fermentum vitae, mattis vel ipsum. Donec interdum, quam a bibendum vulputate, massa dolor eleifend enim, at fringilla nisl risus vel dolor. Praesent id blandit magna.</p>', ## block content, place iline HTML here
+            'optional_classes' : "", ##
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ]
+    ]
+  %>
+</%def>
+
+
+## copyright page content
+
+<%def name="get_copyright_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+        [
+          'static-block', 'static-blocks/_hero-section-01.html', {
+            # template settings
+            'hero_title' : "Static page title", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : "You can have a subtitle here as well, even an CTA button if you'd like (that leads to another page or opens a popup YouTube video)", ## leave value empty if you don't want it displayed.
+            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
+            'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+            'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'text_color' : "#fff",
+            'bg_image_url' : '', ## leave empty if you want just a full color background
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ],
+        [
+          'static-block', 'static-blocks/_plain-content-01.html', {
+            # template settings
+            'content' : '<h1>This is an example of h1 heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus diam lectus, vitae porta purus varius ut. Praesent mollis pharetra odio, sed venenatis lectus bibendum non. Nullam laoreet in ipsum congue rhoncus. Curabitur tristique elementum sapien, et convallis magna auctor ac. Maecenas in sodales massa. Nulla ornare dui vel quam ornare, vel laoreet augue egestas. Curabitur ullamcorper justo nec nulla tincidunt accumsan. Maecenas ac risus venenatis, porta justo in, dignissim justo. Mauris tincidunt sed enim quis accumsan. Sed eget turpis sem. Vestibulum vel ante non quam facilisis hendrerit. Ut at maximus quam, sed imperdiet nisi. Aliquam sollicitudin felis varius, semper magna et, dignissim tellus. Duis iaculis, tortor et tincidunt condimentum, tellus tortor vehicula quam, in aliquet dui lorem eget erat. Suspendisse ut tempor tortor. Cras ut purus at odio sagittis pharetra eget sed ex.</p><h2>This is an example of h2 heading</h2><p>Curabitur placerat aliquet tortor nec dapibus. Sed fermentum, dolor hendrerit scelerisque pulvinar, erat arcu fermentum lacus, at commodo sapien nisl eu turpis. Vestibulum sodales sagittis ligula vitae bibendum. Cras pharetra sem sed lacus consequat, sit amet blandit velit rhoncus. Sed convallis scelerisque massa, et gravida tortor ullamcorper et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla convallis efficitur pulvinar. Aenean justo augue, varius id pellentesque in, posuere eu velit. Nam facilisis quis magna non sodales. In tempus, mi in consequat scelerisque, dui tortor molestie lectus, at dapibus nunc nibh interdum justo. In condimentum felis eget leo convallis fringilla. Curabitur eu neque fermentum, bibendum purus at, facilisis dui.</p><h3>This is an example of h3 heading</h3><p>Cras malesuada facilisis ipsum imperdiet tempus. Nullam ac consectetur orci. Nam bibendum ac velit et interdum. Mauris aliquet sit amet diam facilisis mollis. Integer volutpat ultrices elit id molestie. Duis iaculis consectetur sapien ornare vulputate. Quisque id est non metus consectetur feugiat. Integer enim justo, bibendum vitae cursus a, faucibus viverra est. Suspendisse ut laoreet nisi.</p><h3>This is an example of h3 heading</h3><p>In nec aliquam eros, eget facilisis tellus. Nullam non enim augue. Nulla lacus lorem, efficitur quis nisl in, congue gravida nulla. Nam placerat, nunc ut fermentum scelerisque, velit tellus pulvinar orci, id sagittis elit nulla quis odio. Nunc nisl quam, dapibus non nisi in, porta aliquam ante. Nunc eu elit malesuada est convallis accumsan et et elit. Integer dapibus pretium odio, vitae tincidunt dolor. Maecenas eget semper lectus. Mauris sollicitudin mattis ornare. In et mattis tellus. Suspendisse pellentesque urna a varius laoreet. Nulla ac pretium sapien. Maecenas in tempor arcu.</p><h3>This is an example of h3 heading</h3><p>Donec in orci accumsan, bibendum tortor et, lacinia elit. Aenean auctor ex in quam rutrum convallis. Pellentesque consectetur ut erat at molestie. Aliquam ultricies dapibus nulla, nec commodo odio bibendum ac. Vestibulum interdum, ante non placerat viverra, felis tortor mollis tortor, vitae blandit augue tellus in neque. Etiam mi dui, mattis at fermentum vitae, mattis vel ipsum. Donec interdum, quam a bibendum vulputate, massa dolor eleifend enim, at fringilla nisl risus vel dolor. Praesent id blandit magna.</p>', ## block content, place iline HTML here
             'optional_classes' : "", ##
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
@@ -306,9 +486,24 @@
         #   }
         #]
         [
+          'static-block', 'static-blocks/_hero-section-01.html', {
+            # template settings
+            'hero_title' : "Static page title", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : "You can have a subtitle here as well, even an CTA button if you'd like (that leads to another page or opens a popup YouTube video)", ## leave value empty if you don't want it displayed.
+            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
+            'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+            'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'text_color' : "#fff",
+            'bg_image_url' : '', ## leave empty if you want just a full color background
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ],
+        [
           'static-block', 'static-blocks/_plain-content-01.html', {
             # template settings
-            'content' : '<h1>About us</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </p><h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p><h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.<h3>Subheading here</h3><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.<h3>Subheading here</h3><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus.<h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.', ## block content, place iline HTML here
+            'content' : '<h1>This is an example of h1 heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus diam lectus, vitae porta purus varius ut. Praesent mollis pharetra odio, sed venenatis lectus bibendum non. Nullam laoreet in ipsum congue rhoncus. Curabitur tristique elementum sapien, et convallis magna auctor ac. Maecenas in sodales massa. Nulla ornare dui vel quam ornare, vel laoreet augue egestas. Curabitur ullamcorper justo nec nulla tincidunt accumsan. Maecenas ac risus venenatis, porta justo in, dignissim justo. Mauris tincidunt sed enim quis accumsan. Sed eget turpis sem. Vestibulum vel ante non quam facilisis hendrerit. Ut at maximus quam, sed imperdiet nisi. Aliquam sollicitudin felis varius, semper magna et, dignissim tellus. Duis iaculis, tortor et tincidunt condimentum, tellus tortor vehicula quam, in aliquet dui lorem eget erat. Suspendisse ut tempor tortor. Cras ut purus at odio sagittis pharetra eget sed ex.</p><h2>This is an example of h2 heading</h2><p>Curabitur placerat aliquet tortor nec dapibus. Sed fermentum, dolor hendrerit scelerisque pulvinar, erat arcu fermentum lacus, at commodo sapien nisl eu turpis. Vestibulum sodales sagittis ligula vitae bibendum. Cras pharetra sem sed lacus consequat, sit amet blandit velit rhoncus. Sed convallis scelerisque massa, et gravida tortor ullamcorper et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla convallis efficitur pulvinar. Aenean justo augue, varius id pellentesque in, posuere eu velit. Nam facilisis quis magna non sodales. In tempus, mi in consequat scelerisque, dui tortor molestie lectus, at dapibus nunc nibh interdum justo. In condimentum felis eget leo convallis fringilla. Curabitur eu neque fermentum, bibendum purus at, facilisis dui.</p><h3>This is an example of h3 heading</h3><p>Cras malesuada facilisis ipsum imperdiet tempus. Nullam ac consectetur orci. Nam bibendum ac velit et interdum. Mauris aliquet sit amet diam facilisis mollis. Integer volutpat ultrices elit id molestie. Duis iaculis consectetur sapien ornare vulputate. Quisque id est non metus consectetur feugiat. Integer enim justo, bibendum vitae cursus a, faucibus viverra est. Suspendisse ut laoreet nisi.</p><h3>This is an example of h3 heading</h3><p>In nec aliquam eros, eget facilisis tellus. Nullam non enim augue. Nulla lacus lorem, efficitur quis nisl in, congue gravida nulla. Nam placerat, nunc ut fermentum scelerisque, velit tellus pulvinar orci, id sagittis elit nulla quis odio. Nunc nisl quam, dapibus non nisi in, porta aliquam ante. Nunc eu elit malesuada est convallis accumsan et et elit. Integer dapibus pretium odio, vitae tincidunt dolor. Maecenas eget semper lectus. Mauris sollicitudin mattis ornare. In et mattis tellus. Suspendisse pellentesque urna a varius laoreet. Nulla ac pretium sapien. Maecenas in tempor arcu.</p><h3>This is an example of h3 heading</h3><p>Donec in orci accumsan, bibendum tortor et, lacinia elit. Aenean auctor ex in quam rutrum convallis. Pellentesque consectetur ut erat at molestie. Aliquam ultricies dapibus nulla, nec commodo odio bibendum ac. Vestibulum interdum, ante non placerat viverra, felis tortor mollis tortor, vitae blandit augue tellus in neque. Etiam mi dui, mattis at fermentum vitae, mattis vel ipsum. Donec interdum, quam a bibendum vulputate, massa dolor eleifend enim, at fringilla nisl risus vel dolor. Praesent id blandit magna.</p>', ## block content, place iline HTML here
             'optional_classes' : "", ##
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
@@ -318,10 +513,9 @@
 </%def>
 
 
+## help page content
 
-## course about page content
-
-<%def name="get_course_about_content()">
+<%def name="get_help_content()">
   <%
     return [
         #[
@@ -332,27 +526,25 @@
         #   }
         #]
         [
-          'about-course-template', 'pages/course-about/_course-about-01.html', {
+          'static-block', 'static-blocks/_hero-section-01.html', {
             # template settings
-            'optional_classes' : "", ##
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'courses-list', 'static-blocks/_line-separator.html', {
-            # template settings
-            'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
-            # template settings
-            'heading' : "Great! You’re interested in becoming a programming.", ## leave value empty if you don't want it displayed.
-            'text' : "<p>Click Apply Now and someone from Admissions will contact you shortly.</p>", ## leave value empty if you don't want it displayed.
+            'hero_title' : "Static page title", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : "You can have a subtitle here as well, even an CTA button if you'd like (that leads to another page or opens a popup YouTube video)", ## leave value empty if you don't want it displayed.
             'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "Apply Now", ## leave value empty if you don't want a CTA button displayed.
-            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
+            'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
+            'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+            'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'text_color' : "#fff",
+            'bg_image_url' : '', ## leave empty if you want just a full color background
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ],
+        [
+          'static-block', 'static-blocks/_plain-content-01.html', {
+            # template settings
+            'content' : '<h1>This is an example of h1 heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus diam lectus, vitae porta purus varius ut. Praesent mollis pharetra odio, sed venenatis lectus bibendum non. Nullam laoreet in ipsum congue rhoncus. Curabitur tristique elementum sapien, et convallis magna auctor ac. Maecenas in sodales massa. Nulla ornare dui vel quam ornare, vel laoreet augue egestas. Curabitur ullamcorper justo nec nulla tincidunt accumsan. Maecenas ac risus venenatis, porta justo in, dignissim justo. Mauris tincidunt sed enim quis accumsan. Sed eget turpis sem. Vestibulum vel ante non quam facilisis hendrerit. Ut at maximus quam, sed imperdiet nisi. Aliquam sollicitudin felis varius, semper magna et, dignissim tellus. Duis iaculis, tortor et tincidunt condimentum, tellus tortor vehicula quam, in aliquet dui lorem eget erat. Suspendisse ut tempor tortor. Cras ut purus at odio sagittis pharetra eget sed ex.</p><h2>This is an example of h2 heading</h2><p>Curabitur placerat aliquet tortor nec dapibus. Sed fermentum, dolor hendrerit scelerisque pulvinar, erat arcu fermentum lacus, at commodo sapien nisl eu turpis. Vestibulum sodales sagittis ligula vitae bibendum. Cras pharetra sem sed lacus consequat, sit amet blandit velit rhoncus. Sed convallis scelerisque massa, et gravida tortor ullamcorper et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla convallis efficitur pulvinar. Aenean justo augue, varius id pellentesque in, posuere eu velit. Nam facilisis quis magna non sodales. In tempus, mi in consequat scelerisque, dui tortor molestie lectus, at dapibus nunc nibh interdum justo. In condimentum felis eget leo convallis fringilla. Curabitur eu neque fermentum, bibendum purus at, facilisis dui.</p><h3>This is an example of h3 heading</h3><p>Cras malesuada facilisis ipsum imperdiet tempus. Nullam ac consectetur orci. Nam bibendum ac velit et interdum. Mauris aliquet sit amet diam facilisis mollis. Integer volutpat ultrices elit id molestie. Duis iaculis consectetur sapien ornare vulputate. Quisque id est non metus consectetur feugiat. Integer enim justo, bibendum vitae cursus a, faucibus viverra est. Suspendisse ut laoreet nisi.</p><h3>This is an example of h3 heading</h3><p>In nec aliquam eros, eget facilisis tellus. Nullam non enim augue. Nulla lacus lorem, efficitur quis nisl in, congue gravida nulla. Nam placerat, nunc ut fermentum scelerisque, velit tellus pulvinar orci, id sagittis elit nulla quis odio. Nunc nisl quam, dapibus non nisi in, porta aliquam ante. Nunc eu elit malesuada est convallis accumsan et et elit. Integer dapibus pretium odio, vitae tincidunt dolor. Maecenas eget semper lectus. Mauris sollicitudin mattis ornare. In et mattis tellus. Suspendisse pellentesque urna a varius laoreet. Nulla ac pretium sapien. Maecenas in tempor arcu.</p><h3>This is an example of h3 heading</h3><p>Donec in orci accumsan, bibendum tortor et, lacinia elit. Aenean auctor ex in quam rutrum convallis. Pellentesque consectetur ut erat at molestie. Aliquam ultricies dapibus nulla, nec commodo odio bibendum ac. Vestibulum interdum, ante non placerat viverra, felis tortor mollis tortor, vitae blandit augue tellus in neque. Etiam mi dui, mattis at fermentum vitae, mattis vel ipsum. Donec interdum, quam a bibendum vulputate, massa dolor eleifend enim, at fringilla nisl risus vel dolor. Praesent id blandit magna.</p>', ## block content, place iline HTML here
+            'optional_classes' : "", ##
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ]
@@ -361,94 +553,41 @@
 </%def>
 
 
-## course catalogue page settings
+## contact page content
 
-<%def name="get_course_catalogue_settings()">
-  <%
-    return {
-      'default_edx_view' : False, ## required boolean value. Set to "true" if you want the default edX look and feel.
-      'discovery_course_card' : '_course-tile-02.underscore', ## define which tile template to use for results
-      'discovery_facet' : '_facet-01.underscore', ## define which template for facets to use
-      'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
-      'course_template_class' : 'a--course-tile-02', ## required, defined as "a--{template-name}"
-      'course_template' : 'live-blocks/single-course/_course-tile-02.html', ## required
-      'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html' ## design which discovery-search block design to use
-    }
-  %>
-</%def>
-
-## course catalogue page content
-
-<%def name="get_course_catalogue_content()">
+<%def name="get_contact_content()">
   <%
     return [
-      #[
-      #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
-      #     'template_setting_01': "value",
-      #     'template_setting_02': "value2",
-      #     ...
-      #   }
-      #]
-      [
-        'static-block', 'static-blocks/_hero-section-01.html', {
-          # template settings
-          'hero_title' : "Course catalogue", ## leave value empty if you don't want it displayed.
-          'hero_subtitle' : "You can browse the Inceptures Software School courses below", ## leave value empty if you don't want it displayed.
-          'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
-          'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
-          'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
-          'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
-          'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
-          'bg_image_url' : "/static/themes/inceptures-dogwood/images/inceptures-hero-image.jpg", ## leave empty if you want just a full color background
-          'extra_css' : "padding-top: 5rem; padding-bottom: 5rem;" ## add custom css to be added inline to the wrapper element
-         }
-      ],
-      [
-        'course-catalogue', 'pages/course-catalogue/_course-catalogue-01.html', {
-          # just include the course-catalogue template with the search, facets and results/listing at a place on the page
-        }
-      ]
-    ]
-  %>
-</%def>
-
-
-## dashboard settings
-
-<%def name="get_dashboard_settings()">
-  <%
-    return {
-      'default_edx_view' : False, ## required boolean value. Set to "true" if you want the default edX look and feel.
-      'dashboard_search_enabled' : True,
-      'dashboard_course_listing' : 'live-blocks/dashboard-course-listing/_dashboard-course-listing-01.html', ## set which template should be used to display a single course in the dashboard
-      'discovery_course_card' : '_course-tile-02.underscore', ## define which tile template to use for results
-      'discovery_facet' : '_facet-01.underscore', ## define which template for facets to use
-      'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
-      'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html', ## design which discovery-search block design to use
-      'promote_course_catalog' : True,
-      'promote_course_catalog_text' : "Check out our course catalog and enroll in some awesome courses!"
-    }
-  %>
-</%def>
-
-
-## dashboard page content
-
-<%def name="get_dashboard_content()">
-  <%
-    return [
-      #[
-      #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
-      #     'template_setting_01': "value",
-      #     'template_setting_02': "value2",
-      #     ...
-      #   }
-      #]
-      [
-        'dashboard', 'pages/dashboard/_dashboard-01.html', {
-          # just include the course-catalogue template with the search, facets and results/listing at a place on the page
-        }
-      ]
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+        [
+          'static-block', 'static-blocks/_hero-section-01.html', {
+            # template settings
+            'hero_title' : "Static page title", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : "You can have a subtitle here as well, even an CTA button if you'd like (that leads to another page or opens a popup YouTube video)", ## leave value empty if you don't want it displayed.
+            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
+            'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+            'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
+            'text_color' : "#fff",
+            'bg_image_url' : '', ## leave empty if you want just a full color background
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ],
+        [
+          'static-block', 'static-blocks/_plain-content-01.html', {
+            # template settings
+            'content' : '<h1>This is an example of h1 heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus diam lectus, vitae porta purus varius ut. Praesent mollis pharetra odio, sed venenatis lectus bibendum non. Nullam laoreet in ipsum congue rhoncus. Curabitur tristique elementum sapien, et convallis magna auctor ac. Maecenas in sodales massa. Nulla ornare dui vel quam ornare, vel laoreet augue egestas. Curabitur ullamcorper justo nec nulla tincidunt accumsan. Maecenas ac risus venenatis, porta justo in, dignissim justo. Mauris tincidunt sed enim quis accumsan. Sed eget turpis sem. Vestibulum vel ante non quam facilisis hendrerit. Ut at maximus quam, sed imperdiet nisi. Aliquam sollicitudin felis varius, semper magna et, dignissim tellus. Duis iaculis, tortor et tincidunt condimentum, tellus tortor vehicula quam, in aliquet dui lorem eget erat. Suspendisse ut tempor tortor. Cras ut purus at odio sagittis pharetra eget sed ex.</p><h2>This is an example of h2 heading</h2><p>Curabitur placerat aliquet tortor nec dapibus. Sed fermentum, dolor hendrerit scelerisque pulvinar, erat arcu fermentum lacus, at commodo sapien nisl eu turpis. Vestibulum sodales sagittis ligula vitae bibendum. Cras pharetra sem sed lacus consequat, sit amet blandit velit rhoncus. Sed convallis scelerisque massa, et gravida tortor ullamcorper et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla convallis efficitur pulvinar. Aenean justo augue, varius id pellentesque in, posuere eu velit. Nam facilisis quis magna non sodales. In tempus, mi in consequat scelerisque, dui tortor molestie lectus, at dapibus nunc nibh interdum justo. In condimentum felis eget leo convallis fringilla. Curabitur eu neque fermentum, bibendum purus at, facilisis dui.</p><h3>This is an example of h3 heading</h3><p>Cras malesuada facilisis ipsum imperdiet tempus. Nullam ac consectetur orci. Nam bibendum ac velit et interdum. Mauris aliquet sit amet diam facilisis mollis. Integer volutpat ultrices elit id molestie. Duis iaculis consectetur sapien ornare vulputate. Quisque id est non metus consectetur feugiat. Integer enim justo, bibendum vitae cursus a, faucibus viverra est. Suspendisse ut laoreet nisi.</p><h3>This is an example of h3 heading</h3><p>In nec aliquam eros, eget facilisis tellus. Nullam non enim augue. Nulla lacus lorem, efficitur quis nisl in, congue gravida nulla. Nam placerat, nunc ut fermentum scelerisque, velit tellus pulvinar orci, id sagittis elit nulla quis odio. Nunc nisl quam, dapibus non nisi in, porta aliquam ante. Nunc eu elit malesuada est convallis accumsan et et elit. Integer dapibus pretium odio, vitae tincidunt dolor. Maecenas eget semper lectus. Mauris sollicitudin mattis ornare. In et mattis tellus. Suspendisse pellentesque urna a varius laoreet. Nulla ac pretium sapien. Maecenas in tempor arcu.</p><h3>This is an example of h3 heading</h3><p>Donec in orci accumsan, bibendum tortor et, lacinia elit. Aenean auctor ex in quam rutrum convallis. Pellentesque consectetur ut erat at molestie. Aliquam ultricies dapibus nulla, nec commodo odio bibendum ac. Vestibulum interdum, ante non placerat viverra, felis tortor mollis tortor, vitae blandit augue tellus in neque. Etiam mi dui, mattis at fermentum vitae, mattis vel ipsum. Donec interdum, quam a bibendum vulputate, massa dolor eleifend enim, at fringilla nisl risus vel dolor. Praesent id blandit magna.</p>', ## block content, place iline HTML here
+            'optional_classes' : "", ##
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ]
     ]
   %>
 </%def>
