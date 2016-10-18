@@ -19,11 +19,13 @@
 <%def name="get_global_settings()">
   <%
   return {
-    'enable_registration_button' : True
+    'enable_registration_button' : True,
+    'google_fonts_to_import' : 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800&subset=latin-ext',
+    'apple_app_id' : '',
+    ##'header_logo_target' : ''
   }
   %>
 </%def>
-
 
 
 ## define logo files. All the variables need to be defined.
@@ -58,7 +60,7 @@
 <%def name="get_header_menu_logged_out_extra_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ANCHOR_ARG']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
       ['NYIF.COM', 'http://www.nyif.com', '', 'target = "_blank"']
     ]
   %>
@@ -70,7 +72,7 @@
 <%def name="get_header_menu_logged_in_extra_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ANCHOR_ARG']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
       ['NYIF.COM', 'http://www.nyif.com', '', 'target = "_blank"']
     ]
   %>
@@ -82,7 +84,7 @@
 <%def name="get_footer_menu_items()">
   <%
     return [
-      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ANCHOR_ARG']
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
       ['Terms of Service', 'http://www.nyif.com/terms-of-use', '', ''],
       ['Privacy Policy', 'http://www.nyif.com/privacy-cookie-policy/', '', ''],
       ['Contact us', 'mailto:customerservice@nyif.com', '', ''],
@@ -103,10 +105,12 @@
   <%
     return {
       'footer_logo' : get_brand_logos()['icon_black'], ## leave as is, defined above. Can be changed to something custom if needed.
-      'footer_copyright_text' : '© 1922-2016 New York Institute of Finance, a Financial Times company. All rights reserved. ',  ## leave value empty if you don't want it displayed.
+      'footer_copyright_text' : '© 1922-2016 New York Institute of Finance, a Financial Times company. All rights reserved.',  ## leave value empty if you don't want it displayed.
       'display_edx_disclaimer' : False, ## bool value required
       'edx_disclaimer' : 'edX, Open edX and the edX and Open edX logos are trademarks or registered trademarks of edX Inc.', ## leave value empty if you don't want it displayed.
-      'display_poweredby' : True ## bool value required
+      'display_poweredby' : True, ## bool value required
+      'display_app_link' : False,
+      'app_url' : 'https://itunes.apple.com/app/id1044418100'
     }
   %>
 </%def>
@@ -174,58 +178,6 @@
 </%def>
 
 
-## faq page content
-
-<%def name="get_faq_content()">
-  <%
-    return [
-        #[
-        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
-        #     'template_setting_01': "value",
-        #     'template_setting_02': "value2",
-        #     ...
-        #   }
-        #]
-    ]
-  %>
-</%def>
-
-
-## tos page content
-
-<%def name="get_tos_content()">
-  <%
-    return [
-        #[
-        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
-        #     'template_setting_01': "value",
-        #     'template_setting_02': "value2",
-        #     ...
-        #   }
-        #]
-    ]
-  %>
-</%def>
-
-
-## about page content
-
-<%def name="get_about_content()">
-  <%
-    return [
-        #[
-        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
-        #     'template_setting_01': "value",
-        #     'template_setting_02': "value2",
-        #     ...
-        #   }
-        #]
-    ]
-  %>
-</%def>
-
-
-
 ## course about page content
 
 <%def name="get_course_about_content()">
@@ -249,6 +201,17 @@
           'courses-list', 'static-blocks/_line-separator.html', {
             # template settings
             'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
+            'extra_css' : "" ## add custom css to be added inline to the wrapper element
+          }
+        ],
+        [
+          'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
+            # template settings
+            'heading' : "Optional content title", ## leave value empty if you don't want it displayed.
+            'text' : "<p>You can add some additional content here. You can add a CTA under this section as well.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>", ## leave value empty if you don't want it displayed.
+            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "CTA button", ## leave value empty if you don't want a CTA button displayed.
+            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ]
@@ -307,7 +270,8 @@
       'discovery_facet' : '_facet-01.underscore', ## define which template for facets to use
       'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
       'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html', ## design which discovery-search block design to use
-      'promote_course_catalog' : True
+      'promote_course_catalog' : True,
+      'promote_course_catalog_text' : "Check out our course catalog and enrol in courses!"
     }
   %>
 </%def>
@@ -330,6 +294,125 @@
           # just include the course-catalogue template with the search, facets and results/listing at a place on the page
         }
       ]
+    ]
+  %>
+</%def>
+
+
+## faq page content
+
+<%def name="get_faq_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+    ]
+  %>
+</%def>
+
+
+## tos page content
+
+<%def name="get_tos_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+    ]
+  %>
+</%def>
+
+
+## copyright page content
+
+<%def name="get_copyright_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+    ]
+  %>
+</%def>
+
+
+## about page content
+
+<%def name="get_about_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+    ]
+  %>
+</%def>
+
+
+## help page content
+
+<%def name="get_help_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+    ]
+  %>
+</%def>
+
+
+## contact page content
+
+<%def name="get_contact_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+    ]
+  %>
+</%def>
+
+
+## honor page content
+
+<%def name="get_honor_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
     ]
   %>
 </%def>
