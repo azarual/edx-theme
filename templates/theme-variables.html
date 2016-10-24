@@ -86,12 +86,10 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS', 'ADDITIONAL_ATTRIBUTES']
-      ['Example item', '#', '', 'target="_blank"'],
-      ['Help', reverse('help'), '', ''],
-      ['FAQ', marketing_link('FAQ'), '', ''],
-      ['Contact', reverse('contact'), '', ''],
-      ['Conditions of Use', reverse('tos'), '', ''],
-      ['Copyright', marketing_link('copyright'), '', '']
+      ['Privacy and Legal Statements', 'http://www.psu.edu/legal-statements', '', 'target="_blank"'],
+      ['Accessibility', 'http://agsci.psu.edu/accessibility', '', 'target="_blank"'],
+      ['Contact Us', 'http://extension.psu.edu/contact', '', 'target="_blank"'],
+      ['Penn State Hotlines', 'http://www.psu.edu/hotlines', '', 'target="_blank"']
     ]
   %>
 </%def>
@@ -103,7 +101,7 @@
   <%
     return {
       'footer_logo' : get_brand_logos()['icon_color'], ## leave as is, defined above. Can be changed to something custom if needed.
-      'footer_copyright_text' : '© 2016 Penn State. All rights reserved.',  ## leave value empty if you don't want it displayed.
+      'footer_copyright_text' : '© 2016 Penn State College of Agricultural Sciences.',  ## leave value empty if you don't want it displayed.
       'display_edx_disclaimer' : True, ## bool value required
       'edx_disclaimer' : 'edX, Open edX and the edX and Open edX logos are trademarks or registered trademarks of edX Inc.', ## leave value empty if you don't want it displayed.
       'display_poweredby' : True, ## bool value required
