@@ -98,40 +98,6 @@ from student.helpers import (
             % endif
           </li>
         % endif
-        <!-- unenroll -->
-        <li class="dashboard-courses__course__option" id="actions-item-unenroll-${dashboard_index}">
-          % if is_paid_course and show_refund_option:
-            % if not is_course_blocked:
-              <a href="#unenroll-modal" class="action action-unenroll unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from the purchased course %(course_number)s?")}', '${_("You will be refunded the amount you paid.")}')">${_('Unenroll')}</a>
-            % else:
-              <a class="action action-unenroll unenroll is-disabled" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from the purchased course %(course_number)s?")}', '${_("You will be refunded the amount you paid.")}')">${_('Unenroll')}</a>
-            % endif
-          % elif is_paid_course and not show_refund_option:
-            % if not is_course_blocked:
-              <a href="#unenroll-modal" class="action action-unenroll unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from the purchased course %(course_number)s?")}', '${_("You will not be refunded the amount you paid.")}')">${_('Unenroll')}</a>
-            % else:
-              <a class="action action-unenroll unenroll is-disabled" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from the purchased course %(course_number)s?")}', '${_("You will not be refunded the amount you paid.")}')">${_('Unenroll')}</a>
-            % endif
-          % elif enrollment.mode != "verified":
-            % if not is_course_blocked:
-              <a href="#unenroll-modal" class="action action-unenroll unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from %(course_number)s?")}', '')">${_('Unenroll')}</a>
-            % else:
-              ${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from %(course_number)s?")}', '')">${_('Unenroll')}</a>
-            % endif
-          % elif show_refund_option:
-            % if not is_course_blocked:
-              <a href="#unenroll-modal" class="action action-unenroll unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from the verified {cert_name_long} track of %(course_number)s?").format(cert_name_long=cert_name_long)}', '${_("You will be refunded the amount you paid.")}')">${_('Unenroll')}</a>
-            % else:
-              <a class="action action-unenroll unenroll is-disabled" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from the verified {cert_name_long} track of %(course_number)s?").format(cert_name_long=cert_name_long)}', '${_("You will be refunded the amount you paid.")}')">${_('Unenroll')}</a>
-            % endif
-          % else:
-            % if not is_course_blocked:
-              <a href="#unenroll-modal" class="action action-unenroll unenroll" rel="leanModal" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from the verified {cert_name_long} track of %(course_number)s?").format(cert_name_long=cert_name_long)}', '${_("The refund deadline for this course has passed, so you will not receive a refund.")}')">${_('Unenroll')}</a>
-            % else:
-              <a class="action action-unenroll unenroll is-disabled" data-course-id="${course.id | h}" data-course-number="${course.number | h}" data-dashboard-index="${dashboard_index}" onclick="set_unenroll_message('${_("Are you sure you want to unenroll from the verified {cert_name_long} track of %(course_number)s?").format(cert_name_long=cert_name_long)}', '${_("The refund deadline for this course has passed, so you will not receive a refund.")}')">${_('Unenroll')}</a>
-            % endif
-          % endif
-        </li>
       </ul>
       <!-- end of dashboard course options -->
       <!-- dashboard course footer - still needs work! -->
