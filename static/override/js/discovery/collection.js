@@ -9,7 +9,7 @@ define([
     return Backbone.Collection.extend({
 
         model: CourseCard,
-        pageSize: 10000, // effectively infinite. normally 20.  we don't want to page at all b/c of custom sort order
+        pageSize: 100, // set to max allowed in edx-search. normally 20.  we don't want to page at all b/c of custom sort order
         totalCount: 0,
         latestModelsCount: 0,
         searchTerm: '',
