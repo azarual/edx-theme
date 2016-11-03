@@ -317,17 +317,40 @@
 ## tos page content
 
 <%def name="get_tos_content()">
-  <%
-    return [
-        #[
-        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
-        #     'template_setting_01': "value",
-        #     'template_setting_02': "value2",
-        #     ...
-        #   }
-        #]
-    ]
-  %>
+<%
+  return [
+      #[
+      #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+      #     'template_setting_01': "value",
+      #     'template_setting_02': "value2",
+      #     ...
+      #   }
+      #]
+      [
+        'static-block', 'static-blocks/_hero-section-01.html', {
+          # template settings
+          'hero_title' : "Terms of Service", ## leave value empty if you don't want it displayed.
+          'hero_subtitle' : "", ## leave value empty if you don't want it displayed.
+          'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
+          'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
+          'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+          'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
+          'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
+          'text_color' : "#fff",
+          'bg_image_url' : '', ## leave empty if you want just a full color background
+          'extra_css' : "" ## add custom css to be added inline to the wrapper element
+        }
+      ],
+      [
+        'static-block', 'static-blocks/_plain-content-01.html', {
+          # template settings
+          'content' : '<p>To view the New York Institue of Finance Terms of Service, please visit: <a href="https://www.nyif.com/terms-of-use">https://www.nyif.com/terms-of-use</a> </p>', ## block content, place iline HTML here
+          'optional_classes' : "", ##
+          'extra_css' : "" ## add custom css to be added inline to the wrapper element
+        }
+      ]
+  ]
+%>
 </%def>
 
 
@@ -414,10 +437,10 @@
       [
         'static-block', 'static-blocks/_hero-section-01.html', {
           # template settings
-          'hero_title' : "Static page title", ## leave value empty if you don't want it displayed.
-          'hero_subtitle' : "You can have a subtitle here as well, even an CTA button if you'd like (that leads to another page or opens a popup YouTube video)", ## leave value empty if you don't want it displayed.
-          'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
-          'cta_link_text' : "CTA Button", ## leave value empty if you don't want a CTA button displayed.
+          'hero_title' : "Terms of Service", ## leave value empty if you don't want it displayed.
+          'hero_subtitle' : "", ## leave value empty if you don't want it displayed.
+          'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
+          'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
           'popup_video_url' : "", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
           'popup_video_text' : "", ## leave value empty if you don't want a video button and modal displayed.
           'popup_video_id' : "", ## leave value empty if you don't want a video button and modal displayed.
@@ -429,7 +452,7 @@
       [
         'static-block', 'static-blocks/_plain-content-01.html', {
           # template settings
-          'content' : '<h1>This is an example of h1 heading</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>', ## block content, place iline HTML here
+          'content' : '<p>To view the New York Institue of Finance Terms of Service, please visit: <a href="https://www.nyif.com/terms-of-use">https://www.nyif.com/terms-of-use</a> </p>', ## block content, place iline HTML here
           'optional_classes' : "", ##
           'extra_css' : "" ## add custom css to be added inline to the wrapper element
         }
