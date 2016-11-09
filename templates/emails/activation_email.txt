@@ -1,0 +1,13 @@
+<%namespace file="../main.html" import="stanford_theme_enabled" />
+<%! from django.utils.translation import ugettext as _ %>
+
+Obrigado por registrar-se no curso. Clique no link abaixo ou copie e cole na barra de endereço do seu navegador para ativar sua conta.
+
+% if is_secure:
+  https://${ site }/activate/${ key }
+% else:
+  http://${ site }/activate/${ key }
+% endif
+
+Se você não solicitou este e-mail, desconsidere-o. Não enviaremos nenhum outro e-mail para você. Esta é uma mensagem automática, por favor, não responda. Em caso de dúvidas, consulte a seção de Ajuda em nosso site.
+
