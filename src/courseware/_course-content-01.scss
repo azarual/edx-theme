@@ -228,7 +228,7 @@
       overflow-y: auto;
     }
 
-    .xmodule_display.xmodule_HtmlModule p {
+    .xmodule_display.xmodule_HtmlModule p, .xmodule_display.xmodule_HtmlModule ul li {
       @include primary-font;
       font-size: $courseware-content-font-size;
     }
