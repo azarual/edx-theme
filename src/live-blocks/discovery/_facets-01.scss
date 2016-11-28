@@ -38,6 +38,12 @@
     }
   }
 
+  &__facet-container {
+    @include display(flex);
+    @include align-items(center);
+    width: 100%;
+  }
+
   &__facet-option {
     @include edx_style_killer;
     @include no_damn_focus_glow;
@@ -69,6 +75,7 @@
         border-radius: $facet-results-count-border-radius;
         font-size: $facet-results-count-font-size;
         color: $facet-results-count-text-color;
+        margin-left: auto;
       }
   }
 }

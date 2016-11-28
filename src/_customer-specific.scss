@@ -1,0 +1,98 @@
+@import "customer_specific/palix-hero";
+@import "customer_specific/course-tile-palix";
+@import "customer_specific/course-about-palix";
+
+.a--heading-plus-text-plus-cta {
+  padding: 10rem 0;
+
+  h2 {
+    @include big-headings-font;
+    font-size: 4.2rem;
+    line-height: 4.2rem;
+    text-transform: uppercase;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 2.4rem;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 160%;
+    color: lighten($base-text-color, 30%);
+  }
+
+  .a--cta {
+    text-transform: uppercase;
+    @include large-cta-font;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  &.negative {
+
+    p {
+      color: #fff;
+    }
+
+    .a--cta {
+      background-color: #fff;
+      color: $brand-primary-color;
+
+      &:hover, &:focus {
+        background-color: #fff;
+        color: $brand-primary-color;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.a--course-listing-01 {
+
+  &__section-heading {
+    @include big-headings-font;
+    font-size: 4.2rem;
+    line-height: 4.2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    letter-spacing: normal;
+    -webkit-font-smoothing: antialiased;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__section-text {
+    max-width: 92rem;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    line-height: 160%;
+    color: lighten($base-text-color, 30%);
+  }
+}
+
+.a--header-design-01 .a--site-menu__group ul li a {
+  @include big-headings-font;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.a--hero-section-01 {
+  background-image: url('../images/course_about_bg.png') !important;
+  background-size: initial;
+
+  h1 {
+    font-size: 7.2rem;
+    @include big-headings-font;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h4 {
+    text-transform: none;
+    font-size: 2.2rem;
+    color: #fff;
+    opacity: 1;
+  }
+}
